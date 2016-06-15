@@ -386,7 +386,6 @@ end
 <<<<<<< HEAD
 #bot info
 bot.command(:info) do |event|
-	cmdcount += 1
 	event << "```Ruby Version: #{RUBY_VERSION}"
 	event << "Ruby patchlevel: #{RUBY_PATCHLEVEL}"
 	event << "Ruby release date: #{RUBY_RELEASE_DATE}"
@@ -395,39 +394,25 @@ bot.command(:info) do |event|
 	event << 'Big Thanks to the Bot Community and @meew0'
 	event << 'Creator: @ZerO (ask him if there are any questions)'
 	event << 'Contributors: @Alice, @Reaver02'
-	event << 'updated: 15.06.2016```'
-	puts 'CMD: info'
-end
-#stats
-bot.command(:stats) do |event|
-	cmdcount += 1
-	event << "```#{cmdcount} commands executed"
 	event << "#{p Uptime.uptime} Online```"
-	puts 'CMD: stats'
+	event << 'updated: 15.06.2016```'
 end
 #ping
 bot.command(:ping) do |event|
-	cmdcount += 1
 	event.respond 'Pong!'
-	puts 'CMD: ping'
 end
 #ding
 bot.command(:ding) do |event|
-	cmdcount += 1
 	event.respond 'Dong!'
-	puts 'CMD: ding'
 end
 #rp function
 bot.command(:rp, permission_level: 1) do |event, *phrase|
-	cmdcount += 1
 	phrase = phrase.join(' ')
 	event << "sent **#{phrase}** to mhodiscussion"
 	bot.send_message(122526505606709257, phrase)
-	puts 'CMD: roleplay'
 end
 #get raid time
 bot.command(:raid) do |event|
-	cmdcount += 1
 	nout = 0
 	output1 = time1
 	a1 = output1 / 3600
@@ -485,18 +470,15 @@ bot.command(:raid) do |event|
 		name5s = ''
 	end
 	event << 'no raids are currently set up' if nout == 0
-	puts 'CMD: get raid timer'
 end
 #set raid 1
 bot.command(:raid1, permission_level: 1) do |event, hours1, minutes1, *name1|
-	cmdcount += 1
 	name1 = name1.join(' ')
 	name1s = name1
 	h1 = hours1.to_i
 	m1 = minutes1.to_i
 	time1 = h1 * 3600 + m1 * 60
 	event.respond "raid 1 set **#{hours1}h #{minutes1}m** as **#{name1}**"
-	puts 'CMD: raid1 set'
 	while time1 > 0
 		sleep 1
 		time1 -= 1
@@ -504,14 +486,12 @@ bot.command(:raid1, permission_level: 1) do |event, hours1, minutes1, *name1|
 end
 #set raid 2
 bot.command(:raid2, permission_level: 1) do |event, hours2, minutes2, *name2|
-	cmdcount += 1
 	name2 = name2.join(' ')
 	name2s = name2
 	h2 = hours2.to_i
 	m2 = minutes2.to_i
 	time2 = h2 * 3600 + m2 * 60
 	event.respond "raid 2 set **#{hours2}h #{minutes2}m** as **#{name2}**"
-	puts 'CMD: raid2 set'
 	while time2 > 0
 		sleep 1
 		time2 -= 1
@@ -519,14 +499,12 @@ bot.command(:raid2, permission_level: 1) do |event, hours2, minutes2, *name2|
 end
 #set raid 3
 bot.command(:raid3, permission_level: 1) do |event, hours3, minutes3, *name3|
-	cmdcount += 1
 	name3 = name3.join(' ')
 	name3s = name3
 	h3 = hours3.to_i
 	m3 = minutes3.to_i
 	time3 = h3 * 3600 + m3 * 60
 	event.respond "raid 3 set **#{hours3}h #{minutes3}m** as **#{name3}**"
-	puts 'CMD: raid3 set'
 	while time3 > 0
 		sleep 1
 		time3 -= 1
@@ -534,14 +512,12 @@ bot.command(:raid3, permission_level: 1) do |event, hours3, minutes3, *name3|
 end
 #set raid 4
 bot.command(:raid4, permission_level: 1) do |event, hours4, minutes4, *name4|
-	cmdcount += 1
 	name4 = name4.join(' ')
 	name4s = name4
 	h4 = hours4.to_i
 	m4 = minutes4.to_i
 	time4 = h4 * 3600 + m4 * 60
 	event.respond "raid 4 set **#{hours4}h #{minutes4}m** as **#{name4}**"
-	puts 'CMD: raid4 set'
 	while time4 > 0
 		sleep 1
 		time4 -= 1
@@ -549,26 +525,18 @@ bot.command(:raid4, permission_level: 1) do |event, hours4, minutes4, *name4|
 end
 #set raid 5
 bot.command(:raid5, permission_level: 1) do |event, hours5, minutes5, *name5|
-	cmdcount += 1
 	name5 = name5.join(' ')
 	name5s = name5
 	h5 = hours5.to_i
 	m5 = minutes5.to_i
 	time5 = h5 * 3600 + m5 * 60
 	event.respond "raid 5 set **#{hours5}h #{minutes5}m** named: **#{name5}**"
-	puts 'CMD: raid5 set'
 	while time5 > 0
 		sleep 1
 		time5 -= 1
 	end
 end
-#kill the bot
-bot.command(:kill, description: "kills felyne", permission_level: 800) do |event|
-  puts "Daisy... daisy, give me your answer do..."
-  bot.send_message(event.message.channel, "Daisy... daisy, give me your answer do...")
-  bot.stop
-  exit
-end
+
 =======
 
 >>>>>>> origin/master
