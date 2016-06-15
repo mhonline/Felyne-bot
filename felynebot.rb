@@ -383,7 +383,6 @@ bot.command(:maint) do |event|
 	c = output - a * 3600 - b * 60
 	event.respond "**#{a}:#{b}:#{c}** seconds left"
 end
-<<<<<<< HEAD
 #bot info
 bot.command(:info) do |event|
 	event << "```Ruby Version: #{RUBY_VERSION}"
@@ -536,9 +535,19 @@ bot.command(:raid5, permission_level: 1) do |event, hours5, minutes5, *name5|
 		time5 -= 1
 	end
 end
+<<<<<<< HEAD
 
 =======
 
+>>>>>>> origin/master
+=======
+#kill the bot
+bot.command(:kill, description: "kills felyne", permission_level: 800) do |event|
+  puts "Daisy... daisy, give me your answer do..."
+  bot.send_message(event.message.channel, "Daisy... daisy, give me your answer do...")
+  bot.stop
+  exit
+end
 >>>>>>> origin/master
 
 puts 'Loaded commands.'
