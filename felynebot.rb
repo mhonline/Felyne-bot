@@ -343,10 +343,6 @@ bot.command(:userign, max_args: 1, min_args: 1, description: "Changes IGN for us
   puts "#{clock.inspect}: #{event.user.name}: [userIgn] <#{ign}>"
   saveObj(users,"userbase/users")
 end
-#server
-bot.command(:server) do |event|
-  event << "http://i.imgur.com/EHqV4Cy.jpg"
-	puts "#{clock.inspect}: #{event.user.name}: [server]"
 #kill the bot
 bot.command(:kill, description: "kills felyne", permission_level: 800) do |event|
   puts "Daisy... daisy, give me your answer do..."
@@ -469,7 +465,6 @@ bot.command(:raid) do |event|
 		name5s = ''
 	end
 	event << 'no raids are currently set up' if nout == 0
-	end
 end
 #set raid 1
 bot.command(:raid1, permission_level: 1) do |event, hours1, minutes1, *name1|
