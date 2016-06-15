@@ -1,5 +1,5 @@
 module FelyneBot
-	module StoreData
+	class StoreData
 		#Method for saving arrays
 		def saveArr(ar,loc)
 			if File.exist?(loc)
