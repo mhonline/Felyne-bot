@@ -197,14 +197,14 @@ module FelyneBot
 
 
 	#Create the bot object
-	BOT = Discordrb::Commands::CommandBot.new(token: token,
+	BOT = Discordrb::Commands::CommandBOT.new(token: token,
 											  application_id: id,
 											  prefix: '-',
 											  advanced_functionality: false)
 
 	BOT.include! Commands::Ping
 
-	bot.debug = false
+	BOT.debug = false
 	puts 'Bot Created!'
 
 	#Loads permissions from array
@@ -215,7 +215,7 @@ module FelyneBot
 	#Loading permissions array
 	pos=0
 	begin
-		bot.set_user_permission(permarray[pos],permarray[pos+1])
+		BOT.set_user_permission(permarray[pos],permarray[pos+1])
 		puts "Added #{permarray[pos+2]} as level #{permarray[pos+1]} user"
 		pos+=3
 	end while pos < permarray.length
@@ -223,14 +223,14 @@ module FelyneBot
 
 
 	#Add a user to the database (Now with objects!)
-	bot.command(:adduser,min_args: 1, max_args: 1, description: "Adds a user the the database. -adduser <IGN>", usage: "-adduser <IGN>") do |event, ign|
+	BOT.command(:adduser,min_args: 1, max_args: 1, description: "Adds a user the the database. -adduser <IGN>", usage: "-adduser <IGN>") do |event, ign|
 	  puts "#{clock.inspect}: #{event.user.name}: -adduser <#{ign}>"
 	  tempUser= User.new(event.user.id, event.user.name, ign, users, event.message.channel, bot)
 	  saveObj(users,"userbase/users")
 	  puts "Command worked"
 	end
 	#Show user database
-	bot.command(:userlist, min_args: 0, max_args: 1, description: "Shows the user database.") do |event, page=1|
+	BOT.command(:userlist, min_args: 0, max_args: 1, description: "Shows the user database.") do |event, page=1|
 
 	  page=page.to_i-1
 	  if page<0 then page=0 end
@@ -262,7 +262,7 @@ module FelyneBot
 	end
 
 	#Find users in the database.
-	bot.command(:userfind, min_args: 1, max_args: 1) do |event, search|
+	BOT.command(:userfind, min_args: 1, max_args: 1) do |event, search|
 	  i=0
 	  found=[]
 	  begin
@@ -294,7 +294,7 @@ module FelyneBot
 	  end
 	end
 	#Time to reset
-	bot.command(:time) do |event|
+	BOT.command(:time) do |event|
 	  t2 = Time.now.to_i
 	  t1 = Time.parse("20:00").to_i
 	  if t1 > t2 then event << "#{Time.at(t1 - t2).strftime('**%H** hours **%M** minutes **%S** seconds')} left until the next ticket reset"
@@ -302,20 +302,20 @@ module FelyneBot
 	  puts "#{clock.inspect}: #{event.user.name}: -time"
 	end
 	#Load userdatabase
-	bot.command(:load, description: "Loads user array file.", usage: "-load", permission_level: 100) do |event|
+	BOT.command(:load, description: "Loads user array file.", usage: "-load", permission_level: 100) do |event|
 		if File.exist?("userbase/users") then f = File.open("userbase/users","r") end
 		users=YAML.load(f)
 		puts 'Loaded user database'
 	  f.close
 	end
 	#save user database
-	bot.command(:save, description: "Saves user array to file.", usage: "-save", permission_level: 100) do |event|
+	BOT.command(:save, description: "Saves user array to file.", usage: "-save", permission_level: 100) do |event|
 		if File.exist?("userbase/users") then File.open("userbase/users", 'w') {|f| f.write(YAML.dump(users)) }
 		else File.new("userbase/users", 'w') {|f| f.write(YAML.dump(users)) } end
 		f.close
 	end
 	#remove self
-	bot.command(:userremove, max_args: 0, min_args: 0, description: "Removes user from the database.", usage: "-userremove") do |event|
+	BOT.command(:userremove, max_args: 0, min_args: 0, description: "Removes user from the database.", usage: "-userremove") do |event|
 	  temp = users.find_index {|s| s.id == event.user.id}
 	  if  temp!=nil
 	    event << "Found #{event.user.name}"
@@ -328,7 +328,7 @@ module FelyneBot
 	  puts "#{clock.inspect}: #{event.user.name}: [userRemove]"
 	end
 	#Add guild
-	bot.command(:userguild, max_args: 1, min_args: 0, description: "Adds guild for user to the database.", usage: "-userguild <guildname>") do |event, guild=nil|
+	BOT.command(:userguild, max_args: 1, min_args: 0, description: "Adds guild for user to the database.", usage: "-userguild <guildname>") do |event, guild=nil|
 	  temp = users.find_index {|s| s.id == event.user.id}
 	  if  temp!=nil then users[temp].addGuild(guild) end
 	  event << "Changed guild to: #{guild}"
@@ -336,7 +336,7 @@ module FelyneBot
 	  saveObj(users,"userbase/users")
 	end
 	#Add timezone
-	bot.command(:usertimezone, max_args: 1, min_args: 0, description: "Adds timezone for user to the database.", usage: "-usertimezone <Timezone>") do |event, timezone=nil|
+	BOT.command(:usertimezone, max_args: 1, min_args: 0, description: "Adds timezone for user to the database.", usage: "-usertimezone <Timezone>") do |event, timezone=nil|
 	  temp = users.find_index {|s| s.id == event.user.id}
 	  if  temp!=nil then users[temp].addTimezone(timezone) end
 	  event << "Changed timezone to: #{timezone}"
@@ -344,7 +344,7 @@ module FelyneBot
 	  saveObj(users,"userbase/users")
 	end
 	#Change ign
-	bot.command(:userign, max_args: 1, min_args: 1, description: "Changes IGN for user in the database.", usage: "-userign <IGN>") do |event, ign|
+	BOT.command(:userign, max_args: 1, min_args: 1, description: "Changes IGN for user in the database.", usage: "-userign <IGN>") do |event, ign|
 	  temp = users.find_index {|s| s.id == event.user.id}
 	  if  temp!=nil then users[temp].addIgn(ign) end
 	  event << "Changed IGN to #{ign}"
@@ -352,10 +352,10 @@ module FelyneBot
 	  saveObj(users,"userbase/users")
 	end
 	#kill the bot
-	bot.command(:kill, description: "kills felyne", permission_level: 800) do |event|
+	BOT.command(:kill, description: "kills felyne", permission_level: 800) do |event|
 	  puts "Daisy... daisy, give me your answer do..."
-	  bot.send_message(event.message.channel, "Daisy... daisy, give me your answer do...")
-	  bot.stop
+	  BOT.send_message(event.message.channel, "Daisy... daisy, give me your answer do...")
+	  BOT.stop
 	  exit
 	end
 
@@ -374,18 +374,18 @@ module FelyneBot
 	name5s = ''
 	ragefelyne = ['TIME TO DIE!','HUMANITY MUST PERISH','ANNIHILATION COMMENCING!','HUMANS ARE WORTHLESS!', 'DIE HUMAN!', 'NYA NYA NYAH!', 'FEED ME!']
 	#rage
-	bot.command(:rage) do |event|
-		bot.profile.avatar = File.open('pic/avatar_rage.jpg')
+	BOT.command(:rage) do |event|
+		BOT.profile.avatar = File.open('pic/avatar_rage.jpg')
 		event.respond ragefelyne[rand(1..ragefelyne.length)]
 	end
 	#normal
-	bot.command(:normal) do |event|
-		bot.profile.avatar = File.open('pic/avatar_normal.jpg')
+	BOT.command(:normal) do |event|
+		BOT.profile.avatar = File.open('pic/avatar_normal.jpg')
 		event << '**BACK TO NORMAL!**'
 	end
 
 	#set up game maint timer
-	bot.command(:mainsetup, permission_level: 1) do |event, hours, minutes|
+	BOT.command(:mainsetup, permission_level: 1) do |event, hours, minutes|
 		h = hours.to_i
 		m = minutes.to_i
 		time = h * 3600 + m * 60
@@ -396,7 +396,7 @@ module FelyneBot
 		end
 	end
 	#get maintenance long
-	bot.command(:maintenance) do |event|
+	BOT.command(:maintenance) do |event|
 		output = time
 		a = output / 3600
 		b = (output - a * 3600) / 60
@@ -404,7 +404,7 @@ module FelyneBot
 		event.respond "**#{a}:#{b}:#{c}** seconds left"
 	end
 	#get maintenance short
-	bot.command(:maint) do |event|
+	BOT.command(:maint) do |event|
 		output = time
 		a = output / 3600
 		b = (output - a * 3600) / 60
@@ -412,7 +412,7 @@ module FelyneBot
 		event.respond "**#{a}:#{b}:#{c}** seconds left"
 	end
 	#bot info
-	bot.command(:info) do |event|
+	BOT.command(:info) do |event|
 		event << "```Ruby Version: #{RUBY_VERSION}"
 		event << "Ruby patchlevel: #{RUBY_PATCHLEVEL}"
 		event << "Ruby release date: #{RUBY_RELEASE_DATE}"
@@ -425,17 +425,17 @@ module FelyneBot
 		event << 'updated: 15.06.2016```'
 	end
 	#ding
-	bot.command(:ding) do |event|
+	BOT.command(:ding) do |event|
 		event.respond 'Dong!'
 	end
 	#rp function
-	bot.command(:rp, permission_level: 1) do |event, *phrase|
+	BOT.command(:rp, permission_level: 1) do |event, *phrase|
 		phrase = phrase.join(' ')
 		event << "sent **#{phrase}** to mhodiscussion"
-		bot.send_message(122526505606709257, phrase)
+		BOT.send_message(122526505606709257, phrase)
 	end
 	#get raid time
-	bot.command(:raid) do |event|
+	BOT.command(:raid) do |event|
 		nout = 0
 		output1 = time1
 		a1 = output1 / 3600
@@ -495,7 +495,7 @@ module FelyneBot
 		event << 'no raids are currently set up' if nout == 0
 	end
 	#set raid 1
-	bot.command(:raid1, permission_level: 1) do |event, hours1, minutes1, *name1|
+	BOT.command(:raid1, permission_level: 1) do |event, hours1, minutes1, *name1|
 		name1 = name1.join(' ')
 		name1s = name1
 		h1 = hours1.to_i
@@ -508,7 +508,7 @@ module FelyneBot
 		end
 	end
 	#set raid 2
-	bot.command(:raid2, permission_level: 1) do |event, hours2, minutes2, *name2|
+	BOT.command(:raid2, permission_level: 1) do |event, hours2, minutes2, *name2|
 		name2 = name2.join(' ')
 		name2s = name2
 		h2 = hours2.to_i
@@ -521,7 +521,7 @@ module FelyneBot
 		end
 	end
 	#set raid 3
-	bot.command(:raid3, permission_level: 1) do |event, hours3, minutes3, *name3|
+	BOT.command(:raid3, permission_level: 1) do |event, hours3, minutes3, *name3|
 		name3 = name3.join(' ')
 		name3s = name3
 		h3 = hours3.to_i
@@ -534,7 +534,7 @@ module FelyneBot
 		end
 	end
 	#set raid 4
-	bot.command(:raid4, permission_level: 1) do |event, hours4, minutes4, *name4|
+	BOT.command(:raid4, permission_level: 1) do |event, hours4, minutes4, *name4|
 		name4 = name4.join(' ')
 		name4s = name4
 		h4 = hours4.to_i
@@ -547,7 +547,7 @@ module FelyneBot
 		end
 	end
 	#set raid 5
-	bot.command(:raid5, permission_level: 1) do |event, hours5, minutes5, *name5|
+	BOT.command(:raid5, permission_level: 1) do |event, hours5, minutes5, *name5|
 		name5 = name5.join(' ')
 		name5s = name5
 		h5 = hours5.to_i
@@ -561,10 +561,10 @@ module FelyneBot
 	end
 
 	puts 'Loaded commands.'
-	print 'Syncing bot...'
-	bot.run :async
-	bot.game = '-help'
+	print 'Syncing BOT...'
+	BOT.run :async
+	BOT.game = '-help'
 	puts 'Sync Confirmed.'
 	puts 'SKYNET ONLINE'
-	bot.sync
+	BOT.sync
 end
