@@ -352,6 +352,19 @@ bot.command(:kill, description: "kills felyne", permission_level: 800) do |event
 end
 
 #old commands !!NEED UPDATES!!
+#old global variables
+time = 0
+time1 = 0
+time2 = 0
+time3 = 0
+time4 = 0
+time5 = 0
+name1s = ''
+name2s = ''
+name3s = ''
+name4s = ''
+name5s = ''
+
 #set up game maint timer
 bot.command(:mainsetup, permission_level: 1) do |event, hours, minutes|
 	h = hours.to_i
