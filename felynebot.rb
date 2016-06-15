@@ -197,7 +197,7 @@ module FelyneBot
 
 
 	#Create the bot object
-	BOT = Discordrb::Commands::CommandBOT.new(token: token,
+	BOT = Discordrb::Commands::CommandBot.new(token: token,
 											  application_id: id,
 											  prefix: '-',
 											  advanced_functionality: false)
