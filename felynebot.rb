@@ -1,4 +1,4 @@
-
+module FelyneBot
 	puts 'starting felynebot'
 	print 'loading require...'
 	require 'json'
@@ -567,3 +567,4 @@
 	puts 'Sync Confirmed.'
 	puts 'SKYNET ONLINE'
 	BOT.sync
+end
