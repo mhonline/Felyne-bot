@@ -9,6 +9,7 @@
 	require 'yaml'
 	include Sys
 	require 'time'
+	require 'Commands'
 
 	require_relative 'commands/ping'
 
