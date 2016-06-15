@@ -32,3 +32,5 @@ module FelyneBot
 	    puts "#{clock.inspect}: #{event.user.name}: -userlist <#{page}>"
 	end
 end
+end
+end
