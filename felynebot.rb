@@ -158,6 +158,7 @@ module FelyneBot
 											  advanced_functionality: false)
 
 	BOT.include! Commands::Ping
+	BOT.include! Commands::UserList
 
 	BOT.debug = false
 	puts 'Bot Created!'
