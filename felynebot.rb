@@ -10,7 +10,7 @@ module FelyneBot
 	include Sys
 	require 'time'
 
-	require_relative 'commands/Ping'
+	require_relative 'commands/ping'
 
 	clock=Time.new
 
