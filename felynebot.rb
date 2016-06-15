@@ -163,8 +163,8 @@ module FelyneBot
 
 	#Loads permissions from array
 	puts 'Permessions Loading!'
-	permarray=[]
-	permarray = loadArr(permarray,"userbase/perm")
+	permarray=[107090132506550272,999,"Alice",64438454750031872,999,"Zero",126881441148698624,1,"Asakura",116461732389584901,1,"shoryouken",150278590494277632,800,"reaver01",128333950975213568,1,"pibbish",151987639296327680,1,"symphontwo",129938071067033600,1,"dualblitz"]
+	#permarray = loadArr(permarray,"userbase/perm")
 
 	#Loading permissions array
 	pos=0
