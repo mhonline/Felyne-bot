@@ -1,6 +1,6 @@
 module FelyneBot
 		#Method for saving arrays
-		def saveArr(ar,loc)
+		def save_arr(ar,loc)
 			if File.exist?(loc)
 				f = File.open(loc,"w")
 			else
@@ -13,7 +13,7 @@ module FelyneBot
 		end
 
 		#Method for loading arrays
-		def loadArr(ar,loc)
+		def load_arr(ar,loc)
 			if File.exist?(loc)
 				#puts 'Opened file'
 				f = File.open(loc,"r")
