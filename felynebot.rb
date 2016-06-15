@@ -348,6 +348,40 @@ bot.command(:server) do |event|
   event << "http://i.imgur.com/EHqV4Cy.jpg"
 	puts "#{clock.inspect}: #{event.user.name}: [server]"
 end
+#set up game maint timer
+bot.command(:mainsetup, permission_level: 1) do |event, hours, minutes|
+	cmdcount += 1
+	h = hours.to_i
+	m = minutes.to_i
+	time = h * 3600 + m * 60
+	puts time
+	event.respond "timer set for **#{hours}** hours and **#{minutes}** minutes"
+	puts 'CMD: countdown set'
+	while time > 0
+		sleep 1
+		time -= 1
+	end
+end
+#get maintenance long
+bot.command(:maintenance) do |event|
+	cmdcount += 1
+	output = time
+	a = output / 3600
+	b = (output - a * 3600) / 60
+	c = output - a * 3600 - b * 60
+	event.respond "**#{a}:#{b}:#{c}** seconds left"
+	puts 'CMD: countdown get'
+end
+#get maintenance short
+bot.command(:maint) do |event|
+	cmdcount += 1
+	output = time
+	a = output / 3600
+	b = (output - a * 3600) / 60
+	c = output - a * 3600 - b * 60
+	event.respond "**#{a}:#{b}:#{c}** seconds left"
+	puts 'CMD: countdown get'
+end
 #kill the bot
 bot.command(:kill, description: "kills felyne", permission_level: 800) do |event|
   puts "Daisy... daisy, give me your answer do..."
@@ -359,7 +393,7 @@ end
 puts 'Loaded commands.'
 print 'Syncing bot...'
 bot.run :async
-bot.game = 'No touchy!'
+bot.game = '-help'
 puts 'Sync Confirmed.'
 puts 'SKYNET ONLINE'
 bot.sync
