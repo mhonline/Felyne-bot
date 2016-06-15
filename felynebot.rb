@@ -197,7 +197,10 @@ puts '------->ID Loaded!'
 
 
 #Create the bot object
-BOT = Discordrb::Commands::CommandBot.new token: token, application_id: id, prefix: '-', advanced_functionality: false
+BOT = Discordrb::Commands::CommandBot.new(token: token,
+										  application_id: id,
+										  prefix: '-',
+										  advanced_functionality: false)
 
 BOT.include! Commands::Ping
 
