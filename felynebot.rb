@@ -535,20 +535,6 @@ bot.command(:raid5, permission_level: 1) do |event, hours5, minutes5, *name5|
 		time5 -= 1
 	end
 end
-<<<<<<< HEAD
-
-=======
-
->>>>>>> origin/master
-=======
-#kill the bot
-bot.command(:kill, description: "kills felyne", permission_level: 800) do |event|
-  puts "Daisy... daisy, give me your answer do..."
-  bot.send_message(event.message.channel, "Daisy... daisy, give me your answer do...")
-  bot.stop
-  exit
-end
->>>>>>> origin/master
 
 puts 'Loaded commands.'
 print 'Syncing bot...'
