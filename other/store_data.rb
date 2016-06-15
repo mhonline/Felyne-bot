@@ -1,4 +1,3 @@
-module FelyneBot
 	#Method for saving arrays
 	def saveArr(ar,loc)
 		if File.exist?(loc)
@@ -43,4 +42,3 @@ module FelyneBot
 		if File.exist?(loc) then File.open(loc, 'w') {|f| f.write(YAML.dump(ar)) }
 		else File.new(loc, 'w') {|f| f.write(YAML.dump(ar)) } end
 	end
-end
