@@ -157,7 +157,7 @@ module FelyneBot
 											  prefix: '-',
 											  advanced_functionality: false)
 
-	BOT.include! FelyneBot::StoreData
+	BOT.include! StoreData
 	BOT.include! Commands::Ping
 
 	BOT.debug = false
