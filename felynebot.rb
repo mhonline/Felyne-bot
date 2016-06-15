@@ -469,6 +469,7 @@ bot.command(:raid) do |event|
 		name5s = ''
 	end
 	event << 'no raids are currently set up' if nout == 0
+	end
 end
 #set raid 1
 bot.command(:raid1, permission_level: 1) do |event, hours1, minutes1, *name1|
