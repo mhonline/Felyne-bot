@@ -165,7 +165,7 @@ module FelyneBot
 	#Loads permissions from array
 	puts 'Permessions Loading!'
 	permarray=[]
-	permarray = StoreData.loadArr(permarray,"userbase/perm")
+	permarray = loadArr(permarray,"userbase/perm")
 
 	#Loading permissions array
 	pos=0
