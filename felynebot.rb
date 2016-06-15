@@ -383,7 +383,6 @@ bot.command(:maint) do |event|
 	c = output - a * 3600 - b * 60
 	event.respond "**#{a}:#{b}:#{c}** seconds left"
 end
-<<<<<<< HEAD
 #bot info
 bot.command(:info) do |event|
 	cmdcount += 1
@@ -569,9 +568,6 @@ bot.command(:kill, description: "kills felyne", permission_level: 800) do |event
   bot.stop
   exit
 end
-=======
-
->>>>>>> origin/master
 
 puts 'Loaded commands.'
 print 'Syncing bot...'
