@@ -6,7 +6,7 @@
 ### Commands done
 -help
 -kill
-### Commands in work
+### stuff in work
 -adduser
 -userlist
 -userfind
@@ -17,6 +17,7 @@
 -userguild
 -usertimezone
 -userign
+-permission commands
 ### Commands planned
 -raid timer
 -maintenance timer

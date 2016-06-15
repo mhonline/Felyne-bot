@@ -343,11 +343,15 @@ bot.command(:userign, max_args: 1, min_args: 1, description: "Changes IGN for us
   puts "#{clock.inspect}: #{event.user.name}: [userIgn] <#{ign}>"
   saveObj(users,"userbase/users")
 end
-#server
-bot.command(:server) do |event|
-  event << "http://i.imgur.com/EHqV4Cy.jpg"
-	puts "#{clock.inspect}: #{event.user.name}: [server]"
+#kill the bot
+bot.command(:kill, description: "kills felyne", permission_level: 800) do |event|
+  puts "Daisy... daisy, give me your answer do..."
+  bot.send_message(event.message.channel, "Daisy... daisy, give me your answer do...")
+  bot.stop
+  exit
 end
+
+#old commands !!NEED UPDATES!!
 #set up game maint timer
 bot.command(:mainsetup, permission_level: 1) do |event, hours, minutes|
 	cmdcount += 1
@@ -382,13 +386,7 @@ bot.command(:maint) do |event|
 	event.respond "**#{a}:#{b}:#{c}** seconds left"
 	puts 'CMD: countdown get'
 end
-#kill the bot
-bot.command(:kill, description: "kills felyne", permission_level: 800) do |event|
-  puts "Daisy... daisy, give me your answer do..."
-  bot.send_message(event.message.channel, "Daisy... daisy, give me your answer do...")
-  bot.stop
-  exit
-end
+
 
 puts 'Loaded commands.'
 print 'Syncing bot...'
