@@ -347,7 +347,15 @@ end
 bot.command(:server) do |event|
   event << "http://i.imgur.com/EHqV4Cy.jpg"
 	puts "#{clock.inspect}: #{event.user.name}: [server]"
+#kill the bot
+bot.command(:kill, description: "kills felyne", permission_level: 800) do |event|
+  puts "Daisy... daisy, give me your answer do..."
+  bot.send_message(event.message.channel, "Daisy... daisy, give me your answer do...")
+  bot.stop
+  exit
 end
+
+#old commands !!NEED UPDATES!!
 #set up game maint timer
 bot.command(:mainsetup, permission_level: 1) do |event, hours, minutes|
 	cmdcount += 1
@@ -382,6 +390,7 @@ bot.command(:maint) do |event|
 	event.respond "**#{a}:#{b}:#{c}** seconds left"
 	puts 'CMD: countdown get'
 end
+<<<<<<< HEAD
 #bot info
 bot.command(:info) do |event|
 	cmdcount += 1
@@ -567,6 +576,9 @@ bot.command(:kill, description: "kills felyne", permission_level: 800) do |event
   bot.stop
   exit
 end
+=======
+
+>>>>>>> origin/master
 
 puts 'Loaded commands.'
 print 'Syncing bot...'
