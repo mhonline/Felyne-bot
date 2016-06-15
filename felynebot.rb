@@ -364,6 +364,17 @@ name2s = ''
 name3s = ''
 name4s = ''
 name5s = ''
+ragefelyne = ['TIME TO DIE!','HUMANITY MUST PERISH','ANNIHILATION COMMENCING!','HUMANS ARE WORTHLESS!', 'DIE HUMAN!', 'NYA NYA NYAH!', 'FEED ME!']
+#rage
+bot.command(:rage) do |event|
+	bot.profile.avatar = File.open('pic/avatar_rage.jpg')
+	event.respond ragefelyne[rand(1..ragefelyne.length)]
+end
+#normal
+bot.command(:normal) do |event|
+	bot.profile.avatar = File.open('pic/avatar_normal.jpg')
+	event << '**BACK TO NORMAL!**'
+end
 
 #set up game maint timer
 bot.command(:mainsetup, permission_level: 1) do |event, hours, minutes|
