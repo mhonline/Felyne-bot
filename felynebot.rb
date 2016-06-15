@@ -9,7 +9,7 @@ require 'yaml'
 include Sys
 require 'time'
 
-require 'commands/ping'
+require_relative 'commands/ping'
 
 clock=Time.new
 
