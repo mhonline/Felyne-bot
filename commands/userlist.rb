@@ -30,6 +30,5 @@ module FelyneBot
 	      event << "Showing page #{page+1}/#{pages}"
 	    end
 	    puts "#{clock.inspect}: #{event.user.name}: -userlist <#{page}>"
-		end
 	end
 end
