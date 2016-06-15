@@ -10,7 +10,7 @@ module FelyneBot
 	include Sys
 	require 'time'
 
-	require_relative 'commands/ping'
+Dir["#{File.dirname(__FILE__)}commands/*.rb"].each { |file| require_relative file }
 
 	clock=Time.new
 
