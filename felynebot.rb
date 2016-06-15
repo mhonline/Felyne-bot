@@ -11,6 +11,7 @@ module FelyneBot
 	require 'time'
 	require_relative 'other/store_data'
 	require_relative 'commands/ping'
+	require 'StoreData'
 
 	clock=Time.new
 
