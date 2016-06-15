@@ -9,8 +9,7 @@ require 'yaml'
 include Sys
 require 'time'
 
-Dir["#{File.dirname(__FILE__)}/commands/*.rb"].each { |file| require file }
-
+require 'commands/ping'
 
 clock=Time.new
 
