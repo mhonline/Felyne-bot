@@ -11,6 +11,7 @@ module FelyneBot
 	require 'time'
 
 	require_relative 'other/store_data'
+	include StoreData
 	require_relative 'commands/ping'
 
 	clock=Time.new
@@ -165,7 +166,7 @@ module FelyneBot
 	#Loads permissions from array
 	puts 'Permessions Loading!'
 	permarray=[]
-	permarray = load_arr(permarray,"userbase/perm")
+	permarray = loadArr(permarray,"userbase/perm")
 
 	#Loading permissions array
 	pos=0

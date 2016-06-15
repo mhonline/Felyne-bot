@@ -1,6 +1,7 @@
 module FelyneBot
+	module StoreData
 		#Method for saving arrays
-		def save_arr(ar,loc)
+		def saveArr(ar,loc)
 			if File.exist?(loc)
 				f = File.open(loc,"w")
 			else
@@ -13,7 +14,7 @@ module FelyneBot
 		end
 
 		#Method for loading arrays
-		def load_arr(ar,loc)
+		def loadArr(ar,loc)
 			if File.exist?(loc)
 				#puts 'Opened file'
 				f = File.open(loc,"r")
@@ -44,4 +45,5 @@ module FelyneBot
 			if File.exist?(loc) then File.open(loc, 'w') {|f| f.write(YAML.dump(ar)) }
 			else File.new(loc, 'w') {|f| f.write(YAML.dump(ar)) } end
 		end
+	end
 end
