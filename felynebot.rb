@@ -9,6 +9,9 @@ require 'yaml'
 include Sys
 require 'time'
 
+Dir["#{File.dirname(__FILE__)}/commands/*.rb"].each { |file| require file }
+
+
 clock=Time.new
 
 puts "Starting at: "+clock.inspect
@@ -194,7 +197,9 @@ puts '------->ID Loaded!'
 
 
 #Create the bot object
-bot = Discordrb::Commands::CommandBot.new token: token, application_id: id, prefix: '-', advanced_functionality: false
+BOT = Discordrb::Commands::CommandBot.new token: token, application_id: id, prefix: '-', advanced_functionality: false
+
+BOT.include! Commands::Ping
 
 bot.debug = false
 puts 'Bot Created!'
@@ -415,10 +420,6 @@ bot.command(:info) do |event|
 	event << 'Contributors: @Alice, @Reaver02'
 	event << "#{p Uptime.uptime} Online```"
 	event << 'updated: 15.06.2016```'
-end
-#ping
-bot.command(:ping) do |event|
-	event.respond 'Pong!'
 end
 #ding
 bot.command(:ding) do |event|
