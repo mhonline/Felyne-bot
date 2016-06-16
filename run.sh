@@ -7,5 +7,7 @@ git pull
 rvm use 2.3.0
 ruby -v
 ruby run.rb
+git add .
+git commit -m "database update"
 git push
 done
