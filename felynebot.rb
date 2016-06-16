@@ -28,6 +28,7 @@ module FelyneBot
 	$bot.include! Commands::Kill
 	$bot.include! Commands::AddUser
 	$bot.include! Commands::Game
+	$bot.include! Commands::Color
 
 	#avatar changer
 	scheduler = Rufus::Scheduler.new
