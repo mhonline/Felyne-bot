@@ -13,6 +13,9 @@ require 'time'
 require_relative 'class/user'
 require_relative 'class/loader'
 require_relative 'commands/ping'
+require_relative 'commands/game'
+
+Dir["commands/*.rb"].each {|file| require_relative file }
 
 clock=Time.new
 
