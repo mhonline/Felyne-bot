@@ -419,10 +419,12 @@ end
 #ping
 bot.command(:ping) do |event|
 	event.respond 'Pong!'
+	"#{((Time.now - event.timestamp) * 1000).to_i}ms."
 end
 #ding
 bot.command(:ding) do |event|
 	event.respond 'Dong!'
+	"#{((Time.now - event.timestamp) * 1000).to_i}ms."
 end
 #rp function
 bot.command(:rp, permission_level: 1) do |event, *phrase|
