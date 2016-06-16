@@ -13,6 +13,7 @@ require 'time'
 require_relative 'class/user'
 require_relative 'class/loader'
 require_relative 'commands/ping'
+require_relative 'commands/game'
 
 clock=Time.new
 

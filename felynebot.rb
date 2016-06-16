@@ -16,6 +16,7 @@ module FelyneBot
 	puts "Bot begun"
 
 	bot.include! Commands::Ping
+	bot.include! Commands::Game
 
 	puts "Commands Loaded"
 	bot.debug = false
