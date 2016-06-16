@@ -50,7 +50,7 @@ module FelyneBot
 	$bot.message(containing: "┬─┬﻿ ノ( ゜-゜ノ)") do |event|
 		event << "(╯°□°）╯︵ ┻━┻"
 	end
-	avatar changer
+	#avatar changer
 	scheduler = Rufus::Scheduler.new
 	scheduler.every '30s' do
 		puts "Changing Avatar"
