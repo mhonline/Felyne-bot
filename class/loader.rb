@@ -28,3 +28,14 @@ def saveObj(ar,loc)
 	if File.exist?(loc) then File.open(loc, 'w') {|f| f.write(YAML.dump(ar)) }
 	else File.new(loc, 'w') {|f| f.write(YAML.dump(ar)) } end
 end
+
+def loadusers(loc)
+	if File.exist?(loc)
+	  f = File.open(loc,"r")
+	  $users=YAML.load(f)
+	  puts 'Loaded user database'
+	  f.close
+	else
+	  puts 'No file to open!'
+	end
+end
