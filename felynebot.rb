@@ -50,12 +50,12 @@ module FelyneBot
 	$bot.message(containing: "┬─┬﻿ ノ( ゜-゜ノ)") do |event|
 		event << "(╯°□°）╯︵ ┻━┻"
 	end
-	#avatar changer
-	#scheduler = Rufus::Scheduler.new
-	#scheduler.every '30s' do
-	#	puts "Changing Avatar"
-	#	$bot.profile.avatar = File.open("/Felyne-bot/pic/#{1 + rand(35)}.jpg")
-	#end
+	avatar changer
+	scheduler = Rufus::Scheduler.new
+	scheduler.every '30s' do
+		puts "Changing Avatar"
+		$bot.profile.avatar = File.open("/Felyne-bot/pic/#{1 + rand(35)}.jpg")
+	end
 
 	puts "Commands Loaded"
 	$bot.debug = false
