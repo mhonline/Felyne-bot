@@ -2,7 +2,7 @@ module FelyneBot
   module Commands
     module Guild
       extend Discordrb::Commands::CommandContainer
-      command(:guild, min_args: 0, max_args: 1, description: 'Add user to guild', usage: "-guild <Guildname>  Guilds on server: Hipcheckers, Hyperlynx, Stygian, MHOInter, Discord, SG★Hunters, 血盟狩猎团, 月夜黑貓團, 为卿负天下、, Abysswalker, thelegionnaires, GatotKaca, LaTaverne, MooGoo") do |event, search|
+      command(:guild, min_args: 1, max_args: 1, description: 'Add user to guild', usage: "-guild <Guildname>  Guilds on server: Hipcheckers, Hyperlynx, Stygian, MHOInter, Discord, SG★Hunters, 血盟狩猎团, 月夜黑貓團, 为卿负天下、, Abysswalker, thelegionnaires, GatotKaca, LaTaverne, MooGoo") do |event, search|
       member = event.user.on(event.server)
 	    if search == 'Hipcheckers'
 	    role = event.server.roles.find { |role| role.name == "Hipcheckers" }
