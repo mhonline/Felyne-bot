@@ -3,20 +3,12 @@ module FelyneBot
     module Time
       extend Discordrb::Commands::CommandContainer
 		command(:time) do |event|
-			cmdcount += 1
-			t1 = Time.parse('19:00')
-			t1 = t1.to_i
-			t2 = Time.now
-			t2 = t2.to_i
-			if t1 > t2
-				t3 = t1 - t2
-				event << "#{Time.at(t3).strftime('**%H** hours **%M** minutes **%S** seconds')} left until the next exp/gift reset"
-			else
-				t1 += 86_400
-				t3 = t1 - t2
-				event << "#{Time.at(t3).strftime('**%H** hours **%M** minutes **%S** seconds')} left until the next exp/gift reset"
-			end
-			puts 'CMD: exp reset'
+		  t2 = Time.now.to_i
+		  t1 = Time.parse("20:00").to_i
+		  if t1 > t2 then event << "#{Time.at(t1 - t2).strftime('**%H** hours **%M** minutes **%S** seconds')} left until the next ticket reset"
+		  else event << "#{Time.at(t1 + 86400 - t2).strftime('**%H** hours **%M** minutes **%S** seconds')} left until the next ticket reset" end
+		  puts "#{clock.inspect}: #{event.user.name}: -time"
+		  end
 		end
     end
   end
