@@ -32,9 +32,9 @@ module FelyneBot
 	#avatar changer
 	scheduler = Rufus::Scheduler.new
 	scheduler.every '30s' do
-		#$AVATAR = 1 + rand(35)
-		#$AVATAR = $AVATAR.to_s
+		$AVATAR = 1 + rand(35).to_s
 		puts "Changing Avatar"
+		puts "#{$AVATAR}"
 		#bot.profile.avatar = File.open("/Felyne-bot/pic/#{$AVATAR}.jpg")
 	end
 
