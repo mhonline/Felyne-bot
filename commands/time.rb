@@ -10,6 +10,7 @@ module FelyneBot
 		  puts "#{clock.inspect}: #{event.user.name}: -time"
 		  end
 		end
+	  end
     end
   end
 end
