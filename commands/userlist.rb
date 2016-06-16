@@ -23,10 +23,10 @@ module FelyneBot
               if $users[i].guild!=nil then str << "#{$users[i].guild.to_s}" end
               str=str.ljust(60)
               if $users[i].timezone!=nil then str << "#{$users[i].timezone.to_s}" end
-              if $users[i].name!=nil then str << "```" end
               event << str
               i+=1
             end while i < ($users.length/pages)*(page+1)
+            event << "```"
             event << "Showing page #{page+1}/#{pages}"
           end
           puts "#{event.timestamp}: #{event.user.name}: -userlist <#{page}>"
