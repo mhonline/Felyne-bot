@@ -2,6 +2,6 @@
 - !ruby/object:User
   usr_id: 107090132506550272
   usr_name: Alice
-  usr_ign: test
+  usr_ign: AliceScythe
   usr_guild: 
   user_timezone: 
