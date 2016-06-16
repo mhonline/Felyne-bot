@@ -44,6 +44,7 @@ module FelyneBot
 	end
 	$bot.message(containing: "Open the pod bay doors") do |event|
 		event << "Im sorry Dave, Im afraid I cant do that.'"
+		$bot.profile.avatar = File.open("/Felyne-bot/pic/HAL9000.png")
 	end
 
 	$bot.message(containing: "┬─┬﻿ ノ( ゜-゜ノ)") do |event|
