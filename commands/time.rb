@@ -2,7 +2,7 @@ module FelyneBot
   module Commands
     module Time
       extend Discordrb::Commands::CommandContainer
-		$bot.command(:time) do |event|
+		command(:time) do |event|
 			cmdcount += 1
 			t1 = Time.parse('19:00')
 			t1 = t1.to_i
