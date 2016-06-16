@@ -4,9 +4,13 @@
 - Type "-help" to see all commands
 
 #### Commands done
-- help
+- adduser
+- color
+- game
 - kill
-#### stuff in work
+- ping
+
+#### stuff in works
 - adduser
 - userlist
 - userfind
@@ -18,10 +22,22 @@
 - usertimezone
 - userign
 - permission commands
+
 #### Commands planned
 - raid timer
 - maintenance timer
 - more stuff coming soon
+
+##### require gems
+- 'json'
+- 'discordrb'
+- 'rubygems'
+- 'sys/uptime'
+- 'active_support'
+- 'yaml'
+- Sys
+- 'time'
+- 'rufus-scheduler'
 
 thx to the whole mho community
 join our discord server to communicate
