@@ -11,12 +11,12 @@ module FelyneBot
 	$bot = Discordrb::Commands::CommandBot.new token: token, application_id: id, prefix: '-', advanced_functionality: false
 	puts "Bot begun"
 
-	#Loads permissions from array
+#Loads permissions from array
 	puts 'Permessions Loading!'
 	permarray=[]
 	permarray = loadArr(permarray,"userbase/perm")
 
-	#Loading permissions array
+#Loading permissions array
 	pos=0
 	begin
 		$bot.set_user_permission(permarray[pos],permarray[pos+1])
@@ -40,6 +40,7 @@ module FelyneBot
 	$bot.include! Commands::UserFind
 	$bot.include! Commands::Guild
 
+#Fun Commands
 	$bot.message(containing: "(╯°□°）╯︵ ┻━┻") do |event|
 		event << "┬─┬﻿ ノ( ゜-゜ノ)"
 	end
@@ -51,12 +52,6 @@ module FelyneBot
 	$bot.message(containing: "┬─┬﻿ ノ( ゜-゜ノ)") do |event|
 		event << "(╯°□°）╯︵ ┻━┻"
 	end
-	#avatar changer
-	#scheduler = Rufus::Scheduler.new
-	#scheduler.every '30s' do
-	#	puts "Changing Avatar"
-	#	$bot.profile.avatar = File.open("/Felyne-bot/pic/#{1 + rand(35)}.jpg")
-	#end
 
 	puts "Commands Loaded"
 	$bot.debug = false

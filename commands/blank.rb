@@ -1,8 +1,8 @@
 module FelyneBot
-  module Commands
-    module Blank
-      extend Discordrb::Commands::CommandContainer
+	module Commands
+		module Blank
+			extend Discordrb::Commands::CommandContainer
 
-    end
-  end
+		end
+	end
 end
