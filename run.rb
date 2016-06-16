@@ -8,6 +8,7 @@ require 'active_support'
 require 'yaml'
 include Sys
 require 'time'
+require 'rufus-scheduler'
 
 #require command files
 require_relative 'class/user'

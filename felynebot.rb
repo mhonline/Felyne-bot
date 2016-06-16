@@ -29,6 +29,12 @@ module FelyneBot
 	$bot.include! Commands::AddUser
 	$bot.include! Commands::Game
 
+	#avatar changer
+	scheduler = Rufus::Scheduler.new
+	scheduler.in '30s' do
+		puts 'Hello... Rufus'
+	end
+
 	puts "Commands Loaded"
 	$bot.debug = false
 	$bot.run :async
