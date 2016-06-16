@@ -8,6 +8,7 @@ rvm use 2.3.0
 ruby -v
 ruby run.rb
 git add .
+git reset -- bot/*
 git commit -m "database update"
 git push
 done
