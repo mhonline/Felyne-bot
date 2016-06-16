@@ -39,7 +39,6 @@ module FelyneBot
 	$bot.include! Commands::Server
 	$bot.include! Commands::UserFind
 	$bot.include! Commands::Guild
-	$bot.include! Commands::Time
 
 	$bot.message(containing: "(╯°□°）╯︵ ┻━┻") do |event|
 		event << "┬─┬﻿ ノ( ゜-゜ノ)"
