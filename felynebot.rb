@@ -42,6 +42,9 @@ module FelyneBot
 	$bot.message(containing: "(╯°□°）╯︵ ┻━┻") do |event|
 		event << "┬─┬﻿ ノ( ゜-゜ノ)"
 	end
+	$bot.message(containing: "Open the pod bay doors") do |event|
+		event << "Im sorry Dave, Im afraid I cant do that.'"
+	end
 
 	$bot.message(containing: "┬─┬﻿ ノ( ゜-゜ノ)") do |event|
 		event << "(╯°□°）╯︵ ┻━┻"
