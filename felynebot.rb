@@ -30,12 +30,10 @@ module FelyneBot
 	puts "------------->Permission Loaded!"
 
 	bot.include! Commands::Ping
-<<<<<<< HEAD
 	bot.include! Commands::Game
-=======
 	bot.include! Commands::Kill
 	bot.include! Commands::AddUser
->>>>>>> origin/master
+
 
 	puts "Commands Loaded"
 	bot.debug = false
