@@ -32,8 +32,10 @@ module FelyneBot
 	#avatar changer
 	scheduler = Rufus::Scheduler.new
 	scheduler.in '30s' do
-		puts 'Hello... Rufus'
+		puts "Changing Avatar"
 	end
+
+	sceduler.join
 
 	puts "Commands Loaded"
 	$bot.debug = false
