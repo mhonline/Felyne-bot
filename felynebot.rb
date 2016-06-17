@@ -45,10 +45,10 @@ module FelyneBot
 	$bot.include! Commands::Guild
 #Raids
 	$bot.include! Commands::Raid1
-	$bot.include! Commands::Raid2
-	$bot.include! Commands::Raid3
-	$bot.include! Commands::Raid4
-	$bot.include! Commands::Raid5
+	#$bot.include! Commands::Raid2
+	#$bot.include! Commands::Raid3
+	#$bot.include! Commands::Raid4
+	#$bot.include! Commands::Raid5
 #Mod only
 	$bot.include! Commands::MainSetup
 	$bot.include! Commands::RolePlay
