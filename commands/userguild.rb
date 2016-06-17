@@ -10,7 +10,6 @@ module FelyneBot
 					saveObj($users,"userbase/users")
 				end
 				nil
-			end
 		end
 	end
 end
