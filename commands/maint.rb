@@ -5,7 +5,7 @@ module FelyneBot
 			command(:maint) do |event|
 now = Time.now
 now = now.to_i
-targettime = $targettime.to_i
+targettime = $targettime
 timediff = targettime - now
 event << "#{Time.at(timediff).strftime('%H hours %M minutes %S seconds')} left until the end of maint"
 			end
