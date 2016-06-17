@@ -10,7 +10,7 @@ t = Time.now
 nowtime = t.to_i
 nowtime += time
 timecode = Time.at(nowtime)
-event << "#{Time.at(nowtime).strftime('%H hours %M minutes %S seconds')} left until the next exp/gift reset"
+event << "#{Time.at(nowtime).strftime('%H hours %M minutes %S seconds')} left until end of Maintenance"
 end
 		end
 	end
