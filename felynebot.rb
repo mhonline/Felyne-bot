@@ -4,7 +4,6 @@ module FelyneBot
 
 	$users=[]
 	loadusers("userbase/users")
-	$targettime=YAML.parse(IO.read("bot/maint"))
 	info=Info.new('bot/token','bot/id')
 	token=info.token
 	id=info.id

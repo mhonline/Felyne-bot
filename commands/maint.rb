@@ -3,9 +3,10 @@ module FelyneBot
 		module Maint
 			extend Discordrb::Commands::CommandContainer
 			command(:maint) do |event|
+				targettime=IO.readlines("bot/maint")[0]
 				now = Time.now
 				now = now.to_i
-				time = $targettime.to_i
+				time = targettime.to_i
 				timediff = time - now - 3600
 				if time < now
 					event << "Maintenance has ended! GO HUNTING!"
