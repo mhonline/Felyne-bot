@@ -10,7 +10,10 @@ module FelyneBot
 				targettime = h * 3600 + m * 60 
 				targettime += now
 				targettime = Time.at (targettime)
-				$targettime = targettime
+				#write to file
+				data_towrite = [targettime]
+				IO.write $maintdata data_towrite.to_yaml
+
 				event << "#{h} hours #{m} minutes left until the end of maintenance"
 			end
 		end
