@@ -25,21 +25,27 @@ module FelyneBot
 	end while pos < permarray.length
 	puts "------------->Permission Loaded!"
 
+#Admin/Troubleshooting
 	$bot.include! Commands::Ping
 	$bot.include! Commands::Kill
+#IGN/Guild/Timezone Database
 	$bot.include! Commands::AddUser
-	$bot.include! Commands::Game
-	$bot.include! Commands::Color
-	$bot.include! Commands::UserList
-	$bot.include! Commands::Reset
-	$bot.include! Commands::UserRemove
+	$bot.include! Commands::UserIgn
 	$bot.include! Commands::UserGuild
 	$bot.include! Commands::UserTimezone
-	$bot.include! Commands::UserIgn
-	$bot.include! Commands::Server
+	$bot.include! Commands::UserRemove
+	$bot.include! Commands::UserList
 	$bot.include! Commands::UserFind
-	$bot.include! Commands::Guild
+#Helpful Commands
+	$bot.include! Commands::Reset
+	$bot.include! Commands::Server
+#User Role
 	$bot.include! Commands::UserRaid
+	$bot.include! Commands::Guild
+#Mod only
+	$bot.include! Commands::RolePlay
+	$bot.include! Commands::Color
+	$bot.include! Commands::Game
 
 #Fun Commands
 	$bot.message(containing: "(╯°□°）╯︵ ┻━┻") do |event|
