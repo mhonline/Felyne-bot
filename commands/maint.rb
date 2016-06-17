@@ -3,8 +3,10 @@ module FelyneBot
 		module Maint
 			extend Discordrb::Commands::CommandContainer
 			command(:maint) do |event|
-now = Time.now.to_i
-timediff = $targettime - now
+now = Time.now
+now = now.to_i
+time = $targettime.to_i
+timediff = time - now
 event << "#{Time.at(timediff).strftime('%H hours %M minutes %S seconds')} left until the end of maint"
 			end
 		end
