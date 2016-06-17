@@ -9,7 +9,8 @@ module FelyneBot
 				nowtime = Time.now.to_i
 				nowtime += time
 				timecode = Time.parse(nowtime)
-				event << "#{Time.at(timecode).strftime('%H hours %M minutes %S seconds')} left until the next exp/gift reset"				nil
+				event << "#{Time.at(timecode).strftime('%H hours %M minutes %S seconds')} left until the next exp/gift reset"
+				nil
 			end
 		end
 	end
