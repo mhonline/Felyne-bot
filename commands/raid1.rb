@@ -12,7 +12,7 @@ module FelyneBot
 				targettime = Time.at (targettime)
 				targettime = targettime.to_i
 				#write to file
-				File.write('bot/raid1', name)
+				File.write('bot/raid1', '#{name}\n')
 				open('bot/raid1', 'a') { |f|
 					f.puts "#{targettime}"
 				}
