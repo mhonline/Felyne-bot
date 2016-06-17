@@ -5,7 +5,7 @@ module FelyneBot
 			command(:mainsetup, permission_level: 1) do |event, hours, minutes|
 h = hours.to_i
 m = minutes.to_i
-timedifference = h * 3600 + m * 60
+time = h * 3600 + m * 60
 t = Time.now
 nowtime = t.to_i
 nowtime += time
