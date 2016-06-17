@@ -3,7 +3,6 @@ module FelyneBot
 		module Raid1
 			extend Discordrb::Commands::CommandContainer
 			command(:raid1, permission_level: 1) do |event, name, hours, minutes|
-				puts "raid1"
 				h = hours.to_i
 				m = minutes.to_i
 				now = Time.now
