@@ -10,6 +10,8 @@ module FelyneBot
 				targettime = h * 3600 + m * 60 
 				targettime += now
 				targettime = Time.at (targettime)
+				$targettime = targettime
+				event << $targettime
 				#write to file
 				File.write('bot/maint', targettime)
 				event << "#{h} hours #{m} minutes left until the end of maintenance"
