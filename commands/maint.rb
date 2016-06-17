@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(:maint) do |event|
 				targettime=IO.readlines("bot/maint")[0]
+				event << targettime
 				now = Time.now
 				now = now.to_i
 				time = targettime.to_i
