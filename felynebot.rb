@@ -43,6 +43,7 @@ module FelyneBot
 	$bot.include! Commands::UserRaid
 	$bot.include! Commands::Guild
 #Mod only
+	$bot.include! Commands::MainSetup
 	$bot.include! Commands::RolePlay
 	$bot.include! Commands::Color
 	$bot.include! Commands::Game
