@@ -5,12 +5,11 @@ module FelyneBot
 			command(:mainsetup, permission_level: 1) do |event, hours, minutes|
 h = hours.to_i
 m = minutes.to_i
-time = h * 3600 + m * 60
-t = Time.now
-nowtime = t.to_i
-nowtime += time
-timecode = Time.at(nowtime)
-event << "#{Time.at(nowtime).strftime('%H hours %M minutes %S seconds')} left until end of Maintenance"
+now = Time.now
+now = now.to_i
+timediff = h * 3600 + m * 60
+timediff = Time.at (timediff)
+event << "#{h} hours #{m} minutes left until the end of maintenance"
 end
 		end
 	end
