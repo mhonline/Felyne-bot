@@ -6,7 +6,6 @@ module FelyneBot
 				now = Time.now
 				now = now.to_i
 				time=IO.readlines("bot/maint")[0].to_i
-				event << time
 				timediff = time - now - 3600
 				if time < now
 					event << "Maintenance has ended! GO HUNTING!"
