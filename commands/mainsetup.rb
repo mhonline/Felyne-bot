@@ -7,9 +7,12 @@ module FelyneBot
 				m = minutes.to_i
 				t1 = Time.now
 				t1 = t1.to_i
-				time = h * 3600 + m * 60 + t1
-				$timecode = Time.parse('time')
-				event.respond
+				time = h * 3600 + m * 60
+				nowtime = Time.now
+				nowtime = t1.to_i
+				nowtime += time
+				timecode = Time.at(timecode)
+				event << "#{Time.at(t3).strftime('%H hours %M minutes %S seconds')} left until the next exp/gift reset"
 				nil
 			end
 		end
