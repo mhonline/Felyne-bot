@@ -7,7 +7,11 @@ module FelyneBot
 				now = now.to_i
 				time = $targettime.to_i
 				timediff = time - now - 3600
-				event << "#{Time.at(timediff).strftime('%H hours %M minutes %S seconds')} left until the end of maint"
+				if time < now
+					event << "Maintenance has ended! GO HUNTING!"
+				else
+					event << "#{Time.at(timediff).strftime('%H hours %M minutes %S seconds')} left until the end of maint"
+				end
 			end
 		end
 	end
