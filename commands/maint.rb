@@ -5,7 +5,7 @@ module FelyneBot
 			command(:maint) do |event|
 				now = Time.now
 				now = now.to_i
-				time = $targettime.to_i
+				time=IO.readlines("bot/maint")[0].to_i
 				event << time
 				timediff = time - now - 3600
 				if time < now
