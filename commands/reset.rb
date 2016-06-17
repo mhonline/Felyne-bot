@@ -8,6 +8,7 @@ module FelyneBot
 				if t1 > t2 then event << "#{Time.at(t1 - t2).strftime('**%H** hours **%M** minutes **%S** seconds')} left until the next ticket reset"
 				else event << "#{Time.at(t1 + 86400 - t2).strftime('**%H** hours **%M** minutes **%S** seconds')} left until the next ticket reset" end
 				puts "#{event.timestamp}: #{event.user.name}: -reset"
+				nil
 			end
 		end
 	end

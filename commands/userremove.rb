@@ -13,6 +13,7 @@ module FelyneBot
 					event << "No user found."
 				end
 				puts "#{event.timestamp}: #{event.user.name}: [userRemove]"
+				nil
 			end
 		end
 	end

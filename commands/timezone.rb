@@ -8,6 +8,7 @@ module FelyneBot
 				event << "Changed timezone to: #{timezone}"
 				puts "#{event.timestamp}: #{event.user.name}: [userTimezone] <#{timezone}>"
 				saveObj($users,"userbase/users")
+				nil
 			end
 		end
 	end

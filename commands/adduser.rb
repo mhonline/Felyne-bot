@@ -7,6 +7,7 @@ module FelyneBot
 				tempUser= User.new(event.user.id, event.user.name, ign, $users, event.message.channel, $bot)
 				saveObj($users,"userbase/users")
 				puts "Command worked"
+				nil
 			end
 		end
 	end

@@ -13,6 +13,7 @@ module FelyneBot
 					role = event.server.roles.find { |role| role.name == "RaidReady" }
 					member.remove_role(role)
 					event << "Removed from RaidReady Role"
+				nil
 				end
 			end
 		end

@@ -60,6 +60,7 @@ module FelyneBot
 					role = event.server.roles.find { |role| role.name == "MooGoo" }
 					member.add_role(role)
 				end
+				nil
 			end
 		end
 	end

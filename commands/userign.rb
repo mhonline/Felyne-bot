@@ -8,6 +8,7 @@ module FelyneBot
 				event << "Changed IGN to #{ign}"
 				puts "#{event.timestamp}: #{event.user.name}: [userIgn] <#{ign}>"
 				saveObj($users,"userbase/users")
+				nil
 			end
 		end
 	end

@@ -3,6 +3,7 @@ module FelyneBot
 		module Blank
 			extend Discordrb::Commands::CommandContainer
 
+				nil
 		end
 	end
 end

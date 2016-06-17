@@ -7,6 +7,7 @@ module FelyneBot
 				$bot.send_message(event.message.channel, "Daisy... daisy, give me your answer do...")
 				$bot.stop
 				exit
+				nil
 			end
 		end
 	end

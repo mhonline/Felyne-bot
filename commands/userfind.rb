@@ -32,6 +32,7 @@ module FelyneBot
 					end while i < found.length
 					event << "```"
 				end
+				nil
 			end
 		end
 	end
