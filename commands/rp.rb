@@ -3,7 +3,6 @@ module FelyneBot
 		module RolePlay
 			extend Discordrb::Commands::CommandContainer
 			command(:rp) do |event, *phrase|
-				cmdcount += 1
 				phrase = phrase.join(' ')
 				event << "sent **#{phrase}** to mhodiscussion"
 				bot.send_message(122526505606709257, phrase)
