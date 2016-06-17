@@ -12,7 +12,8 @@ now = now.to_i
 timediff = h + m 
 timediff = Time.at (timediff)
 event << "#{h} hours #{m} minutes left until the end of maintenance"
-timediff
+event << timediff
+event << timenow
 end
 		end
 	end
