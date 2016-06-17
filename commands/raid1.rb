@@ -11,7 +11,7 @@ module FelyneBot
 				targettime += now
 				targettime = Time.at (targettime)
 				targettime = targettime.to_i
-				if name = "clear"
+				if name == "clear"
 					File.write('bot/raid1', '')
 					event << "Raid 1 has been cleared"
 				else
