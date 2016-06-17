@@ -11,8 +11,8 @@ module FelyneBot
 				targettime += now
 				targettime = Time.at (targettime)
 				#write to file
-				data_towrite = [targettime]
-				IO.write $maintdata data_towrite
+				data_before = [targettime]
+				IO.write $maintdata data_before
 				event << "#{h} hours #{m} minutes left until the end of maintenance"
 			end
 		end
