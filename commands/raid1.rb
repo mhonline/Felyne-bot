@@ -11,12 +11,16 @@ module FelyneBot
 				targettime += now
 				targettime = Time.at (targettime)
 				targettime = targettime.to_i
-				#write to file
-				File.write('bot/raid1', name)
-				open('bot/raid1', 'a') { |f|
-					f.puts "\n#{targettime}"
-				}
-				event << "#{h} hours #{m} minutes left until '#{name}' raid"
+				if name = "clear"
+					File.write('bot/raid1', '')
+					event << "Raid 1 has been cleared"
+				else
+					File.write('bot/raid1', name)
+					open('bot/raid1', 'a') { |f|
+						f.puts "\n#{targettime}"
+					}
+					event << "#{h} hours #{m} minutes left until '#{name}' raid"
+				end
 			end
 		end
 	end
