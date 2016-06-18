@@ -5,12 +5,17 @@ module FelyneBot
 			command(:maint, description: 'Checks time left in game maintenance.') do |event|
 				now = Time.now
 				now = now.to_i
-				time=IO.readlines("bot/maint")[0].to_i
-				timediff = time - now - 3600
-				if time < now
-					event << "Maintenance has ended! GO HUNTING!"
+				time=IO.readlines("bot/maint")[0]
+				if time.to_s == ''
+					event << "No maintenance happening at this time. GO HUNTING!"
 				else
-					event << "#{Time.at(timediff).strftime('%H hours %M minutes %S seconds')} left until the end of maint"
+					time = time.to_i
+					timediff = time - now - 3600
+					if time < now
+						event << "Maintenance has ended! GO HUNTING!"
+					else
+						event << "#{Time.at(timediff).strftime('%H hours %M minutes %S seconds')} left until the end of maint"
+					end
 				end
 			end
 		end
