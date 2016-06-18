@@ -15,11 +15,11 @@ module FelyneBot
 				else
 					name1=name1.gsub("\n","")
 					time1=IO.readlines("bot/raid1")[1].to_i
-					timediff1 = time1 - now - 90000
+					timediff1 = time1 - now - 3600
 					if time1 < now
 						raid1 = "```Raid 1:  In process or Completed"
 					else
-						raid1 = "```Raid 1:  #{name1} in #{TimeDifference.between(Time.now, time1))}"
+						raid1 = "```Raid 1:  #{name1} in #{Time.at(timediff1).strftime('%d Days %H hours %M minutes %S seconds')}"
 					end
 				end
 				if name2.to_s == ''
@@ -27,7 +27,7 @@ module FelyneBot
 				else
 					name2=name2.gsub("\n","")
 					time2=IO.readlines("bot/raid2")[1].to_i
-					timediff2 = time2 - now - 90000
+					timediff2 = time2 - now - 3600
 					if time2 < now
 						raid2 = "Raid 2:  In process or Completed"
 					else
@@ -39,7 +39,7 @@ module FelyneBot
 				else
 					name3=name3.gsub("\n","")
 					time3=IO.readlines("bot/raid3")[1].to_i
-					timediff3 = time3 - now - 90000
+					timediff3 = time3 - now - 3600
 					if time3 < now
 						raid3 = "Raid 3:  In process or Completed"
 					else
@@ -51,7 +51,7 @@ module FelyneBot
 				else
 					name4=name4.gsub("\n","")
 					time4=IO.readlines("bot/raid4")[1].to_i
-					timediff4 = time4 - now - 90000
+					timediff4 = time4 - now - 3600
 					if time4 < now
 						raid4 = "Raid 4:  In process or Completed"
 					else
@@ -63,7 +63,7 @@ module FelyneBot
 				else
 					name5=name5.gsub("\n","")
 					time5=IO.readlines("bot/raid5")[1].to_i
-					timediff5 = time5 - now
+					timediff5 = time5 - now - 3600
 					if time5 < now
 						raid5 = "Raid 5:  In process or Completed```"
 					else
