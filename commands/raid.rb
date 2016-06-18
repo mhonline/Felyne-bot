@@ -22,7 +22,7 @@ module FelyneBot
 					r1h2 = r1h1.floor
 					r1m1 = r1m1-60*r1h2-24*60*r1d2
 					r1m2 = r1m1.floor
-					if t1.to_i < now.to_i
+					if r1t4.to_i < t1.to_i
 						raid1 = "```Raid 1:  In process or Completed"
 					else
 						raid1 = "```Raid 1:  #{name1} in #{d2} days #{h2} hours #{m2} minutes}"
