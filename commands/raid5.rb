@@ -2,7 +2,7 @@ module FelyneBot
 	module Commands
 		module Raid5
 			extend Discordrb::Commands::CommandContainer
-			command(:raid5, description: 'Schedules Raid 5. (Name has to be a single word)', usage: 'raid5 <name> <hours> <minutes>', permission_level: 1) do |event, name, hours, minutes|
+			command(:raid5, description: 'Schedules Raid 5. (Name has to be a single word)', usage: 'raid5 <name> <hours> <minutes> | raid5 clear', permission_level: 1) do |event, name, hours, minutes|
 				h = hours.to_i
 				m = minutes.to_i
 				now = Time.now
