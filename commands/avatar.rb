@@ -9,7 +9,7 @@ module FelyneBot
 				newcolor = '0x'
 				newcolor << IO.readlines("bot/colors")[picture]
 				newcolor=newcolor.gsub("\n","").to_s
-				role.color = Discordrb::ColorRGB.new(newcolor)
+				role.color = Discordrb::ColorRGB.new('0xffffff')
 				$bot.send_message(event.message.channel, "Changing Avatar!")
 				puts "Changing Avatar"
 				nil
