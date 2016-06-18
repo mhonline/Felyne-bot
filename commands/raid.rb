@@ -81,7 +81,7 @@ module FelyneBot
 						i+=1
 					end
 					event << raidusers
-					event << raidready.length
+					event << "#{raidready.length} users are ready to raid"
 				end
 			end
 		end
