@@ -6,7 +6,7 @@ module FelyneBot
 				if text == ''
 					picture = 1 + rand(35)
 				else
-					if -1 > text.to_i < 36
+					if text.to_i.between(0, 35)
 						picture = text
 					else
 						$bot.send_message(event.message.channel, "Invalid Option, randomizing!")
