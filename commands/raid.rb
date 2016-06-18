@@ -2,7 +2,7 @@ module FelyneBot
 	module Commands
 		module Raid
 			extend Discordrb::Commands::CommandContainer
-			command(:raid, description: 'Displays raid schedule.') do |event|
+			command(:raid, description: 'Displays raid schedule.') do |event, list|
 				now = Time.now
 				now = now.to_i
 				name1=IO.readlines("bot/raid1")[0]
@@ -71,6 +71,9 @@ module FelyneBot
 					end
 				end
 				event << "#{raid1}\n#{raid2}\n#{raid3}\n#{raid4}\n#{raid5}"
+				if list == 'list'
+					event << "userlist"
+				end
 			end
 		end
 	end
