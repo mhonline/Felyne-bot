@@ -1,6 +1,6 @@
 module FelyneBot
 	require_relative 'class/info'
-	puts "Loaded info"
+	puts "Info Loaded"
 
 	$users=[]
 	loadusers("userbase/users")
@@ -9,10 +9,9 @@ module FelyneBot
 	id=info.id
 
 	$bot = Discordrb::Commands::CommandBot.new token: token, application_id: id, prefix: '-', advanced_functionality: false
-	puts "Bot begun"
+	puts "BOT Loaded"
 
 #Loads permissions from array
-	puts 'Permessions Loading!'
 	permarray=[]
 	permarray = loadArr(permarray,"userbase/perm")
 
@@ -23,7 +22,7 @@ module FelyneBot
 		#puts "Added #{permarray[pos+2]} as level #{permarray[pos+1]} user"
 		pos+=3
 	end while pos < permarray.length
-	puts "------------->Permission Loaded!"
+	puts "Permission Loaded!"
 
 #Admin/Troubleshooting
 	$bot.include! Commands::Ping

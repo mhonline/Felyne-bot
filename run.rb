@@ -1,5 +1,5 @@
-puts 'starting felynebot'
-print 'loading require...'
+puts 'starting FelyneBot'
+print 'loading required...'
 require 'json'
 require 'discordrb'
 require 'discordrb/data'
@@ -19,7 +19,6 @@ Dir["commands/*.rb"].each {|file| require_relative file }
 clock=Time.new
 
 puts "Starting at: "+clock.inspect
-puts "Loading BOT"
 
 #Create the bot object
 require_relative 'felynebot'

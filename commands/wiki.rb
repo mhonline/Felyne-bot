@@ -10,7 +10,7 @@ module FelyneBot
 						event << "http://monsterhunteronline.in/skills/?search=#{search}"
 					else
 						if list == 'armor'
-							event << "http://monsterhunteronline.in/skills/?armor=#{search}"
+							event << "http://monsterhunteronline.in/armor/?search=#{search}"
 						else
 							wiki = IO.readlines("bot/wiki")[0]
 							wiki = wiki.split(",")
