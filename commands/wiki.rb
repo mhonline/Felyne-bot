@@ -7,7 +7,7 @@ module FelyneBot
 				wiki = wiki.split(",")
 				links = ""
 				wiki.grep(/#{list}/).each { |x| links << "http://monsterhunteronline.in/#{x} \n" }
-				links = links[0..1500].gsub(/\s\w+\s*$/, '...')
+				links = links[0..1500].gsub(/\s\w+\s*$/,'...')
 				event << links
 
 				nil
