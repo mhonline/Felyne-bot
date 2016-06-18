@@ -9,9 +9,9 @@ module FelyneBot
 				time1=IO.readlines("bot/raid1")[1].to_i
 				timediff1 = time1 - now - 3600
 				if time1 < now
-					event << "'#{name1}' raid is either happening now, or you missed it!"
+					raid1 = "Raid 1:  Started or Over"
 				else
-					event << "#{Time.at(timediff1).strftime('%H hours %M minutes %S seconds')} left until the #{name1} raid"
+					raid1 = "Raid 1:  #{name1} in #{Time.at(timediff1).strftime('%H hours %M minutes %S seconds')}"
 				end
 			end
 		end
