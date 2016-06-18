@@ -53,7 +53,7 @@ module FelyneBot
 #Mod only
 	$bot.include! Commands::MainSetup
 	$bot.include! Commands::RolePlay
-	$bot.include! Commands::Color
+	$bot.include! Commands::Avatar
 	$bot.include! Commands::Game
 
 #Fun Commands
