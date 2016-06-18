@@ -5,7 +5,7 @@ module FelyneBot
 			command(:avatar, description: "Changes avatar randomly", permission_level: 1) do |event|
 				$bot.profile.avatar = File.open("/Felyne-bot/pic/#{1 + rand(35)}.jpg")
 				role = event.server.roles.find { |role| role.name == "Felyne" }
-				event << role.color
+				role.color = Discordrb::ColourRGB:0xffffff
 				$bot.send_message(event.message.channel, "Changing Avatar!")
 				puts "Changing Avatar"
 				nil
