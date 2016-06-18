@@ -6,7 +6,6 @@ module FelyneBot
 				begin
 					eval code.join(' ')
 				rescue
-					"An error occured :x: "
 				end
 			end
 		end
