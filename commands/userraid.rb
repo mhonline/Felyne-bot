@@ -2,7 +2,7 @@ module FelyneBot
 	module Commands
 		module UserRaid
 			extend Discordrb::Commands::CommandContainer
-			command(:userraid, min_args: 1, max_args: 1, description: 'Add user to Raid Ready server role', usage: "-raidready <yes/no>") do |event, search|
+			command(:userraid, min_args: 1, max_args: 1, description: 'Add user to Raid Ready server role', usage: "-userraid <yes/no>") do |event, search|
 				member = event.user.on(event.server)
 				if search == 'yes'
 					role = event.server.roles.find { |role| role.name == "RaidReady" }
