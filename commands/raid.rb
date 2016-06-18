@@ -22,11 +22,11 @@ module FelyneBot
 					r1h2 = r1h1.floor
 					r1m1 = r1m1-60*r1h2-24*60*r1d2
 					r1m2 = r1m1.floor
-					#if r1t4.to_i < t1.to_i
-					#	raid1 = "```Raid 1:  In process or Completed"
-					#else
-						raid1 = "```Raid 1:  #{name1} in #{r1d2} days #{r1h2} hours #{r1m2} minutes}"
-					#end
+					if TimeDifference.between(t1, r1t4).in_minutes == 0
+						raid1 = "```Raid 1:  In process or Completed"
+					else
+						raid1 = "```Raid 1:  #{name1} in #{r1d2} days #{r1h2} hours #{r1m2} minutes"
+					end
 				end
 				event << "#{raid1}\n"
 				if list == 'ready'
