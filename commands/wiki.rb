@@ -7,9 +7,11 @@ module FelyneBot
 				wiki = wiki.split(",")
 				links = ""
 				wiki.grep(/#{list}/).each { |x| links << "http://monsterhunteronline.in/#{x} \n" }
-				links = links.gsub(/^(.{1500,}?).*$/m,'\1...')
-				event << links
-
+				if links.length > 2000
+					event << "Output has too many characters. Please be more specific in your search."
+				else
+					event << links
+				end
 				nil
 			end
 		end
