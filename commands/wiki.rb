@@ -19,7 +19,11 @@ module FelyneBot
 							if links.length > 2000
 								event << "Output has too many characters. Please be more specific in your search."
 							else
-								event << links
+								if links.length < 1
+									event << "I wasn't able to dig up any results.  Please try something else!"
+								else
+									event << links
+								end
 							end
 						end
 					end
