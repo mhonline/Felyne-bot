@@ -10,7 +10,6 @@ require 'yaml'
 include Sys
 require 'time'
 require 'time_difference'
-require 'actionview'
 
 #require command files
 require_relative 'class/user'
