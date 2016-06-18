@@ -72,9 +72,16 @@ module FelyneBot
 				end
 				event << "#{raid1}\n#{raid2}\n#{raid3}\n#{raid4}\n#{raid5}"
 				if list == 'ready'
-					role = event.server.roles.find { |role| role.name == "RaidReady" }
-					raidready = server.members.select { |id, m| m.role?(role) }
-					event << raidready
+					role = event.server.roles.find { |role| role.name == "RaidReady" }.id
+					raidready = server.members.select { |m| m.role?(role) }
+					i=0
+					raidusers = ""
+					while i < raidready.length
+						raidusers << "#{raidready[i].username}"
+						i+=1
+					end
+					event << raidusers
+					event << raidready.length
 				end
 			end
 		end
