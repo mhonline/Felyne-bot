@@ -5,7 +5,7 @@ module FelyneBot
 			command(:eval, help_available: false, permission_level: 800) do |event, *code|
 				begin
 					eval code.join(' ')
-				rescue e => StandardError
+				rescue StandardError => e
 					event.respond(e.to_s)
 				end
 			end
