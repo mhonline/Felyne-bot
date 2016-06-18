@@ -2,7 +2,7 @@ module FelyneBot
 	module Commands
 		module MainSetup
 			extend Discordrb::Commands::CommandContainer
-			command(:mainsetup, description: 'Sets time left in maintenance.', usage: 'mainsetup <hours> <minutes> | mainsetup clear', permission_level: 1) do |event, hours, minutes|
+			command(:mainsetup, description: 'Sets time left in maintenance.', usage: 'mainsetup <hours> <minutes> | mainsetup clear', permission_level: 1, permission_message: "Ask a Mod or Admin to set up a Mainenance Timer!") do |event, hours, minutes|
 				if hours == 'clear'
 					File.write('bot/maint', '')
 					event << "Maintenance has been cleared"
