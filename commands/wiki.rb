@@ -2,15 +2,27 @@ module FelyneBot
 	module Commands
 		module Wiki
 			extend Discordrb::Commands::CommandContainer
-			command(:wiki, description: 'Searches the Wiki') do |event, list|
-				wiki = IO.readlines("bot/wiki")[0]
-				wiki = wiki.split(",")
-				links = ""
-				wiki.grep(/#{list}/).each { |x| links << "http://monsterhunteronline.in/#{x} \n" }
-				if links.length > 2000
-					event << "Output has too many characters. Please be more specific in your search."
+			command(:wiki, description: 'Searches the Wiki') do |event, list, search|
+				if list == 'mats'
+					event << "http://monsterhunteronline.in/materials/?search=#{search}"
 				else
-					event << links
+					if list == 'skill'
+						event << "http://monsterhunteronline.in/skills/?search=#{search}"
+					else
+						if list == 'armor'
+							event << "http://monsterhunteronline.in/skills/?armor=#{search}"
+						else
+							wiki = IO.readlines("bot/wiki")[0]
+							wiki = wiki.split(",")
+							links = ""
+							wiki.grep(/#{list}/).each { |x| links << "http://monsterhunteronline.in/#{x} \n" }
+							if links.length > 2000
+								event << "Output has too many characters. Please be more specific in your search."
+							else
+								event << links
+							end
+						end
+					end
 				end
 				nil
 			end
