@@ -5,10 +5,14 @@ module FelyneBot
 			command(:raid) do |event|
 				now = Time.now
 				now = now.to_i
-				if File.zero?("bot/raid1")
+				name1=IO.readlines("bot/raid1")[0]
+				name2=IO.readlines("bot/raid2")[0]
+				name3=IO.readlines("bot/raid3")[0]
+				name4=IO.readlines("bot/raid4")[0]
+				name5=IO.readlines("bot/raid5")[0]
+				if name1.to_s == ''
 					raid1 = "```Raid 1:  Nothing set up"
 				else
-					name1=IO.readlines("bot/raid1")[0]
 					name1=name1.gsub("\n","")
 					time1=IO.readlines("bot/raid1")[1].to_i
 					timediff1 = time1 - now - 3600
@@ -18,10 +22,9 @@ module FelyneBot
 						raid1 = "```Raid 1:  #{name1} in #{Time.at(timediff1).strftime('%H hours %M minutes %S seconds')}"
 					end
 				end
-				if File.zero?("bot/raid2")
+				if name2.to_s == ''
 					raid2 = "Raid 2:  Nothing set up"
 				else
-					name2=IO.readlines("bot/raid2")[0]
 					name2=name2.gsub("\n","")
 					time2=IO.readlines("bot/raid2")[1].to_i
 					timediff2 = time2 - now - 3600
@@ -31,10 +34,9 @@ module FelyneBot
 						raid2 = "Raid 2:  #{name1} in #{Time.at(timediff2).strftime('%H hours %M minutes %S seconds')}"
 					end
 				end
-				if File.zero?("bot/raid3")
+				if name3.to_s == ''
 					raid3 = "Raid 3:  Nothing set up"
 				else
-					name3=IO.readlines("bot/raid3")[0]
 					name3=name3.gsub("\n","")
 					time3=IO.readlines("bot/raid3")[3].to_i
 					timediff3 = time3 - now - 3600
@@ -44,10 +46,9 @@ module FelyneBot
 						raid3 = "Raid 3:  #{name3} in #{Time.at(timediff3).strftime('%H hours %M minutes %S seconds')}"
 					end
 				end
-				if File.zero?("bot/raid4")
+				if name4.to_s == ''
 					raid4 = "Raid 4:  Nothing set up"
 				else
-					name4=IO.readlines("bot/raid4")[0]
 					name4=name4.gsub("\n","")
 					time4=IO.readlines("bot/raid4")[4].to_i
 					timediff4 = time4 - now - 3600
@@ -57,10 +58,9 @@ module FelyneBot
 						raid4 = "Raid 4:  #{name4} in #{Time.at(timediff4).strftime('%H hours %M minutes %S seconds')}"
 					end
 				end
-				if File.zero?("bot/raid5")
+				if name5.to_s == ''
 					raid5 = "Raid 5:  Nothing set up```"
 				else
-					name5=IO.readlines("bot/raid5")[0]
 					name5=name5.gsub("\n","")
 					time5=IO.readlines("bot/raid5")[5].to_i
 					timediff5 = time5 - now - 3600
