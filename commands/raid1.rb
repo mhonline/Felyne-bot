@@ -18,7 +18,7 @@ module FelyneBot
 					open('bot/raid1', 'a') { |f|
 						f.puts "\n#{t4}"
 					}
-					event << "#{TimeDifference.between(t1, t4)}.in_days until raid"
+					event << "#{TimeDifference.between(t1, t4).in_days} until raid"
 				end
 			end
 		end
