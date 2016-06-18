@@ -19,7 +19,7 @@ module FelyneBot
 					if time1 < now
 						raid1 = "```Raid 1:  In process or Completed"
 					else
-						raid1 = "```Raid 1:  #{name1} in #{Time.at(timediff1).strftime('%d Days %H hours %M minutes %S seconds')}"
+						raid1 = "```Raid 1:  #{name1} in #{TimeDifference.between(Time.now, time1))}"
 					end
 				end
 				if name2.to_s == ''

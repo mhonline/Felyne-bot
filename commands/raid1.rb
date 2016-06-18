@@ -2,24 +2,20 @@ module FelyneBot
 	module Commands
 		module Raid1
 			extend Discordrb::Commands::CommandContainer
-			command(:raid1, description: 'Schedules Raid 1. (Name has to be a single word)', usage: '-raid1 <name> <hours> <minutes> | raid1 clear', permission_level: 1, permission_message: "Ask a Mod or Admin to set up a raid!") do |event, name, hours, minutes|
-				h = hours.to_i
-				m = minutes.to_i
-				now = Time.now
-				now = now.to_i
-				targettime = h * 3600 + m * 60 
-				targettime += now
-				targettime = Time.at (targettime)
-				targettime = targettime.to_i
+			command(:raid1, description: 'Schedules Raid 1. (Name has to be a single word)', usage: '-raid1 <name> <hours> <minutes> | raid1 clear', permission_level: 1, permission_message: "Ask a Mod or Admin to set up a raid!") do |event, name, days, hours, minutes|
+				t1 = Time.now
+				t2 = t1 + minutes*60
+				t3 = t2 + hours*60*60
+				t4 = t3 + days*24*60*60
 				if name == "clear"
 					File.write('bot/raid1', '')
 					event << "Raid 1 has been cleared"
 				else
 					File.write('bot/raid1', name)
 					open('bot/raid1', 'a') { |f|
-						f.puts "\n#{targettime}"
+						f.puts "\n#{t4}"
 					}
-					event << "#{h} hours #{m} minutes left until '#{name}' raid"
+					event << "#{TimeDifference.between(t1, t4)}.in_days until raid"
 				end
 			end
 		end
