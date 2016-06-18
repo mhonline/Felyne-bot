@@ -55,6 +55,7 @@ module FelyneBot
 	$bot.include! Commands::RolePlay
 	$bot.include! Commands::Avatar
 	$bot.include! Commands::Game
+	$bot.include! Commands::Eval
 
 #Fun Commands
 	$bot.message(containing: "(╯°□°）╯︵ ┻━┻") do |event|
