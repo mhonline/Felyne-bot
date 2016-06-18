@@ -14,9 +14,9 @@ module FelyneBot
 				h1 = TimeDifference.between(t1, t4).in_hours
 				m1 = TimeDifference.between(t1, t4).in_minutes
 				d2 = d1.floor
-				h1 = h1-24*d1
+				h1 = h1-24*d2
 				h2 = h1.floor
-				m1 = m1-60*h1-24*d1
+				m1 = m1-60*h2-24*d2
 				m2 = m1.floor
 				if name == "clear"
 					File.write('bot/raid1', '')
