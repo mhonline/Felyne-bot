@@ -72,7 +72,7 @@ module FelyneBot
 	puts "Commands Loaded"
 	$bot.debug = false
 	$bot.run :async
-	$bot.game = '-help'
+	$bot.game = IO.readlines("bot/game")[0]
 	puts 'Sync Confirmed.'
 	puts 'SKYNET ONLINE'
 	$bot.sync
