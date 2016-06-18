@@ -8,7 +8,7 @@ module FelyneBot
 				role = event.server.roles.find { |role| role.name == "Felyne" }
 				newcolor = '0x'
 				newcolor << IO.readlines("bot/colors")[picture]
-				newcolor=newcolor.gsub("\n","")
+				newcolor=newcolor.gsub("\n","").to_i
 				role.color = Discordrb::ColorRGB.new(newcolor)
 				$bot.send_message(event.message.channel, "Changing Avatar!")
 				puts "Changing Avatar"
