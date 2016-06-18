@@ -39,6 +39,7 @@ module FelyneBot
 #Helpful Commands
 	$bot.include! Commands::Reset
 	$bot.include! Commands::Server
+	$bot.include! Commands::Server47
 	$bot.include! Commands::Maint
 #User Role
 	$bot.include! Commands::UserRaid
