@@ -2,7 +2,7 @@ module FelyneBot
 	module Commands
 		module Maint
 			extend Discordrb::Commands::CommandContainer
-			command(:maint) do |event|
+			command(:maint, description: 'Checks time left in game maintenance.') do |event|
 				now = Time.now
 				now = now.to_i
 				time=IO.readlines("bot/maint")[0].to_i

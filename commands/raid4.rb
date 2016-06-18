@@ -2,7 +2,7 @@ module FelyneBot
 	module Commands
 		module Raid4
 			extend Discordrb::Commands::CommandContainer
-			command(:raid4, permission_level: 1) do |event, name, hours, minutes|
+			command(:raid4, description: 'Schedules Raid 4. (Name has to be a single word)', usage: 'raid4 <name> <hours> <minutes>', permission_level: 1) do |event, name, hours, minutes|
 				h = hours.to_i
 				m = minutes.to_i
 				now = Time.now
