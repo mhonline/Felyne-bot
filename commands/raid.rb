@@ -25,7 +25,7 @@ module FelyneBot
 					#if r1t4.to_i < t1.to_i
 					#	raid1 = "```Raid 1:  In process or Completed"
 					#else
-						raid1 = "```Raid 1:  #{name1} in #{d2} days #{h2} hours #{m2} minutes}"
+						raid1 = "```Raid 1:  #{name1} in #{r1d2} days #{r1h2} hours #{r1m2} minutes}"
 					#end
 				end
 				event << "#{raid1}\n"
