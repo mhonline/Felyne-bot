@@ -9,6 +9,7 @@ require 'active_support'
 require 'yaml'
 include Sys
 require 'time'
+require 'time_difference'
 
 #require command files
 require_relative 'class/user'
