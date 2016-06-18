@@ -2,7 +2,7 @@ module FelyneBot
 	module Commands
 		module Raid3
 			extend Discordrb::Commands::CommandContainer
-			command(:raid3, description: 'Schedules Raid 3. (Name has to be a single word)', usage: 'raid3 <name> <hours> <minutes> | raid3 clear', permission_level: 1, permission_message: "Ask a Mod or Admin to set up a raid!") do |event, name, hours, minutes|
+			command(:raid3, description: 'Schedules Raid 3. (Name has to be a single word)', usage: '-raid3 <name> <hours> <minutes> | raid3 clear', permission_level: 1, permission_message: "Ask a Mod or Admin to set up a raid!") do |event, name, hours, minutes|
 				h = hours.to_i
 				m = minutes.to_i
 				now = Time.now
