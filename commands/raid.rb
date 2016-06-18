@@ -6,6 +6,7 @@ module FelyneBot
 				now = Time.now
 				now = now.to_i
 				name1=IO.readlines("bot/raid1")[0]
+				event << name1
 				if name1 == ""
 					raid1 = "```Raid 1:  No raid set up."
 				else
