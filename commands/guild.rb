@@ -2,7 +2,7 @@ module FelyneBot
 	module Commands
 		module Guild
 			extend Discordrb::Commands::CommandContainer
-			command(:guild, min_args: 1, max_args: 1, description: 'Add user to guild', usage: "-guild <Guildname>  Guilds on server: Hipcheckers, Hyperlynx, Stygian, MHOInter, Discord, SG★Hunters, 血盟狩猎团, 月夜黑貓團, 为卿负天下、, Abysswalker, thelegionnaires, GatotKaca, LaTaverne, MooGoo, TheHoldingPen") do |event, search|
+			command(:guild, min_args: 1, max_args: 1, description: 'Add user to guild', usage: "-guild <Guildname>  Guilds on server: Hipcheckers, Hyperlynx, Stygian, MHOInter, Discord, SG★Hunters, 血盟狩猎团, 月夜黑貓團, 为卿负天下、, Abysswalker, thelegionnaires, GatotKaca, LaTaverne, MooGoo, TheHoldingPen, 花落阴影") do |event, search|
 				member = event.user.on(event.server)
 				guild = 0
 				if search == 'remove'
@@ -35,6 +35,8 @@ module FelyneBot
 					role = event.server.roles.find { |role| role.name == "MooGoo" }
 					member.remove_role(role)
 					role = event.server.roles.find { |role| role.name == "TheHoldingPen" }
+					member.remove_role(role)
+					role = event.server.roles.find { |role| role.name == "花落阴影" }
 					member.remove_role(role)
 					event << "Removed from all guild server roles."
 				else
@@ -110,6 +112,11 @@ module FelyneBot
 					end
 					if search == 'TheHoldingPen'
 						role = event.server.roles.find { |role| role.name == "TheHoldingPen" }
+						member.add_role(role)
+						guild = 1
+					end
+					if search == '花落阴影'
+						role = event.server.roles.find { |role| role.name == "花落阴影" }
 						member.add_role(role)
 						guild = 1
 					end
