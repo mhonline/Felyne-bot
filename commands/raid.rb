@@ -70,7 +70,16 @@ module FelyneBot
 						raid5 = "Raid 5:  #{name5} in #{Time.at(timediff5).strftime('%H hours %M minutes %S seconds')}```"
 					end
 				end
-				event << raid1 + "\n" + raid2 + "\n" + raid3 + "\n" + raid4 + "\n" + raid5
+				raidlist = raid1
+				raidlist << "\n"
+				raidlist << raid2
+				raidlist << "\n"
+				raidlist << raid3
+				raidlist << "\n"
+				raidlist << raid4
+				raidlist << "\n"
+				raidlist << raid5
+				event << raidlist
 			end
 		end
 	end
