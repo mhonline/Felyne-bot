@@ -5,8 +5,8 @@ module FelyneBot
 			command(:eval, help_available: false, permission_level: 800) do |event, *code|
 				begin
 					eval code.join(' ')
-				rescue => error
-					error
+				rescue
+					"An error occured :x: "
 				end
 			end
 		end
