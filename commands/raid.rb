@@ -6,6 +6,7 @@ module FelyneBot
 				now = Time.now
 				now = now.to_i
 				name1=IO.readlines("bot/raid1")[0]
+				name1=name1.gsub("\n","")
 				time1=IO.readlines("bot/raid1")[1].to_i
 				timediff1 = time1 - now - 3600
 				if time1 < now
