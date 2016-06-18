@@ -6,7 +6,7 @@ module FelyneBot
 				picture = 1 + rand(35)
 				$bot.profile.avatar = File.open("/Felyne-bot/pic/#{picture}.jpg")
 				role = event.server.roles.find { |role| role.name == "Felyne" }
-				newcolor = IO.readlines("bot/color")[picture]
+				newcolor = IO.readlines("bot/colors")[picture]
 				role.color = Discordrb::ColorRGB.new(0xffffff)
 				$bot.send_message(event.message.channel, "Changing Avatar!")
 				puts "Changing Avatar"
