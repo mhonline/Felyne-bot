@@ -31,6 +31,8 @@ module FelyneBot
 						i+=1
 					end while i < found.length
 					event << "```"
+				else
+					event << "Search string was not found in database."
 				end
 				nil
 			end
