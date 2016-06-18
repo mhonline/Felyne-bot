@@ -77,7 +77,7 @@ module FelyneBot
 					i=0
 					raidusers = ""
 					while i < raidready.length
-						raidusers << "#{raidready[i].username}"
+						raidusers << "**#{raidready[i].username}**\n"
 						i+=1
 					end
 					event << raidusers
