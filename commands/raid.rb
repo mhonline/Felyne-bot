@@ -15,7 +15,7 @@ module FelyneBot
 				else
 					name1=name1.gsub("\n","")
 					time1=IO.readlines("bot/raid1")[1].to_i
-					timediff1 = time1 - now - 3600
+					timediff1 = time1 - now - 90000
 					if time1 < now
 						raid1 = "```Raid 1:  In process or Completed"
 					else
