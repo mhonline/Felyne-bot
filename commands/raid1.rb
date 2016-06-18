@@ -16,7 +16,7 @@ module FelyneBot
 				d2 = d1.floor
 				h1 = h1-24*d2
 				h2 = h1.floor
-				m1 = m1-60*h2-24*d2
+				m1 = m1-60*h2-24*60*d2
 				m2 = m1.floor
 				if name == "clear"
 					File.write('bot/raid1', '')
