@@ -19,7 +19,7 @@ module FelyneBot
 					if time1 < now
 						raid1 = "```Raid 1:  In process or Completed"
 					else
-						raid1 = "```Raid 1:  #{name1} in #{Time.at(timediff1).strftime('%H hours %M minutes %S seconds')}"
+						raid1 = "```Raid 1:  #{name1} in #{Time.at(timediff1).strftime('%d Days %H hours %M minutes %S seconds')}"
 					end
 				end
 				if name2.to_s == ''
@@ -31,7 +31,7 @@ module FelyneBot
 					if time2 < now
 						raid2 = "Raid 2:  In process or Completed"
 					else
-						raid2 = "Raid 2:  #{name2} in #{Time.at(timediff2).strftime('%H hours %M minutes %S seconds')}"
+						raid2 = "Raid 2:  #{name2} in #{Time.at(timediff2).strftime('%d Days %H hours %M minutes %S seconds')}"
 					end
 				end
 				if name3.to_s == ''
@@ -43,7 +43,7 @@ module FelyneBot
 					if time3 < now
 						raid3 = "Raid 3:  In process or Completed"
 					else
-						raid3 = "Raid 3:  #{name3} in #{Time.at(timediff3).strftime('%H hours %M minutes %S seconds')}"
+						raid3 = "Raid 3:  #{name3} in #{Time.at(timediff3).strftime('%d Days %H hours %M minutes %S seconds')}"
 					end
 				end
 				if name4.to_s == ''
@@ -55,7 +55,7 @@ module FelyneBot
 					if time4 < now
 						raid4 = "Raid 4:  In process or Completed"
 					else
-						raid4 = "Raid 4:  #{name4} in #{Time.at(timediff4).strftime('%H hours %M minutes %S seconds')}"
+						raid4 = "Raid 4:  #{name4} in #{Time.at(timediff4).strftime('%d Days %H hours %M minutes %S seconds')}"
 					end
 				end
 				if name5.to_s == ''
@@ -67,7 +67,7 @@ module FelyneBot
 					if time5 < now
 						raid5 = "Raid 5:  In process or Completed```"
 					else
-						raid5 = "Raid 5:  #{name5} in #{Time.at(timediff5).strftime('%H hours %M minutes %S seconds')}```"
+						raid5 = "Raid 5:  #{name5} in #{Time.at(timediff5).strftime('%d Days %H hours %M minutes %S seconds')}```"
 					end
 				end
 				event << "#{raid1}\n#{raid2}\n#{raid3}\n#{raid4}\n#{raid5}"
