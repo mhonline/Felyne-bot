@@ -11,7 +11,7 @@ module FelyneBot
 				if time1 < now
 					event << "'#{name1}' raid is either happening now, or you missed it!"
 				else
-					event << "#{Time.at(timediff1).strftime('%H hours %M minutes %S seconds')} left until the '#{name1}' raid"
+					event << "#{Time.at(timediff1).strftime('%H hours %M minutes %S seconds')} left until the #{name1} raid"
 				end
 			end
 		end
