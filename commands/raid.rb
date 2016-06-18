@@ -19,7 +19,7 @@ module FelyneBot
 					end
 				end
 				if File.zero?("bot/raid2")
-					raid1 = "Raid 2:  Nothing set up"
+					raid2 = "Raid 2:  Nothing set up"
 				else
 					name2=IO.readlines("bot/raid2")[0]
 					name2=name2.gsub("\n","")
