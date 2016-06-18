@@ -14,7 +14,7 @@ module FelyneBot
 				else
 					name1 = name1.gsub("\n","")
 					r1t4 = IO.readlines("bot/raid1")[1]
-					r1t4 = r1t4.gsub("\n","")
+					r1t4 = Time.parse(r1t4.gsub("\n",""))
 					r1d1 = TimeDifference.between(t1, r1t4).in_days
 					r1h1 = TimeDifference.between(t1, r1t4).in_hours
 					r1m1 = TimeDifference.between(t1, r1t4).in_minutes
