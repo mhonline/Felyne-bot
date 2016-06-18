@@ -2,7 +2,7 @@ module FelyneBot
 	module Commands
 		module Raid
 			extend Discordrb::Commands::CommandContainer
-			command(:maint) do |event|
+			command(:raid) do |event|
 				now = Time.now
 				now = now.to_i
 				name1=IO.readlines("bot/raid1")[0]
