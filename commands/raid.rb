@@ -27,6 +27,7 @@ module FelyneBot
 					else
 						raid1 = "```Raid 1:  #{name1} in #{d2} days #{h2} hours #{m2} minutes}"
 					end
+				end
 				event << "#{raid1}\n"
 				if list == 'ready'
 					role = event.server.roles.find { |role| role.name == "RaidReady" }.id
