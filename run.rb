@@ -13,6 +13,7 @@ require 'time_difference'
 
 #require logger
 require_relative 'logger'
+require_relative 'stats'
 
 # Supresses warning: already initialized constant Discordrb::LOGGER
 original_verbosity = $VERBOSE
