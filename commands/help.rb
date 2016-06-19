@@ -10,6 +10,7 @@ module FelyneBot
 				raids = ['raid', 'raid1', 'raid2', 'raid3', 'raid4', 'raid5']
 				mods = ['mainsetup', 'rp', 'avatar', 'game', 'eval']
 				if more == ""
+					more = " "
 					out = "```#Admin/Troubleshooting\n"
 					admin.each { |x| out << "	#{$prefix}#{x}\n" }
 					out << "\n#Admin/Troubleshooting\n"
@@ -23,7 +24,6 @@ module FelyneBot
 					out << "\n#Mod only\n"
 					mods.each { |x| out << "	#{$prefix}#{x}\n" }
 					out << "```"
-					event << out
 				else
 					search = more.to_sym
 					desc = $bot.commands[search].attributes[:description]
