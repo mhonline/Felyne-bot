@@ -14,6 +14,19 @@ require 'time_difference'
 #require logger
 require_relative 'logger'
 
+# Supresses warning: already initialized constant Discordrb::LOGGER
+original_verbosity = $VERBOSE
+$VERBOSE = nil
+
+debug = ARGV.include?('-debug') ? true : false
+Discordrb::LOGGER = LOGGER = if debug
+                               SapphireBot::Logger.new(:debug)
+                             else
+                               SapphireBot::Logger.new
+                             end
+
+$VERBOSE = original_verbosity
+
 #require command files
 require_relative 'class/user'
 require_relative 'class/loader'
