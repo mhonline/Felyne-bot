@@ -12,15 +12,15 @@ module FelyneBot
 
 				out = "```**#Admin/Troubleshooting**\n"
 				admin.each { |x| out << "	#{$prefix}#{x}\n" }
-				out << "\n**#Admin/Troubleshooting**"
+				out << "\n**#Admin/Troubleshooting**\n"
 				database.each { |x| out << "	#{$prefix}#{x}\n" }
-				out << "\n**#IGN/Guild/Timezone Database**"
+				out << "\n**#IGN/Guild/Timezone Database**\n"
 				helpful.each { |x| out << "	#{$prefix}#{x}\n" }
-				out << "\n**#Helpful Commands**"
+				out << "\n**#Helpful Commands**\n"
 				roles.each { |x| out << "	#{$prefix}#{x}\n" }
-				out << "\n**#Raids**"
+				out << "\n**#Raids**\n"
 				raids.each { |x| out << "	#{$prefix}#{x}\n" }
-				out << "\n**#Mod only**"
+				out << "\n**#Mod only**\n"
 				mods.each { |x| out << "	#{$prefix}#{x}\n" }
 				out << "```"
 				event << out
