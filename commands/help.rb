@@ -25,8 +25,8 @@ module FelyneBot
 					out << "```"
 					event << out
 				else
-					search = ':#{more}'.to_sym
-					out = $bot.commands[:ping].attributes[:description]
+					search = more.to_sym
+					out = $bot.commands[search].attributes[:description]
 				end
 				event << out
 				nil
