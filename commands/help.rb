@@ -9,7 +9,6 @@ module FelyneBot
 				roles = ['userraid', 'guild']
 				raids = ['raid', 'raid1', 'raid2', 'raid3', 'raid4', 'raid5']
 				mods = ['mainsetup', 'rp', 'avatar', 'game', 'eval']
-
 				if more == ''
 					out = "```#Admin/Troubleshooting\n"
 					admin.each { |x| out << "	#{$prefix}#{x}\n" }
@@ -29,6 +28,7 @@ module FelyneBot
 					search = ':#{more}'.to_sym
 					out = $bot.commands[search].attributes[:description]
 				end
+				event << out
 				nil
 			end
 		end
