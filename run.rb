@@ -20,9 +20,9 @@ $VERBOSE = nil
 
 debug = ARGV.include?('-debug') ? true : false
 Discordrb::LOGGER = LOGGER = if debug
-                               SapphireBot::Logger.new(:debug)
+                               FelyneBot::Logger.new(:debug)
                              else
-                               SapphireBot::Logger.new
+                               FelyneBot::Logger.new
                              end
 
 $VERBOSE = original_verbosity
