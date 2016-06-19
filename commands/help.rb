@@ -13,11 +13,11 @@ module FelyneBot
 					more = "none"
 					out = "```#Admin/Troubleshooting\n"
 					admin.each { |x| out << "	#{$prefix}#{x}\n" }
-					out << "\n#Admin/Troubleshooting\n"
-					database.each { |x| out << "	#{$prefix}#{x}\n" }
 					out << "\n#IGN/Guild/Timezone Database\n"
-					helpful.each { |x| out << "	#{$prefix}#{x}\n" }
+					database.each { |x| out << "	#{$prefix}#{x}\n" }
 					out << "\n#Helpful Commands\n"
+					helpful.each { |x| out << "	#{$prefix}#{x}\n" }
+					out << "\n#Role Commands\n"
 					roles.each { |x| out << "	#{$prefix}#{x}\n" }
 					out << "\n#Raids\n"
 					raids.each { |x| out << "	#{$prefix}#{x}\n" }
