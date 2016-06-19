@@ -2,7 +2,8 @@ module FelyneBot
 	module Commands
 		module Wiki
 			extend Discordrb::Commands::CommandContainer
-			command(:wiki, description: 'Searches the Wiki') do |event, list, search|
+			command(:wiki, description: 'Searches the Wiki') do |event, list, *search|
+				search = search.join(' ')
 				if list == 'mats'
 					event << "http://monsterhunteronline.in/materials/?search=#{search}"
 				else
