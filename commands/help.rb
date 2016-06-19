@@ -27,7 +27,7 @@ module FelyneBot
 					event << out
 				else
 					seach = ':#{more}'
-					out = bot.commands[search].attributes[:description]
+					out = $bot.commands[search].attributes[:description]
 				end
 				nil
 			end
