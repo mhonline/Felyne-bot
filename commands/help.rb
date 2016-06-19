@@ -3,39 +3,27 @@ module FelyneBot
 		module Help
 			extend Discordrb::Commands::CommandContainer
 			command(:help, description: 'Shows all commands') do |event|
-				event <<  "**#Admin/Troubleshooting**"
-				event <<  "``-ping``"
-				event <<  "``-kill``"
-				event <<  "**#IGN/Guild/Timezone Database**"
-				event <<  "``-adduser``"
-				event <<  "``-userign``"
-				event <<  "``-userguild``"
-				event <<  "``-usertimezone``"
-				event <<  "``-userremove``"
-				event <<  "``-userlist``"
-				event <<  "``-userfind``"
-				event <<  "**#Helpful Commands**"
-				event <<  "``-reset``"
-				event <<  "``-server``"
-				event <<  "``-server47``"
-				event <<  "``-maint``"
-				event <<  "``-help``"
-				event <<  "**#User Role**"
-				event <<  "``-userraid``"
-				event <<  "``-guild``"
-				event <<  "**#Raids**"
-				event <<  "``-raid``"
-				event <<  "``-raid1``"
-				event <<  "``-raid2``"
-				event <<  "``-raid3``"
-				event <<  "``-raid4``"
-				event <<  "``-raid5``"
-				event <<  "**#Mod only**"
-				event <<  "``-mainsetup``"
-				event <<  "``-rp``"
-				event <<  "``-avatar``"
-				event <<  "``-game``"
-				event <<  "``-eval``"
+				admin = ['ping', 'kill']
+				database = ['adduser', 'userign', 'userguild', 'usertimezone', 'userremove', 'userlist', 'userfind']
+				helpful = ['reset', 'server', 'server47', 'maint', 'help']
+				roles = ['userraid', 'guild']
+				raids = ['raid', 'raid1', 'raid2', 'raid3', 'raid4', 'raid5']
+				mods = ['mainsetup', 'rp', 'avatar', 'game', 'eval']
+
+				out = "```**#Admin/Troubleshooting**\n"
+				admin.each { |x| out << "	#{$prefix}#{x}\n" }
+				out << "\n**#Admin/Troubleshooting**"
+				database.each { |x| out << "	#{$prefix}#{x}\n" }
+				out << "\n**#IGN/Guild/Timezone Database**"
+				helpful.each { |x| out << "	#{$prefix}#{x}\n" }
+				out << "\n**#Helpful Commands**"
+				roles.each { |x| out << "	#{$prefix}#{x}\n" }
+				out << "\n**#Raids**"
+				raids.each { |x| out << "	#{$prefix}#{x}\n" }
+				out << "\n**#Mod only**"
+				mods.each { |x| out << "	#{$prefix}#{x}\n" }
+				out << "```"
+				event << out
 				nil
 			end
 		end

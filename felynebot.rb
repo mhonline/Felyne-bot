@@ -8,7 +8,9 @@ module FelyneBot
 	token=info.token
 	id=info.id
 
-	$bot = Discordrb::Commands::CommandBot.new token: token, application_id: id, prefix: '-', advanced_functionality: false
+	$prefix = '-'
+
+	$bot = Discordrb::Commands::CommandBot.new token: token, application_id: id, prefix: $prefix, advanced_functionality: false
 	puts "BOT Loaded"
 
 #Loads permissions from array
@@ -79,7 +81,7 @@ module FelyneBot
 	end
 
 	puts "Commands Loaded"
-	#$bot.debug = false
+	$bot.debug = false
 	$bot.run :async
 	$bot.game = IO.readlines("bot/game")[0]
 	puts 'Sync Confirmed.'
