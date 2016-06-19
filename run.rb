@@ -11,23 +11,6 @@ include Sys
 require 'time'
 require 'time_difference'
 
-#require logger
-require_relative 'logger'
-require_relative 'stats'
-
-# Supresses warning: already initialized constant Discordrb::LOGGER
-original_verbosity = $VERBOSE
-$VERBOSE = nil
-
-debug = ARGV.include?('-debug') ? true : false
-Discordrb::LOGGER = LOGGER = if debug
-                               FelyneBot::Logger.new(:debug)
-                             else
-                               FelyneBot::Logger.new
-                             end
-
-$VERBOSE = original_verbosity
-
 #require command files
 require_relative 'class/user'
 require_relative 'class/loader'
