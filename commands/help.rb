@@ -28,7 +28,10 @@ module FelyneBot
 					search = more.to_sym
 					desc = $bot.commands[search].attributes[:description]
 					useage = $bot.commands[search].attributes[:usage]
-					out = "#{$prefix}#{more}: ``#{desc}``\nUseage: ``#{useage}``"
+					out = "#{$prefix}#{more}: ``#{desc}``"
+					if useage != nill
+						out << "\nUseage: ``#{useage}``"
+					end
 				end
 				event << out
 				nil
