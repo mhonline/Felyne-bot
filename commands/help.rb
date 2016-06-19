@@ -23,7 +23,7 @@ module FelyneBot
 					raids.each { |x| out << "	#{$prefix}#{x}\n" }
 					out << "\n#Mod only\n"
 					mods.each { |x| out << "	#{$prefix}#{x}\n" }
-					out << "```"
+					out << "To get more info about a specific command type: #{$prefix}help <command>```"
 				else
 					search = more.to_sym
 					desc = $bot.commands[search].attributes[:description]
