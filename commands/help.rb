@@ -26,11 +26,15 @@ module FelyneBot
 					out << "To get more info about a specific command type: #{$prefix}help <command>```"
 				else
 					search = more.to_sym
-					desc = $bot.commands[search].attributes[:description]
-					useage = $bot.commands[search].attributes[:usage]
-					out = "#{$prefix}#{more}: ``#{desc}``"
-					if useage != nil
-						out << "\nUseage: ``#{useage}``"
+					if $bot.commands[search] != nil
+						desc = $bot.commands[search].attributes[:description]
+						useage = $bot.commands[search].attributes[:usage]
+						out = "#{$prefix}#{more}: ``#{desc}``"
+						if useage != nil
+							out << "\nUseage: ``#{useage}``"
+						end
+					else
+						out = "No such command exists."
 					end
 				end
 				event << out
