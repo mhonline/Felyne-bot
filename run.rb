@@ -11,6 +11,9 @@ include Sys
 require 'time'
 require 'time_difference'
 
+#require logger
+require_relative 'logger'
+
 #require command files
 require_relative 'class/user'
 require_relative 'class/loader'
