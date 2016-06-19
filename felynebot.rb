@@ -79,7 +79,7 @@ module FelyneBot
 	end
 
 	puts "Commands Loaded"
-	$bot.debug = false
+	#$bot.debug = false
 	$bot.run :async
 	$bot.game = IO.readlines("bot/game")[0]
 	puts 'Sync Confirmed.'
