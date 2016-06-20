@@ -8,9 +8,7 @@ module FelyneBot
 	token=info.token
 	id=info.id
 
-	$prefix = '-'
-
-	$bot = Discordrb::Commands::CommandBot.new token: token, application_id: id, prefix: $prefix, advanced_functionality: false
+	$bot = Discordrb::Commands::CommandBot.new token: token, application_id: id, prefix: '-', advanced_functionality: false
 	puts "BOT Loaded"
 
 #Loads permissions from array
@@ -37,6 +35,7 @@ module FelyneBot
 	$bot.include! Commands::UserRemove
 	$bot.include! Commands::UserList
 	$bot.include! Commands::UserFind
+	$bot.include! Commands::UserServer
 #Helpful Commands
 	$bot.include! Commands::Reset
 	$bot.include! Commands::Server
