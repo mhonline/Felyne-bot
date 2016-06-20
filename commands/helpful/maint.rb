@@ -22,20 +22,25 @@ module FelyneBot
 				eh2 = eh1.floor
 				em1 = em1-60*eh2
 				em2 = em1.floor
-
+				if t3!=""
 					if t3.past?
-						mainstart << "Maintenance has started!"
+						started = "Maintenance has started!"
 					else
-						mainstart << "#{sh2} hours #{sm2} minutes left until start of maintenance"
+						started = "#{sh2} hours #{sm2} minutes left until start of maintenance"
 					end
-
+				else
+					started = "Maintenance start time not set."
+				end
+				if t4!=""
 					if t4.past?
-						mainend << "Maintenance has Ended! GO HUNTING!"
+						ended = "Maintenance has Ended! GO HUNTING!"
 					else
-						mainend << "#{eh2} hours #{em2} minutes left until start of maintenance"
+						ended = "#{eh2} hours #{em2} minutes left until start of maintenance"
 					end
-
-				event << "```#{mainstart}\n#{mainend}```"
+				else
+					ended = "Maintenance end time not set."
+				end
+				event << "```#{started}\n#{ended}```"
 				puts "#{event.timestamp}: #{event.user.name}: CMD: maint"
 				nil
 			end
