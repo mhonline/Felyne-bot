@@ -30,7 +30,6 @@ module FelyneBot
 	$bot.include! Commands::Eval
 	$bot.include! Commands::Info
 	$bot.include! Commands::Kill
-	$bot.include! Commands::NewGuild
 	$bot.include! Commands::Ping
 #IGN/Guild/Timezone Database
 	$bot.include! Commands::AddUser
