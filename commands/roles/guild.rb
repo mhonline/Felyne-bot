@@ -25,6 +25,12 @@ module FelyneBot
 					guilds.each { |x| event << x }
 				end
 				if set == 'set'
+					guilds.each { |x| 
+						role = member.roles.find { |role| role.name == x }
+						if role!=nil
+							member.remove_role(role)
+						end
+					}
 					guilds.each { |x|
 						if search == x
 							role = event.server.roles.find { |role| role.name == search }
