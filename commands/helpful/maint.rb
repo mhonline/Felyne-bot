@@ -35,7 +35,7 @@ module FelyneBot
 					if t4.past?
 						ended = "Maintenance has Ended! GO HUNTING!"
 					else
-						ended = "#{eh2} hours #{em2} minutes left until start of maintenance"
+						ended = "#{eh2} hours #{em2} minutes left until end of maintenance"
 					end
 				else
 					ended = "Maintenance end time not set."
