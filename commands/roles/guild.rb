@@ -44,7 +44,7 @@ module FelyneBot
 					event << "The requested guild server role does not exist.  If you would like to add your guild to the servers roles, please PM Reaver01"
 				end
 				end
-				puts "#{event.timestamp}: #{event.user.name}: CMD: guild <#{search}>"
+				puts "#{event.timestamp}: #{event.user.name}: CMD: guild <#{set}> <#{search}>"
 				nil
 			end
 		end
