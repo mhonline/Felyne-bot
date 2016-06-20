@@ -24,7 +24,7 @@ module FelyneBot
 				if !found.empty?
 					i=0
 					event << "Found User Database:"
-					event << "```Name                IGN                 Guild               Timezone               Server"
+					event << "```Name                IGN                 Guild               Timezone            Server"
 					begin
 						str = ""
 						if found[i].name!=nil then str << "#{found[i].name.to_s}" end
