@@ -14,7 +14,7 @@ module FelyneBot
 				rescue StandardError => e
 					event.respond(e.to_s)
 				end
-				puts '#{event.timestamp}: #{event.user.name}: CMD: eval'
+				puts "#{event.timestamp}: #{event.user.name}: CMD: eval"
 				nil
 			end
 		end

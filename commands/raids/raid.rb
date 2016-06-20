@@ -140,7 +140,7 @@ module FelyneBot
 					event << raidusers
 					event << "#{raidready.length} users are ready to raid"
 				end
-				puts '#{event.timestamp}: #{event.user.name}: CMD: raid'
+				puts "#{event.timestamp}: #{event.user.name}: CMD: raid"
 				nil
 			end
 		end

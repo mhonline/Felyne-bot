@@ -48,7 +48,7 @@ module FelyneBot
 					end
 				end
 				event << out
-				puts '#{event.timestamp}: #{event.user.name}: CMD: help'
+				puts "#{event.timestamp}: #{event.user.name}: CMD: help"
 				nil
 			end
 		end

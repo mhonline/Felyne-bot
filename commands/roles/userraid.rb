@@ -20,7 +20,7 @@ module FelyneBot
 					member.remove_role(role)
 					event << "Removed from RaidReady Role"
 				nil
-				puts '#{event.timestamp}: #{event.user.name}: CMD: userraid <#{search}>'
+				puts "#{event.timestamp}: #{event.user.name}: CMD: userraid <#{search}>"
 				end
 			end
 		end

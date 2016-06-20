@@ -12,7 +12,7 @@ module FelyneBot
 				gametext = text.join(' ')
 				File.write('bot/game', gametext)
 				$bot.game = gametext
-				puts '#{event.timestamp}: #{event.user.name}: CMD: game <#{gametext}>'
+				puts "#{event.timestamp}: #{event.user.name}: CMD: game <#{gametext}>"
 				nil
 			end
 		end

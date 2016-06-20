@@ -14,7 +14,7 @@ module FelyneBot
 				event << "Changed guild to: #{guild}"
 				puts "#{event.timestamp}: #{event.user.name}: [userGuild] <#{guild}>"
 				saveObj($users,"userbase/users")
-				puts '#{event.timestamp}: #{event.user.name}: CMD: userguild'
+				puts "#{event.timestamp}: #{event.user.name}: CMD: userguild"
 				nil
 			end
 		end

@@ -8,7 +8,7 @@ module FelyneBot
 					useage: "ping"
 			) do |event|
 				event <<  "Pong! : #{((Time.now - event.timestamp) * 1000).to_i}ms."
-				puts '#{event.timestamp}: #{event.user.name}: CMD: ping'
+				puts "#{event.timestamp}: #{event.user.name}: CMD: ping"
 				nil
 			end
 		end

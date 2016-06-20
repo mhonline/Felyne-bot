@@ -8,7 +8,7 @@ module FelyneBot
 					useage: "server47"
 			) do |event|
 				event << "https://i.imgur.com/W3tv2c8.jpg"
-				puts '#{event.timestamp}: #{event.user.name}: CMD: server47'
+				puts "#{event.timestamp}: #{event.user.name}: CMD: server47"
 				nil
 			end
 		end

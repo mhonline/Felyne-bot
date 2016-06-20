@@ -34,7 +34,7 @@ module FelyneBot
 					event << "```"
 					event << "Showing page #{page+1}/#{pages}"
 				end
-				puts '#{event.timestamp}: #{event.user.name}: CMD: userlist <#{page}>'
+				puts "#{event.timestamp}: #{event.user.name}: CMD: userlist <#{page}>"
 				nil
 			end
 		end

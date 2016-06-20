@@ -26,7 +26,7 @@ module FelyneBot
 					File.write('bot/maint', t3)
 					event << "#{h2} hours #{m2} minutes until the end of maintenance."
 				end
-				puts '#{event.timestamp}: #{event.user.name}: CMD: mainsetup'
+				puts "#{event.timestamp}: #{event.user.name}: CMD: mainsetup"
 				nil
 			end
 		end

@@ -12,7 +12,7 @@ module FelyneBot
 				roleplaytext = phrase.join(' ')
 				event << "sent **#{roleplaytext}** to mhodiscussion"
 				$bot.send_message(122526505606709257, roleplaytext)
-				puts '#{event.timestamp}: #{event.user.name}: CMD: roleplay'
+				puts "#{event.timestamp}: #{event.user.name}: CMD: roleplay"
 				nil
 			end
 		end

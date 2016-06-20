@@ -15,7 +15,7 @@ module FelyneBot
 					next
 					channel.send_message("**#{event.author.username}**: #{text}")
 				end
-				puts '#{event.timestamp}: #{event.user.name}: CMD: announce'
+				puts "#{event.timestamp}: #{event.user.name}: CMD: announce"
 				nil
 			end
 		end

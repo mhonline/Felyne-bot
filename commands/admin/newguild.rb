@@ -14,7 +14,7 @@ module FelyneBot
 				guilds = loadArr(guilds,"bot/guilds")
 				guilds.push(guild)
 				File.write('bot/guilds', guilds)
-				puts '#{event.timestamp}: #{event.user.name}: CMD: newguild'
+				puts "#{event.timestamp}: #{event.user.name}: CMD: newguild"
 				nil
 			end
 		end

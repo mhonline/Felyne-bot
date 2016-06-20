@@ -20,7 +20,7 @@ module FelyneBot
 				else
 					event << "#{h2} hours #{m2} minutes left until end of maintenance"
 				end
-				puts '#{event.timestamp}: #{event.user.name}: CMD: maint'
+				puts "#{event.timestamp}: #{event.user.name}: CMD: maint"
 				nil
 			end
 		end

@@ -16,7 +16,7 @@ module FelyneBot
 				event << 'Creator: @ZerO (ask him if there are any questions)'
 				event << 'Contributors: @Reaver01 and @Alice'
 				event << 'updated: 06.2016```'
-				puts '#{event.timestamp}: #{event.user.name}: CMD: info'
+				puts "#{event.timestamp}: #{event.user.name}: CMD: info"
 				nil
 			end
 		end

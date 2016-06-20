@@ -18,7 +18,7 @@ module FelyneBot
 				else
 					event << "No user found."
 				end
-				puts '#{event.timestamp}: #{event.user.name}: CMD: userremove'
+				puts "#{event.timestamp}: #{event.user.name}: CMD: userremove"
 				nil
 			end
 		end

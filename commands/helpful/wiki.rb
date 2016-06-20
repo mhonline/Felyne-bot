@@ -33,7 +33,7 @@ module FelyneBot
 						end
 					end
 				end
-				puts '#{event.timestamp}: #{event.user.name}: CMD: wiki'
+				puts "#{event.timestamp}: #{event.user.name}: CMD: wiki"
 				nil
 			end
 		end
