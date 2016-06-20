@@ -5,6 +5,7 @@ class User
 		@usr_ign=ign
 		@usr_guild=nil
 		@user_timezone=nil
+		@user_server=nil
 
 		if array.empty?
 			array.push(self)
@@ -35,6 +36,10 @@ class User
 		@usr_timezone=zone
 	end
 
+	def addServer(zone=nil)
+		@usr_server=zone
+	end
+
 #Defining the user id variable (call it with user.id)
 	def id
 		@usr_id
@@ -54,5 +59,9 @@ class User
 #Defining the user id variable (call it with user.timezone)
 	def timezone
 		@usr_timezone
+	end
+#Defining the user id variable (call it with user.server)
+	def server
+		@usr_server
 	end
 end
