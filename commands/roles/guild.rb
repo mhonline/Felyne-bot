@@ -14,8 +14,10 @@ module FelyneBot
 				guild = 0
 				if set == 'remove'
 					guilds.each { |x| 
-						role = event.server.roles.find { |role| role.name == x }
-						member.remove_role(role)
+						role = member.roles.find { |role| role.name == x }
+						if role!=nil
+							member.remove_role(role)
+						end
 					}
 					event << "Removed from all guild server roles."
 				end
