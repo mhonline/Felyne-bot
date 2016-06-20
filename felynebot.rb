@@ -27,26 +27,32 @@ module FelyneBot
 	puts "Permission Loaded!"
 
 #Admin/Troubleshooting
-	$bot.include! Commands::Ping
+	$bot.include! Commands::Eval
+	$bot.include! Commands::Info
 	$bot.include! Commands::Kill
+	$bot.include! Commands::NewGuild
+	$bot.include! Commands::Ping
 #IGN/Guild/Timezone Database
 	$bot.include! Commands::AddUser
-	$bot.include! Commands::UserIgn
-	$bot.include! Commands::UserGuild
-	$bot.include! Commands::UserTimezone
-	$bot.include! Commands::UserRemove
-	$bot.include! Commands::UserList
 	$bot.include! Commands::UserFind
+	$bot.include! Commands::UserGuild
+	$bot.include! Commands::UserIgn
+	$bot.include! Commands::UserList
+	$bot.include! Commands::UserRemove
+	$bot.include! Commands::UserTimezone
 #Helpful Commands
+	$bot.include! Commands::Help
+	$bot.include! Commands::Maint
 	$bot.include! Commands::Reset
 	$bot.include! Commands::Server
 	$bot.include! Commands::Server47
-	$bot.include! Commands::Maint
 	$bot.include! Commands::Wiki
-	$bot.include! Commands::Help
-#User Role
-	$bot.include! Commands::UserRaid
-	$bot.include! Commands::Guild
+#Mod only
+	$bot.include! Commands::Announce
+	$bot.include! Commands::Avatar
+	$bot.include! Commands::Game
+	$bot.include! Commands::MainSetup
+	$bot.include! Commands::RolePlay
 #Raids
 	$bot.include! Commands::Raid
 	$bot.include! Commands::Raid1
@@ -54,13 +60,9 @@ module FelyneBot
 	$bot.include! Commands::Raid3
 	$bot.include! Commands::Raid4
 	$bot.include! Commands::Raid5
-#Mod only
-	$bot.include! Commands::MainSetup
-	$bot.include! Commands::RolePlay
-	$bot.include! Commands::Avatar
-	$bot.include! Commands::Game
-	$bot.include! Commands::Eval
-	$bot.include! Commands::Announce
+#User Role
+	$bot.include! Commands::Guild
+	$bot.include! Commands::UserRaid
 
 #Fun Commands
 	$bot.message(containing: "(╯°□°）╯︵ ┻━┻") do |event|

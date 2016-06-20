@@ -16,7 +16,7 @@ def loadObj(ar,loc)
 	if File.exist?(loc)
 		f = File.open(loc,"r")
 		users=YAML.load(ar)
-		puts 'Loaded user database'
+		puts 'User database Loaded!'
 		f.close
 	else
 		puts 'No file to load!'
@@ -33,7 +33,7 @@ def loadusers(loc)
 	if File.exist?(loc)
 		f = File.open(loc,"r")
 		$users=YAML.load(f)
-		puts 'Loaded user database'
+		puts 'User database Loaded!'
 		f.close
 	else
 		puts 'No file to open!'
