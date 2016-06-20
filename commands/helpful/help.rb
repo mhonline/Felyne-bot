@@ -3,7 +3,7 @@ module FelyneBot
 		module Help
 			extend Discordrb::Commands::CommandContainer
 			command(
-					:help,
+					:fullhelp,
 					description: "Shows all commands. If command is added will show the description",
 					useage: "help <command>"
 			) do |event, more|
