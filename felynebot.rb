@@ -43,7 +43,7 @@ module FelyneBot
 	$bot.include! Commands::Server47
 	$bot.include! Commands::Maint
 	$bot.include! Commands::Wiki
-	$bot.include! Commands::Help
+	$bot.include! Commands::FullHelp
 #User Role
 	$bot.include! Commands::UserRaid
 	$bot.include! Commands::Guild

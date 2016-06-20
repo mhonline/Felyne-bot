@@ -1,8 +1,8 @@
 module FelyneBot
 	module Commands
-		module Help
+		module FullHelp
 			extend Discordrb::Commands::CommandContainer
-			command(:help, description: 'Shows all commands') do |event, more|
+			command(:fullhelp, description: 'Shows all commands') do |event, more|
 				admin = ['ping', 'kill']
 				database = ['adduser', 'userign', 'userguild', 'usertimezone', 'userremove', 'userlist', 'userfind']
 				helpful = ['reset', 'server', 'server47', 'maint', 'help']
