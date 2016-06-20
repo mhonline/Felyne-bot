@@ -13,12 +13,12 @@ module FelyneBot
 				mods = []
 				raids = []
 				roles = []
-				Dir["commands/admin/*.rb"].each {|basename| admin.push(basename) }
-				Dir["commands/database/*.rb"].each {|basename| database.push(basename) }
-				Dir["commands/helpful/*.rb"].each {|basename| helpful.push(basename) }
-				Dir["commands/mods/*.rb"].each {|basename| mods.push(basename) }
-				Dir["commands/raids/*.rb"].each {|basename| raids.push(basename) }
-				Dir["commands/roles/*.rb"].each {|basename| roles.push(basename) }
+				Dir["commands/admin/*.rb"].each {|file| admin.push(File.basename(file, ".rb")) }
+				Dir["commands/database/*.rb"].each {|file| database.push(File.basename(file, ".rb")) }
+				Dir["commands/helpful/*.rb"].each {|file| helpful.push(File.basename(file, ".rb")) }
+				Dir["commands/mods/*.rb"].each {|file| mods.push(File.basename(file, ".rb")) }
+				Dir["commands/raids/*.rb"].each {|file| raids.push(File.basename(file, ".rb")) }
+				Dir["commands/roles/*.rb"].each {|file| roles.push(File.basename(file, ".rb")) }
 				if more == nil
 					more = "none"
 					out = "```#IGN/Guild/Timezone Database\n"
