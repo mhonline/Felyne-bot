@@ -20,28 +20,15 @@ module FelyneBot
 				event << "User Database:"
 				event << "```Name           IGN            Guild          Timezone       Server"
 				begin
-					namel = $users[i].name.to_s.length
-					ignl = $users[i].ign.to_s.length
-					guildl = $users[i].guild.to_s.length
-					namec = $users[i].name.to_s
-					ignc = $users[i].ign.to_s
-					guildc = $users[i].guild.to_s
-					just1 = 15
-					just2 = 30
-					just3 = 45
-					just4 = 60
-					if namec then just2 = just2 - namel/2 end
-					if ignc then just3 = just3 - ignl/2 end
-					if guildc then just4 = just4 - guildl/2 end
 					str = ""
 					if $users[i].name!=nil then str << "#{$users[i].name.to_s}" end
-					str=str.ljust(just1)
+					str=str.ljust(15)
 					if $users[i].ign!=nil then str << "#{$users[i].ign.to_s}" end
-					str=str.ljust(just2)
+					str=str.ljust(30)
 					if $users[i].guild!=nil then str << "#{$users[i].guild.to_s}" end
-					str=str.ljust(just3)
+					str=str.ljust(45)
 					if $users[i].timezone!=nil then str << "#{$users[i].timezone.to_s}" end
-					str=str.ljust(just4)
+					str=str.ljust(60)
 					if $users[i].server!=nil then str << "#{$users[i].server.to_s}" end
 					event << str
 					i+=1

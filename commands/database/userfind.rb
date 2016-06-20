@@ -26,28 +26,16 @@ module FelyneBot
 					event << "Found User Database:"
 					event << "```Name           IGN            Guild          Timezone       Server"
 					begin
-						namel = found[i].name.to_s.length
-						ignl = found[i].ign.to_s.length
-						guildl = found[i].guild.to_s.length
-						namec = found[i].name.to_s
-						ignc = found[i].ign.to_s
-						guildc = found[i].guild.to_s
-						just1 = 15
-						just2 = 30
-						just3 = 45
-						just4 = 60
-						if namec then just2 = just2 - namel/2 end
-						if ignc then just3 = just3 - ignl/2 end
-						if guildc then just4 = just4 - guildl/2 end
+
 						str = ""
 						if found[i].name!=nil then str << "#{found[i].name.to_s}" end
-						str=str.ljust(just1)
+						str=str.ljust(15)
 						if found[i].ign!=nil then str << "#{found[i].ign.to_s}" end
-						str=str.ljust(just2)
+						str=str.ljust(30)
 						if found[i].guild!=nil then str << "#{found[i].guild.to_s}" end
-						str=str.ljust(just3)
+						str=str.ljust(45)
 						if found[i].timezone!=nil then str << "#{found[i].timezone.to_s}" end
-						str=str.ljust(just4)
+						str=str.ljust(60)
 						if found[i].server!=nil then str << "#{found[i].server.to_s}" end
 						event << str
 						i+=1
