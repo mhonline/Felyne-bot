@@ -19,17 +19,21 @@ module FelyneBot
 					}
 					event << "Removed from all guild server roles."
 				else
-					guilds.each { |x|
-						if search == x
-							role = event.server.roles.find { |role| role.name == search }
-							member.add_role(role)
-							guild = 1
-						end
-					}
-					if guild == 1
-						event << "Added to the #{search} guild server role"
+					if search == 'list'
+						guilds.each { |x| event << x }
 					else
-						event << "The requested guild server role does not exist.  If you would like to add your guild to the servers roles, please PM Reaver01"
+						guilds.each { |x|
+							if search == x
+								role = event.server.roles.find { |role| role.name == search }
+								member.add_role(role)
+								guild = 1
+							end
+						}
+						if guild == 1
+							event << "Added to the #{search} guild server role"
+						else
+							event << "The requested guild server role does not exist.  If you would like to add your guild to the servers roles, please PM Reaver01"
+						end
 					end
 				end
 				puts "#{event.timestamp}: #{event.user.name}: CMD: guild <#{search}>"
