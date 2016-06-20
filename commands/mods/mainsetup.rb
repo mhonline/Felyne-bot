@@ -5,10 +5,10 @@ module FelyneBot
 			command(
 					:mainsetup,
 					description: "Sets time left in maintenance.",
-					usage: "mainsetup <hours/clear> <minutes>",
+					usage: "mainsetup <start/end> <hours/clear> <minutes>",
 					permission_level: 1,
 					permission_message: "Ask a Mod or Admin to set up a Mainenance Timer!"
-			) do |event, hours, minutes|
+			) do |event, option, hours, minutes|
 				h = hours.to_i
 				m = minutes.to_i
 				t1 = Time.now
@@ -19,12 +19,23 @@ module FelyneBot
 				h2 = h1.floor
 				m1 = m1-60*h2
 				m2 = m1.floor
-				if name == "clear"
-					File.write('bot/maint', '')
-					event << "Maintenance has been cleared"
-				else
-					File.write('bot/maint', t3)
-					event << "#{h2} hours #{m2} minutes until the end of maintenance."
+				if option == "start"
+					if hours == "clear"
+						File.write('bot/maintstart', '')
+						event << "Maintenance has been cleared"
+					else
+						File.write('bot/maintstart', t3)
+						event << "#{h2} hours #{m2} minutes until the start of maintenance."
+					end
+				end
+				if option == "end"
+					if hours == "clear"
+						File.write('bot/maintend', '')
+						event << "Maintenance has been cleared"
+					else
+						File.write('bot/maintend', t3)
+						event << "#{h2} hours #{m2} minutes until the end of maintenance."
+					end
 				end
 				puts "#{event.timestamp}: #{event.user.name}: CMD: mainsetup"
 				nil
