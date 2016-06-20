@@ -29,11 +29,9 @@ module FelyneBot
 						namel = found[i].name.to_s.length
 						ignl = found[i].ign.to_s.length
 						guildl = found[i].guild.to_s.length
-						timezonel = found[i].timezone.to_s.length
 						namec = found[i].name.to_s
 						ignc = found[i].ign.to_s
 						guildc = found[i].guild.to_s
-						timezonec = found[i].timezone.to_s
 						just1 = 15
 						just2 = 30
 						just3 = 45
@@ -41,7 +39,6 @@ module FelyneBot
 						if namec then just1 = just1 - namel end
 						if ignc then just2 = just2 - ignl end
 						if guildc then just3 = just3 - guildl end
-						if timezonec then just4 = just4 - timezonec end
 						str = ""
 						if found[i].name!=nil then str << "#{found[i].name.to_s}" end
 						str=str.ljust(just1)
