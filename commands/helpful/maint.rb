@@ -22,7 +22,7 @@ module FelyneBot
 				eh2 = eh1.floor
 				em1 = em1-60*eh2
 				em2 = em1.floor
-				if t3!=""
+				if t3!=nil
 					if t3.past?
 						started << "Maintenance has started!"
 					else
@@ -31,7 +31,7 @@ module FelyneBot
 				else
 					started << "Maintenance start time not set."
 				end
-				if t4!=""
+				if t4!=nil
 					if t4.past?
 						ended << "Maintenance has Ended! GO HUNTING!"
 					else
