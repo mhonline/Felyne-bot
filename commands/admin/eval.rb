@@ -9,13 +9,12 @@ module FelyneBot
 					help_available: false,
 					permission_level: 800
 			) do |event, *code|
+				puts "#{event.timestamp}: #{event.user.name}: CMD: eval"
 				begin
 					eval code.join(' ')
 				rescue StandardError => e
 					event.respond(e.to_s)
 				end
-				puts "#{event.timestamp}: #{event.user.name}: CMD: eval"
-				nil
 			end
 		end
 	end
