@@ -31,7 +31,7 @@ module FelyneBot
 					raids.each { |x| out << "	#{$prefix}#{x}\n" }
 					out << "\n#Mod only\n"
 					mods.each { |x| out << "	#{$prefix}#{x}\n" }
-					out << "#Admin/Troubleshooting\n"
+					out << "\n#Admin/Troubleshooting\n"
 					admin.each { |x| out << "	#{$prefix}#{x}\n" }
 					out << "\nTo get more info about a specific command type: #{$prefix}help <command>```"
 				else

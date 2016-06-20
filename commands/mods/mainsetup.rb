@@ -7,6 +7,8 @@ module FelyneBot
 					description: "Sets time left in maintenance.",
 					usage: "mainsetup <start/end> <hours/clear> <minutes>",
 					permission_level: 1,
+					min_args: 2,
+					max_args: 3,
 					permission_message: "Ask a Mod or Admin to set up a Mainenance Timer!"
 			) do |event, option, hours, minutes|
 				h = hours.to_i
