@@ -16,10 +16,9 @@ module FelyneBot
 				m1 = m1-60*h2
 				m2 = m1.floor
 				if t3.past?
-						event << "Maintenance has ended! GO HUNTING!"
-					else
-						event << "#{h2} hours #{m2} minutes left until end of maintenance"
-					end
+					event << "Maintenance has ended! GO HUNTING!"
+				else
+					event << "#{h2} hours #{m2} minutes left until end of maintenance"
 				end
 				puts '#{event.timestamp}: #{event.user.name}: CMD: maint'
 				nil
