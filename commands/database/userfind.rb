@@ -36,9 +36,9 @@ module FelyneBot
 						just2 = 30
 						just3 = 45
 						just4 = 60
-						if namec then just1 = just1 - namel end
-						if ignc then just2 = just2 - ignl end
-						if guildc then just3 = just3 - guildl end
+						if namec then just2 = just2 - namel end
+						if ignc then just3 = just3 - ignl end
+						if guildc then just4 = just4 - guildl end
 						str = ""
 						if found[i].name!=nil then str << "#{found[i].name.to_s}" end
 						str=str.ljust(just1)
