@@ -17,6 +17,7 @@ module FelyneBot
 					if $users[i].ign!=nil && $users[i].ign.downcase.include?(search.downcase) then found.push($users[i]) end
 					if $users[i].guild!=nil && $users[i].guild.downcase.include?(search.downcase) then found.push($users[i]) end
 					if $users[i].timezone!=nil && $users[i].timezone.downcase.include?(search.downcase) then found.push($users[i]) end
+					if $users[i].server!=nil && $users[i].server.downcase.include?(search.downcase) then found.push($users[i]) end
 					i+=1
 				end while $users[i]!=nil
 				found.uniq!

@@ -38,6 +38,7 @@ module FelyneBot
 	$bot.include! Commands::UserIgn
 	$bot.include! Commands::UserList
 	$bot.include! Commands::UserRemove
+	$bot.include! Commands::UserServer
 	$bot.include! Commands::UserTimezone
 #Helpful Commands
 	$bot.include! Commands::Help
