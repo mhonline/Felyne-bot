@@ -18,7 +18,7 @@ module FelyneBot
 				if page>=pages then page=0 end
 				i=($users.length/pages)*page
 				event << "User Database:"
-				event << "```Name                IGN                 Guild               Timezone"
+				event << "```Name                IGN                 Guild               Timezone               Server"
 				begin
 					str = ""
 					if $users[i].name!=nil then str << "#{$users[i].name.to_s}" end
@@ -28,6 +28,8 @@ module FelyneBot
 					if $users[i].guild!=nil then str << "#{$users[i].guild.to_s}" end
 					str=str.ljust(60)
 					if $users[i].timezone!=nil then str << "#{$users[i].timezone.to_s}" end
+					str=str.ljust(80)
+					if $users[i].server!=nil then str << "#{$users[i].server.to_s}" end
 					event << str
 					i+=1
 				end while i < ($users.length/pages)*(page+1)
