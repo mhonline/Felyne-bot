@@ -5,7 +5,7 @@ module FelyneBot
 			command(
 					:guild,
 					description: "Add user to guild",
-					usage: "guild <Guildname>",
+					usage: "guild <guildname/remove/list>",
 					min_args: 1,
 					max_args: 1,
 			) do |event, search|
