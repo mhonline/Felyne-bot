@@ -13,6 +13,7 @@ require 'time_difference'
 
 #require command files
 require_relative 'class/user'
+require_relative 'class/guild'
 require_relative 'class/loader'
 require_relative 'class/strings'
 Dir["commands/*.rb"].each {|file| require_relative file }
