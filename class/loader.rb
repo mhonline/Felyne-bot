@@ -29,6 +29,12 @@ def saveObj(ar,loc)
 	else File.new(loc, 'w') {|f| f.write(YAML.dump(ar)) } end
 end
 
+def saveGuilds(ar,loc)
+	ar.sort! { |a,b| a.guild_name.downcase <=> b.guild_name.downcase }
+	if File.exist?(loc) then File.open(loc, 'w') {|f| f.write(YAML.dump(ar)) }
+	else File.new(loc, 'w') {|f| f.write(YAML.dump(ar)) } end
+end
+
 def loadusers(loc)
 	if File.exist?(loc)
 		f = File.open(loc,"r")
