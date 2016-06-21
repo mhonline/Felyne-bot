@@ -8,11 +8,16 @@ module FelyneBot
 					usage: "newguild <GuildName>",
 					min_args: 1,
 					max_args: 1,
+					permission_level: 800
 			) do |event, search|
 				search = search.to_s
 				role = event.server.roles.find { |role| role.name == search }
-				tempGuild = Guild.new(role, search, $guilds, event.message.channel, $bot)
-				saveObj($guilds,"userbase/guilds")
+				if role == nil
+					event << "The role **#{search}** does not exist on the server. Please create it before running the command again."
+				else
+					tempGuild = Guild.new(role, search, $guilds, event.message.channel, $bot)
+					saveObj($guilds,"userbase/guilds")
+				end
 				puts "#{event.timestamp}: #{event.user.name}: CMD: newguild <#{ign}>"
 				nil
 			end
