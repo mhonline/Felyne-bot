@@ -17,7 +17,7 @@ module FelyneBot
 					tempGuild = Guild.new(role, search, $guilds, event.message.channel, $bot)
 					saveObj($guilds,"userbase/guilds")
 				end
-				puts "#{event.timestamp}: #{event.user.name}: CMD: newguild <#{ign}>"
+				puts "#{event.timestamp}: #{event.user.name}: CMD: newguild <#{search}>"
 				nil
 			end
 		end
