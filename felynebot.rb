@@ -5,7 +5,7 @@ module FelyneBot
 	$users=[]
 	loadusers("userbase/users")
 	$guilds=[]
-	loadusers("userbase/guilds")
+	loadguilds("userbase/guilds")
 	info=Info.new('bot/token','bot/id')
 	token=info.token
 	id=info.id
