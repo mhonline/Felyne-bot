@@ -1,6 +1,6 @@
 class Guild
 	def initialize(role, guildname, array, channel, b)
-		@role=role
+		@guild_role=role
 		@guild_name=guildname
 		if array.empty?
 			array.push(self)
