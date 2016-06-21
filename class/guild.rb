@@ -15,8 +15,8 @@ class Guild
 		end
 	end
 #Defining the guild role variable (call it with guild.role)
-	def role
-		@role
+	def guild_role
+		@guild_role
 	end
 #Defining the guild name variable (call it with guild.name)
 	def name

@@ -10,7 +10,6 @@ module FelyneBot
 					max_args: 1,
 					permission_level: 800
 			) do |event, search|
-				search = search.to_s
 				role = event.server.roles.find { |role| role.name == search }
 				if role == nil
 					event << "The role **#{search}** does not exist on the server. Please create it before running the command again."
