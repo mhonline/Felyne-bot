@@ -4,6 +4,8 @@ module FelyneBot
 
 	$users=[]
 	loadusers("userbase/users")
+	$guilds=[]
+	loadusers("userbase/guilds")
 	info=Info.new('bot/token','bot/id')
 	token=info.token
 	id=info.id
@@ -52,6 +54,7 @@ module FelyneBot
 	$bot.include! Commands::Avatar
 	$bot.include! Commands::Game
 	$bot.include! Commands::MainSetup
+	$bot.include! Commands::NewGuild
 	$bot.include! Commands::RolePlay
 #User Role
 	$bot.include! Commands::UserRaid

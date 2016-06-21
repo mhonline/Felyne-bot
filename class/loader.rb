@@ -39,3 +39,14 @@ def loadusers(loc)
 		puts 'No file to open!'
 	end
 end
+
+def loadguilds(loc)
+	if File.exist?(loc)
+		f = File.open(loc,"r")
+		$guilds=YAML.load(f)
+		puts 'Guild database Loaded!'
+		f.close
+	else
+		puts 'No file to open!'
+	end
+end
