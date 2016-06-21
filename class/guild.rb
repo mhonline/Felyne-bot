@@ -2,7 +2,7 @@ class Guilds
 	def initialize(role, guildname, array, channel, b)
 		@guild_role=role
 		@guild_name=guildname
-		
+
 		if array.empty?
 			array.push(self)
 			b.send_message(channel, "**#{guildname}** not found in (empty) database, added. Guild: **#{guildname}**")
@@ -20,7 +20,7 @@ class Guilds
 		@guild_role
 	end
 #Defining the guild name variable (call it with guild.name)
-	def name
+	def guild_name
 		@guild_name
 	end
 end
