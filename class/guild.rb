@@ -1,11 +1,10 @@
 class Guild
 	def initialize(role, guildname, array, channel, b)
-		@role=role
-		@guild_name=guildname
-
 		if role == nil
 			b.send_message(channel, "Role for **#{guildname}** not found on server. Create role before adding guild.")
 		else
+			@role=role
+			@guild_name=guildname
 			if array.empty?
 				array.push(self)
 				b.send_message(channel, "**#{guildname}** not found in (empty) database, added. Guild: **#{guildname}**")
