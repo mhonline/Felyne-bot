@@ -23,6 +23,7 @@ Dir["commands/helpful/*.rb"].each {|file| require_relative file }
 Dir["commands/mods/*.rb"].each {|file| require_relative file }
 Dir["commands/raids/*.rb"].each {|file| require_relative file }
 Dir["commands/roles/*.rb"].each {|file| require_relative file }
+Dir["commands/other/*.rb"].each {|file| require_relative file }
 
 clock=Time.new
 
