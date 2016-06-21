@@ -9,7 +9,8 @@ module FelyneBot
 					min_args: 1,
 					max_args: 2
 			) do |event, set, search|
-				guilds = ["Hipcheckers","Hyperlynx","Stygian","MHOInter","Discord","SG★Hunters","血盟狩猎团","月夜黑貓團","为卿负天下、","Abysswalker","thelegionnaires","GatotKaca","LaTaverne","MooGoo","TheHoldingPen","花落阴影"]
+				guilds = []
+				(1..$guilds.length).each { |i| guilds.push($guilds[i-1].guild_name) }
 				member = event.user.on(event.server)
 				guild = 0
 				if set == 'remove'
