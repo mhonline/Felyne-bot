@@ -23,7 +23,7 @@ module FelyneBot
 					event << "Removed from all guild server roles."
 				end
 				if set == 'list'
-					event << "Guild roles currently set up:"
+					event << "``Guild roles currently set up:``"
 					guilds.each { |x| event << x }
 				end
 				if set == 'set'
