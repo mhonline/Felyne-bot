@@ -9,6 +9,7 @@ module FelyneBot
 					min_args: 1,
 					max_args: 1,
 			) do |event, search|
+				search = search.to_s
 				role = event.server.roles.find { |role| role.name == search }
 				tempGuild = Guild.new(role, search, $guilds, event.message.channel, $bot)
 				saveObj($guilds,"userbase/guilds")
