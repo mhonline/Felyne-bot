@@ -1,4 +1,4 @@
-class Guild
+class Guilds
 	def initialize(role, guildname, array, channel, b)
 		@guild_role=role
 		@guild_name=guildname
