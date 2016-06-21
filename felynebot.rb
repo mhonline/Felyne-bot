@@ -69,6 +69,8 @@ module FelyneBot
 #User Role
 	$bot.include! Commands::Guild
 	$bot.include! Commands::UserRaid
+#Other <not in fullhelp>
+	$bot.include! Commands::Danger
 
 #Fun Commands
 	$bot.message(containing: "(╯°□°）╯︵ ┻━┻") do |event|
