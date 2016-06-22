@@ -6,14 +6,16 @@ module FelyneBot
 					:guildwars,
 			) do |event|
 				guilds = []
-				(1..$guilds.length).each { |i| guilds.push([$guilds[i-1].guild_name, 0]) }
-				member = event.user.on(event.server)
+				(1..$guilds.length).each { |i| guilds.push({"value"=>0, "name"=>$guilds[i-1].guild_name}) }
 				(1..guilds.length).each { |i| 
-					role = event.server.roles.find { |role| role.name == guilds[i-1][0] }.id
+					role = event.server.roles.find { |role| role.name == guilds[i-1]['name'] }.id
 					members = event.server.members.select { |m| m.role?(role) }
-					guilds[i-1][1] = members.length
-					event << "Guild: #{guilds[i-1][0]} | Members: #{guilds[i-1][1]}"
-				}		
+					guilds[0]['value'] = members.length
+				}
+				sorted = guilds.sort_by { |k| k["value"] }
+				(1..guilds.length).each { |i| 
+					event << "Guild: #{guilds[i-1]['name']} | Members: #{guilds[i-1]['value']}"
+				}
 				nil
 			end
 		end
