@@ -7,7 +7,7 @@ module FelyneBot
 					description: "Changes avatar randomly",
 					useage: "avatar",
 					permission_level: 1,
-					permission_message: "I'm sorry #{event.user.name}, I cannot do that."
+					permission_message: "I'm sorry Dave, I cannot do that."
 			) do |event, text|
 				picture = 1 + rand(35)
 				$bot.profile.avatar = File.open("/Felyne-bot/pic/#{picture}.jpg")

@@ -7,7 +7,7 @@ module FelyneBot
 					description: "Nothing to see here.",
 					useage: "rp <text>",
 					permission_level: 1,
-					permission_message: "I'm sorry #{event.user.name}, I cannot do that."
+					permission_message: "I'm sorry Dave, I cannot do that."
 			) do |event, *phrase|
 				roleplaytext = phrase.join(' ')
 				event << "sent **#{roleplaytext}** to mhodiscussion"
