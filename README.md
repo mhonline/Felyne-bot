@@ -4,40 +4,64 @@
 - Type "-help" to see all commands
 
 #### Commands done
-- adduser
-- color
-- game
+##### Admin
+- eval
+- info
 - kill
 - ping
 
-#### stuff in works
+##### Database
 - adduser
-- userlist
 - userfind
-- time
-- load
-- save
-- userremove
 - userguild
-- usertimezone
 - userign
-- permission commands
+- userlist
+- userremove
+- userserver
+- usertimezone
+
+##### Helpful
+- fullhelp
+- maint
+- reset
+- server
+- server47
+- wiki
+
+##### Mods
+- announce
+- avatar
+- game
+- mainsetup
+- newguild
+- rp
+
+##### Other
+- danger
+
+##### Raids
+- raid
+- raid1
+- raid2
+- raid3
+- raid4
+- raid5
+
+##### Roles
+- guild
+- userraid
+
+#### stuff in works
+
 
 #### Commands planned
-- raid timer
-- maintenance timer
 - more stuff coming soon
 
 ##### require gems
-- 'json'
-- 'discordrb'
-- 'rubygems'
-- 'sys/uptime'
-- 'active_support'
-- 'yaml'
-- Sys
-- 'time'
-- 'rufus-scheduler'
+gem 'discordrb'
+gem 'sys-uptime'
+gem 'json'
+gem 'time_difference'
 
 thx to the whole mho community
 join our discord server to communicate
