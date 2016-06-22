@@ -16,6 +16,7 @@ module FelyneBot
 				(1..guilds.length).each { |i| 
 					event << "Guild: #{sorted[i-1]['name']} | Members: #{sorted[i-1]['value']}"
 				}
+				puts "#{event.timestamp}: #{event.user.name}: CMD: guildwars"
 				nil
 			end
 		end
