@@ -10,6 +10,7 @@ require 'yaml'
 include Sys
 require 'time'
 require 'time_difference'
+require 'terminal-table'
 
 #require command files
 require_relative 'class/user'
