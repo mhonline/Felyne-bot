@@ -8,7 +8,7 @@ module FelyneBot
 				if number == nil
 					number = 6
 				end
-				event << "A D#{number} is rolled: #{rand(1..number)}"
+				event << "A D#{number.to_i} is rolled: #{rand(1..number.to_i)}"
 				puts "#{event.timestamp}: #{event.user.name}: CMD: roll"
 				nil
 			end
