@@ -10,7 +10,7 @@ module FelyneBot
 				(1..guilds.length).each { |i| 
 					role = event.server.roles.find { |role| role.name == guilds[i-1]['name'] }.id
 					members = event.server.members.select { |m| m.role?(role) }
-					guilds[0]['value'] = members.length
+					guilds[i-1]['value'] = members.length
 				}
 				sorted = guilds.sort_by { |k| k["value"] }
 				(1..guilds.length).each { |i| 
