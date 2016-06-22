@@ -17,17 +17,21 @@ module FelyneBot
 						if list == 'armor'
 							event << "<http://monsterhunteronline.in/armor/?search=#{search}>"
 						else
-							wiki = IO.readlines("bot/wiki")[0]
-							wiki = wiki.split(",")
-							links = ""
-							wiki.grep(/#{list}/).each { |x| links << "<http://monsterhunteronline.in/#{x}> \n" }
-							if links.length > 2000
-								event << "Output has too many characters. Please be more specific in your search."
+							if list == 'monsters'
+								event << "<http://monsterhunteronline.in/monsters>"
 							else
-								if links.length < 1
-									event << "I wasn't able to dig up any results.  Please try something else!"
+								wiki = IO.readlines("bot/wiki")[0]
+								wiki = wiki.split(",")
+								links = ""
+								wiki.grep(/#{list}/).each { |x| links << "<http://monsterhunteronline.in/#{x}> \n" }
+								if links.length > 2000
+									event << "Output has too many characters. Please be more specific in your search."
 								else
-									event << links
+									if links.length < 1
+										event << "I wasn't able to dig up any results.  Please try something else!"
+									else
+										event << links
+									end
 								end
 							end
 						end
