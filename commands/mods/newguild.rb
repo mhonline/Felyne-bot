@@ -8,7 +8,8 @@ module FelyneBot
 					usage: "newguild <GuildName>",
 					min_args: 1,
 					max_args: 1,
-					permission_level: 800
+					permission_level: 800,
+					permission_message: "Talk to Reaver01 if you have a new guild you would like added to the server."
 			) do |event, search|
 				role = event.server.roles.find { |role| role.name == search }
 				if role == nil

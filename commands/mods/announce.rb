@@ -8,6 +8,7 @@ module FelyneBot
 					usage: "announce <text>",
 					min_args: 1,
 					permission_level: 800,
+					permission_message: "I'm sorry #{event.user.name}, I cannot do that."
 			) do |event, *text|
 				bot_profile = event.bot.profile.on(event.server)
 				text = text.join(' ')

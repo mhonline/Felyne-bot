@@ -7,7 +7,8 @@ module FelyneBot
 					description: "Sets game status of the bot.",
 					usage: "game <text>",
 					min_args: 1,
-					permission_level: 800
+					permission_level: 800,
+					permission_message: "I'm sorry #{event.user.name}, I cannot do that."
 			) do |event, *text|
 				gametext = text.join(' ')
 				File.write('bot/game', gametext)
