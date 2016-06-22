@@ -29,12 +29,18 @@ module FelyneBot
 					guildl = $users[i].guild.to_s.length
 					if $users[i].name.to_s.contains_cjk?
 						just1 = just1 - ((namel/4).floor)*4
+						just2 = just2 - ((namel/4).floor)*4
+						just3 = just3 - ((namel/4).floor)*4
+						just4 = just4 - ((namel/4).floor)*4
 					end
 					if $users[i].ign.to_s.contains_cjk?
 						just2 = just2 - ((ignl/4).floor)*4
+						just3 = just3 - ((ignl/4).floor)*4
+						just4 = just4 - ((ignl/4).floor)*4
 					end
 					if $users[i].guild.to_s.contains_cjk?
 						just3 = just3 - ((guildl/4).floor)*4
+						just4 = just4 - ((guildl/4).floor)*4
 					end
 					str = ""
 					if $users[i].name!=nil then str << "#{$users[i].name.to_s}" end
