@@ -58,10 +58,10 @@
 - more stuff coming soon
 
 ##### require gems
-gem 'discordrb'
-gem 'sys-uptime'
-gem 'json'
-gem 'time_difference'
+- 'discordrb'
+- 'sys-uptime'
+- 'json'
+- 'time_difference'
 
 thx to the whole mho community
 join our discord server to communicate
