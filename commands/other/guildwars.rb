@@ -14,7 +14,7 @@ module FelyneBot
 				}
 				sorted = guilds.sort_by { |k| k["value"] }
 				(1..guilds.length).each { |i| 
-					event << "Guild: #{guilds[i-1]['name']} | Members: #{guilds[i-1]['value']}"
+					event << "Guild: #{sorted[i-1]['name']} | Members: #{sorted[i-1]['value']}"
 				}
 				nil
 			end
