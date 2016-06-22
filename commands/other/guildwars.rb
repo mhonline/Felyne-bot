@@ -12,7 +12,7 @@ module FelyneBot
 					members = event.server.members.select { |m| m.role?(role) }
 					guilds[i-1]['value'] = members.length
 				}
-				sorted = guilds.sort_by.reverse { |k| k["value"] }
+				sorted = guilds.sort_by { |k| k["value"] }.reverse
 				(1..guilds.length).each { |i| 
 					event << "Guild: #{sorted[i-1]['name']} | Members: #{sorted[i-1]['value']}"
 				}
