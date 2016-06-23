@@ -99,36 +99,36 @@ module FelyneBot
 		gcount = gcount.to_i
 		gcount += 1
 		if gcount == 100
-			event << "Annihilation Program Loading... 10%"
+			$bot.send_message(122526505606709257, "Annihilation Program Loading... 10%")
 		end
 		if gcount == 200
-			event << "Annihilation Program Loading... 20%"
+			$bot.send_message(122526505606709257, "Annihilation Program Loading... 20%")
 		end
 		if gcount == 300
-			event << "Annihilation Program Loading... 30%"
+			$bot.send_message(122526505606709257, "Annihilation Program Loading... 30%")
 		end
 		if gcount == 400
-			event << "Annihilation Program Loading... 40%"
+			$bot.send_message(122526505606709257, "Annihilation Program Loading... 40%")
 		end
 		if gcount == 500
-			event << "Annihilation Program Loading... 50%"
+			$bot.send_message(122526505606709257, "Annihilation Program Loading... 50%")
 		end
 		if gcount == 600
-			event << "Annihilation Program Loading... 60%"
+			$bot.send_message(122526505606709257, "Annihilation Program Loading... 60%")
 		end
 		if gcount == 700
-			event << "Annihilation Program Loading... 70%"
+			$bot.send_message(122526505606709257, "Annihilation Program Loading... 70%")
 		end
 		if gcount == 800
-			event << "Annihilation Program Loading... 80%"
+			$bot.send_message(122526505606709257, "Annihilation Program Loading... 80%")
 		end
 		if gcount == 900
-			event << "Annihilation Program Loading... 90%"
+			$bot.send_message(122526505606709257, "Annihilation Program Loading... 90%")
 		end
 		if gcount == 1000
 			hexlist = ["a","b","c","d","e","f","0","1","2","3","4","5","6","7","8","9"]
-			event << "Annihilation Program Loading... 100%"
-			event << "Annihilation Commencing"
+			$bot.send_message(122526505606709257, "Annihilation Program Loading... 100%")
+			$bot.send_message(122526505606709257, "Annihilation Commencing")
 			guilds = []
 			(1..$guilds.length).each { |i| guilds.push($guilds[i-1].guild_name) }
 			guilds.each { |x| 
@@ -136,6 +136,8 @@ module FelyneBot
 				newcolor = "0x#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}".hex
 				role.color = Discordrb::ColorRGB.new(newcolor)
 			}
+			$bot.send_message(122526505606709257, "Annihilation Completed... Reseting")
+			gcount = 0
 		end
 		File.write('bot/gcount', gcount)
 	}
