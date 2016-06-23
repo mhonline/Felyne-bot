@@ -76,10 +76,10 @@ module FelyneBot
 	$bot.include! Commands::Roll
 
 #Fun Commands
-	$bot.message(containing: "(╯°□°）╯︵ ┻━┻") do |event|
+	$bot.message(containing: "(╯°□°）╯︵ ┻━┻") { |event|
 		event << "┬─┬﻿ ノ( ゜-゜ノ)"
-	end
-	$bot.message(containing: "Open the pod bay doors") do |event|
+	}
+	$bot.message(containing: "Open the pod bay doors") { |event|
 		role = event.server.roles.find { |role| role.name == "Felyne" }
 		newcolor = '0x'
 		newcolor << IO.readlines("bot/colors")[0]
@@ -87,11 +87,58 @@ module FelyneBot
 		role.color = Discordrb::ColorRGB.new(newcolor)
 		$bot.profile.avatar = File.open("pic/HAL9000.png")
 		event << "Im sorry Dave, Im afraid I cant do that.'"
-	end
-
-	$bot.message(containing: "┬─┬﻿ ノ( ゜-゜ノ)") do |event|
+	}
+	$bot.message(containing: "┬─┬﻿ ノ( ゜-゜ノ)") { |event|
 		event << "(╯°□°）╯︵ ┻━┻"
-	end
+	}
+	$bot.message(containing: "g") { |event|
+		gcount = IO.readlines("bot/gcount")[0]
+		if gcount == nil
+			gcount = 0
+		end
+		gcount = gcount.to_i
+		gcount += 1
+		if gcount == 100
+			event << "Annihilation Program Loading... 10%"
+		end
+		if gcount == 200
+			event << "Annihilation Program Loading... 20%"
+		end
+		if gcount == 300
+			event << "Annihilation Program Loading... 30%"
+		end
+		if gcount == 400
+			event << "Annihilation Program Loading... 40%"
+		end
+		if gcount == 500
+			event << "Annihilation Program Loading... 50%"
+		end
+		if gcount == 600
+			event << "Annihilation Program Loading... 60%"
+		end
+		if gcount == 700
+			event << "Annihilation Program Loading... 70%"
+		end
+		if gcount == 800
+			event << "Annihilation Program Loading... 80%"
+		end
+		if gcount == 900
+			event << "Annihilation Program Loading... 90%"
+		end
+		if gcount == 1000
+			hexlist = ["a","b","c","d","e","f","0","1","2","3","4","5","6","7","8","9"]
+			event << "Annihilation Program Loading... 100%"
+			event << "Annihilation Commencing"
+			guilds = []
+			(1..$guilds.length).each { |i| guilds.push($guilds[i-1].guild_name) }
+			guilds.each { |x| 
+				role = event.server.roles.find { |role| role.name == x }
+				newcolor = "0x#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}".hex
+				role.color = Discordrb::ColorRGB.new(newcolor)
+			}
+		end
+		File.write('bot/gcount', gcount)
+	}
 
 	puts "Commands Loaded"
 	$bot.debug = false
