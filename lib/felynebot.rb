@@ -91,11 +91,9 @@ module FelyneBot
 	}
 	$bot.message(containing: "g") { |event|
 		gcount = IO.readlines("bot/gcount")[0]
-		if gcount == nil
-			gcount = 0
-		end
 		gcount = gcount.to_i
 		gcount += 1
+		puts << "Number of g's in chat: #{gcount}"
 		if gcount == 100
 			event << "Annihilation Program Loading... 10%"
 		end
