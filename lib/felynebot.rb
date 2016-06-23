@@ -1,5 +1,5 @@
 module FelyneBot
-	require '/lib/felynebot/class/info'
+	require 'felynebot/class/info'
 	puts "Info Loaded"
 
 	$users = []
