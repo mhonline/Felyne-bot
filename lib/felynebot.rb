@@ -69,6 +69,7 @@ module FelyneBot
 	$bot.include! Commands::Guild
 	$bot.include! Commands::UserRaid
 #Other <not in fullhelp>
+	$bot.include! Commands::Annihilation
 	$bot.include! Commands::Danger
 	$bot.include! Commands::GuildWars
 	$bot.include! Commands::Roll
