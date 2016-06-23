@@ -38,6 +38,8 @@
 
 ##### Other
 - danger
+- guildwars
+- roll
 
 ##### Raids
 - raid
