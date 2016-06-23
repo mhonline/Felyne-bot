@@ -13,18 +13,18 @@ require 'time_difference'
 require 'terminal-table'
 
 #require command files
-require_relative 'class/user'
-require_relative 'class/guild'
-require_relative 'class/loader'
-require_relative 'class/strings'
-Dir["commands/*.rb"].each {|file| require_relative file }
-Dir["commands/admin/*.rb"].each {|file| require_relative file }
-Dir["commands/database/*.rb"].each {|file| require_relative file }
-Dir["commands/helpful/*.rb"].each {|file| require_relative file }
-Dir["commands/mods/*.rb"].each {|file| require_relative file }
-Dir["commands/raids/*.rb"].each {|file| require_relative file }
-Dir["commands/roles/*.rb"].each {|file| require_relative file }
-Dir["commands/other/*.rb"].each {|file| require_relative file }
+require_relative 'lib/felynebot/class/user'
+require_relative 'lib/felynebot/class/guild'
+require_relative 'lib/felynebot/class/loader'
+require_relative 'lib/felynebot/class/strings'
+Dir["lib/felynebot/commands/*.rb"].each {|file| require_relative file }
+Dir["lib/felynebot/commands/admin/*.rb"].each {|file| require_relative file }
+Dir["lib/felynebot/commands/database/*.rb"].each {|file| require_relative file }
+Dir["lib/felynebot/commands/helpful/*.rb"].each {|file| require_relative file }
+Dir["lib/felynebot/commands/mods/*.rb"].each {|file| require_relative file }
+Dir["lib/felynebot/commands/raids/*.rb"].each {|file| require_relative file }
+Dir["lib/felynebot/commands/roles/*.rb"].each {|file| require_relative file }
+Dir["lib/felynebot/commands/other/*.rb"].each {|file| require_relative file }
 
 clock=Time.new
 
