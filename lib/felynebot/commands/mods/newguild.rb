@@ -11,7 +11,7 @@ module FelyneBot
 					permission_level: 800,
 					permission_message: "Talk to Reaver01 if you have a new guild you would like added to the server."
 			) do |event, search|
-				role = event.server.roles.find { |role| role.name == search }
+				role = event.bot.server(122526505606709257).roles.find { |role| role.name == search }
 				if role == nil
 					event << "The role **#{search}** does not exist on the server. Please create it before running the command again."
 				else

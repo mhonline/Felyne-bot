@@ -11,12 +11,12 @@ module FelyneBot
 			) do |event, search|
 				member = event.user.on(event.server)
 				if search == 'yes'
-					role = event.server.roles.find { |role| role.name == "RaidReady" }
+					role = event.bot.server(122526505606709257).roles.find { |role| role.name == "RaidReady" }
 					member.add_role(role)
 					event << "Added to RaidReady Role"
 				end
 				if search == 'no'
-					role = event.server.roles.find { |role| role.name == "RaidReady" }
+					role = event.bot.server(122526505606709257).roles.find { |role| role.name == "RaidReady" }
 					member.remove_role(role)
 					event << "Removed from RaidReady Role"
 				nil

@@ -35,7 +35,7 @@ module FelyneBot
 					}
 					guilds.each { |x|
 						if search == x
-							role = event.server.roles.find { |role| role.name == search }
+							role = event.bot.server(122526505606709257).roles.find { |role| role.name == search }
 							member.add_role(role)
 							guild = 1
 						end

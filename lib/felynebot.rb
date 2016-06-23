@@ -78,7 +78,7 @@ module FelyneBot
 		event << "┬─┬﻿ ノ( ゜-゜ノ)"
 	}
 	$bot.message(containing: "Open the pod bay doors") { |event|
-		role = event.server.roles.find { |role| role.name == "Felyne" }
+		role = event.bot.server(122526505606709257).roles.find { |role| role.name == "Felyne" }
 		newcolor = '0x'
 		newcolor << IO.readlines("bot/colors")[0]
 		newcolor = newcolor.gsub("\n","").hex
