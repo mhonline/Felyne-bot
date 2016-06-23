@@ -93,38 +93,48 @@ module FelyneBot
 		gcount = IO.readlines("bot/gcount")[0]
 		gcount = gcount.to_i
 		gcount += 1
-		puts "Number of g's in chat: #{gcount}"
+		#puts "Number of g's in chat: #{gcount}"
 		if gcount == 100
 			$bot.send_message(122526505606709257, "Annihilation Program Loading... 10%")
+			puts gcount
 		end
 		if gcount == 200
 			$bot.send_message(122526505606709257, "Annihilation Program Loading... 20%")
+			puts gcount
 		end
 		if gcount == 300
 			$bot.send_message(122526505606709257, "Annihilation Program Loading... 30%")
+			puts gcount
 		end
 		if gcount == 400
 			$bot.send_message(122526505606709257, "Annihilation Program Loading... 40%")
+			puts gcount
 		end
 		if gcount == 500
 			$bot.send_message(122526505606709257, "Annihilation Program Loading... 50%")
+			puts gcount
 		end
 		if gcount == 600
 			$bot.send_message(122526505606709257, "Annihilation Program Loading... 60%")
+			puts gcount
 		end
 		if gcount == 700
 			$bot.send_message(122526505606709257, "Annihilation Program Loading... 70%")
+			puts gcount
 		end
 		if gcount == 800
 			$bot.send_message(122526505606709257, "Annihilation Program Loading... 80%")
+			puts gcount
 		end
 		if gcount == 900
 			$bot.send_message(122526505606709257, "Annihilation Program Loading... 90%")
+			puts gcount
 		end
 		if gcount == 1000
 			hexlist = ["a","b","c","d","e","f","0","1","2","3","4","5","6","7","8","9"]
 			$bot.send_message(122526505606709257, "Annihilation Program Loading... 100%")
 			$bot.send_message(122526505606709257, "Annihilation Commencing")
+			puts gcount
 			guilds = []
 			(1..$guilds.length).each { |i| guilds.push($guilds[i-1].guild_name) }
 			guilds.each { |x| 
