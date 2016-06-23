@@ -20,11 +20,9 @@ module FelyneBot
 	permarray = loadArr(permarray,"userbase/perm")
 
 #Loading permissions array
-	#(1..permarray.length).each { |i| $bot.set_user_permission(permarray[i-1][0],permarray[i-1][1])}
 	pos = 0
 	begin
 		$bot.set_user_permission(permarray[pos],permarray[pos+1])
-		#puts "Added #{permarray[pos+2]} as level #{permarray[pos+1]} user"
 		pos += 3
 	end while pos < permarray.length
 	puts "Permission Loaded!"
