@@ -10,7 +10,7 @@ module FelyneBot
 					permission_level: 800,
 					permission_message: "I'm sorry Dave, I cannot do that.",
 			) do |event, *code|
-				puts "#{event.timestamp}: #{event.user.name}: CMD: kill"
+				puts "#{event.timestamp}: #{event.user.name}: CMD: eval <#{code.join(' ')}>"
 				begin
 					eval code.join(' ')
 				rescue StandardError => e
