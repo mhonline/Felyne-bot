@@ -10,7 +10,7 @@ module FelyneBot
 					permission_message: "I'm sorry Dave, I cannot do that."
 			) do |event, text|
 				picture = 1 + rand(35)
-				$bot.profile.avatar = File.open("/Felyne-bot/pic/#{picture}.jpg")
+				$bot.profile.avatar = File.open("pic/#{picture}.jpg")
 				role = event.server.roles.find { |role| role.name == "Felyne" }
 				newcolor = '0x'
 				newcolor << IO.readlines("bot/colors")[picture]

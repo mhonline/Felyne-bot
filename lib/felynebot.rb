@@ -85,7 +85,7 @@ module FelyneBot
 		newcolor << IO.readlines("bot/colors")[0]
 		newcolor = newcolor.gsub("\n","").hex
 		role.color = Discordrb::ColorRGB.new(newcolor)
-		$bot.profile.avatar = File.open("/Felyne-bot/pic/HAL9000.png")
+		$bot.profile.avatar = File.open("pic/HAL9000.png")
 		event << "Im sorry Dave, Im afraid I cant do that.'"
 	end
 
