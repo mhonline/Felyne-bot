@@ -7,9 +7,9 @@ module FelyneBot
 					description: "Checks time left in game maintenance.",
 					useage: "maint"
 			) do |event|
-				t3 = IO.readlines("/bot/maintstart")[0]
+				t3 = IO.readlines("bot/maintstart")[0]
 				t3 = Time.parse(t3)
-				t4 = IO.readlines("/bot/maintend")[0]
+				t4 = IO.readlines("bot/maintend")[0]
 				t4 = Time.parse(t4)
 				t1 = Time.now
 				sh1 = TimeDifference.between(t1, t3).in_hours

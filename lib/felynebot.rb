@@ -3,10 +3,10 @@ module FelyneBot
 	puts "Info Loaded"
 
 	$users = []
-	loadusers("/userbase/users")
+	loadusers("userbase/users")
 	$guilds = []
-	loadguilds("/userbase/guilds")
-	info = Info.new('/bot/token','/bot/id')
+	loadguilds("userbase/guilds")
+	info = Info.new('bot/token','bot/id')
 	token = info.token
 	id = info.id
 
@@ -17,7 +17,7 @@ module FelyneBot
 
 #Loads permissions from array
 	permarray = []
-	permarray = loadArr(permarray,"/userbase/perm")
+	permarray = loadArr(permarray,"userbase/perm")
 
 #Loading permissions array
 	pos = 0
@@ -80,17 +80,17 @@ module FelyneBot
 	$bot.message(containing: "Open the pod bay doors") { |event|
 		role = event.server.roles.find { |role| role.name == "Felyne" }
 		newcolor = '0x'
-		newcolor << IO.readlines("/bot/colors")[0]
+		newcolor << IO.readlines("bot/colors")[0]
 		newcolor = newcolor.gsub("\n","").hex
 		role.color = Discordrb::ColorRGB.new(newcolor)
-		$bot.profile.avatar = File.open("/pic/HAL9000.png")
+		$bot.profile.avatar = File.open("pic/HAL9000.png")
 		event << "Im sorry Dave, Im afraid I cant do that.'"
 	}
 	$bot.message(containing: "┬─┬﻿ ノ( ゜-゜ノ)") { |event|
 		event << "(╯°□°）╯︵ ┻━┻"
 	}
 	$bot.message(containing: "g") { |event|
-		gcount = IO.readlines("/bot/gcount")[0]
+		gcount = IO.readlines("bot/gcount")[0]
 		if gcount == nil
 			gcount = 0
 		end
@@ -137,13 +137,13 @@ module FelyneBot
 			event << "Annihilation Complete... Reseting"
 			gcount = 0
 		end
-		File.write('/bot/gcount', gcount)
+		File.write('bot/gcount', gcount)
 	}
 
 	puts "Commands Loaded"
 	$bot.debug = false
 	$bot.run :async
-	$bot.game = IO.readlines("/bot/game")[0]
+	$bot.game = IO.readlines("bot/game")[0]
 	puts 'Sync Confirmed.'
 	puts 'SKYNET ONLINE'
 	$bot.sync

@@ -16,7 +16,7 @@ module FelyneBot
 					event << "The role **#{search}** does not exist on the server. Please create it before running the command again."
 				else
 					tempGuilds= Guilds.new(role.id, search, $guilds, event.message.channel, $bot)
-					saveGuilds($guilds,"/userbase/guilds")
+					saveGuilds($guilds,"userbase/guilds")
 				end
 				puts "#{event.timestamp}: #{event.user.name}: CMD: newguild <#{search}>"
 				nil

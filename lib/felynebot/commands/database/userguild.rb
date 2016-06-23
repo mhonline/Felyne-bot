@@ -12,7 +12,7 @@ module FelyneBot
 				temp = $users.find_index {|s| s.id == event.user.id}
 				if  temp!=nil then $users[temp].addGuild(guild) end
 				event << "Changed guild to: #{guild}"
-				saveObj($users,"/userbase/users")
+				saveObj($users,"userbase/users")
 				puts "#{event.timestamp}: #{event.user.name}: CMD: userguild <#{guild}>"
 				nil
 			end

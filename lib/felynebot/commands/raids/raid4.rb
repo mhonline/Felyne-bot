@@ -25,11 +25,11 @@ module FelyneBot
 				m1 = m1-60*h2-24*60*d2
 				m2 = m1.floor
 				if name == "clear"
-					File.write('/bot/raid4', '')
+					File.write('bot/raid4', '')
 					event << "Raid 4 has been cleared"
 				else
-					File.write('/bot/raid4', name)
-					open('/bot/raid4', 'a') { |f|
+					File.write('bot/raid4', name)
+					open('bot/raid4', 'a') { |f|
 						f.puts "\n#{t4}"
 					}
 					event << "#{d2} days #{h2} hours #{m2} minutes until #{name} raid"

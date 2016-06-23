@@ -10,7 +10,7 @@ module FelyneBot
 					max_args: 1,
 			) do |event, ign|
 				tempUser = User.new(event.user.id, event.user.name, ign, $users, event.message.channel, $bot)
-				saveObj($users,"/userbase/users")
+				saveObj($users,"userbase/users")
 				puts "#{event.timestamp}: #{event.user.name}: CMD: adduser <#{ign}>"
 				nil
 			end
