@@ -142,6 +142,7 @@ module FelyneBot
 				role = event.bot.server(122526505606709257).roles.find { |role| role.name == x }
 				newcolor = "0x#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}".hex
 				role.color = Discordrb::ColorRGB.new(newcolor)
+				role.hoist = true
 			}
 			$bot.send_message(122526505606709257, "Annihilation Complete... Reseting")
 			gcount = 0
