@@ -130,7 +130,7 @@ module FelyneBot
 			guilds = []
 			(1..$guilds.length).each { |i| guilds.push($guilds[i-1].guild_name) }
 			guilds.each { |x| 
-				role = event.server.roles.find { |role| role.name == x }
+				role = event.bot.server(122526505606709257).roles.find { |role| role.name == x }
 				newcolor = "0x#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}".hex
 				role.color = Discordrb::ColorRGB.new(newcolor)
 			}

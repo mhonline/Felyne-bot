@@ -11,7 +11,7 @@ module FelyneBot
 			) do |event, text|
 				picture = 1 + rand(35)
 				$bot.profile.avatar = File.open("pic/#{picture}.jpg")
-				role = event.server.roles.find { |role| role.name == "Felyne" }
+				role = event.bot.server(122526505606709257).roles.find { |role| role.name == "Felyne" }
 				newcolor = '0x'
 				newcolor << IO.readlines("bot/colors")[picture]
 				newcolor=newcolor.gsub("\n","").hex
