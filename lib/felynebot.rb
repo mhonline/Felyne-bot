@@ -93,7 +93,7 @@ module FelyneBot
 		gcount = IO.readlines("bot/gcount")[0]
 		gcount = gcount.to_i
 		gcount += 1
-		puts << "Number of g's in chat: #{gcount}"
+		puts "Number of g's in chat: #{gcount}"
 		if gcount == 100
 			event << "Annihilation Program Loading... 10%"
 		end
