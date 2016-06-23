@@ -31,4 +31,4 @@ clock=Time.new
 puts "Starting at: "+clock.inspect
 
 #Create the bot object
-require_relative 'felynebot'
+require_relative 'lib/felynebot'
