@@ -10,18 +10,18 @@ module FelyneBot
 				t1 = Time.now
 
 				#Get raid names from file
-				name1 = IO.readlines("bot/raid1")[0]
-				name2 = IO.readlines("bot/raid2")[0]
-				name3 = IO.readlines("bot/raid3")[0]
-				name4 = IO.readlines("bot/raid4")[0]
-				name5 = IO.readlines("bot/raid5")[0]
+				name1 = IO.readlines("/bot/raid1")[0]
+				name2 = IO.readlines("/bot/raid2")[0]
+				name3 = IO.readlines("/bot/raid3")[0]
+				name4 = IO.readlines("/bot/raid4")[0]
+				name5 = IO.readlines("/bot/raid5")[0]
 
 				#Raid 1
 				if name1.to_s == ''	#checks if raid exists
 					raid1 = "```Raid 1:  Nothing set up"	#if it doesn't sets text
 				else
 					name1 = name1.gsub("\n","")	#removes new line from string in file
-					r1t4 = IO.readlines("bot/raid1")[1]	#gets date/time from file
+					r1t4 = IO.readlines("/bot/raid1")[1]	#gets date/time from file
 					r1t4 = Time.parse(r1t4.gsub("\n",""))	#parses string as time without the new line
 					r1d1 = TimeDifference.between(t1, r1t4).in_days	#gets time diff in days
 					r1h1 = TimeDifference.between(t1, r1t4).in_hours	#gets time diff in hours
@@ -43,7 +43,7 @@ module FelyneBot
 					raid2 = "Raid 2:  Nothing set up"
 				else
 					name2 = name2.gsub("\n","")
-					r2t4 = IO.readlines("bot/raid2")[1]
+					r2t4 = IO.readlines("/bot/raid2")[1]
 					r2t4 = Time.parse(r2t4.gsub("\n",""))
 					r2d1 = TimeDifference.between(t1, r2t4).in_days
 					r2h1 = TimeDifference.between(t1, r2t4).in_hours
@@ -65,7 +65,7 @@ module FelyneBot
 					raid3 = "Raid 3:  Nothing set up"
 				else
 					name3 = name3.gsub("\n","")
-					r3t4 = IO.readlines("bot/raid3")[1]
+					r3t4 = IO.readlines("/bot/raid3")[1]
 					r3t4 = Time.parse(r3t4.gsub("\n",""))
 					r3d1 = TimeDifference.between(t1, r3t4).in_days
 					r3h1 = TimeDifference.between(t1, r3t4).in_hours
@@ -87,7 +87,7 @@ module FelyneBot
 					raid4 = "Raid 4:  Nothing set up"
 				else
 					name4 = name4.gsub("\n","")
-					r4t4 = IO.readlines("bot/raid4")[1]
+					r4t4 = IO.readlines("/bot/raid4")[1]
 					r4t4 = Time.parse(r4t4.gsub("\n",""))
 					r4d1 = TimeDifference.between(t1, r4t4).in_days
 					r4h1 = TimeDifference.between(t1, r4t4).in_hours
@@ -109,7 +109,7 @@ module FelyneBot
 					raid5 = "Raid 5:  Nothing set up```"
 				else
 					name5 = name5.gsub("\n","")
-					r5t4 = IO.readlines("bot/raid5")[1]
+					r5t4 = IO.readlines("/bot/raid5")[1]
 					r5t4 = Time.parse(r5t4.gsub("\n",""))
 					r5d1 = TimeDifference.between(t1, r5t4).in_days
 					r5h1 = TimeDifference.between(t1, r5t4).in_hours

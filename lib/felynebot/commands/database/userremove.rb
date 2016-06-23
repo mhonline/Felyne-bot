@@ -14,7 +14,7 @@ module FelyneBot
 					event << "Found #{event.user.name}"
 					$users=$users[0,temp].push(*$users.drop(temp+1))
 					event << "Removed"
-					saveObj($users, "userbase/users")
+					saveObj($users, "/userbase/users")
 				else
 					event << "No user found."
 				end

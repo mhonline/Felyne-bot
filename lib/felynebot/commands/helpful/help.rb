@@ -13,12 +13,12 @@ module FelyneBot
 				mods = []
 				raids = []
 				roles = []
-				Dir["lib/felynebot/commands/admin/*.rb"].each {|file| admin.push(File.basename(file, ".rb")) }
-				Dir["lib/felynebot/commands/database/*.rb"].each {|file| database.push(File.basename(file, ".rb")) }
-				Dir["lib/felynebot/commands/helpful/*.rb"].each {|file| helpful.push(File.basename(file, ".rb")) }
-				Dir["lib/felynebot/commands/mods/*.rb"].each {|file| mods.push(File.basename(file, ".rb")) }
-				Dir["lib/felynebot/commands/raids/*.rb"].each {|file| raids.push(File.basename(file, ".rb")) }
-				Dir["lib/felynebot/commands/roles/*.rb"].each {|file| roles.push(File.basename(file, ".rb")) }
+				Dir["lib/felyne/bot/commands/admin/*.rb"].each {|file| admin.push(File.basename(file, ".rb")) }
+				Dir["lib/felyne/bot/commands/database/*.rb"].each {|file| database.push(File.basename(file, ".rb")) }
+				Dir["lib/felyne/bot/commands/helpful/*.rb"].each {|file| helpful.push(File.basename(file, ".rb")) }
+				Dir["lib/felyne/bot/commands/mods/*.rb"].each {|file| mods.push(File.basename(file, ".rb")) }
+				Dir["lib/felyne/bot/commands/raids/*.rb"].each {|file| raids.push(File.basename(file, ".rb")) }
+				Dir["lib/felyne/bot/commands/roles/*.rb"].each {|file| roles.push(File.basename(file, ".rb")) }
 				if more == nil
 					more = "none"
 					out = "```#IGN/Guild/Timezone Database\n"

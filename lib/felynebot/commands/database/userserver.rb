@@ -6,7 +6,7 @@ module FelyneBot
 				temp = $users.find_index {|s| s.id == event.user.id}
 				if  temp!=nil then $users[temp].addServer(server) end
 				event << "Changed server to: #{server}"
-				saveObj($users,"userbase/users")
+				saveObj($users,"/userbase/users")
 				puts "#{event.timestamp}: #{event.user.name}: CMD: userserver <#{server}>"
 				nil
 			end
