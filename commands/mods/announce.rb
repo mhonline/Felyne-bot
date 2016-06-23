@@ -13,7 +13,7 @@ module FelyneBot
 				bot_profile = event.bot.profile.on(event.server)
 				text = text.join(' ')
 				event.server.text_channels.each { |x| event.bot.send_message(x, text) }
-				puts "#{event.timestamp}: #{event.user.name}: CMD: announce"
+				puts "#{event.timestamp}: #{event.user.name}: CMD: announce <#{text}>"
 				nil
 			end
 		end

@@ -34,7 +34,7 @@ module FelyneBot
 					}
 					event << "#{d2} days #{h2} hours #{m2} minutes until #{name} raid"
 				end
-				puts "#{event.timestamp}: #{event.user.name}: CMD: raid1"
+				puts "#{event.timestamp}: #{event.user.name}: CMD: raid1 <#{name}> <#{t4}>"
 			end
 		end
 	end

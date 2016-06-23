@@ -65,7 +65,7 @@ module FelyneBot
 				else
 					event << "Search string was not found in database."
 				end
-				puts "#{event.timestamp}: #{event.user.name}: CMD: userfind"
+				puts "#{event.timestamp}: #{event.user.name}: CMD: userfind <#{search}>"
 				nil
 			end
 		end

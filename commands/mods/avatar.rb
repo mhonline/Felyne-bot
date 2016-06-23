@@ -17,7 +17,7 @@ module FelyneBot
 				newcolor=newcolor.gsub("\n","").hex
 				role.color = Discordrb::ColorRGB.new(newcolor)
 				$bot.send_message(event.message.channel, "Changing Avatar!")
-				puts "#{event.timestamp}: #{event.user.name}: CMD: avatar"
+				puts "#{event.timestamp}: #{event.user.name}: CMD: avatar <#{newcolor}>"
 				nil
 			end
 		end

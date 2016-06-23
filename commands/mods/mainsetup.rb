@@ -39,7 +39,7 @@ module FelyneBot
 						event << "#{h2} hours #{m2} minutes until the end of maintenance."
 					end
 				end
-				puts "#{event.timestamp}: #{event.user.name}: CMD: mainsetup"
+				puts "#{event.timestamp}: #{event.user.name}: CMD: mainsetup <#{option}> <#{t3}>"
 				nil
 			end
 		end
