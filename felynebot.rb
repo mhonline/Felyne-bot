@@ -2,13 +2,13 @@ module FelyneBot
 	require_relative 'class/info'
 	puts "Info Loaded"
 
-	$users=[]
+	$users = []
 	loadusers("userbase/users")
-	$guilds=[]
+	$guilds = []
 	loadguilds("userbase/guilds")
-	info=Info.new('bot/token','bot/id')
-	token=info.token
-	id=info.id
+	info = Info.new('bot/token','bot/id')
+	token = info.token
+	id = info.id
 
 	$prefix = '-'
 
@@ -16,15 +16,16 @@ module FelyneBot
 	puts "BOT Loaded"
 
 #Loads permissions from array
-	permarray=[]
+	permarray = []
 	permarray = loadArr(permarray,"userbase/perm")
 
 #Loading permissions array
-	pos=0
+	#(1..permarray.length).each { |i| $bot.set_user_permission(permarray[i-1][0],permarray[i-1][1])}
+	pos = 0
 	begin
 		$bot.set_user_permission(permarray[pos],permarray[pos+1])
 		#puts "Added #{permarray[pos+2]} as level #{permarray[pos+1]} user"
-		pos+=3
+		pos += 3
 	end while pos < permarray.length
 	puts "Permission Loaded!"
 
@@ -82,7 +83,7 @@ module FelyneBot
 		role = event.server.roles.find { |role| role.name == "Felyne" }
 		newcolor = '0x'
 		newcolor << IO.readlines("bot/colors")[0]
-		newcolor=newcolor.gsub("\n","").hex
+		newcolor = newcolor.gsub("\n","").hex
 		role.color = Discordrb::ColorRGB.new(newcolor)
 		$bot.profile.avatar = File.open("/Felyne-bot/pic/HAL9000.png")
 		event << "Im sorry Dave, Im afraid I cant do that.'"
