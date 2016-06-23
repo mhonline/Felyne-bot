@@ -7,22 +7,32 @@ module FelyneBot
 					description: "Checks time left in game maintenance.",
 					useage: "maint"
 			) do |event|
-				t3 = IO.readlines("bot/maintstart")[0]
-				t3 = Time.parse(t3)
-				t4 = IO.readlines("bot/maintend")[0]
-				t4 = Time.parse(t4)
 				t1 = Time.now
-				sh1 = TimeDifference.between(t1, t3).in_hours
-				sm1 = TimeDifference.between(t1, t3).in_minutes
-				sh2 = sh1.floor
-				sm1 = sm1-60*sh2
-				sm2 = sm1.floor
-				eh1 = TimeDifference.between(t1, t4).in_hours
-				em1 = TimeDifference.between(t1, t4).in_minutes
-				eh2 = eh1.floor
-				em1 = em1-60*eh2
-				em2 = em1.floor
-				if t3!=""
+
+				t3 = IO.readlines("bot/maintstart")[0]
+				if t3 == nil
+					t3 = "notime"
+				else
+					t3 = Time.parse(t3)
+					sh1 = TimeDifference.between(t1, t3).in_hours
+					sm1 = TimeDifference.between(t1, t3).in_minutes
+					sh2 = sh1.floor
+					sm1 = sm1-60*sh2
+					sm2 = sm1.floor
+				end
+
+				t4 = IO.readlines("bot/maintend")[0]
+				if t4 == nil
+					t4 = "notime"
+				else
+					t4 = Time.parse(t4)
+					eh1 = TimeDifference.between(t1, t4).in_hours
+					em1 = TimeDifference.between(t1, t4).in_minutes
+					eh2 = eh1.floor
+					em1 = em1-60*eh2
+					em2 = em1.floor
+				end
+				if t3!="notime"
 					if t3.past?
 						started = "Maintenance has started!"
 					else
@@ -31,7 +41,7 @@ module FelyneBot
 				else
 					started = "Maintenance start time not set."
 				end
-				if t4!=""
+				if t4!="notime"
 					if t4.past?
 						ended = "Maintenance has Ended! GO HUNTING!"
 					else
