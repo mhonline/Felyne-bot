@@ -1,5 +1,5 @@
 module FelyneBot
-	require_relative '/lib/felyne/bot/class/info'
+	require_relative '/lib/felynebot/class/info'
 	puts "Info Loaded"
 
 	$users = []
