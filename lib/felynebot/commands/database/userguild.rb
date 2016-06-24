@@ -14,7 +14,7 @@ module FelyneBot
 				#Roles function
 				guilds = []
 				(1..$guilds.length).each { |i|
-					name_server = "#{$guilds[i-1].guild_name}    #{$guilds[i-1].guild_server}"
+					name_server = "#{$guilds[i-1].guild_name}        (#{$guilds[i-1].guild_server})"
 					guilds.push(name_server)
 				}
 				member = event.user.on(event.server)
