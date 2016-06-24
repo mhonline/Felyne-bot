@@ -58,9 +58,6 @@ module FelyneBot
 	$bot.include! Commands::MainSetup
 	$bot.include! Commands::NewGuild
 	$bot.include! Commands::RolePlay
-#User Role
-	$bot.include! Commands::UserRaid
-	$bot.include! Commands::Guild
 #Raids
 	$bot.include! Commands::Raid
 	$bot.include! Commands::Raid1
