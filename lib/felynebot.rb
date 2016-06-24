@@ -44,11 +44,27 @@ module FelyneBot
 	$bot.include! Commands::UserServer
 	$bot.include! Commands::UserTimezone
 #Helpful Commands
+	$bot.include! Commands::Ass
+	$bot.include! Commands::Awaken
+	$bot.include! Commands::Bounty
+	$bot.include! Commands::CatQuest
+	$bot.include! Commands::CatVids
+	$bot.include! Commands::Coupon
+	$bot.include! Commands::Damage
+	$bot.include! Commands::Deco
+	$bot.include! Commands::Helix
 	$bot.include! Commands::Help
+	$bot.include! Commands::HGE
 	$bot.include! Commands::Maint
+	$bot.include! Commands::Ports
 	$bot.include! Commands::Reset
 	$bot.include! Commands::Server
 	$bot.include! Commands::Server47
+	$bot.include! Commands::SetBuild
+	$bot.include! Commands::Shell
+	$bot.include! Commands::Stars
+	$bot.include! Commands::Talents
+	$bot.include! Commands::Unstable
 	$bot.include! Commands::Wiki
 #Mod only
 	$bot.include! Commands::Announce
