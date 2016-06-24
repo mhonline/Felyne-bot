@@ -114,6 +114,8 @@ module FelyneBot
 		if gcount == 900 then $bot.send_message(122526505606709257, "Annihilation Program Loading... 90%");puts gcount end
 
 		if gcount == 1000
+			gcount = 0
+			File.write('bot/gcount', gcount)
 			hexlist = ["a","b","c","d","e","f","0","1","2","3","4","5","6","7","8","9"]
 			$bot.send_message(122526505606709257, "Annihilation Program Loading... 100%")
 			$bot.send_message(122526505606709257, "Annihilation Commencing")
@@ -127,7 +129,6 @@ module FelyneBot
 				role.hoist = true
 			}
 			$bot.send_message(122526505606709257, "Annihilation Complete... Reseting")
-			gcount = 0
 		end
 		File.write('bot/gcount', gcount)
 	}
