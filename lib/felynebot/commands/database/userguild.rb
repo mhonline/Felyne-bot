@@ -46,7 +46,7 @@ module FelyneBot
 						end
 					}
 				if guild == 1
-					if  temp!=nil then $users[temp].addGuild(set) end
+					if  temp!=nil then $users[temp].addGuild(search) end
 					event << "Changed guild to: #{guild}"
 					saveObj($users,"userbase/users")
 					event << "Added to the #{search} guild server role"
