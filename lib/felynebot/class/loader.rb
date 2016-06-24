@@ -15,18 +15,18 @@ end
 def loadObj(ar,loc)
 	if File.exist?(loc)
 		f = File.open(loc,"r")
-		users=YAML.load(ar)
-		puts 'User database Loaded!'
+		ar=YAML.load(f)
+		puts "Loaded #{loc}"
 		f.close
 	else
-		puts 'No file to load!'
+		puts "No file #{loc} to load!"
 	end
 end
 #save object arrays
 def saveObj(ar,loc)
 	ar.sort! { |a,b| a.name.downcase <=> b.name.downcase }
 	if File.exist?(loc) then File.open(loc, 'w') {|f| f.write(YAML.dump(ar)) }
-	else File.new(loc, 'w') {|f| f.write(YAML.dump(ar)) } end
+	else File.open(loc, 'w') {|f| f.write(YAML.dump(ar)) } end
 end
 
 def saveGuilds(ar,loc)
@@ -35,6 +35,17 @@ def saveGuilds(ar,loc)
 	else File.new(loc, 'w') {|f| f.write(YAML.dump(ar)) } end
 end
 
+
+def loadmess(loc)
+	if File.exist?(loc)
+		f = File.open(loc,"r")
+		$mess=YAML.load(f)
+		puts 'Mess database Loaded!'
+		f.close
+	else
+		puts 'No file to open!'
+	end
+end
 def loadusers(loc)
 	if File.exist?(loc)
 		f = File.open(loc,"r")
