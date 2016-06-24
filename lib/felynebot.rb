@@ -8,7 +8,6 @@ module FelyneBot
 	loadusers("userbase/users")
 	loadmess("userbase/mess")
 	loadguilds("userbase/guilds")
-	p $mess
 	info = Info.new('bot/token','bot/id')
 	token = info.token
 	id = info.id
