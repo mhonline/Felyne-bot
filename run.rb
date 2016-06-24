@@ -13,6 +13,7 @@ require 'time_difference'
 
 #require command files
 require_relative 'lib/felynebot/class/user'
+require_relative 'lib/felynebot/class/mess'
 require_relative 'lib/felynebot/class/guild'
 require_relative 'lib/felynebot/class/loader'
 require_relative 'lib/felynebot/class/strings'
