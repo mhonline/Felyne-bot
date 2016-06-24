@@ -13,7 +13,10 @@ module FelyneBot
 				temp = $users.find_index {|s| s.id == event.user.id}
 				#Roles function
 				guilds = []
-				(1..$guilds.length).each { |i| guilds.push($guilds[i-1].guild_name+"    "+$guilds[i-1].guild_server) }
+				(1..$guilds.length).each { |i|
+					name_server = "#{$guilds[i-1].guild_name}    #{$guilds[i-1].guild_server}"
+					guilds.push(name_server)
+				}
 				member = event.user.on(event.server)
 				guild = 0
 				if set == 'remove'
