@@ -69,7 +69,6 @@ module FelyneBot
 	$bot.include! Commands::Raid4
 	$bot.include! Commands::Raid5
 #User Role
-	$bot.include! Commands::Guild
 	$bot.include! Commands::UserRaid
 #Other <not in fullhelp>
 	$bot.include! Commands::Annihilation
