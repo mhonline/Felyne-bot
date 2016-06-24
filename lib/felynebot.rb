@@ -102,6 +102,7 @@ module FelyneBot
 		end
 		gcount = gcount.to_i
 		gcount += 1
+		File.write('bot/gcount', gcount)
 		#puts "Number of g's in chat: #{gcount}"
 		if gcount == 100 then $bot.send_message(122526505606709257, "Annihilation Program Loading... 10%");puts gcount end
 		if gcount == 200 then $bot.send_message(122526505606709257, "Annihilation Program Loading... 20%");puts gcount end
@@ -114,8 +115,7 @@ module FelyneBot
 		if gcount == 900 then $bot.send_message(122526505606709257, "Annihilation Program Loading... 90%");puts gcount end
 
 		if gcount == 1000
-			gcount = 0
-			File.write('bot/gcount', gcount)
+			File.write('bot/gcount', "0")
 			hexlist = ["a","b","c","d","e","f","0","1","2","3","4","5","6","7","8","9"]
 			$bot.send_message(122526505606709257, "Annihilation Program Loading... 100%")
 			$bot.send_message(122526505606709257, "Annihilation Commencing")
@@ -130,7 +130,6 @@ module FelyneBot
 			}
 			$bot.send_message(122526505606709257, "Annihilation Complete... Reseting")
 		end
-		File.write('bot/gcount', gcount)
 	}
 
 	#Code for saving the last message of someone
