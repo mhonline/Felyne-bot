@@ -8,34 +8,34 @@ module FelyneBot
 					useage: "sets <weapon>"
 			) do |event, *weapon|
 				weapon = weapon.join(' ')
-				if weapon == "Lance" || weapon == "lance" || weapon == "L" || weapon == "l"
+				if ["Lance", "lance", "L", "l"].include? weapon
 					event << "``Lance Sets:``"
 				end
-				if weapon == "Gunlance" || "gunlance" || "GL" || "Gl" || "gl"
+				if ["Gunlance", "gunlance", "GL", "Gl", "gl"].include? weapon
 					event << "``Gunlance Sets:``"
 				end
-				if weapon == "Sword and Shield" || "sword and shield" || "SnS" || "SNS" || "sns"
+				if ["Sword and Shield", "sword and shield", "SnS", "SNS", "sns"].include? weapon
 					event << "``Sword and Shield Sets:``"
 				end
-				if weapon == "Greatsword" || "greatsword" || "GS" || "Gs" || "gs"
+				if ["Greatsword", "greatsword", "GS", "Gs", "gs"].include? weapon
 					event << "``Greatsword Sets:``"
 				end
-				if weapon == "Longsword" || "longsword" || "LS" || "Ls" || "ls"
+				if ["Longsword", "longsword", "LS", "Ls", "ls"].include? weapon
 					event << "``Longsword Sets:``"
 				end
-				if weapon == "Hammer" || "hammer" || "H" || "h"
+				if ["Hammer", "hammer", "H", "h"].include? weapon
 					event << "``Hammer Sets:``"
 				end
-				if weapon == "Dual Blades" || "dual blades" || "DB" || "Db" || "db" || "DS" || "Ds" || "ds" || "Dual Swords" || "dual swords"
+				if ["Dual Blades", "dual blades", "DB", "Db", "db", "DS", "Ds", "ds", "Dual Swords", "dual swords"].include? weapon
 					event << "``Dual Blades Sets:``"
 				end
-				if weapon == "Hunting Horn" || "hunting horn" || "HH" || "Hh" || "hh"
+				if ["Hunting Horn", "hunting horn", "HH", "Hh", "hh"].include? weapon
 					event << "``Hunting Horn Sets:``"
 				end
-				if weapon == "Bow" || "bow" || "B" || "b"
+				if ["Bow", "bow", "B", "b"].include? weapon
 					event << "``Bow Sets:``"
 				end
-				if weapon == "Bowgun" || "bowgun" || "BG" || "Bg" || "bg"
+				if ["Bowgun", "bowgun", "BG", "Bg", "bg"].include? weapon
 					event << "``Bowgun Sets:``"
 				end
 				puts "#{event.timestamp}: #{event.user.name}: CMD: sets <#{weapon}>"
