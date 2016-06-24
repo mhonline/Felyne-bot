@@ -7,7 +7,7 @@ module FelyneBot
 					description: "Adds guild for user to the database.",
 					usage: "userguild <set/remove/list> <guildname>",
 					max_args: 2,
-					min_args: 2
+					min_args: 1
 			) do |event, set, search|
 				#Database function
 				temp = $users.find_index {|s| s.id == event.user.id}

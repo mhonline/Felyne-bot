@@ -1,7 +1,8 @@
 class Guilds
-	def initialize(role, guildname, array, channel, b)
+	def initialize(role, guildname, server, array, channel, b)
 		@guild_role=role
 		@guild_name=guildname
+		@guild_server=server
 
 		if array.empty?
 			array.push(self)
@@ -22,5 +23,8 @@ class Guilds
 #Defining the guild name variable (call it with guild.name)
 	def guild_name
 		@guild_name
+	end
+	def guild_server
+		@guild_server
 	end
 end
