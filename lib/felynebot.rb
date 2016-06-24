@@ -2,10 +2,13 @@ module FelyneBot
 	require_relative 'felynebot/class/info'
 	puts "Info Loaded"
 
+	$mess = []
 	$users = []
-	loadusers("userbase/users")
 	$guilds = []
+	loadusers("userbase/users")
+	loadmess("userbase/mess")
 	loadguilds("userbase/guilds")
+	p $mess
 	info = Info.new('bot/token','bot/id')
 	token = info.token
 	id = info.id
@@ -73,6 +76,7 @@ module FelyneBot
 	$bot.include! Commands::Danger
 	$bot.include! Commands::GuildWars
 	$bot.include! Commands::Roll
+	$bot.include! Commands::Last
 
 #Fun Commands
 	$bot.message(containing: "(╯°□°）╯︵ ┻━┻") { |event|
@@ -91,46 +95,24 @@ module FelyneBot
 		event << "(╯°□°）╯︵ ┻━┻"
 	}
 	$bot.message(containing: "g") { |event|
-		gcount = IO.readlines("bot/gcount")[0]
+		if File.file?("bot/gcount")
+			gcount = IO.readlines("bot/gcount")[0]
+		else
+			gcount=0
+		end
 		gcount = gcount.to_i
 		gcount += 1
 		#puts "Number of g's in chat: #{gcount}"
-		if gcount == 100
-			$bot.send_message(122526505606709257, "Annihilation Program Loading... 10%")
-			puts gcount
-		end
-		if gcount == 200
-			$bot.send_message(122526505606709257, "Annihilation Program Loading... 20%")
-			puts gcount
-		end
-		if gcount == 300
-			$bot.send_message(122526505606709257, "Annihilation Program Loading... 30%")
-			puts gcount
-		end
-		if gcount == 400
-			$bot.send_message(122526505606709257, "Annihilation Program Loading... 40%")
-			puts gcount
-		end
-		if gcount == 500
-			$bot.send_message(122526505606709257, "Annihilation Program Loading... 50%")
-			puts gcount
-		end
-		if gcount == 600
-			$bot.send_message(122526505606709257, "Annihilation Program Loading... 60%")
-			puts gcount
-		end
-		if gcount == 700
-			$bot.send_message(122526505606709257, "Annihilation Program Loading... 70%")
-			puts gcount
-		end
-		if gcount == 800
-			$bot.send_message(122526505606709257, "Annihilation Program Loading... 80%")
-			puts gcount
-		end
-		if gcount == 900
-			$bot.send_message(122526505606709257, "Annihilation Program Loading... 90%")
-			puts gcount
-		end
+		if gcount == 100 then $bot.send_message(122526505606709257, "Annihilation Program Loading... 10%");puts gcount end
+		if gcount == 200 then $bot.send_message(122526505606709257, "Annihilation Program Loading... 20%");puts gcount end
+		if gcount == 300 then $bot.send_message(122526505606709257, "Annihilation Program Loading... 30%");puts gcount end
+		if gcount == 400 then $bot.send_message(122526505606709257, "Annihilation Program Loading... 40%");puts gcount end
+		if gcount == 500 then $bot.send_message(122526505606709257, "Annihilation Program Loading... 50%");puts gcount end
+		if gcount == 600 then $bot.send_message(122526505606709257, "Annihilation Program Loading... 60%");puts gcount end
+		if gcount == 700 then $bot.send_message(122526505606709257, "Annihilation Program Loading... 70%");puts gcount end
+		if gcount == 800 then $bot.send_message(122526505606709257, "Annihilation Program Loading... 80%");puts gcount end
+		if gcount == 900 then $bot.send_message(122526505606709257, "Annihilation Program Loading... 90%");puts gcount end
+
 		if gcount == 1000
 			hexlist = ["a","b","c","d","e","f","0","1","2","3","4","5","6","7","8","9"]
 			$bot.send_message(122526505606709257, "Annihilation Program Loading... 100%")
@@ -138,7 +120,7 @@ module FelyneBot
 			puts gcount
 			guilds = []
 			(1..$guilds.length).each { |i| guilds.push($guilds[i-1].guild_name) }
-			guilds.each { |x| 
+			guilds.each { |x|
 				role = event.bot.server(122526505606709257).roles.find { |role| role.name == x }
 				newcolor = "0x#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}".hex
 				role.color = Discordrb::ColorRGB.new(newcolor)
@@ -150,10 +132,32 @@ module FelyneBot
 		File.write('bot/gcount', gcount)
 	}
 
+	#Code for saving the last message of someone
+	$bot.message() { |event|
+		if $mess.empty?
+			Mess.new(event.user.id, event.user.name, event.timestamp, event.message.to_s, $mess)
+			saveObj($mess,"userbase/mess")
+		else
+			if $mess.any?{|a| a.id == event.user.id}
+				pos=$mess.find_index {|item| item.id == event.user.id}
+				$mess[pos].s_name(event.user.name)
+				$mess[pos].s_time(event.timestamp)
+				$mess[pos].s_mess(event.message.to_s)
+				saveObj($mess,"userbase/mess")
+			else
+				Mess.new(event.user.id, event.user.name, event.timestamp, event.message.to_s, $mess)
+				saveObj($mess,"userbase/mess")
+			end
+		end
+	}
 	puts "Commands Loaded"
 	$bot.debug = false
 	$bot.run :async
-	$bot.game = IO.readlines("bot/game")[0]
+	if File.file?("bot/game")
+		$bot.game = IO.readlines("bot/game")[0]
+	else
+		$bot.game = 0
+	end
 	puts 'Sync Confirmed.'
 	puts 'SKYNET ONLINE'
 	$bot.sync
