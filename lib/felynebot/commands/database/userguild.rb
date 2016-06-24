@@ -13,9 +13,13 @@ module FelyneBot
 				temp = $users.find_index {|s| s.id == event.user.id}
 				#Roles function
 				guilds = []
+				servers = []
+				guilds2 = []
 				(1..$guilds.length).each { |i|
 					name_server = "#{$guilds[i-1].guild_name}        (#{$guilds[i-1].guild_server})"
-					guilds.push(name_server)
+					guilds.push($guilds[i-1].guild_name)
+					guilds2.push(name_server)
+					servers.push({"name"=>"#{$guilds[i-1].guild_name}","server"=>"#{$guilds[i-1].guild_server}"})
 				}
 				member = event.user.on(event.server)
 				guild = 0
@@ -32,7 +36,7 @@ module FelyneBot
 				end
 				if set == 'list'
 					event << "``Guild roles currently set up:``"
-					guilds.each { |x| event << x }
+					guilds2.each { |x| event << x }
 				end
 				if set == 'set'
 					guilds.each { |x| 
@@ -49,7 +53,14 @@ module FelyneBot
 						end
 					}
 				if guild == 1
-					if  temp!=nil then $users[temp].addGuild(search) end
+					if  temp!=nil 
+						$users[temp].addGuild(search)
+						servers.each { |x| 
+							if servers[x]['name'] == search
+								$users[temp].addServer(servers[x]['server'])
+							end
+						}
+					end
 					event << "Changed guild to: #{guild}"
 					saveObj($users,"userbase/users")
 					event << "Added to the #{search} guild server role"
