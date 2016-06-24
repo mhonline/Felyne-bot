@@ -61,6 +61,7 @@ module FelyneBot
 	$bot.include! Commands::Server
 	$bot.include! Commands::Server47
 	$bot.include! Commands::SetBuild
+	$bot.include! Commands::Sets
 	$bot.include! Commands::Shell
 	$bot.include! Commands::Stars
 	$bot.include! Commands::Talents
