@@ -55,8 +55,8 @@ module FelyneBot
 				if guild == 1
 					if  temp!=nil 
 						$users[temp].addGuild(search)
-						servers.each { |x| 
-							if servers[x]['name'] == search
+						(1..servers.length).each { |x|
+							if servers[x-1]['name'] == search
 								$users[temp].addServer(servers[x]['server'])
 							end
 						}
