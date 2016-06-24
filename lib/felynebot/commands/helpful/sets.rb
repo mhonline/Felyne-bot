@@ -8,7 +8,7 @@ module FelyneBot
 					useage: "sets <weapon>"
 			) do |event, *weapon|
 				weapon = weapon.join(' ')
-				if weapon == "Lance" || "lance" || "L" || "l"
+				if weapon == "Lance" || weapon == "lance" || weapon == "L" || weapon == "l"
 					event << "``Lance Sets:``"
 				end
 				if weapon == "Gunlance" || "gunlance" || "GL" || "Gl" || "gl"
