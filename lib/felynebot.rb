@@ -152,7 +152,7 @@ module FelyneBot
 		ecount = ecount.to_i
 		ecount += 1
 		File.write('bot/ecount', ecount)
-		if ecount == 1500
+		if ecount == 500
 			File.write('bot/ecount', "0")
 			File.write('bot/gcount', "0")
 			$bot.send_message(122526505606709257, "Annihilation Program has been interrupted... Reseting")
