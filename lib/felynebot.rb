@@ -46,6 +46,7 @@ module FelyneBot
 #Helpful Commands
 	$bot.include! Commands::Ass
 	$bot.include! Commands::Awaken
+	$bot.include! Commands::Blog
 	$bot.include! Commands::Bounty
 	$bot.include! Commands::CatQuest
 	$bot.include! Commands::CatVids
