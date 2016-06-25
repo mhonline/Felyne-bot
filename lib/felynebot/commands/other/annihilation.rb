@@ -8,8 +8,12 @@ module FelyneBot
 			) do |event, number|
 				gcount = IO.readlines("bot/gcount")[0]
 				gcount = gcount.to_i
+				ecount = IO.readlines("bot/ecount")[0]
+				ecount = gcount.to_i
 				a = (gcount / 10.00)
+				b = (ecount / 10.00)
 				event << "Annihilation Program is currently #{a}% loaded."
+				event << "Annihilation interrupt Program is currently #{b}% loaded."
 				puts "#{event.timestamp}: #{event.user.name}: CMD: annil"
 				nil
 			end
