@@ -129,7 +129,7 @@ module FelyneBot
 
 		if gcount == 1000
 			File.write('bot/gcount', "0")
-			hexlist = ["a","b","c","d","e","f","0","1","2","3","4","5","6","7","8","9"]
+			hexlist = ["ffbf00","ffff00","bfff00","80ff00","40ff00","00ff00","00ff40","00ff80","00ffbf","00ffff","00bfff","0080ff","0040ff","0000ff","4000ff","8000ff","bf00ff","ff00ff","ff00bf","ff0080"]
 			$bot.send_message(122526505606709257, "Annihilation Program Loading... 100%")
 			$bot.send_message(122526505606709257, "Annihilation Commencing")
 			puts gcount
@@ -137,7 +137,7 @@ module FelyneBot
 			(1..$guilds.length).each { |i| guilds.push($guilds[i-1].guild_name) }
 			guilds.each { |x|
 				role = event.bot.server(122526505606709257).roles.find { |role| role.name == x }
-				newcolor = "0x#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}#{hexlist[rand(0..15)]}".hex
+				newcolor = "0x#{hexlist[rand(0..19)]}".hex
 				role.color = Discordrb::ColorRGB.new(newcolor)
 				role.hoist = true
 			}
@@ -153,7 +153,7 @@ module FelyneBot
 		ecount = ecount.to_i
 		ecount += 1
 		File.write('bot/ecount', ecount)
-		if ecount == 5000
+		if ecount == 2000
 			File.write('bot/ecount', "0")
 			File.write('bot/gcount', "0")
 			$bot.send_message(122526505606709257, "Annihilation Program has been interrupted... Reseting")
