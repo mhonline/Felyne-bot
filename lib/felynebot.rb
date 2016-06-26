@@ -59,6 +59,7 @@ module FelyneBot
 	$bot.include! Commands::Maint
 	$bot.include! Commands::Ports
 	$bot.include! Commands::Reset
+	$bot.include! Commands::Sasha
 	$bot.include! Commands::Server
 	$bot.include! Commands::Server47
 	$bot.include! Commands::SetBuild
