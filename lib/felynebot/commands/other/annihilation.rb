@@ -11,7 +11,7 @@ module FelyneBot
 				ecount = IO.readlines("bot/ecount")[0]
 				ecount = ecount.to_i
 				a = (gcount / 10.00)
-				b = (ecount / 10.00)
+				b = (ecount / 50.00)
 				event << "Annihilation Program is currently #{a}% loaded."
 				event << "Annihilation interrupt Program is currently #{b}% loaded."
 				puts "#{event.timestamp}: #{event.user.name}: CMD: annil"
