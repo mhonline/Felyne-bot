@@ -10,9 +10,8 @@ module FelyneBot
 					min_args: 1,
 					max_args: 2,
 					permission_message: "I'm sorry Dave, I cannot do that.",
-			) do |event, uname, level=1|
-				permarray = []
-				permarray = loadArr(permarray,"userbase/perm")
+			) do |event, uname, level|
+				permarray = getline("userbase/perm",1)
 				userid = $bot.parse_mention(uname).id
 				username = $bot.parse_mention(uname).name
 				if userid != nil
