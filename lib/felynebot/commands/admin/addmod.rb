@@ -10,8 +10,10 @@ module FelyneBot
 					min_args: 1,
 					max_args: 4,
 					permission_message: "I'm sorry Dave, I cannot do that.",
-			) do |event, uname, level=1, force1="no", force2="no"|
-				level = level.to_i
+			) do |event, uname, level=1, force="no"|
+				if level != "delete"
+					level = level.to_i
+				end
 				permarray = []
 				permarray = loadArr(permarray,"userbase/perm")
 				if $bot.parse_mention(uname) !=nil
@@ -23,14 +25,14 @@ module FelyneBot
 						i = hash[userid].to_i
 						curlevel = permarray[i+1]
 						if [800, 999].include? curlevel
-							if force1 == "yes"
+							if force == "yes"
 								event << "Forcing permission change to lower level."
 							end
-							if force1 == "no"
+							if force == "no"
 								event << "User permissions level is admin or higher, you must force permissions change to set lower."
 							end
-							if force1 == "delete"
-								if force2 == yes
+							if level == "delete"
+								if force == yes
 									event << "Force deleting user's permissions"
 								else
 									event << "You must force deletion of admin or botmaster"
