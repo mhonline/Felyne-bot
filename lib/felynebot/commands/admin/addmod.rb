@@ -26,23 +26,29 @@ module FelyneBot
 						hash = Hash[permarray.map.with_index.to_a]
 						i = hash[userid].to_i
 						curlevel = permarray[i+1]
+						event << "Current permission level: #{curlevel}"
 						if [800, 999].include? curlevel
-							if force == "yes"
-								event << "Forcing permission change to lower level."
-							end
-							if force == "no"
-								event << "User permissions level is admin or higher, you must force permissions change to set lower."
-							end
 							if del == "yes"
 								if force == "yes"
 									event << "Force deleting user's permissions"
 								else
 									event << "You must force deletion of admin or botmaster"
 								end
+							else
+								if force == "yes"
+									event << "Forcing permission change to lower level."
+								end
+								if force == "no"
+									event << "User permissions level is admin or higher, you must force permissions change to set lower."
+								end
+							end
+						else
+							if del == "yes"
+								event << "Deleting user's permissions"
+							else
+								event << "Changing user's permissions"
 							end
 						end
-
-						event << "Current permission level: #{curlevel}"
 					else
 						event << "User permissions not found... Adding permissions."
 					end
