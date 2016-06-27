@@ -62,6 +62,12 @@ module FelyneBot
 						permarray.push(userid,level,username)
 					end
 					File.write('userbase/perm', permarray.to_s)
+					pos = 0
+					begin
+						$bot.set_user_permission(permarray[pos],permarray[pos+1])
+						pos += 3
+					end while pos < permarray.length
+					puts "Permission Loaded!"
 				else
 					event << "Invalid user."
 				end
