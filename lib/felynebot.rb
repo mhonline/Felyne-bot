@@ -2,7 +2,7 @@ module FelyneBot
 	require_relative 'felynebot/class/info'
 	puts "Info Loaded"
 
-	$mess = []
+#	$mess = []
 	$users = []
 	$guilds = []
 	loadusers("userbase/users")
@@ -162,23 +162,23 @@ module FelyneBot
 #		end
 #	}
 	#Code for saving the last message of someone
-	$bot.message() { |event|
-		if $mess.empty?
-			Mess.new(event.user.id, event.user.name, event.timestamp, event.message.to_s, $mess)
-			saveObj($mess,"userbase/mess")
-		else
-			if $mess.any?{|a| a.id == event.user.id}
-				pos=$mess.find_index {|item| item.id == event.user.id}
-				$mess[pos].s_name(event.user.name)
-				$mess[pos].s_time(event.timestamp)
-				$mess[pos].s_mess(event.message.to_s)
-				saveObj($mess,"userbase/mess")
-			else
-				Mess.new(event.user.id, event.user.name, event.timestamp, event.message.to_s, $mess)
-				saveObj($mess,"userbase/mess")
-			end
-		end
-	}
+#	$bot.message() { |event|
+#		if $mess.empty?
+#			Mess.new(event.user.id, event.user.name, event.timestamp, event.message.to_s, $mess)
+#			saveObj($mess,"userbase/mess")
+#		else
+#			if $mess.any?{|a| a.id == event.user.id}
+#				pos=$mess.find_index {|item| item.id == event.user.id}
+#				$mess[pos].s_name(event.user.name)
+#				$mess[pos].s_time(event.timestamp)
+#				$mess[pos].s_mess(event.message.to_s)
+#				saveObj($mess,"userbase/mess")
+#			else
+#				Mess.new(event.user.id, event.user.name, event.timestamp, event.message.to_s, $mess)
+#				saveObj($mess,"userbase/mess")
+#			end
+#		end
+#	}
 
 	puts "Commands Loaded"
 	$bot.debug = false
