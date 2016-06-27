@@ -1,11 +1,11 @@
 module FelyneBot
 	module Commands
-		module AddMod
+		module BotMod
 			extend Discordrb::Commands::CommandContainer
 			command(
-					:addmod,
+					:botmod,
 					description: "Adds mod permissions to Felyne.",
-					useage: "addmod <@name> <level> <force>",
+					useage: "botmod <@name> <level> <force>",
 					permission_level: 800,
 					min_args: 1,
 					max_args: 4,
@@ -75,7 +75,7 @@ module FelyneBot
 						event << "Invalid user."
 					end
 				end
-				puts "#{event.timestamp}: #{event.user.name}: CMD: addmod"
+				puts "#{event.timestamp}: #{event.user.name}: CMD: botmod"
 				nil
 			end
 		end
