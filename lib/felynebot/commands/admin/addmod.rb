@@ -69,7 +69,11 @@ module FelyneBot
 					end while pos < permarray.length
 					puts "Permission Loaded!"
 				else
-					event << "Invalid user."
+					if uname == "check"
+						event << permarray
+					else
+						event << "Invalid user."
+					end
 				end
 				puts "#{event.timestamp}: #{event.user.name}: CMD: addmod"
 				nil
