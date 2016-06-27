@@ -31,9 +31,9 @@ module FelyneBot
 							if del == "yes"
 								if force == "yes"
 									event << "Force deleting user's permissions"
-									permarray = permarray - [i+2]
-									permarray = permarray - [i+1]
-									permarray = permarray - [i]
+									permarray.delete_at(i+2)
+									permarray.delete_at(i+1)
+									permarray.delete_at(i)
 								else
 									event << "You must force deletion of admin or botmaster"
 								end
@@ -49,9 +49,9 @@ module FelyneBot
 						else
 							if del == "yes"
 								event << "Deleting user's permissions"
-								permarray = permarray - [i+2]
-								permarray = permarray - [i+1]
-								permarray = permarray - [i]
+								permarray.delete_at(i+2)
+								permarray.delete_at(i+1)
+								permarray.delete_at(i)
 							else
 								event << "Changing user's permissions"
 								permarray[i+1] = level
