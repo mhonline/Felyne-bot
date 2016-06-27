@@ -6,7 +6,7 @@ module FelyneBot
 					:rp,
 					description: "Nothing to see here.",
 					useage: "rp <text>",
-					permission_level: 1,
+					permission_level: 2,
 					permission_message: "I'm sorry Dave, I cannot do that."
 			) do |event, *phrase|
 				roleplaytext = phrase.join(' ')

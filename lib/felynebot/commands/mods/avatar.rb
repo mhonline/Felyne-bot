@@ -6,7 +6,7 @@ module FelyneBot
 					:avatar,
 					description: "Changes avatar randomly",
 					useage: "avatar",
-					permission_level: 1,
+					permission_level: 2,
 					permission_message: "I'm sorry Dave, I cannot do that."
 			) do |event, text|
 				picture = 1 + rand(35)

@@ -4,7 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:anni,
-					permission_level: 1,					
+					permission_level: 2,					
 			) do |event, number|
 				gcount = getline("bot/gcount",1)
 				gcount = gcount.to_i
