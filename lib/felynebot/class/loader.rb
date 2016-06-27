@@ -67,3 +67,14 @@ def loadguilds(loc)
 		puts 'No file to open!'
 	end
 end
+
+def getline(loc,line)
+	if File.exist?(loc)
+		f = File.open(loc,"r")
+		line.times{ file.gets }
+		p $_
+		f.close
+	else
+		puts 'No file to open!'
+	end
+end
