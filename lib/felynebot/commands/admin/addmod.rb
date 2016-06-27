@@ -61,6 +61,7 @@ module FelyneBot
 						event << "User permissions not found... Adding permissions."
 						permarray.push(userid,level,username)
 					end
+					File.write('userbase/perm', permarray.to_s)
 				else
 					event << "Invalid user."
 				end
