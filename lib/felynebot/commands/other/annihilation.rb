@@ -6,9 +6,9 @@ module FelyneBot
 					:anni,
 					permission_level: 1,					
 			) do |event, number|
-				gcount = IO.readlines("bot/gcount")[0]
+				gcount = getline("bot/gcount",1)
 				gcount = gcount.to_i
-				ecount = IO.readlines("bot/ecount")[0]
+				ecount = getline("bot/ecount",1)
 				ecount = ecount.to_i
 				a = (gcount / 10.00)
 				b = (ecount / 20.00)

@@ -23,7 +23,7 @@ module FelyneBot
 								if list == 'monsters'
 									event << "<http://monsterhunteronline.in/monsters>"
 								else
-									wiki = IO.readlines("bot/wiki")[0]
+									wiki = getline("bot/wiki",1)
 									wiki = wiki.split(",")
 									links = ""
 									wiki.grep(/#{list}/).each { |x| links << "<http://monsterhunteronline.in/#{x}> \n" }

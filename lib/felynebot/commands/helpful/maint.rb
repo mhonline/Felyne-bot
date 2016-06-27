@@ -9,7 +9,7 @@ module FelyneBot
 			) do |event|
 				t1 = Time.now
 
-				t3 = IO.readlines("bot/maintstart")[0]
+				t3 = getline("bot/maintstart",1)
 				if t3 == nil
 					t3 = "notime"
 				else
@@ -21,7 +21,7 @@ module FelyneBot
 					sm2 = sm1.floor
 				end
 
-				t4 = IO.readlines("bot/maintend")[0]
+				t4 = getline("bot/maintend",1)
 				if t4 == nil
 					t4 = "notime"
 				else

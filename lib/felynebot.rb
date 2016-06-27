@@ -99,7 +99,7 @@ module FelyneBot
 	$bot.message(containing: "Open the pod bay doors") { |event|
 		role = event.bot.server(122526505606709257).roles.find { |role| role.name == "Felyne" }
 		newcolor = '0x'
-		newcolor << IO.readlines("bot/colors")[0]
+		newcolor << getline("bot/colors",1)
 		newcolor = newcolor.gsub("\n","").hex
 		role.color = Discordrb::ColorRGB.new(newcolor)
 		$bot.profile.avatar = File.open("pic/HAL9000.png")
@@ -183,7 +183,7 @@ module FelyneBot
 	$bot.debug = false
 	$bot.run :async
 	if File.file?("bot/game")
-		$bot.game = IO.readlines("bot/game")[0]
+		$bot.game = getline("bot/game",0)
 	else
 		$bot.game = 0
 	end
