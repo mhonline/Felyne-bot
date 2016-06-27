@@ -184,7 +184,7 @@ module FelyneBot
 	$bot.debug = false
 	$bot.run :async
 	if File.file?("bot/game")
-		$bot.game = getline("bot/game",0)
+		$bot.game = getline("bot/game",1)
 	else
 		$bot.game = 0
 	end
