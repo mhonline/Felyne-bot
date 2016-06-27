@@ -19,8 +19,9 @@ module FelyneBot
 					if permarray.include? userid
 						event << "User permissions found... Updating permissions."
 						hash = Hash[permarray.map.with_index.to_a]
-						i = hash[userid]
-						event << "Current permission level: #{i}"
+						i = hash[userid].to_i
+						curlevel = permarray[i+2]
+						event << "Current permission level: #{curlevel}"
 					else
 						event << "User permissions not found... Adding permissions."
 					end
