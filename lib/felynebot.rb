@@ -30,6 +30,7 @@ module FelyneBot
 	puts "Permission Loaded!"
 
 #Admin/Troubleshooting
+	$bot.include! Commands::AddMod
 	$bot.include! Commands::Eval
 	$bot.include! Commands::Info
 	$bot.include! Commands::Kill
