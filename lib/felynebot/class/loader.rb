@@ -74,6 +74,7 @@ def getline(loc,line)
 		line.times{ f.gets }
 		$temp = $_
 		f.close
+		$temp
 	else
 		puts 'No file to open!'
 	end
