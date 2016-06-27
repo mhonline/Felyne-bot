@@ -71,7 +71,8 @@ end
 def getline(loc,line)
 	if File.exist?(loc)
 		f = File.open(loc,"r")
-		$temp = line.times{ f.gets }
+		line.times{ f.gets }
+		$temp = $_
 		f.close
 	else
 		puts 'No file to open!'
