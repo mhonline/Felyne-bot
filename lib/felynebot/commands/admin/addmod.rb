@@ -13,9 +13,9 @@ module FelyneBot
 			) do |event, uname, level|
 				permarray = []
 				permarray = loadArr(permarray,"userbase/perm")
-				userid = $bot.parse_mention(uname).id
-				username = $bot.parse_mention(uname).name
-				if userid != nil
+				if $bot.parse_mention(uname).id !=nil
+					userid = $bot.parse_mention(uname).id
+					username = $bot.parse_mention(uname).name
 					if permarray.include? userid
 						event << "User permissions found... Updating permissions."
 					else
