@@ -18,6 +18,12 @@ module FelyneBot
 					username = $bot.parse_mention(uname).name
 					if permarray.include? userid
 						event << "User permissions found... Updating permissions."
+						permarray.each { |i| 
+							if permarray[i] == userid
+								curlevel = permarray[i+2]
+								event << "current permissions level: #{curlevel}"
+							end
+						}
 					else
 						event << "User permissions not found... Adding permissions."
 					end
