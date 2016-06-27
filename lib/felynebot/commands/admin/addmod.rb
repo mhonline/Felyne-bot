@@ -13,7 +13,7 @@ module FelyneBot
 			) do |event, uname, level|
 				permarray = []
 				permarray = loadArr(permarray,"userbase/perm")
-				if $bot.parse_mention(uname).id !=nil
+				if $bot.parse_mention(uname) !=nil
 					userid = $bot.parse_mention(uname).id
 					username = $bot.parse_mention(uname).name
 					if permarray.include? userid
