@@ -19,7 +19,6 @@ module FelyneBot
 				event << $username
 				event << level
 				puts "#{event.timestamp}: #{event.user.name}: CMD: addmod"
-				exit
 				nil
 			end
 		end
