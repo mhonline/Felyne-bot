@@ -5,7 +5,8 @@ module FelyneBot
 			command(
 					:sets,
 					description: "Lists recommended sets for <weapon>.",
-					useage: "sets <weapon>"
+					useage: "sets <weapon>",
+					min_args: 1,
 			) do |event, *weapon|
 				weapon = weapon.join(' ')
 				if ["Lance", "lance", "L", "l"].include? weapon
