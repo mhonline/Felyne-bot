@@ -16,7 +16,7 @@ module FelyneBot
 				$userid = $bot.parse_mention(uname).id
 				$username = $bot.parse_mention(uname).name
 				if userid != nil
-					if permarray.include? userid
+					if permarray.include? $userid
 						event << "User permissions found... Updating permissions."
 					else
 						event << "User permissions not found... Adding permissions."
