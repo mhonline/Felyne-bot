@@ -57,6 +57,7 @@ module FelyneBot
 	$bot.include! Commands::Helix
 	$bot.include! Commands::Help
 	$bot.include! Commands::HGE
+	$bot.include! Commands::HS
 	$bot.include! Commands::Maint
 	$bot.include! Commands::Ports
 	$bot.include! Commands::Reset
