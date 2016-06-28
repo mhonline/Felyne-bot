@@ -2,7 +2,7 @@ module FelyneBot
 	require_relative 'felynebot/class/info'
 	puts "Info Loaded"
 
-	$mess = []
+#	$mess = []
 	$users = []
 	$guilds = []
 	loadusers("userbase/users")
@@ -30,7 +30,7 @@ module FelyneBot
 	puts "Permission Loaded!"
 
 #Admin/Troubleshooting
-	$bot.include! Commands::AddMod
+	$bot.include! Commands::BotMod
 	$bot.include! Commands::Eval
 	$bot.include! Commands::Info
 	$bot.include! Commands::Kill
@@ -88,7 +88,6 @@ module FelyneBot
 #User Role
 	$bot.include! Commands::UserRaid
 #Other <not in fullhelp>
-	$bot.include! Commands::Annihilation
 	$bot.include! Commands::Danger
 	$bot.include! Commands::GuildWars
 	$bot.include! Commands::Roll
@@ -163,29 +162,29 @@ module FelyneBot
 #		end
 #	}
 	#Code for saving the last message of someone
-	$bot.message() { |event|
-		if $mess.empty?
-			Mess.new(event.user.id, event.user.name, event.timestamp, event.message.to_s, $mess)
-			saveObj($mess,"userbase/mess")
-		else
-			if $mess.any?{|a| a.id == event.user.id}
-				pos=$mess.find_index {|item| item.id == event.user.id}
-				$mess[pos].s_name(event.user.name)
-				$mess[pos].s_time(event.timestamp)
-				$mess[pos].s_mess(event.message.to_s)
-				saveObj($mess,"userbase/mess")
-			else
-				Mess.new(event.user.id, event.user.name, event.timestamp, event.message.to_s, $mess)
-				saveObj($mess,"userbase/mess")
-			end
-		end
-	}
+#	$bot.message() { |event|
+#		if $mess.empty?
+#			Mess.new(event.user.id, event.user.name, event.timestamp, event.message.to_s, $mess)
+#			saveObj($mess,"userbase/mess")
+#		else
+#			if $mess.any?{|a| a.id == event.user.id}
+#				pos=$mess.find_index {|item| item.id == event.user.id}
+#				$mess[pos].s_name(event.user.name)
+#				$mess[pos].s_time(event.timestamp)
+#				$mess[pos].s_mess(event.message.to_s)
+#				saveObj($mess,"userbase/mess")
+#			else
+#				Mess.new(event.user.id, event.user.name, event.timestamp, event.message.to_s, $mess)
+#				saveObj($mess,"userbase/mess")
+#			end
+#		end
+#	}
 
 	puts "Commands Loaded"
 	$bot.debug = false
 	$bot.run :async
 	if File.file?("bot/game")
-		$bot.game = getline("bot/game",0)
+		$bot.game = getline("bot/game",1)
 	else
 		$bot.game = 0
 	end
