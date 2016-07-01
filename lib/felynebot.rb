@@ -88,6 +88,7 @@ module FelyneBot
 #User Role
 	$bot.include! Commands::UserRaid
 #Other <not in fullhelp>
+	$bot.include! Commands::Ask
 	$bot.include! Commands::Danger
 	$bot.include! Commands::GuildWars
 	$bot.include! Commands::Roll
