@@ -120,8 +120,13 @@ module FelyneBot
 		event << "(╯°□°）╯︵ ┻━┻"
 	}
 	$bot.message { |event|
-		if(event.channel.id == 125859373393117184)
-			$bot.send_message(189667083586502656, "\##{event.message.channel.name} - #{event.user.name}: #{event.message.content.gsub(/<@!?(\d+)>/){ |m| event.server.member($1, false).name }}")
+		if(event.channel.id == 127308098372108288)
+			$bot.send_message(138344202005250049, "\##{event.message.channel.name} - #{event.user.name}: #{event.message.content.gsub(/<@!?(\d+)>/){ |m| event.server.member($1, false).name }}")
+		end
+	}
+	$bot.message { |event|
+		if(event.channel.id == 138344202005250049)
+			$bot.send_message(127308098372108288, "\##{event.message.channel.name} - #{event.user.name}: #{event.message.content.gsub(/<@!?(\d+)>/){ |m| event.server.member($1, false).name }}")
 		end
 	}
 #mho-discussion: 125859373393117184
