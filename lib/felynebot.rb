@@ -121,7 +121,7 @@ module FelyneBot
 	}
 	$bot.message { |event|
 		if(event.channel.id == 125859373393117184)
-			$bot.send_message(189667083586502656, "#{event.message.timestamp} in #{event.message.channel.name} - #{event.user.name}: #{event.message.content.gsub(/<@!?(\d+)>/){ |m| event.server.member($1, false).name }}")
+			$bot.send_message(189667083586502656, "\##{event.message.channel.name} - #{event.user.name}: #{event.message.content.gsub(/<@!?(\d+)>/){ |m| event.server.member($1, false).name }}")
 		end
 	}
 #mho-discussion: 125859373393117184
