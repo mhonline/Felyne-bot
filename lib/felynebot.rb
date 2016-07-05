@@ -119,6 +119,9 @@ module FelyneBot
 	$bot.message(containing: "┬─┬﻿ ノ( ゜-゜ノ)") { |event|
 		event << "(╯°□°）╯︵ ┻━┻"
 	}
+	$bot.message(containing: "111") { |event|
+		event << "CATCH THE FUCKING MONSTER!!"
+	}
 	$bot.message { |event|
 		if(event.channel.id == 127308098372108288)
 			$bot.send_message(138344202005250049, "\##{event.message.channel.name} - #{event.user.name}: #{event.message.content.gsub(/<@!?(\d+)>/){ |m| event.server.member($1, false).name }}")
