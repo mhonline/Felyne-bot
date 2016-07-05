@@ -96,7 +96,7 @@ module FelyneBot
 
 #Fun Commands
 	$bot.message(containing: "(╯°□°）╯︵ ┻━┻") { |event|
-		event << "┬─┬﻿ ノ( ゜-゜ノ)"
+		event.respond "┬─┬﻿ ノ( ゜-゜ノ)"
 	}
 	$bot.message(containing: "Open the pod bay doors") { |event|
 		role = event.bot.server(122526505606709257).roles.find { |role| role.name == "Felyne" }
