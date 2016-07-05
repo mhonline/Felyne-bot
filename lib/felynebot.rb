@@ -119,7 +119,7 @@ module FelyneBot
 	$bot.message(containing: "┬─┬﻿ ノ( ゜-゜ノ)") { |event|
 		event.respond "(╯°□°）╯︵ ┻━┻"
 	}
-	$bot.message(containing: "\b111\b") { |event|
+	$bot.message(containing: "\b111") { |event|
 		event.respond "CATCH THE FUCKING MONSTER!!"
 	}
 	$bot.message { |event|
