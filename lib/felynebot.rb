@@ -105,7 +105,7 @@ module FelyneBot
 		newcolor = newcolor.gsub("\n","").hex
 		role.color = Discordrb::ColorRGB.new(newcolor)
 		$bot.profile.avatar = File.open("pic/HAL9000.png")
-		event << "Im sorry Dave, Im afraid I cant do that."
+		event.respond "Im sorry Dave, Im afraid I cant do that."
 	}
 	$bot.message(containing: "This fucking guy") { |event|
 		role = event.bot.server(122526505606709257).roles.find { |role| role.name == "Felyne" }
@@ -114,13 +114,13 @@ module FelyneBot
 		newcolor = newcolor.gsub("\n","").hex
 		role.color = Discordrb::ColorRGB.new(newcolor)
 		$bot.profile.avatar = File.open("pic/mhol_christmas2.jpg")
-		event << "This fucking guy indeed."
+		event.respond "This fucking guy indeed."
 	}
 	$bot.message(containing: "┬─┬﻿ ノ( ゜-゜ノ)") { |event|
-		event << "(╯°□°）╯︵ ┻━┻"
+		event.respond "(╯°□°）╯︵ ┻━┻"
 	}
 	$bot.message(containing: "111") { |event|
-		event << "CATCH THE FUCKING MONSTER!!"
+		event.respond "CATCH THE FUCKING MONSTER!!"
 	}
 	$bot.message { |event|
 		if(event.channel.id == 127308098372108288)
