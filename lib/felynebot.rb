@@ -120,7 +120,11 @@ module FelyneBot
 		event.respond "(╯°□°）╯︵ ┻━┻"
 	}
 	$bot.message(containing: "111") { |event|
-		event.respond "CATCH THE FUCKING MONSTER!!"
+		if ["190211199097503745", "177511625111109632"].include? event.message.content
+			
+		else
+			event.respond "CATCH THE FUCKING MONSTER!!"
+		end
 	}
 	$bot.message { |event|
 		if(event.channel.id == 127308098372108288)
