@@ -37,7 +37,7 @@ module FelyneBot
 					event << "Bow Sets:\nSleep C+ Set: <http://monsterhunteronline.in/armor/?1=61496&2=61497&3=61358&4=61499&5=61500&8=81002&9=38&10=6&15=29010&16=29010&18=29262&21=29126&24=29124&25=29262&27=29262&28=29262>"
 				end
 				if ["Bowgun", "bowgun", "BG", "Bg", "bg"].include? weapon
-					event << "Bowgun Sets:\nRecoil + Sett: <http://monsterhunteronline.in/armor/?1=61496&4=61499&5=61500&2=61357&3=61358&8=81007&9=32&10=4&15=29273&16=29273&18=29273&19=29273&21=29273&22=29273&23=29124&24=29124&25=29124&27=29124&28=29124>"
+					event << "Bowgun Sets:\nRecoil + Set: <http://monsterhunteronline.in/armor/?1=61496&4=61499&5=61500&2=61357&3=61358&8=81007&9=32&10=4&15=29273&16=29273&18=29273&19=29273&21=29273&22=29273&23=29124&24=29124&25=29124&27=29124&28=29124>"
 				end
 				puts "#{event.timestamp}: #{event.user.name}: CMD: sets <#{weapon}>"
 				nil
