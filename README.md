@@ -61,6 +61,7 @@
 
 ##### ruby version
 - 2.3.1
+
 ##### require gems
 - 'discordrb'
 - 'sys-uptime'
