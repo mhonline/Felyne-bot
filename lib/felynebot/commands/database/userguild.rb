@@ -32,11 +32,11 @@ module FelyneBot
 					}
 					$users[temp].addGuild(" ")
 					saveObj($users,"userbase/users")
-					event << "Removed from all guild server roles, and cleared guild from Database"
+					event.respond "Removed from all guild server roles, and cleared guild from Database"
 				end
 				if set == 'list'
-					event << "``Guild roles currently set up:``"
-					guilds2.each { |x| event << x }
+					event.respond "``Guild roles currently set up:``"
+					guilds2.each { |x| event.respond x }
 				end
 				if set == 'set'
 					guilds.each { |x| 
@@ -61,11 +61,11 @@ module FelyneBot
 							end
 						}
 					end
-					event << "Changed guild to: #{guild}"
+					event.respond "Changed guild to: #{guild}"
 					saveObj($users,"userbase/users")
-					event << "Added to the #{search} guild server role"
+					event.respond "Added to the #{search} guild server role"
 				else
-					event << "The requested guild server role does not exist.  If you would like to add your guild to the servers roles, please PM Reaver01"
+					event.respond "The requested guild server role does not exist.  If you would like to add your guild to the servers roles, please PM Reaver01"
 				end
 				end
 				puts "#{event.timestamp}: #{event.user.name}: CMD: userguild <#{set}> <#{search}>"

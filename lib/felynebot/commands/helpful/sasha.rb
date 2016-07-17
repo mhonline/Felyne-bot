@@ -7,7 +7,7 @@ module FelyneBot
 					description: "Sasha quests quick ref.",
 					useage: "sasha"
 			) do |event|
-				event << "http://i.imgur.com/ZPbqWpd.png"
+				event.respond "http://i.imgur.com/ZPbqWpd.png"
 				puts "#{event.timestamp}: #{event.user.name}: CMD: sasha"
 				nil
 			end

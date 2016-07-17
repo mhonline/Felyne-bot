@@ -47,7 +47,7 @@ module FelyneBot
 						out = "No such command exists."
 					end
 				end
-				event << out
+				event.respond out
 				puts "#{event.timestamp}: #{event.user.name}: CMD: help"
 				nil
 			end

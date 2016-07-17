@@ -24,19 +24,19 @@ module FelyneBot
 				if option == "start"
 					if hours == "clear"
 						File.write('bot/maintstart', '')
-						event << "Maintenance has been cleared"
+						event.respond "Maintenance has been cleared"
 					else
 						File.write('bot/maintstart', t3)
-						event << "#{h2} hours #{m2} minutes until the start of maintenance."
+						event.respond "#{h2} hours #{m2} minutes until the start of maintenance."
 					end
 				end
 				if option == "end"
 					if hours == "clear"
 						File.write('bot/maintend', '')
-						event << "Maintenance has been cleared"
+						event.respond "Maintenance has been cleared"
 					else
 						File.write('bot/maintend', t3)
-						event << "#{h2} hours #{m2} minutes until the end of maintenance."
+						event.respond "#{h2} hours #{m2} minutes until the end of maintenance."
 					end
 				end
 				puts "#{event.timestamp}: #{event.user.name}: CMD: mainsetup <#{option}> <#{t3}>"

@@ -7,7 +7,7 @@ module FelyneBot
 					description: "Hunter Blog quick ref.",
 					useage: "blog"
 			) do |event|
-				event << "<https://docs.google.com/a/protoprim.co.uk/document/d/12vYXsxwvRM1yMEwkASS79wzvgCm89SPYHQfu4BK3kCc/edit?usp=sharing>"
+				event.respond "<https://docs.google.com/a/protoprim.co.uk/document/d/12vYXsxwvRM1yMEwkASS79wzvgCm89SPYHQfu4BK3kCc/edit?usp=sharing>"
 				puts "#{event.timestamp}: #{event.user.name}: CMD: blog"
 				nil
 			end

@@ -13,7 +13,7 @@ module FelyneBot
 			) do |event, search, server|
 				role = event.bot.server(122526505606709257).roles.find { |role| role.name == search }
 				if role == nil
-					event << "The role **#{search}** does not exist on the server. Please create it before running the command again."
+					event.respond "The role **#{search}** does not exist on the server. Please create it before running the command again."
 				else
 					tempGuilds= Guilds.new(role.id, search, server, $guilds, event.message.channel, $bot)
 					saveGuilds($guilds,"userbase/guilds")

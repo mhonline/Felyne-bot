@@ -11,12 +11,12 @@ module FelyneBot
 			) do |event|
 				temp = $users.find_index {|s| s.id == event.user.id}
 				if  temp!=nil
-					event << "Found #{event.user.name}"
+					event.respond "Found #{event.user.name}"
 					$users=$users[0,temp].push(*$users.drop(temp+1))
-					event << "Removed"
+					event.respond "Removed"
 					saveObj($users, "userbase/users")
 				else
-					event << "No user found."
+					event.respond "No user found."
 				end
 				puts "#{event.timestamp}: #{event.user.name}: CMD: userremove"
 				nil

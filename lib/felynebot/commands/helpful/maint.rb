@@ -50,7 +50,7 @@ module FelyneBot
 				else
 					ended = "Maintenance end time not set."
 				end
-				event << "```ruby\n#{started}\n#{ended}```"
+				event.respond "```ruby\n#{started}\n#{ended}```"
 				puts "#{event.timestamp}: #{event.user.name}: CMD: maint"
 				nil
 			end

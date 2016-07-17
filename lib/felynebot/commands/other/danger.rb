@@ -15,7 +15,7 @@ module FelyneBot
 					"*Mom says, get the hell out of there!*",
 					"**Destroy Robinson family.**"
 				]
-				event << danger[rand(0..(danger.length-1))]
+				event.respond danger[rand(0..(danger.length-1))]
 				puts "#{event.timestamp}: #{event.user.name}: CMD: danger"
 				nil
 			end

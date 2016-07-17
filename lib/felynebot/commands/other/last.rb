@@ -6,10 +6,10 @@ module FelyneBot
 				x=person[2..-2].to_i
 				if $mess.any?{|a| a.id == x}
 					pos=$mess.find_index {|item| item.id == x}
-					event << "On: #{$mess[pos].time.asctime}"
-					event << "They said: #{$mess[pos].mess}"
+					event.respond "On: #{$mess[pos].time.asctime}"
+					event.respond "They said: #{$mess[pos].mess}"
 				else
-					event << "Nothing saved from that user."
+					event.respond "Nothing saved from that user."
 				end
 			end
 		end

@@ -14,7 +14,7 @@ module FelyneBot
 				}
 				sorted = guilds.sort_by { |k| k["value"] }.reverse
 				(1..sorted.length).each { |i| 
-					event << "Guild: #{sorted[i-1]['name']} | Members: #{sorted[i-1]['value']}"
+					event.respond "Guild: #{sorted[i-1]['name']} | Members: #{sorted[i-1]['value']}"
 				}
 				puts "#{event.timestamp}: #{event.user.name}: CMD: guildwars"
 				nil

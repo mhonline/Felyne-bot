@@ -7,7 +7,7 @@ module FelyneBot
 					description: "Bounty picture reference.",
 					useage: "bounty"
 			) do |event|
-				event << "http://i.imgur.com/1zoLPUu.png"
+				event.respond "http://i.imgur.com/1zoLPUu.png"
 				puts "#{event.timestamp}: #{event.user.name}: CMD: bounty"
 				nil
 			end

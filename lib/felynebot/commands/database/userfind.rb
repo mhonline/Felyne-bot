@@ -20,8 +20,8 @@ module FelyneBot
 				}
 				found.uniq!
 				if !found.empty?
-					event << "Found User Database:"
-					event << "```ruby\nName           IGN            Guild          Timezone       Server"
+					event.respond "Found User Database:"
+					event.respond "```ruby\nName           IGN            Guild          Timezone       Server"
 					(1..found.length).each { |i|
 						just1 = 15
 						just2 = 30
@@ -55,12 +55,12 @@ module FelyneBot
 						if found[i-1].timezone!=nil then str << "#{found[i-1].timezone.to_s}" end
 						str=str.ljust(just4)
 						if found[i-1].server!=nil then str << "#{found[i-1].server.to_s}" end
-						event << str
+						event.respond str
 						i+=1
 					}
-					event << "```"
+					event.respond "```"
 				else
-					event << "Search string was not found in database."
+					event.respond "Search string was not found in database."
 				end
 				puts "#{event.timestamp}: #{event.user.name}: CMD: userfind <#{search}>"
 				nil

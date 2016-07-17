@@ -11,7 +11,7 @@ module FelyneBot
 			) do |event, timezone=nil|
 				temp = $users.find_index {|s| s.id == event.user.id}
 				if  temp!=nil then $users[temp].addTimezone(timezone) end
-				event << "Changed timezone to: #{timezone}"
+				event.respond "Changed timezone to: #{timezone}"
 				saveObj($users,"userbase/users")
 				puts "#{event.timestamp}: #{event.user.name}: CMD: usertimezone <#{timezone}>"
 				nil

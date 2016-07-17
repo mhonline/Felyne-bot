@@ -11,14 +11,14 @@ module FelyneBot
 			) do |event, page=1|
 				page=page.to_i-1
 				if page<0 then page=0 end
-				if $users.length == 0 then event << "User table is empty!"
+				if $users.length == 0 then event.respond "User table is empty!"
 				else
 				pages=$users.length/9
 				if pages<1 then pages=1 end
 				if page>=pages then page=0 end
 				i=($users.length/pages)*page
-				event << "User Database:"
-				event << "```ruby\nName           IGN            Guild          Timezone       Server"
+				event.respond "User Database:"
+				event.respond "```ruby\nName           IGN            Guild          Timezone       Server"
 				begin
 					just1 = 15
 					just2 = 30
@@ -52,11 +52,11 @@ module FelyneBot
 					if $users[i].timezone!=nil then str << "#{$users[i].timezone.to_s}" end
 					str=str.ljust(just4)
 					if $users[i].server!=nil then str << "#{$users[i].server.to_s}" end
-					event << str
+					event.respond str
 					i+=1
 				end while i < ($users.length/pages)*(page+1)
-					event << "```"
-					event << "Showing page #{page+1}/#{pages}"
+					event.respond "```"
+					event.respond "Showing page #{page+1}/#{pages}"
 				end
 				puts "#{event.timestamp}: #{event.user.name}: CMD: userlist <#{page}>"
 				nil

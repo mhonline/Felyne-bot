@@ -7,7 +7,7 @@ module FelyneBot
 					description: "Displays a picture of the server 4-7.",
 					useage: "server47"
 			) do |event|
-				event << "https://i.imgur.com/W3tv2c8.jpg"
+				event.respond "https://i.imgur.com/W3tv2c8.jpg"
 				puts "#{event.timestamp}: #{event.user.name}: CMD: server47"
 				nil
 			end

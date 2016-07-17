@@ -127,14 +127,14 @@ module FelyneBot
 				end
 
 				#put strings in event
-				event << "#{raid1}\n#{raid2}\n#{raid3}\n#{raid4}\n#{raid5}"
+				event.respond "#{raid1}\n#{raid2}\n#{raid3}\n#{raid4}\n#{raid5}"
 				if list == 'ready'
 					role = event.bot.server(122526505606709257).roles.find { |role| role.name == "RaidReady" }.id
 					raidready = event.server.members.select { |m| m.role?(role) }
 					raidusers = "Users with RaidReady Role:\n"
 					(0..raidready.length-1).each { |i| raidusers << "**#{raidready[i].username}**\n" }
-					event << raidusers
-					event << "#{raidready.length} users are ready to raid"
+					event.respond raidusers
+					event.respond "#{raidready.length} users are ready to raid"
 				end
 				puts "#{event.timestamp}: #{event.user.name}: CMD: raid"
 				nil

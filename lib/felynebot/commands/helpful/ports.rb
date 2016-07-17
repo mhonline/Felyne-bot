@@ -7,7 +7,7 @@ module FelyneBot
 					description: "Ports list.",
 					useage: "ports"
 			) do |event|
-				event << "http://i.imgur.com/eLElIe8.png"
+				event.respond "http://i.imgur.com/eLElIe8.png"
 				puts "#{event.timestamp}: #{event.user.name}: CMD: ports"
 				nil
 			end

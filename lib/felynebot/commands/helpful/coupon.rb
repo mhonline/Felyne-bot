@@ -7,7 +7,7 @@ module FelyneBot
 					description: "Purchasing Coupons help.",
 					useage: "coupon"
 			) do |event|
-				event << "<http://i.imgur.com/ynbKtR4.png>"
+				event.respond "<http://i.imgur.com/ynbKtR4.png>"
 				puts "#{event.timestamp}: #{event.user.name}: CMD: coupon"
 				nil
 			end

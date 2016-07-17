@@ -7,7 +7,7 @@ module FelyneBot
 					description: "Cat quest videos. (Chinese)",
 					useage: "catvids"
 			) do |event|
-				event << "<http://mho.tgbus.com/zt/mmywl/>"
+				event.respond "<http://mho.tgbus.com/zt/mmywl/>"
 				puts "#{event.timestamp}: #{event.user.name}: CMD: catquest"
 				nil
 			end

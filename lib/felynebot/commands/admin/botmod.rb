@@ -22,43 +22,43 @@ module FelyneBot
 					userid = $bot.parse_mention(uname).id
 					username = $bot.parse_mention(uname).name
 					if permarray.include? userid
-						event << "User permissions found... Updating permissions."
+						event.respond "User permissions found... Updating permissions."
 						hash = Hash[permarray.map.with_index.to_a]
 						i = hash[userid].to_i
 						curlevel = permarray[i+1]
-						event << "Current permission level: #{curlevel}"
+						event.respond "Current permission level: #{curlevel}"
 						if [800, 999].include? curlevel
 							if del == "yes"
 								if force == "yes"
-									event << "Force deleting user's permissions"
+									event.respond "Force deleting user's permissions"
 									permarray.delete_at(i+2)
 									permarray.delete_at(i+1)
 									permarray.delete_at(i)
 								else
-									event << "You must force deletion of admin or botmaster"
+									event.respond "You must force deletion of admin or botmaster"
 								end
 							else
 								if force == "yes"
-									event << "Forcing permission change to lower level."
+									event.respond "Forcing permission change to lower level."
 									permarray[i+1] = level
 								end
 								if force == "no"
-									event << "User permissions level is admin or higher, you must force permissions change to set lower."
+									event.respond "User permissions level is admin or higher, you must force permissions change to set lower."
 								end
 							end
 						else
 							if del == "yes"
-								event << "Deleting user's permissions"
+								event.respond "Deleting user's permissions"
 								permarray.delete_at(i+2)
 								permarray.delete_at(i+1)
 								permarray.delete_at(i)
 							else
-								event << "Changing user's permissions"
+								event.respond "Changing user's permissions"
 								permarray[i+1] = level
 							end
 						end
 					else
-						event << "User permissions not found... Adding permissions."
+						event.respond "User permissions not found... Adding permissions."
 						permarray.push(userid,level,username)
 					end
 					File.write('userbase/perm', permarray.to_s)
@@ -70,9 +70,9 @@ module FelyneBot
 					puts "Permission Loaded!"
 				else
 					if uname == "check"
-						event << permarray
+						event.respond permarray
 					else
-						event << "Invalid user."
+						event.respond "Invalid user."
 					end
 				end
 				puts "#{event.timestamp}: #{event.user.name}: CMD: botmod"

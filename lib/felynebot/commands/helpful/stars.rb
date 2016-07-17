@@ -7,7 +7,7 @@ module FelyneBot
 					description: "Stars picture list.",
 					useage: "stars"
 			) do |event|
-				event << "https://imgur.com/a/eemCL"
+				event.respond "https://imgur.com/a/eemCL"
 				puts "#{event.timestamp}: #{event.user.name}: CMD: stars"
 				nil
 			end
