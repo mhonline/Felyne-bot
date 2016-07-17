@@ -21,7 +21,7 @@ module FelyneBot
 				found.uniq!
 				if !found.empty?
 					event << "Found User Database:"
-					event << "```Name           IGN            Guild          Timezone       Server"
+					event << "```ruby\nName           IGN            Guild          Timezone       Server"
 					(1..found.length).each { |i|
 						just1 = 15
 						just2 = 30

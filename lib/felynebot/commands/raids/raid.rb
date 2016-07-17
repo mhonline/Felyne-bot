@@ -18,7 +18,7 @@ module FelyneBot
 
 				#Raid 1
 				if name1.to_s == ''	#checks if raid exists
-					raid1 = "```Raid 1:  Nothing set up"	#if it doesn't sets text
+					raid1 = "```ruby\nRaid 1:  Nothing set up"	#if it doesn't sets text
 				else
 					name1 = name1.gsub("\n","")	#removes new line from string in file
 					r1t4 = getline("bot/raid1",2)	#gets date/time from file
@@ -32,9 +32,9 @@ module FelyneBot
 					r1m1 = r1m1 - 60 * r1h2 - 24 * 60 * r1d2	#subtracts hours and days from minutes
 					r1m2 = r1m1.floor	#rounds remaining minutes down
 					if r1t4.past?	#checks if date is in the past
-						raid1 = "```Raid 1:  In process or Completed"	#if it is raid is complete
+						raid1 = "```ruby\nRaid 1:  In process or Completed"	#if it is raid is complete
 					else
-						raid1 = "```Raid 1:  #{name1} in #{r1d2} days #{r1h2} hours #{r1m2} minutes"	#if it isn't display time left
+						raid1 = "```ruby\nRaid 1:  #{name1} in #{r1d2} days #{r1h2} hours #{r1m2} minutes"	#if it isn't display time left
 					end
 				end
 

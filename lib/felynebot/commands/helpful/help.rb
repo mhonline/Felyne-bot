@@ -21,7 +21,7 @@ module FelyneBot
 				Dir["lib/felynebot/commands/roles/*.rb"].each {|file| roles.push(File.basename(file, ".rb")) }
 				if more == nil
 					more = "none"
-					out = "```#IGN/Guild/Timezone Database\n"
+					out = "```ruby\n#IGN/Guild/Timezone Database\n"
 					database.each { |x| out << "	#{$prefix}#{x}\n" }
 					out << "\n#Helpful Commands\n"
 					helpful.each { |x| out << "	#{$prefix}#{x}\n" }
