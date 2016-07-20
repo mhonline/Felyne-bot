@@ -70,7 +70,6 @@ module FelyneBot
 	$bot.include! Commands::Stars
 	$bot.include! Commands::Talents
 	$bot.include! Commands::Unstable
-	$bot.include! Commands::Translate
 	$bot.include! Commands::Wiki
 #Mod only
 	$bot.include! Commands::Announce
