@@ -19,7 +19,8 @@ module FelyneBot
 				    "铳枪":"Gunlance",
 				    "长枪":"Lance",
 				}
-				event.respond "#{translations[:text]}"
+				text = ":"+text
+				event.respond "#{translations[text]}"
 				puts "#{event.timestamp}: #{event.user.name}: CMD: raid1 <#{name}> <#{t4}>"
 			end
 		end
