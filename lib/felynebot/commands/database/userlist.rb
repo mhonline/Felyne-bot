@@ -17,8 +17,8 @@ module FelyneBot
 				if pages<1 then pages=1 end
 				if page>=pages then page=0 end
 				i=($users.length/pages)*page
-				event.respond "User Database:"
-				event.respond "```ruby\nName           IGN            Guild          Timezone       Server"
+				event << "User Database:"
+				event << "```ruby\nName           IGN            Guild          Timezone       Server"
 				begin
 					just1 = 15
 					just2 = 30
@@ -52,11 +52,11 @@ module FelyneBot
 					if $users[i].timezone!=nil then str << "#{$users[i].timezone.to_s}" end
 					str=str.ljust(just4)
 					if $users[i].server!=nil then str << "#{$users[i].server.to_s}" end
-					event.respond str
+					event << str
 					i+=1
 				end while i < ($users.length/pages)*(page+1)
-					event.respond "```"
-					event.respond "Showing page #{page+1}/#{pages}"
+					event << "```"
+					event << "Showing page #{page+1}/#{pages}"
 				end
 				puts "#{event.timestamp}: #{event.user.name}: CMD: userlist <#{page}>"
 				nil
