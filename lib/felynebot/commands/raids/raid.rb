@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:raid,
+					bucket: :delay10,
 					description: "Displays raid schedule.",
 					useage: "raid"
 			) do |event, list|

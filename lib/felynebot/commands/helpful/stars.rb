@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:stars,
+					bucket: :delay10,
 					description: "Stars picture list.",
 					useage: "stars"
 			) do |event|

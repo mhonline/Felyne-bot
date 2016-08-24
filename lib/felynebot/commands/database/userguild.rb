@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:userguild,
+					bucket: :delay10,
 					description: "Adds guild for user to the database.",
 					usage: "userguild <set/remove/list> <guildname>",
 					max_args: 2,

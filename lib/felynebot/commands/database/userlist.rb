@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:userlist,
+					bucket: :delay10,
 					description: "Shows the user database.",
 					useage: "userlist",
 					min_args: 0,

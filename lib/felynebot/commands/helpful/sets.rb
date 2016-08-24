@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:sets,
+					bucket: :delay10,
 					description: "Lists recommended sets for <weapon>.",
 					useage: "sets <weapon>",
 					min_args: 1,

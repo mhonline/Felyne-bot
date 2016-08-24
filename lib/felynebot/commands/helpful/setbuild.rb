@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:setbuild,
+					bucket: :delay10,
 					description: "Chinese set builder site.",
 					useage: "setbuild"
 			) do |event|

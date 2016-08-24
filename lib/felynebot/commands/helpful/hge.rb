@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:hge,
+					bucket: :delay10,
 					description: "HGE Copypasta.",
 					useage: "hge"
 			) do |event|

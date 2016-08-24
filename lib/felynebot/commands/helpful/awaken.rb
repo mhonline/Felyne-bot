@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:awaken,
+					bucket: :delay10,
 					description: "Awaken Copypasta.",
 					useage: "awaken"
 			) do |event|

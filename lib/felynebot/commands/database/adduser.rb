@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:adduser,
+					bucket: :delay10,
 					description: "Adds a user the the database.",
 					usage: "adduser <IGN>",
 					min_args: 1,

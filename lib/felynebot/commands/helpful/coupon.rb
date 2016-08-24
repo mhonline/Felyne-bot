@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:coupon,
+					bucket: :delay10,
 					description: "Purchasing Coupons help.",
 					useage: "coupon"
 			) do |event|

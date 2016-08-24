@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:ports,
+					bucket: :delay10,
 					description: "Ports list.",
 					useage: "ports"
 			) do |event|

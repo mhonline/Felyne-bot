@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:userfind,
+					bucket: :delay10,
 					description: "Finds a user on the database",
 					useage: "userfind <search>",
 					min_args: 1,

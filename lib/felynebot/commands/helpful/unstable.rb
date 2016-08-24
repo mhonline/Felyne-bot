@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:unstable,
+					bucket: :delay10,
 					description: "Unstable quick ref.",
 					useage: "unstable"
 			) do |event|

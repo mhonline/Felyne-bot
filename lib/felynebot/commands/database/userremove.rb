@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:userremove,
+					bucket: :delay10,
 					description: "Removes user from the database.",
 					usage: "userremove",
 					max_args: 0,

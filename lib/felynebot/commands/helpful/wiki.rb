@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:wiki,
+					bucket: :delay10,
 					description: "Searches the Wiki",
 					useage: "wiki <search>"
 			) do |event, list, *search|

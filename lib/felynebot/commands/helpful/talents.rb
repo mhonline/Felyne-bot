@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:talents,
+					bucket: :delay10,
 					description: "Talents Google Doc.",
 					useage: "talents"
 			) do |event|

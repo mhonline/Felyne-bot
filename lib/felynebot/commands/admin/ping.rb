@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:ping,
+					bucket: :delay10,
 					description: "Responds with response time",
 					useage: "ping"
 			) do |event|

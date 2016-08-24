@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:maint,
+					bucket: :delay10,
 					description: "Checks time left in game maintenance.",
 					useage: "maint"
 			) do |event|

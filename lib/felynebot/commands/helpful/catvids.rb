@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:catvids,
+					bucket: :delay10,
 					description: "Cat quest videos. (Chinese)",
 					useage: "catvids"
 			) do |event|

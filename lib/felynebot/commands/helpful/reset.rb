@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:reset,
+					bucket: :delay10,
 					description: "Displays time until gift/ticket reset",
 					useage: "reset"
 			) do |event|

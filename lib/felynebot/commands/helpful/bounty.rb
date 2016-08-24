@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:bounty,
+					bucket: :delay10,
 					description: "Bounty picture reference.",
 					useage: "bounty"
 			) do |event|

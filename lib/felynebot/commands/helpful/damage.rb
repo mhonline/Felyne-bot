@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:damage,
+					bucket: :delay10,
 					description: "Damage copypasta for ref.",
 					useage: "damage"
 			) do |event|

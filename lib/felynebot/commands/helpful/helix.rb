@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:helix,
+					bucket: :delay10,
 					description: "Helix's Wild Hunts",
 					useage: "helix"
 			) do |event|

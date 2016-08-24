@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:usertimezone,
+					bucket: :delay10,
 					description: "Adds timezone for user to the database.",
 					usage: "usertimezone <timezone>",
 					max_args: 1,

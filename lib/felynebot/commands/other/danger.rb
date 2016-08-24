@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:danger,
+					bucket: :delay10
 			) do |event|
 				danger = [
 					"It sounds like old morse code. ",

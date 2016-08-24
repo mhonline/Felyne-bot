@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:sasha,
+					bucket: :delay10,
 					description: "Sasha quests quick ref.",
 					useage: "sasha"
 			) do |event|

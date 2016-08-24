@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:deco,
+					bucket: :delay10,
 					description: "Sm0's deco spreadsheet.",
 					useage: "deco"
 			) do |event|

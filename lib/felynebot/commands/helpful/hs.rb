@@ -4,7 +4,8 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:hs,
-					description: "Athena's ASS Program fixed by Love2BeHated.",
+					bucket: :delay10,
+					description: "Hunter Set Guide.",
 					useage: "hs"
 			) do |event|
 				event.respond "Hunter Set guide."

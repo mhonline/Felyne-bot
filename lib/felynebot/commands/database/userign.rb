@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:userign,
+					bucket: :delay10,
 					description: "Changes IGN for user in the database.",
 					usage: "userign <IGN>",
 					max_args: 1,

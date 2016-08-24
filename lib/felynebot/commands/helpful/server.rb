@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:server,
+					bucket: :delay10,
 					description: "Displays a picture of the server most of us play on.",
 					useage: "server"
 			) do |event|

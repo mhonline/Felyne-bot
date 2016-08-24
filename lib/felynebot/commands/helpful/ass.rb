@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:ass,
+					bucket: :delay10,
 					description: "Athena's ASS Program fixed by Love2BeHated.",
 					useage: "ass"
 			) do |event|

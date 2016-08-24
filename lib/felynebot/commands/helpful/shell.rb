@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:shell,
+					bucket: :delay10,
 					description: "Shell copypasta for ref.",
 					useage: "shell"
 			) do |event|

@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:guildwars,
+					bucket: :delay10
 			) do |event|
 				guilds = []
 				(1..$guilds.length).each { |i| guilds.push({"value"=>0, "name"=>$guilds[i-1].guild_name}) }

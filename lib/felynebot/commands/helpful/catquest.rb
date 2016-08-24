@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:catquest,
+					bucket: :delay10,
 					description: "Cat quest description doc.",
 					useage: "catquest"
 			) do |event|

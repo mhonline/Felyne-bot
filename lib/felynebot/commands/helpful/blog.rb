@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:blog,
+					bucket: :delay10,
 					description: "Hunter Blog quick ref.",
 					useage: "blog"
 			) do |event|

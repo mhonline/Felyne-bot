@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:roll,
+					bucket: :delay10
 			) do |event, number|
 				if number == nil
 					number = 6
