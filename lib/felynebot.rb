@@ -30,6 +30,7 @@ module FelyneBot
 	puts "Permission Loaded!"
 
 	$bot.bucket :delay10, delay: 10
+	$bot.bucket :delay300, delay: 300
 
 #Admin/Troubleshooting
 	$bot.include! Commands::BotMod
