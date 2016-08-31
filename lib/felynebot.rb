@@ -125,7 +125,6 @@ module FelyneBot
 	$bot.message(containing: "111") { |event|
 		id_list = ["190211199097503745", "177511625111109632", "187278111866355712", "211187469889044480"]
 		if id_list.any?{|s| event.message.content.include?(s)}
-			
 		else
 			event.respond "CATCH THE FUCKING MONSTER!!"
 		end
