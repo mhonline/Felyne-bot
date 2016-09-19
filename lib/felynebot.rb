@@ -74,6 +74,10 @@ module FelyneBot
 	$bot.include! Commands::Talents
 	$bot.include! Commands::Unstable
 	$bot.include! Commands::Wiki
+	$bot.include! Commands::Achievement
+	$bot.include! Commands::Catskill
+	$bot.include! Commands::Cat
+	$bot.include! Commands::Newbie
 #Mod only
 	$bot.include! Commands::Announce
 	$bot.include! Commands::Avatar
