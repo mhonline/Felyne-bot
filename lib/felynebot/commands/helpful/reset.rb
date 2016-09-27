@@ -10,8 +10,8 @@ module FelyneBot
 			) do |event|
 				t2 = Time.now.to_i
 				t1 = Time.parse("20:00").to_i
-				if t1 > t2 then event.respond ":felyne:#{Time.at(t1 - t2).strftime('**%H** hours **%M** minutes **%S** seconds')} left until the next gift/ticket reset:felyne:"
-				else event.respond ":felyne:#{Time.at(t1 + 86400 - t2).strftime('**%H** hours **%M** minutes **%S** seconds')} left until the next gift/ticket reset:felyne:" end
+				if t1 > t2 then event.respond "#{Time.at(t1 - t2).strftime('**%H** hours **%M** minutes **%S** seconds')} left until the next gift/ticket reset"
+				else event.respond "#{Time.at(t1 + 86400 - t2).strftime('**%H** hours **%M** minutes **%S** seconds')} left until the next gift/ticket reset" end
 				puts "#{event.timestamp}: #{event.user.name}: CMD: reset"
 				nil
 			end
