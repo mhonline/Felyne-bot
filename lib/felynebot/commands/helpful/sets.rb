@@ -11,7 +11,7 @@ module FelyneBot
 			) do |event, *weapon|
 				weapon = weapon.join(' ')
 				if ["Lance", "lance", "L", "l"].include? weapon
-					event.respond "``Lance Sets:\nChange Helm to Rusted Kushala: http://monsterhunteronline.in/armor/?1=61531&2=61532&3=61533&4=61294&5=61535&9=46&10=8&8=81007&18=29182&19=29007&15=29264&27=29264&28=29264&26=29251&24=29252&21=29090``"
+					event.respond "Lance Sets:\nChange Helm to Rusted Kushala: http://monsterhunteronline.in/armor/?1=61531&2=61532&3=61533&4=61294&5=61535&9=46&10=8&8=81007&18=29182&19=29007&15=29264&27=29264&28=29264&26=29251&24=29252&21=29090"
 				end
 				if ["Gunlance", "gunlance", "GL", "Gl", "gl"].include? weapon
 					event.respond "``Gunlance Sets:``"
