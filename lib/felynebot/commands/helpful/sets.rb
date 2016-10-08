@@ -12,29 +12,29 @@ module FelyneBot
 				weapon = weapon.join(' ')
 				if ["Lance", "lance", "L", "l"].include? weapon
 					event.respond "Lance Sets:\nSnS and Lance (preferrably SnS) (Guard+2 Guard Up Health+2 Eva dist+2)
-Change the helm to Rusted Kushala: http://monsterhunteronline.in/armor/?1=61531&2=61532&3=61533&4=61294&5=61535&9=46&10=8&8=81007&18=29182&19=29007&15=29264&27=29264&28=29264&26=29251&24=29252&21=29090\nMelee Super Damage (Ch+2 Sharp Sharpness+1): http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29226&21=29226&24=29226"
+Change the helm to Rusted Kushala: <http://monsterhunteronline.in/armor/?1=61531&2=61532&3=61533&4=61294&5=61535&9=46&10=8&8=81007&18=29182&19=29007&15=29264&27=29264&28=29264&26=29251&24=29252&21=29090<\nMelee Super Damage (Ch+2 Sharp Sharpness+1): <http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29226&21=29226&24=29226>"
 				end
 				if ["Gunlance", "gunlance", "GL", "Gl", "gl"].include? weapon
 					event.respond "``Gunlance Sets:``"
 				end
 				if ["Sword and Shield", "sword and shield", "SnS", "SNS", "sns"].include? weapon
 					event.respond "Sword and Shield Sets:\nSnS and Lance (preferrably SnS) (Guard+2 Guard Up Health+2 Eva dist+2)
-Change the helm to Rusted Kushala: http://monsterhunteronline.in/armor/?1=61531&2=61532&3=61533&4=61294&5=61535&9=46&10=8&8=81007&18=29182&19=29007&15=29264&27=29264&28=29264&26=29251&24=29252&21=29090\nMelee Super Damage (Ch+2 Sharp Sharpness+1): http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29226&21=29226&24=29226"
+Change the helm to Rusted Kushala: <http://monsterhunteronline.in/armor/?1=61531&2=61532&3=61533&4=61294&5=61535&9=46&10=8&8=81007&18=29182&19=29007&15=29264&27=29264&28=29264&26=29251&24=29252&21=29090>\nMelee Super Damage (Ch+2 Sharp Sharpness+1): <http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29226&21=29226&24=29226>"
 				end
 				if ["Greatsword", "greatsword", "GS", "Gs", "gs"].include? weapon
-					event.respond "Greatsword Sets:\nMelee Super Damage (Ch+2 Sharp Sharpness+1): http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29226&21=29226&24=29226"
+					event.respond "Greatsword Sets:\nMelee Super Damage (Ch+2 Sharp Sharpness+1): <http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29226&21=29226&24=29226>"
 				end
 				if ["Longsword", "longsword", "LS", "Ls", "ls"].include? weapon
-					event.respond "Longsword Sets:\nMelee Super Damage (Ch+2 Sharp Sharpness+1): http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29226&21=29226&24=29226"
+					event.respond "Longsword Sets:\nMelee Super Damage (Ch+2 Sharp Sharpness+1): <http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29226&21=29226&24=29226>"
 				end
 				if ["Hammer", "hammer", "H", "h"].include? weapon
-					event.respond "Hammer Sets:\nMelee Super Damage (Ch+2 Sharp Sharpness+1): http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29226&21=29226&24=29226"
+					event.respond "Hammer Sets:\nMelee Super Damage (Ch+2 Sharp Sharpness+1): <http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29226&21=29226&24=29226>"
 				end
 				if ["Dual Blades", "dual blades", "DB", "Db", "db", "DS", "Ds", "ds", "Dual Swords", "dual swords"].include? weapon
-					event.respond "Dual Blades Sets:\nMelee Super Damage (Ch+2 Sharp Sharpness+1): http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29226&21=29226&24=29226"
+					event.respond "Dual Blades Sets:\nMelee Super Damage (Ch+2 Sharp Sharpness+1): <http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29226&21=29226&24=29226>"
 				end
 				if ["Hunting Horn", "hunting horn", "HH", "Hh", "hh"].include? weapon
-					event.respond "Hunting Horn Sets:\nMelee Super Damage (Ch+2 Sharp Sharpness+1): http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29226&21=29226&24=29226"
+					event.respond "Hunting Horn Sets:\nMelee Super Damage (Ch+2 Sharp Sharpness+1): <http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29226&21=29226&24=29226>"
 				end
 				if ["Bow", "bow", "B", "b"].include? weapon
 					event.respond "Bow Sets:\nSleep C+ Set: <http://monsterhunteronline.in/armor/?1=61496&2=61497&3=61358&4=61499&5=61500&8=81002&9=38&10=6&15=29010&16=29010&18=29262&21=29126&24=29124&25=29262&27=29262&28=29262>\nBetter Sleep C+ Set: <http://monsterhunteronline.in/armor/?1=61496&2=61497&3=61668&4=61499&5=61500&8=81002&9=38&10=7&15=29010&16=29010&18=29262&24=29082&25=29082&27=29262&28=29262&21=29126>"
