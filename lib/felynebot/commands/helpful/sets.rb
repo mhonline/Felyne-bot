@@ -11,28 +11,27 @@ module FelyneBot
 			) do |event, *weapon|
 				weapon = weapon.join(' ')
 				if ["Lance", "lance", "L", "l"].include? weapon
-					event.respond "Lance Sets:\nChange Helm to Rusted Kushala: http://monsterhunteronline.in/armor/?1=61531&2=61532&3=61533&4=61294&5=61535&9=46&10=8&8=81007&18=29182&19=29007&15=29264&27=29264&28=29264&26=29251&24=29252&21=29090"
-				end
+					event.respond "Lance Sets:\nChange Helm to Rusted Kushala: http://monsterhunteronline.in/armor/?1=61531&2=61532&3=61533&4=61294&5=61535&9=46&10=8&8=81007&18=29182&19=29007&15=29264&27=29264&28=29264&26=29251&24=29252&21=29090\nMelee DMG Set: http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29225&21=29225&24=29225&25=29225&22=29225&19=29225"				end
 				if ["Gunlance", "gunlance", "GL", "Gl", "gl"].include? weapon
 					event.respond "``Gunlance Sets:``"
 				end
 				if ["Sword and Shield", "sword and shield", "SnS", "SNS", "sns"].include? weapon
-					event.respond "``Sword and Shield Sets:``"
+					event.respond "Sword and Shield Sets:\nMelee DMG Set: http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29225&21=29225&24=29225&25=29225&22=29225&19=29225"
 				end
 				if ["Greatsword", "greatsword", "GS", "Gs", "gs"].include? weapon
-					event.respond "``Greatsword Sets:``"
+					event.respond "Greatsword Sets:\nMelee DMG Set: http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29225&21=29225&24=29225&25=29225&22=29225&19=29225"
 				end
 				if ["Longsword", "longsword", "LS", "Ls", "ls"].include? weapon
-					event.respond "``Longsword Sets:``"
+					event.respond "Longsword Sets:\nMelee DMG Set: http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29225&21=29225&24=29225&25=29225&22=29225&19=29225"
 				end
 				if ["Hammer", "hammer", "H", "h"].include? weapon
-					event.respond "``Hammer Sets:``"
+					event.respond "Hammer Sets:\nMelee DMG Set: http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29225&21=29225&24=29225&25=29225&22=29225&19=29225"
 				end
 				if ["Dual Blades", "dual blades", "DB", "Db", "db", "DS", "Ds", "ds", "Dual Swords", "dual swords"].include? weapon
-					event.respond "``Dual Blades Sets:``"
+					event.respond "Dual Blades Sets:\nMelee DMG Set: http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29225&21=29225&24=29225&25=29225&22=29225&19=29225"
 				end
 				if ["Hunting Horn", "hunting horn", "HH", "Hh", "hh"].include? weapon
-					event.respond "``Hunting Horn Sets:``"
+					event.respond "Hunting Horn Sets:\nMelee DMG Set: http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29225&21=29225&24=29225&25=29225&22=29225&19=29225"
 				end
 				if ["Bow", "bow", "B", "b"].include? weapon
 					event.respond "Bow Sets:\nSleep C+ Set: <http://monsterhunteronline.in/armor/?1=61496&2=61497&3=61358&4=61499&5=61500&8=81002&9=38&10=6&15=29010&16=29010&18=29262&21=29126&24=29124&25=29262&27=29262&28=29262>\nBetter Sleep C+ Set: <http://monsterhunteronline.in/armor/?1=61496&2=61497&3=61668&4=61499&5=61500&8=81002&9=38&10=7&15=29010&16=29010&18=29262&24=29082&25=29082&27=29262&28=29262&21=29126>"
