@@ -4,6 +4,7 @@ module FelyneBot
 
 #	$mess = []
 	$currentnews = open('http://mho.qq.com/webplat/info/news_version3/5499/5500/5501/m4027/list_1.shtml').read
+	$currentnews = $currentnews.encode("iso-8859-1").force_encoding("utf-8")
 	$currentnews.gsub!(/.*?(?=<ul class="newsList">)/im, "")
 	$currentnews.delete! "\s"
 	File.write('bot/newnews', $currentnews)
