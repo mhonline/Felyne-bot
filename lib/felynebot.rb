@@ -212,7 +212,6 @@ module FelyneBot
 		$news = $news.join(",")
 		File.write("bot/oldnews", $news)
 	end
-	puts '#newsupdate updated.'
 	puts 'Sync Confirmed.'
 	puts 'SKYNET ONLINE'
 	$bot.sync
