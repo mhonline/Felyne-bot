@@ -3,8 +3,7 @@ module FelyneBot
 	puts "Info Loaded"
 
 #	$mess = []
-	$currentnews = open('http://mho.qq.com/webplat/info/news_version3/5499/5500/5501/m4027/list_1.shtml').read
-	$currentnews = $currentnews.force_encoding('UTF-8')
+	$currentnews = open('http://mho.qq.com/webplat/info/news_version3/5499/5500/5501/m4027/list_1.shtml').read.force_encoding('UTF-8')
 	$currentnews.gsub!(/.*?(?=<ul class="newsList">)/im, "")
 	$currentnews.delete! "\s"
 	File.write('bot/newnews', $currentnews)
