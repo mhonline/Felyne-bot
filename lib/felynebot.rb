@@ -15,6 +15,8 @@ module FelyneBot
 	if !$news.include? $topnewsdate + " | " + $topnewslink
 		$news.push($topnewsdate + " | " + $topnewslink)
 		$bot.send_message(126766276038230016, "http://mho.qq.com" + $topnewslink)
+		$news = $news.join(",")
+		File.write("bot/oldnews", $news)
 	end
 	$users = []
 	$guilds = []
