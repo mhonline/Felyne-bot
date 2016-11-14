@@ -7,11 +7,7 @@ module FelyneBot
 	$currentnews.gsub!(/.*?(?=<ul class="newsList">)/im, "")
 	$currentnews.delete! "\s"
 	File.write('bot/newnews', $currentnews)
-	$news = getline("bot/oldnews",1).split(",")
-	$topnews = getline("bot/newnews",2)
-	$topnews = $topnews.chars.select(&:valid_encoding?).join
-	$topnewsdate = $topnews[/#{"<li><span>"}(.*?)#{"</span>"}/m, 1]
-	$topnewslink = $topnews[/#{"a><ahref=\""}(.*?)#{"\"target"}/m, 1]
+	puts "News gathered"
 	$users = []
 	$guilds = []
 	$wikilinks = ["armor", "cats", "crafting", "food", "gathering", "hunter-set", "hunter-set/#blademaster", "hunter-set/#gunner", "hunter-set/#list", "hunting-groups", "install", "jewelry", "materials", "monsters", "monsters/akura-jebia", "monsters/akura-vashimu", "monsters/azure-rathalos", "monsters/baelidae", "monsters/basarios", "monsters/blangonga", "monsters/blue-yian-kut-ku", "monsters/bulldrome", "monsters/burning-tartaronis", "monsters/caeserber", "monsters/cephadrome", "monsters/chameleos", "monsters/chramine", "monsters/conflagration-rathian", "monsters/congalala", "monsters/crystal-basarios", "monsters/daimyo-hermitaur", "monsters/diablos", "monsters/doom-estrellian", "monsters/dread-baelidae", "monsters/elemental-merphistophelin", "monsters/estrellian", "monsters/flame-blangonga", "monsters/gendrome", "monsters/ghost-caeserber", "monsters/giadrome", "monsters/gold-congalala", "monsters/gold-hypnocatrice", "monsters/gravios", "monsters/guren-shen-gaoren", "monsters/gypceros", "monsters/hypnocatrice", "monsters/ice-chramine", "monsters/imag", "monsters/iodrome", "monsters/khezu", "monsters/kushala-daora", "monsters/lavasioth", "monsters/lightenna", "monsters/merphistophelin", "monsters/monoblos", "monsters/one-eared-yian-garuga", "monsters/pink-rathian", "monsters/plesioth", "monsters/purple-gypceros", "monsters/purple-slicemargl", "monsters/rajang", "monsters/rathalos", "monsters/rathian", "monsters/red-khezu", "monsters/sandstone-basarios", "monsters/shattered-monoblos", "monsters/shen-gaoren", "monsters/shogun-ceanataur", "monsters/silver-hypnocatrice", "monsters/slicemargl", "monsters/swordmaster-shogun-ceanataur", "monsters/tartaronis", "monsters/tepekki-shen-gaoren", "monsters/tigrex", "monsters/velocidrome", "monsters/white-monoblos", "monsters/yellow-caeserber", "monsters/yian-garuga", "monsters/yian-kut-ku", "mosaics", "npcs", "quests", "quests/#arena", "quests/#bounty", "quests/#elites", "quests/#monsters", "quests/#raids", "quests/#tickets", "quests/#unstable", "skills", "talismans", "talismans/table", "translation", "vip", "weapons", "weapons/bow", "weapons/bowgun", "weapons/dual-blades", "weapons/greatsword", "weapons/gunlance", "weapons/hammer", "weapons/hunting-horn", "weapons/lance", "weapons/longsword", "weapons/sword-and-shield"]
@@ -111,6 +107,35 @@ module FelyneBot
 	$bot.include! Commands::Roll
 	$bot.include! Commands::Last
 
+#News Stuff
+
+	$news = getline("bot/oldnews",1).split(",")
+	#news2
+	$news2 = getline("bot/newnews",2)
+	$news2 = $news2.chars.select(&:valid_encoding?).join
+	$news2date = $news2[/#{"<li><span>"}(.*?)#{"</span>"}/m, 1]
+	$news2link = $news2[/#{"a><ahref=\""}(.*?)#{"\"target"}/m, 1]
+	#news3
+	$news3 = getline("bot/newnews",3)
+	$news3 = $news3.chars.select(&:valid_encoding?).join
+	$news3date = $news3[/#{"<li><span>"}(.*?)#{"</span>"}/m, 1]
+	$news3link = $news3[/#{"a><ahref=\""}(.*?)#{"\"target"}/m, 1]
+	#news4
+	$news4 = getline("bot/newnews",4)
+	$news4 = $news4.chars.select(&:valid_encoding?).join
+	$news4date = $news4[/#{"<li><span>"}(.*?)#{"</span>"}/m, 1]
+	$news4link = $news4[/#{"a><ahref=\""}(.*?)#{"\"target"}/m, 1]
+	#news5
+	$news5 = getline("bot/newnews",5)
+	$news5 = $news5.chars.select(&:valid_encoding?).join
+	$news5date = $news5[/#{"<li><span>"}(.*?)#{"</span>"}/m, 1]
+	$news5link = $news5[/#{"a><ahref=\""}(.*?)#{"\"target"}/m, 1]
+	#news6
+	$news6 = getline("bot/newnews",6)
+	$news6 = $news6.chars.select(&:valid_encoding?).join
+	$news6date = $news6[/#{"<li><span>"}(.*?)#{"</span>"}/m, 1]
+	$news6link = $news6[/#{"a><ahref=\""}(.*?)#{"\"target"}/m, 1]
+
 #Fun Commands
 	$bot.message(containing: "(╯°□°）╯︵ ┻━┻") { |event|
 		event.respond "┬─┬﻿ ノ( ゜-゜ノ)"
@@ -143,19 +168,6 @@ module FelyneBot
 			event.respond "CATCH THE FUCKING MONSTER!!"
 		end
 	}
-#	$bot.message { |event|
-#		if(event.channel.id == 127308098372108288)
-#			$bot.send_message(138344202005250049, "\##{event.message.channel.name} - #{event.user.name}: #{event.message.content.gsub(/<@!?(\d+)>/){ |m| event.server.member($1, false).name }}")
-#		end
-#	}
-#	$bot.message { |event|
-#		if(event.channel.id == 138344202005250049)
-#			$bot.send_message(127308098372108288, "\##{event.message.channel.name} - #{event.user.name}: #{event.message.content.gsub(/<@!?(\d+)>/){ |m| event.server.member($1, false).name }}")
-#		end
-#	}
-#mho-discussion: 125859373393117184
-#website: 197762918337478656
-#betabot: 189667083586502656
 
 	puts "Commands Loaded"
 	$bot.debug = false
@@ -165,9 +177,38 @@ module FelyneBot
 	else
 		$bot.game = 0
 	end
-	if !$news.include? $topnewsdate + " | " + $topnewslink
-		$news.push($topnewsdate + " | " + $topnewslink)
-		$bot.send_message(126766276038230016, "http://mho.qq.com" + $topnewslink)
+	#news6
+	if !$news.include? $news6date + " | " + $news6link
+		$news.push($news6date + " | " + $news6link)
+		$bot.send_message(126766276038230016, "http://mho.qq.com" + $news6link)
+		$news = $news.join(",")
+		File.write("bot/oldnews", $news)
+	end
+	#news5
+	if !$news.include? $news5date + " | " + $news5link
+		$news.push($news5date + " | " + $news5link)
+		$bot.send_message(126766276038230016, "http://mho.qq.com" + $news5link)
+		$news = $news.join(",")
+		File.write("bot/oldnews", $news)
+	end
+	#news4
+	if !$news.include? $news4date + " | " + $news4link
+		$news.push($news4date + " | " + $news4link)
+		$bot.send_message(126766276038230016, "http://mho.qq.com" + $news4link)
+		$news = $news.join(",")
+		File.write("bot/oldnews", $news)
+	end
+	#news3
+	if !$news.include? $news3date + " | " + $news3link
+		$news.push($news3date + " | " + $news3link)
+		$bot.send_message(126766276038230016, "http://mho.qq.com" + $news3link)
+		$news = $news.join(",")
+		File.write("bot/oldnews", $news)
+	end
+	#news2
+	if !$news.include? $news2date + " | " + $news2link
+		$news.push($news2date + " | " + $news2link)
+		$bot.send_message(126766276038230016, "http://mho.qq.com" + $news2link)
 		$news = $news.join(",")
 		File.write("bot/oldnews", $news)
 	end
