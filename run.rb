@@ -1,4 +1,4 @@
-puts 'starting FelyneBot'
+puts 'starting FelyneBot!'
 print 'loading required...'
 require 'json'
 require 'discordrb'
