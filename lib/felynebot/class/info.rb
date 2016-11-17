@@ -39,7 +39,7 @@ class Info
 		puts "ID Loaded"
 	else
 		puts 'No file found for the ID String! Please input the ID.'
-		id = prompt "Client/Application ID: "
+		id = prompt "Client/Client ID: "
 		@i_id=id
 
 		q= prompt "Store this for next time? y/n: "
