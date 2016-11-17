@@ -54,11 +54,14 @@ module FelyneBot
 	$bot.include! Commands::UserServer
 	$bot.include! Commands::UserTimezone
 #Helpful Commands
+	$bot.include! Commands::Achievement
 	$bot.include! Commands::Ass
 	$bot.include! Commands::Awaken
 	$bot.include! Commands::Blog
 	$bot.include! Commands::Bounty
+	$bot.include! Commands::Cat
 	$bot.include! Commands::CatQuest
+	$bot.include! Commands::Catskill
 	$bot.include! Commands::CatVids
 	$bot.include! Commands::Coupon
 	$bot.include! Commands::Damage
@@ -68,6 +71,7 @@ module FelyneBot
 	$bot.include! Commands::HGE
 	$bot.include! Commands::HS
 	$bot.include! Commands::Maint
+	$bot.include! Commands::Newbie
 	$bot.include! Commands::Ports
 	$bot.include! Commands::Reset
 	$bot.include! Commands::Sasha
@@ -80,10 +84,6 @@ module FelyneBot
 	$bot.include! Commands::Talents
 	$bot.include! Commands::Unstable
 	$bot.include! Commands::Wiki
-	$bot.include! Commands::Achievement
-	$bot.include! Commands::Catskill
-	$bot.include! Commands::Cat
-	$bot.include! Commands::Newbie
 #Mod only
 	$bot.include! Commands::Announce
 	$bot.include! Commands::Avatar
@@ -104,8 +104,9 @@ module FelyneBot
 	$bot.include! Commands::Ask
 	$bot.include! Commands::Danger
 	$bot.include! Commands::GuildWars
-	$bot.include! Commands::Roll
+	$bot.include! Commands::Hosting
 	$bot.include! Commands::Last
+	$bot.include! Commands::Roll
 
 #News Stuff
 
