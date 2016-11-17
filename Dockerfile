@@ -1,2 +1,2 @@
-FROM ruby:2.1-onbuild 
+FROM ruby:2.3.1-alpine 
 CMD ["./run.rb"]
