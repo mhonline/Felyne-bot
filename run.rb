@@ -1,4 +1,4 @@
-puts 'starting FelyneBot'
+puts 'starting FelyneBot!'
 print 'loading required...'
 require 'json'
 require 'discordrb'
@@ -10,6 +10,7 @@ require 'yaml'
 include Sys
 require 'time'
 require 'time_difference'
+require 'open-uri'
 
 #require command files
 require_relative 'lib/felynebot/class/user'
