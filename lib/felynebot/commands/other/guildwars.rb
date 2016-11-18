@@ -4,6 +4,7 @@ module FelyneBot
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:guildwars,
+					help_available: false,
 					bucket: :delay10
 			) do |event|
 				guilds = []
