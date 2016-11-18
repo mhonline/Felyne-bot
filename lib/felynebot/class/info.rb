@@ -32,7 +32,7 @@ class Info
 			f.write(token)
 			f.close
 		end
-	end
+	
 
 	#Open file for Client ID/Get ID
 	if File.exist?(loc2)
