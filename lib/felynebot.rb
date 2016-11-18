@@ -210,7 +210,7 @@ module FelyneBot
 	#news4
 	if !news.include? news4date + " | " + news4link
 		news.push(news4date + " | " + news4link)
-		bot.send_message(126766276038230016, "#{news4date} | http://mho.qq.com#{news4link}")
+		$bot.send_message(126766276038230016, "#{news4date} | http://mho.qq.com#{news4link}")
 		news1 = news.join(",")
 		File.write("bot/oldnews", news1)
 	end
