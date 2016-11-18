@@ -11,6 +11,7 @@ include Sys
 require 'time'
 require 'time_difference'
 require 'open-uri'
+require 'rufus-scheduler'
 
 #require command files
 require_relative 'lib/felynebot/class/user'
