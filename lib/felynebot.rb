@@ -231,7 +231,7 @@ module FelyneBot
 	puts 'News Posted!'
 		
 	scheduler.cron '*/1 * * * *' do |event|
-		$bot.sent_message(189667083586502656, "Is this annoying yet?")
+		$bot.send_message(189667083586502656, "Is this annoying yet?")
 	end
 	
 	puts 'Sync Confirmed!'
