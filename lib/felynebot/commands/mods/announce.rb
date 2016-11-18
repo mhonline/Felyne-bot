@@ -6,6 +6,7 @@ module FelyneBot
 					:announce,
 					description: "announces your text server-wide. (Probably shouldn't use this...)",
 					usage: "announce <text>",
+					help_available: false,
 					min_args: 1,
 					permission_level: 800,
 					permission_message: "I'm sorry Dave, I cannot do that."
