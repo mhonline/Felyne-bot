@@ -7,6 +7,7 @@ module FelyneBot
 					description: "Adds mod permissions to Felyne.",
 					useage: "botmod <@name> <level> <force>",
 					permission_level: 800,
+					help_available: false,
 					min_args: 1,
 					max_args: 4,
 					permission_message: "I'm sorry Dave, I cannot do that.",
