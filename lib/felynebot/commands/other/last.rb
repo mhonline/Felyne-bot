@@ -7,6 +7,7 @@ module FelyneBot
 					bucket: :delay10,
 					description: 'Gets the last message seen of a user.',
 					usage: "<@user>",
+					help_available: false,
 					min_arguments: 1,
 					max_arguments: 1
 				) do |event, person|
