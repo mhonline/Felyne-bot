@@ -226,7 +226,7 @@ module FelyneBot
 		$news.push($news2date + " | " + $news2link)
 		$bot.send_message(126766276038230016, "#{$news2date} | http://mho.qq.com#{$news2link}")
 		$news1 = $news.join(",")
-		File.write("bot/oldnews", $$news1)
+		File.write("bot/oldnews", $news1)
 	end
 	puts '$news Posted!'
 	
