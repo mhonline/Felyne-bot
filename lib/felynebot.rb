@@ -232,9 +232,11 @@ module FelyneBot
 	
 	scheduler.cron '0 19 * * *' do |event|
 		$bot.send_message(122526505606709257, "Daily gift/ticket reset just happened!\nDon't forget to collect your rewards!")
+		$bot.send_message(125859373393117184, "Daily gift/ticket reset just happened!\nDon't forget to collect your rewards!")
 	end
 	scheduler.cron '0 19 * * 4' do |event|
 		$bot.send_message(122526505606709257, "Weekly gift/ticket reset just happened!\nYour extra ticket storage has been refilled!\nDon't forget to collect your rewards!")
+		$bot.send_message(125859373393117184, "Weekly gift/ticket reset just happened!\nYour extra ticket storage has been refilled!\nDon't forget to collect your rewards!")
 	end
 	scheduler.cron '5 */3 * * *' do |event|
 		$bot.stop
