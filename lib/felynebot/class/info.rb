@@ -4,10 +4,10 @@ def prompt(*args)
 end
 
 class Info
-	def initialize(loc1,loc2) #loc3
-		@i_id = nil #i_cid
+	def initialize(loc1,loc2,loc3)
+		@i_cid = nil 
 		@i_token = nil
-#		@i_aid=nil
+		@i_aid = nil
 
 
 	#Open file for Client ID/Get ID
@@ -37,14 +37,14 @@ class Info
 	#Open file for Client ID/Get ID
 	if File.exist?(loc2)
 		f = File.open(loc2,"r")
-		id = f.read #cid = f.read
-		@i_id = id #i_cid = cid
+		cid = f.read
+		@i_cid = cid
 		f.close
 		puts "Client ID Loaded!"
 	else
 		puts 'No file found for the ID String! Please input the ID.'
-		id = prompt "Client/Client ID: " #cid = prompt "Client/Client ID:"
-		@i_id = id #i_cid = cid
+		cid = prompt "Client/Client ID:"
+		@i_cid = cid
 
 		q= prompt "Store this for next time? y/n: "
 		if q[0] == "y"
@@ -54,46 +54,46 @@ class Info
 				puts "Creating new file [#{loc2}]"
 				f = File.new(loc2,"w")
 			end
-				f.write(id) #f.write(cid)
+				f.write(cid)
 				f.close
 			end
 		end
 	end	
 
 	#Open file for Application ID/Get ID
-#	if File.exist?(loc3)
-#		f = File.open(loc3,"r")
-#		aid = f.read
-#		@i_aid = aid
-#		f.close
-#		puts "Application ID Loaded!"
-#	else
-#		puts 'No file found for the ID String! Please input the ID.'
-#		aid = prompt "Aplication/Application ID: "
-#		@i_aid = aid
-#
-#		q = prompt "Store this for next time? y/n: "
-#		if q[0] == "y"
-#			if File.exist?(loc3)
-#				f = File.open(loc3,"w")
-#			else
-#				puts "Creating new file [#{loc3}]"
-#				f = File.new(loc3,"w")
-#			end
-#				f.write(aid)
-#				f.close
-#			end
-#		end
-#	end
+	if File.exist?(loc3)
+		f = File.open(loc3,"r")
+		aid = f.read
+		@i_aid = aid
+		f.close
+		puts "Application ID Loaded!"
+	else
+		puts 'No file found for the ID String! Please input the ID.'
+		aid = prompt "Aplication/Application ID: "
+		@i_aid = aid
+
+		q = prompt "Store this for next time? y/n: "
+		if q[0] == "y"
+			if File.exist?(loc3)
+				f = File.open(loc3,"w")
+			else
+				puts "Creating new file [#{loc3}]"
+				f = File.new(loc3,"w")
+			end
+				f.write(aid)
+				f.close
+			end
+		end
+	end
 
 
-	def id #cid
-		@i_id #@i_cid
+	def cid
+		@i_cid
 	end
 	
-#	def aid
-#		@i_aid
-#	end
+	def aid
+		@i_aid
+	end
 	
 	def token
 		@i_token

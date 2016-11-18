@@ -20,10 +20,10 @@ module FelyneBot
 	loadusers("userbase/users")
 	loadmess("userbase/mess")
 	loadguilds("userbase/guilds")
-	info = Info.new('bot/token','bot/id')
+	info = Info.new('bot/token','bot/cid','bot/aid')
 	token = info.token
-	id = info.id #cid = info.cid
-#	aid = info.aid
+	cid = info.cid
+	aid = info.aid
 	scheduler = Rufus::Scheduler.new
 	puts "All variables initialized!"
 
@@ -31,7 +31,7 @@ module FelyneBot
 	$prefix = '-'
 
 	#Loads and establishes $bot object
-	$bot = Discordrb::Commands::CommandBot.new token: token, client_id: id, prefix: $prefix, advanced_functionality: false #application_id: aid, client_id: cid,
+	$bot = Discordrb::Commands::CommandBot.new token: token, application_id: aid, client_id: cid, prefix: $prefix, advanced_functionality: false
 	puts "$bot Loaded!"
 
 	#Loads permissions from array
