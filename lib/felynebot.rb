@@ -229,10 +229,17 @@ module FelyneBot
 		File.write("bot/oldnews", $news1)
 	end
 	puts 'News Posted!'
-		
-	scheduler.cron '*/1 * * * *' do |event|
-		$bot.send_message(189667083586502656, "Is this annoying yet?")
+	
+	scheduler.cron '0 19 * * *' do |event|
+		$bot.send_message(122526505606709257, "Daily gift/ticket reset just happened!\nDon't forget to collect your rewards!")
 	end
+	scheduler.cron '0 19 * * 4' do |event|
+		$bot.send_message(122526505606709257, "Weekly gift/ticket reset just happened!\nYour extra ticket storage has been refilled!\nDon't forget to collect your rewards!")
+	end
+	scheduler.cron '5 */3 * * *' do |event|
+		$bot.stop
+	end
+	puts 'Cron jobs scheduled!'
 	
 	puts 'Sync Confirmed!'
 	puts 'SKYNET ONLINE'
