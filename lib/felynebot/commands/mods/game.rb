@@ -6,6 +6,7 @@ module FelyneBot
 					:game,
 					description: "Sets game status of the bot.",
 					usage: "game <text>",
+					help_available: false,
 					min_args: 1,
 					permission_level: 2,
 					permission_message: "I'm sorry Dave, I cannot do that."
