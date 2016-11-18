@@ -196,35 +196,35 @@ module FelyneBot
 	if !$news.include? $news6date + " | " + $news6link
 		$news.push($news6date + " | " + $news6link)
 		$bot.send_message(126766276038230016, "#{$news6date} | http://mho.qq.com#{$news6link}")
-		$news1 = $news.join(",")
+		$news1 = $news.join(",").gsub("\n","")
 		File.write("bot/oldnews", $news1)
 	end
-	#$news5
+	#news5
 	if !$news.include? $news5date + " | " + $news5link
 		$news.push($news5date + " | " + $news5link)
 		$bot.send_message(126766276038230016, "#{$news5date} | http://mho.qq.com#{$news5link}")
-		$news1 = $news.join(",")
+		$news1 = $news.join(",").gsub("\n","")
 		File.write("bot/oldnews", $news1)
 	end
-	#$news4
+	#news4
 	if !$news.include? $news4date + " | " + $news4link
 		$news.push($news4date + " | " + $news4link)
 		$bot.send_message(126766276038230016, "#{$news4date} | http://mho.qq.com#{$news4link}")
-		$news1 = $news.join(",")
+		$news1 = $news.join(",").gsub("\n","")
 		File.write("bot/oldnews", $news1)
 	end
-	#$news3
+	#news3
 	if !$news.include? $news3date + " | " + $news3link
 		$news.push($news3date + " | " + $news3link)
 		$bot.send_message(126766276038230016, "#{$news3date} | http://mho.qq.com#{$news3link}")
-		$news1 = $news.join(",")
+		$news1 = $news.join(",").gsub("\n","")
 		File.write("bot/oldnews", $news1)
 	end
-	#$news2
+	#news2
 	if !$news.include? $news2date + " | " + $news2link
 		$news.push($news2date + " | " + $news2link)
 		$bot.send_message(126766276038230016, "#{$news2date} | http://mho.qq.com#{$news2link}")
-		$news1 = $news.join(",")
+		$news1 = $news.join(",").gsub("\n","")
 		File.write("bot/oldnews", $news1)
 	end
 	puts '$news Posted!'
