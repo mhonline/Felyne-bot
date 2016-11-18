@@ -6,6 +6,7 @@ module FelyneBot
 					:kill,
 					description: "Kills felyne",
 					useage: "kill",
+					help_available: false,
 					permission_level: 800,
 					permission_message: "I'm sorry Dave, I cannot do that.",
 			) do |event|
