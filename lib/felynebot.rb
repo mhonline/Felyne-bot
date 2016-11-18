@@ -24,6 +24,7 @@ module FelyneBot
 	token = info.token
 	id = info.id #cid = info.cid
 #	aid = info.aid
+	scheduler = Rufus::Scheduler.new
 	puts "All variables initialized!"
 
 	#sets bot prefix
