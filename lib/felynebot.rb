@@ -245,11 +245,15 @@ module FelyneBot
 		$bot.user(222214087269023744).pm("Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")
 		$bot.user(196781866672455680).pm("Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")
 		$bot.user(150278590494277632).pm("Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")
+		$bot.send_message(122526505606709257, "Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")
+		$bot.send_message(125859373393117184, "Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")
 	end
 	scheduler.cron '0 11 * * 7' do
 		$bot.user(222214087269023744).pm("Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")
 		$bot.user(196781866672455680).pm("Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")
 		$bot.user(150278590494277632).pm("Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")
+		$bot.send_message(122526505606709257, "Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")
+		$bot.send_message(125859373393117184, "Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")
 	end
 	puts 'Cron jobs scheduled!'
 	
