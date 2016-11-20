@@ -118,6 +118,7 @@ module FelyneBot
 	$bot.include! Commands::Hosting
 	$bot.include! Commands::Last
 	$bot.include! Commands::Roll
+	$bot.include! Commands::Remindme
 		
 	$news = getline("bot/oldnews",1).split(",")
 	#news2
@@ -240,13 +241,16 @@ module FelyneBot
 	scheduler.cron '5 */3 * * *' do
 		$bot.stop
 	end
-
-
-	if File.exist?("bot/pmcron")
-
-		
+	scheduler.cron '0 11 * * 6' do
+		$bot.user(222214087269023744).pm("Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")
+		$bot.user(196781866672455680).pm("Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")
+		$bot.user(150278590494277632).pm("Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")
 	end
-
+	scheduler.cron '0 11 * * 7' do
+		$bot.user(222214087269023744).pm("Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")
+		$bot.user(196781866672455680).pm("Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")
+		$bot.user(150278590494277632).pm("Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")
+	end
 	puts 'Cron jobs scheduled!'
 	
 	puts 'Sync Confirmed!'
