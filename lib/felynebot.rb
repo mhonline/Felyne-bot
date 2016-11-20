@@ -229,17 +229,17 @@ module FelyneBot
 	end
 	puts '$news Posted!'
 	
-	scheduler.cron '0 19 * * *'
+	scheduler.cron '0 19 * * *' {
 		$bot.send_message(122526505606709257, "Daily gift/ticket reset just happened!\nDon't forget to collect your rewards!")
 		$bot.send_message(125859373393117184, "Daily gift/ticket reset just happened!\nDon't forget to collect your rewards!")
-	end
-	scheduler.cron '0 19 * * 4'
+	}
+	scheduler.cron '0 19 * * 4' {
 		$bot.send_message(122526505606709257, "Weekly gift/ticket reset just happened!\nYour extra ticket storage has been refilled!\nAny weekly events such as Astrolab have been reset!\nDon't forget to collect your rewards!")
 		$bot.send_message(125859373393117184, "Weekly gift/ticket reset just happened!\nYour extra ticket storage has been refilled!\nAny weekly events such as Astrolab have been reset!\nDon't forget to collect your rewards!")
-	end
-	scheduler.cron '5 */3 * * *'
+	}
+	scheduler.cron '5 */3 * * *' {
 		$bot.stop
-	end
+	}
 
 	if File.exist?("bot/pmcron")
 
