@@ -9,8 +9,8 @@ module FelyneBot
 					description: "Sets user up for PM notification of events.",
 					usage: "remindme <daily/weekend>",
 			) do |event, type|
-				if type = "daily" || type = "weekend" || type = "remove"
-					if type = "daily"
+				if type == "daily" || type == "weekend" || type == "remove"
+					if type == "daily"
 						if File.file?("bot/dailypm")
 							dailypm = loadArr(dailypm,"bot/dailypm")
 						else
@@ -24,7 +24,7 @@ module FelyneBot
 							event << "*#{event.user.name}* has been added to the daily pm list"
 						end
 					end
-					if type = "weekend"
+					if type == "weekend"
 						if File.file?("bot/weekendpm")
 							weekendpm = loadArr(weekendpm,"bot/weekendpm")
 						else
@@ -38,7 +38,7 @@ module FelyneBot
 							event << "*#{event.user.name}* has been added to the weekend event pm list"
 						end
 					end
-					if type = "remove"
+					if type == "remove"
 						if File.file?("bot/dailypm")
 							dailypm = loadArr(dailypm,"bot/dailypm")
 						else
