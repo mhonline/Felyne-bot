@@ -46,7 +46,7 @@ module FelyneBot
 
 	#Set up buckets
 	$bot.bucket :delay10, delay: 10
-	$bot.bucket :delay300, delay: 3003
+	$bot.bucket :delay300, delay: 300
 	puts "Buckets filled!"
 
 	#Admin/Troubleshooting
