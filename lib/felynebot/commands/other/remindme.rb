@@ -63,6 +63,7 @@ module FelyneBot
 						else
 							event << "You are not currently recieving weekend notifications"
 						end
+					end
 				else
 					event << "Invalid.  Valid options: `daily` | `weekend` | `remove`"
 				end
