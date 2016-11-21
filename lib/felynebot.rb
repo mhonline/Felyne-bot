@@ -118,7 +118,7 @@ module FelyneBot
 	$bot.include! Commands::Hosting
 	$bot.include! Commands::Last
 	$bot.include! Commands::Roll
-	#$bot.include! Commands::Remindme
+	$bot.include! Commands::Remindme
 		
 	$news = getline("bot/oldnews",1).split(",")
 	#news2
