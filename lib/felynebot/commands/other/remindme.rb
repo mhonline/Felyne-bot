@@ -20,7 +20,7 @@ module FelyneBot
 							event << "You are already recieving daily pm notifications"
 						else
 							dailypm = dailypm.push(event.user.id)
-							File.write('bot/dailypm', weekendpm.to_s)
+							File.write('bot/dailypm', dailypm.to_s)
 							event << "*#{event.user.name}* has been added to the daily pm list"
 						end
 					end
