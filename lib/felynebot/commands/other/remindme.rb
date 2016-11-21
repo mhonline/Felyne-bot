@@ -45,7 +45,7 @@ module FelyneBot
 							dailypm = []
 						end
 						if dailypm.include? event.user.id
-							dailypm = dailypm - event.user.id
+							dailypm = dailypm - [event.user.id]
 							File.write('bot/dailypm', dailypm.to_s)
 							event << "You have been removed from the daily notifications list"
 						else
@@ -57,7 +57,7 @@ module FelyneBot
 							weekendpm = []
 						end
 						if weekendpm.include? event.user.id
-							weekendpm = weekendpm - event.user.id
+							weekendpm = weekendpm - [event.user.id]
 							File.write('bot/weekendpm', weekendpm.to_s)
 							event << "You have been removed from the weekend notifications list"
 						else
