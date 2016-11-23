@@ -6,7 +6,7 @@ def news_pull
 	rescue StandardError
 		res = false
 	end
-	if res !== false
+	if res != false
 		$currentnews = open(url).read
 		$currentnews.gsub!(/.*?(?=<ul class="newsList">)/im, "")
 		$currentnews.delete! "\s"
