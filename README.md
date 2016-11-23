@@ -5,6 +5,7 @@
 
 #### Commands done
 ##### Admin
+- botmod
 - eval
 - info
 - kill
@@ -21,11 +22,35 @@
 - usertimezone
 
 ##### Helpful
-- fullhelp
+- achievement
+- ass
+- awaken
+- blog
+- bounty
+- cat
+- catquest
+- catskill
+- catvids
+- coupon
+- damage
+- deco
+- helix
+- help
+- hge
+- hs
 - maint
+- newbie
+- ports
 - reset
+- sasha
 - server
 - server47
+- setbuild
+- sets
+- shell
+- stars
+- talents
+- unstable
 - wiki
 
 ##### Mods
@@ -37,8 +62,11 @@
 - rp
 
 ##### Other
+- ask
 - danger
 - guildwars
+- hosting
+- remindme
 - roll
 
 ##### Raids
@@ -50,7 +78,6 @@
 - raid5
 
 ##### Roles
-- guild
 - userraid
 
 #### stuff in works
@@ -67,6 +94,7 @@
 - 'sys-uptime'
 - 'json'
 - 'time_difference'
+- 'rufus-scheduler'
 
 thx to the whole mho community
 join our discord server to communicate
