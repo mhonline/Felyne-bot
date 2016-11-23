@@ -182,7 +182,7 @@ module FelyneBot
 	puts "Commands Loaded"
 	
 	#Turn off debugging and run async
-	$bot.debug = true
+	$bot.debug = false
 	$bot.run :async
 		
 	#Set game status from file
