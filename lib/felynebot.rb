@@ -183,7 +183,7 @@ module FelyneBot
 	
 	#Turn off debugging and run async
 	$bot.debug = false
-	#$bot.run :async
+	$bot.run :async
 		
 	#Set game status from file
 	if File.file?("bot/game")
