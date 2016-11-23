@@ -1,7 +1,7 @@
 module FelyneBot
 	require_relative 'felynebot/extras/news'
 	#Pull $news from mho.qq.com and store to file
-	Extras::News.news_pull
+	news_pull
 	
 	#Create Global Variables
 	$users = []
