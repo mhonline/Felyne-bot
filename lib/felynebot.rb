@@ -21,7 +21,7 @@ module FelyneBot
 	loadmess("userbase/mess")
 	loadguilds("userbase/guilds")
 	info = Info.new('bot/token','bot/cid','bot/aid')
-	token = info.token
+	token = info.token.gsub("\n",'')
 	cid = info.cid
 	aid = info.aid
 	scheduler = Rufus::Scheduler.new
