@@ -41,19 +41,74 @@ module FelyneBot
 	puts "Buckets filled!"
 
 	#Admin/Troubleshooting
-	$bot.include! Commands::BotMod, Commands::Eval, Commands::Info, Commands::Kill, Commands::Ping
+	$bot.include! Commands::BotMod, Commands::Eval
+	$bot.include! Commands::Info
+	$bot.include! Commands::Kill
+	$bot.include! Commands::Ping
 	#IGN/Guild/Timezone Database
-	$bot.include! Commands::AddUser, Commands::UserFind, Commands::UserGuild, Commands::UserIgn, Commands::UserList, Commands::UserRemove, Commands::UserServer, Commands::UserTimezone
+	$bot.include! Commands::AddUser
+	$bot.include! Commands::UserFind
+	$bot.include! Commands::UserGuild
+	$bot.include! Commands::UserIgn
+	$bot.include! Commands::UserList
+	$bot.include! Commands::UserRemove
+	$bot.include! Commands::UserServer
+	$bot.include! Commands::UserTimezone
 	#Helpful Commands
-	$bot.include! Commands::Achievement, Commands::Ass, Commands::Awaken, Commands::Blog, Commands::Bounty, Commands::Cat, Commands::CatQuest, Commands::Catskill, Commands::CatVids, Commands::Coupon, Commands::Damage, Commands::Deco, Commands::Helix, Commands::Help, Commands::HGE, Commands::HS, Commands::Maint, Commands::Newbie, Commands::Ports, Commands::Reset, Commands::Sasha, Commands::Server, Commands::Server47, Commands::SetBuild, Commands::Sets, Commands::Shell, Commands::Stars, Commands::Talents, Commands::Unstable, Commands::Wiki
+	$bot.include! Commands::Achievement
+	$bot.include! Commands::Ass
+	$bot.include! Commands::Awaken
+	$bot.include! Commands::Blog
+	$bot.include! Commands::Bounty
+	$bot.include! Commands::Cat
+	$bot.include! Commands::CatQuest
+	$bot.include! Commands::Catskill
+	$bot.include! Commands::CatVids
+	$bot.include! Commands::Coupon
+	$bot.include! Commands::Damage
+	$bot.include! Commands::Deco
+	$bot.include! Commands::Helix
+	$bot.include! Commands::Help
+	$bot.include! Commands::HGE
+	$bot.include! Commands::HS
+	$bot.include! Commands::Maint
+	$bot.include! Commands::Newbie
+	$bot.include! Commands::Ports
+	$bot.include! Commands::Reset
+	$bot.include! Commands::Sasha
+	$bot.include! Commands::Server
+	$bot.include! Commands::Server47
+	$bot.include! Commands::SetBuild
+	$bot.include! Commands::Sets
+	$bot.include! Commands::Shell
+	$bot.include! Commands::Stars
+	$bot.include! Commands::Talents
+	$bot.include! Commands::Unstable
+	$bot.include! Commands::Wiki
 	#Mod only
-	$bot.include! Commands::Announce, Commands::Avatar, Commands::Game, Commands::MainSetup, Commands::NewGuild, Commands::RolePlay
+	$bot.include! Commands::Announce
+	$bot.include! Commands::Avatar
+	$bot.include! Commands::Game
+	$bot.include! Commands::MainSetup
+	$bot.include! Commands::NewGuild
+	$bot.include! Commands::RolePlay
 	#Raids
-	$bot.include! Commands::Raid, Commands::Raid1, Commands::Raid2, Commands::Raid3, Commands::Raid4, Commands::Raid5
+	$bot.include! Commands::Raid
+	$bot.include! Commands::Raid1
+	$bot.include! Commands::Raid2
+	$bot.include! Commands::Raid3
+	$bot.include! Commands::Raid4
+	$bot.include! Commands::Raid5
 	#User Role
 	$bot.include! Commands::UserRaid
 	#Other
-	$bot.include! Commands::Ask, Commands::Danger, Commands::GuildWars, Commands::Hosting, Commands::Last, Commands::Roll, Commands::Remindme
+	$bot.include! Commands::Ask
+	$bot.include! Commands::Danger
+	$bot.include! Commands::GuildWars
+	$bot.include! Commands::Hosting
+	$bot.include! Commands::Last
+	$bot.include! Commands::Roll
+	$bot.include! Commands::Remindme
 
 	#Fun Commands
 	$bot.message(containing: "(╯°□°）╯︵ ┻━┻") { |event|
