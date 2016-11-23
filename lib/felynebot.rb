@@ -17,6 +17,7 @@ module FelyneBot
 	loadusers("userbase/users")
 	loadmess("userbase/mess")
 	loadguilds("userbase/guilds")
+	Dotenv.load
 	scheduler = Rufus::Scheduler.new
 	puts "All variables initialized!"
 
