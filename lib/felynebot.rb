@@ -1,7 +1,4 @@
 module FelyneBot
-	require_relative 'felynebot/class/info'
-	puts "Info Loaded!"
-
 	#Pull $news from mho.qq.com and store to file
 	$currentnews = open('http://mho.qq.com/webplat/info/news_version3/5499/5500/5501/m4027/list_1.shtml').read
 	$currentnews.gsub!(/.*?(?=<ul class="newsList">)/im, "")
@@ -20,10 +17,6 @@ module FelyneBot
 	loadusers("userbase/users")
 	loadmess("userbase/mess")
 	loadguilds("userbase/guilds")
-	info = Info.new('bot/token','bot/cid','bot/aid')
-	token = info.token.gsub("\n",'')
-	cid = info.cid
-	aid = info.aid
 	scheduler = Rufus::Scheduler.new
 	puts "All variables initialized!"
 
@@ -31,7 +24,7 @@ module FelyneBot
 	$prefix = '-'
 
 	#Loads and establishes $bot object
-	$bot = Discordrb::Commands::CommandBot.new token: token, client_id: aid, prefix: $prefix, advanced_functionality: false
+	$bot = Discordrb::Commands::CommandBot.new token: ENV['TOKEN'], client_id: ENV['CLIENT'], prefix: $prefix, advanced_functionality: false
 	puts "$bot Loaded!"
 
 	#Loads permissions from array
