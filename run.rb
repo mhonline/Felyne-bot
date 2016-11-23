@@ -20,7 +20,6 @@ require_relative 'lib/felynebot/class/mess'
 require_relative 'lib/felynebot/class/guild'
 require_relative 'lib/felynebot/class/loader'
 require_relative 'lib/felynebot/class/strings'
-require_relative 'lib/felynebot/extras/news'
 Dir["lib/felynebot/commands/*.rb"].each {|file| require_relative file }
 Dir["lib/felynebot/commands/admin/*.rb"].each {|file| require_relative file }
 Dir["lib/felynebot/commands/database/*.rb"].each {|file| require_relative file }
