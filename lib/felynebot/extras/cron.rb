@@ -1,4 +1,5 @@
-def schedule_cron
+def cronjobs_start
+	scheduler = Rufus::Scheduler.new
 	scheduler.cron '0 19 * * 1,2,3,5,6,7' do
 		$bot.send_message(122526505606709257, "Daily gift/ticket reset just happened!\nDon't forget to collect your rewards!")
 		$bot.send_message(125859373393117184, "Daily gift/ticket reset just happened!\nDon't forget to collect your rewards!")

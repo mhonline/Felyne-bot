@@ -16,7 +16,6 @@ module FelyneBot
 	loadmess("userbase/mess")
 	loadguilds("userbase/guilds")
 	Dotenv.load
-	scheduler = Rufus::Scheduler.new
 	puts "All variables initialized!"
 
 	#sets bot prefix
@@ -162,7 +161,7 @@ module FelyneBot
 	news_post
 
 	#scedule cron jobs
-	schedule_cron
+	cronjobs_start
 	
 	puts 'Sync Confirmed!'
 	puts 'SKYNET ONLINE'
