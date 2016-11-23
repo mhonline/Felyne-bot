@@ -31,7 +31,7 @@ module FelyneBot
 	$prefix = '-'
 
 	#Loads and establishes $bot object
-	$bot = Discordrb::Commands::CommandBot.new token: token, application_id: aid, client_id: cid, prefix: $prefix, advanced_functionality: false
+	$bot = Discordrb::Commands::CommandBot.new token: token, client_id: cid, prefix: $prefix, advanced_functionality: false
 	puts "$bot Loaded!"
 
 	#Loads permissions from array
