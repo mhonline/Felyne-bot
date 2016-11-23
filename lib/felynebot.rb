@@ -110,33 +110,6 @@ module FelyneBot
 	$bot.include! Commands::Last
 	$bot.include! Commands::Roll
 	$bot.include! Commands::Remindme
-		
-	$news = getline("bot/oldnews",1).split(",")
-	#news2
-	$news2 = getline("bot/newnews",2)
-	$news2 = $news2.chars.select(&:valid_encoding?).join
-	$news2date = $news2[/#{"<li><span>"}(.*?)#{"</span>"}/m, 1]
-	$news2link = $news2[/#{"a><ahref=\""}(.*?)#{"\"target"}/m, 1]
-	#news3
-	$news3 = getline("bot/newnews",3)
-	$news3 = $news3.chars.select(&:valid_encoding?).join
-	$news3date = $news3[/#{"<li><span>"}(.*?)#{"</span>"}/m, 1]
-	$news3link = $news3[/#{"a><ahref=\""}(.*?)#{"\"target"}/m, 1]
-	#news4
-	$news4 = getline("bot/newnews",4)
-	$news4 = $news4.chars.select(&:valid_encoding?).join
-	$news4date = $news4[/#{"<li><span>"}(.*?)#{"</span>"}/m, 1]
-	$news4link = $news4[/#{"a><ahref=\""}(.*?)#{"\"target"}/m, 1]
-	#news5
-	$news5 = getline("bot/newnews",5)
-	$news5 = $news5.chars.select(&:valid_encoding?).join
-	$news5date = $news5[/#{"<li><span>"}(.*?)#{"</span>"}/m, 1]
-	$news5link = $news5[/#{"a><ahref=\""}(.*?)#{"\"target"}/m, 1]
-	#news6
-	$news6 = getline("bot/newnews",6)
-	$news6 = $news6.chars.select(&:valid_encoding?).join
-	$news6date = $news6[/#{"<li><span>"}(.*?)#{"</span>"}/m, 1]
-	$news6link = $news6[/#{"a><ahref=\""}(.*?)#{"\"target"}/m, 1]
 
 	#Fun Commands
 	$bot.message(containing: "(╯°□°）╯︵ ┻━┻") { |event|
@@ -184,43 +157,10 @@ module FelyneBot
 	end
 	puts "Game set!"	
 	
-	#news6
-	if !$news.include? $news6date + " | " + $news6link
-		$news.push($news6date + " | " + $news6link)
-		$bot.send_message(126766276038230016, "#{$news6date} | http://mho.qq.com#{$news6link}")
-		$news1 = $news.join(",").gsub("\n","")
-		File.write("bot/oldnews", $news1)
-	end
-	#news5
-	if !$news.include? $news5date + " | " + $news5link
-		$news.push($news5date + " | " + $news5link)
-		$bot.send_message(126766276038230016, "#{$news5date} | http://mho.qq.com#{$news5link}")
-		$news1 = $news.join(",").gsub("\n","")
-		File.write("bot/oldnews", $news1)
-	end
-	#news4
-	if !$news.include? $news4date + " | " + $news4link
-		$news.push($news4date + " | " + $news4link)
-		$bot.send_message(126766276038230016, "#{$news4date} | http://mho.qq.com#{$news4link}")
-		$news1 = $news.join(",").gsub("\n","")
-		File.write("bot/oldnews", $news1)
-	end
-	#news3
-	if !$news.include? $news3date + " | " + $news3link
-		$news.push($news3date + " | " + $news3link)
-		$bot.send_message(126766276038230016, "#{$news3date} | http://mho.qq.com#{$news3link}")
-		$news1 = $news.join(",").gsub("\n","")
-		File.write("bot/oldnews", $news1)
-	end
-	#news2
-	if !$news.include? $news2date + " | " + $news2link
-		$news.push($news2date + " | " + $news2link)
-		$bot.send_message(126766276038230016, "#{$news2date} | http://mho.qq.com#{$news2link}")
-		$news1 = $news.join(",").gsub("\n","")
-		File.write("bot/oldnews", $news1)
-	end
-	puts '$news Posted!'
-	
+	#post news
+	news_post
+
+	#scedule cron jobs
 	scheduler.cron '0 19 * * 1,2,3,5,6,7' do
 		$bot.send_message(122526505606709257, "Daily gift/ticket reset just happened!\nDon't forget to collect your rewards!")
 		$bot.send_message(125859373393117184, "Daily gift/ticket reset just happened!\nDon't forget to collect your rewards!")
