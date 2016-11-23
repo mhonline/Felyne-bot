@@ -6,13 +6,13 @@ def news_pull
 	rescue StandardError
 		res = false
 	end
-	puts res
-	#	$currentnews = open(url).read
-	#	$currentnews.gsub!(/.*?(?=<ul class="newsList">)/im, "")
-	#	$currentnews.delete! "\s"
-	#	File.write('bot/newnews', $currentnews)
-	#	puts "News gathered!"
-	
-	#	puts "Can't Connect to news!"
-	
+	if res !== false
+		$currentnews = open(url).read
+		$currentnews.gsub!(/.*?(?=<ul class="newsList">)/im, "")
+		$currentnews.delete! "\s"
+		File.write('bot/newnews', $currentnews)
+		puts "News gathered!"
+	else
+		puts "Can't Connect to news!"
+	end
 end
