@@ -2,8 +2,9 @@ def news_pull
 	url = URI.parse("http://mh0.qq.com/webplat/info/news_version3/5499/5500/5501/m4027/list_1.shtml")
 	req = Net::HTTP.new(url.host, url.port)
 	begin
-		res = req.request_head(url.path)
-	rescue Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError, Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError => e
+  		response = Net::HTTP.get_response(url)
+	rescue StandardError
+		false
 	end
 	puts res
 	#	$currentnews = open(url).read
