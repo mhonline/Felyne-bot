@@ -41,7 +41,8 @@ module FelyneBot
 	puts "Buckets filled!"
 
 	#Admin/Troubleshooting
-	$bot.include! Commands::BotMod, Commands::Eval
+	$bot.include! Commands::BotMod
+	$bot.include! Commands::Eval
 	$bot.include! Commands::Info
 	$bot.include! Commands::Kill
 	$bot.include! Commands::Ping
