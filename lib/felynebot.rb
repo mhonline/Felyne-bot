@@ -143,6 +143,14 @@ module FelyneBot
 			event.respond "CATCH THE FUCKING MONSTER!!"
 		end
 	}
+	$bot.message(containing: "english patch") { |event|
+		engpatch = "2016-06-21 00:00:00 +0000"
+		t1 = Time.now
+		t4 = Time.parse(engpatch)
+		d1 = TimeDifference.between(t1, t4).in_days
+		d2 = d1.floor
+		event.respond "Day #{d2}: Still no english patch"
+	}
 	puts "Commands Loaded"
 	
 	#Turn off debugging and run async
