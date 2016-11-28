@@ -7,7 +7,8 @@ module FelyneBot
 					description: "Responds with response time",
 					useage: "ping"
 			) do |event|
-				event.respond  ":ping_pong: Pong! : #{((Time.now - event.timestamp) * 1000).to_i.abs}ms :ping_pong:"
+				x = `ping -c 1 ied-tqos.qq.com | grep icmp_seq`
+				event.respond  "#{x}"
 				puts "#{event.timestamp}: #{event.user.name}: CMD: ping"
 				nil
 			end
