@@ -6,8 +6,10 @@ module FelyneBot
 					:ping,
 					description: "Responds with response time",
 					useage: "ping"
-			) do |event|
-				x = `ping -c 1 ied-tqos.qq.com | grep icmp_seq`
+			) do |event, ip|
+				if ip = nil
+					ip = "ied-tqos.qq.com"
+				x = `ping -c 1 #{ip} | grep icmp_seq`
 				event.respond  "#{x}"
 				puts "#{event.timestamp}: #{event.user.name}: CMD: ping"
 				nil
