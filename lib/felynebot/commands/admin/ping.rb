@@ -12,7 +12,7 @@ module FelyneBot
 				end
 				x = `ping -c 1 #{ip} | grep icmp_seq`
 				event.respond  "#{x}"
-				puts "#{event.timestamp}: #{event.user.name}: CMD: ping"
+				puts "#{event.timestamp}: #{event.user.name}: CMD: ping <#{ip}>"
 				nil
 			end
 		end
