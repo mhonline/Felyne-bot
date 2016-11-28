@@ -7,7 +7,7 @@ module FelyneBot
 					description: "Responds with response time",
 					useage: "ping"
 			) do |event, ip|
-				if ip = nil
+				if ip == nil
 					ip = "ied-tqos.qq.com"
 				x = `ping -c 1 #{ip} | grep icmp_seq`
 				event.respond  "#{x}"
