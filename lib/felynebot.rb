@@ -143,7 +143,10 @@ module FelyneBot
 			event.respond "CATCH THE FUCKING MONSTER!!"
 		end
 	}
-
+	$bot.message(containing: ["RIP", "RIp", "Rip", "RiP", "rip", "riP", "rIP", "rIp"]) { |event|
+		rip = ["Rest in Pizza", "RIP in Peace", "Ripperoni", "Rippy Dippy Doo", "Rest in Peace", "RIP in Pizza"]
+		event.respond event.respond rip[rand(0..(rip.length-1))]
+	}
 	$bot.message(containing: ["english patch", "English Patch", "English patch", "english Patch", "Eng Patch", "Eng patch", "eng patch", "eng Patch", "ENGLISH PATCH", "ENG PATCH"]) { |event|
 		engpatch = "2016-06-21 00:00:00 +0000"
 		t1 = Time.now
