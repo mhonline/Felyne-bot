@@ -143,7 +143,7 @@ module FelyneBot
 			event.respond "CATCH THE FUCKING MONSTER!!"
 		end
 	}
-	$bot.message(containing: ["RIP", "RIp", "Rip", "RiP", "rip", "riP", "rIP", "rIp"]) { |event|
+	$bot.message(containing: "RIP") { |event|
 		rip = ["Rest in Pizza", "RIP in Peace", "Ripperoni", "Rippy Dippy Doo", "Rest in Peace", "RIP in Pizza"]
 		event.respond rip[rand(0..(rip.length-1))]
 	}
