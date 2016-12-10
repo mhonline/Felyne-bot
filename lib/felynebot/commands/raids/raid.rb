@@ -35,7 +35,11 @@ module FelyneBot
 					if r1t4.past?	#checks if date is in the past
 						raid1 = "```ruby\nRaid 1:  In process or Completed"	#if it is raid is complete
 					else
-						raid1 = "```ruby\nRaid 1:  #{name1} in #{r1d2} days #{r1h2} hours #{r1m2} minutes"	#if it isn't display time left
+						if r1d2 == 0
+							raid1 = "```ruby\nRaid 1:  #{name1} in #{r1h2} hours #{r1m2} minutes"
+						else
+							raid1 = "```ruby\nRaid 1:  #{name1} in #{r1d2} days #{r1h2} hours #{r1m2} minutes"	
+						end
 					end
 				end
 
@@ -57,7 +61,11 @@ module FelyneBot
 					if r2t4.past?
 						raid2 = "Raid 2:  In process or Completed"
 					else
-						raid2 = "Raid 2:  #{name2} in #{r2d2} days #{r2h2} hours #{r2m2} minutes"
+						if r2d2 == 0
+							raid2 = "Raid 2:  #{name2} in #{r2h2} hours #{r2m2} minutes"
+						else
+							raid2 = "Raid 2:  #{name2} in #{r2d2} days #{r2h2} hours #{r2m2} minutes"
+						end
 					end
 				end
 
@@ -79,7 +87,11 @@ module FelyneBot
 					if r3t4.past?
 						raid3 = "Raid 3:  In process or Completed"
 					else
-						raid3 = "Raid 3:  #{name3} in #{r3d2} days #{r3h2} hours #{r3m2} minutes"
+						if r3d2 == 0
+							raid3 = "Raid 3:  #{name3} in #{r3h2} hours #{r3m2} minutes"
+						else
+							raid3 = "Raid 3:  #{name3} in #{r3d2} days #{r3h2} hours #{r3m2} minutes"
+						end
 					end
 				end
 
@@ -101,7 +113,11 @@ module FelyneBot
 					if r4t4.past?
 						raid4 = "Raid 4:  In process or Completed"
 					else
-						raid4 = "Raid 4:  #{name4} in #{r4d2} days #{r4h2} hours #{r4m2} minutes"
+						if r4d2 == 0
+							raid4 = "Raid 4:  #{name4} in #{r4h2} hours #{r4m2} minutes"
+						else
+							raid4 = "Raid 4:  #{name4} in #{r4d2} days #{r4h2} hours #{r4m2} minutes"
+						end
 					end
 				end
 
@@ -123,7 +139,11 @@ module FelyneBot
 					if r5t4.past?
 						raid5 = "Raid 5:  In process or Completed```"
 					else
-						raid5 = "Raid 5:  #{name5} in #{r5d2} days #{r5h2} hours #{r5m2} minutes```"
+						if r5d2 == 0
+							raid5 = "Raid 5:  #{name5} in #{r5h2} hours #{r5m2} minutes```"
+						else
+							raid5 = "Raid 5:  #{name5} in #{r5d2} days #{r5h2} hours #{r5m2} minutes```"
+						end
 					end
 				end
 
