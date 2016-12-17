@@ -13,6 +13,7 @@ require 'time_difference'
 require 'open-uri'
 require 'rufus-scheduler'
 require 'dotenv'
+require 'date'
 
 #require command files
 require_relative 'lib/felynebot/class/user'

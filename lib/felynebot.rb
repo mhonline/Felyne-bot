@@ -156,6 +156,12 @@ module FelyneBot
 		event.respond "Day #{d2}: Still no english patch"
 	}
 	puts "Commands Loaded"
+
+	today = Date::MONTHNAMES[Date.today.month]
+	if today == "December"
+		$bot.profile.avatar = File.open("pic/christmas.png")
+		puts "It's December! Christmas Avatar loaded!"
+	end
 	
 	#Turn off debugging and run async
 	$bot.debug = false
