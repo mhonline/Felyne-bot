@@ -60,16 +60,16 @@ def cronjobs_start
 		end
 		weekendpm.each { |x| $bot.user(x).pm("Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")}
 	end
-	scheduler.cron '0 11 * * 7' do
-		$bot.send_message(122526505606709257, "Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")
-		$bot.send_message(125859373393117184, "Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")
-		if File.file?("bot/weekendpm")
-			weekendpm = loadArr(weekendpm,"bot/weekendpm")
-		else
-			weekendpm = []
-		end
-		weekendpm.each { |x| $bot.user(x).pm("Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")}
-	end
+#	scheduler.cron '0 11 * * 7' do
+#		$bot.send_message(122526505606709257, "Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")
+#		$bot.send_message(125859373393117184, "Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")
+#		if File.file?("bot/weekendpm")
+#			weekendpm = loadArr(weekendpm,"bot/weekendpm")
+#		else
+#			weekendpm = []
+#		end
+#		weekendpm.each { |x| $bot.user(x).pm("Don't forget to set your computer timezone to Beijing, China and log in to get your tickets. Event starts in 1 hour")}
+#	end
 	scheduler.cron '5 */3 * * *' do
 		$bot.stop
 	end
