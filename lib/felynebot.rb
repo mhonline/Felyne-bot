@@ -40,76 +40,10 @@ module FelyneBot
 	$bot.bucket :delay300, delay: 30
 	puts "Buckets filled!"
 
-	#Admin/Troubleshooting
-	$bot.include! Commands::BotMod
-	$bot.include! Commands::Eval
-	$bot.include! Commands::Info
-	$bot.include! Commands::Kill
-	$bot.include! Commands::Ping
-	#IGN/Guild/Timezone Database
-	$bot.include! Commands::AddUser
-	$bot.include! Commands::UserFind
-	$bot.include! Commands::UserGuild
-	$bot.include! Commands::UserIgn
-	$bot.include! Commands::UserList
-	$bot.include! Commands::UserRemove
-	$bot.include! Commands::UserServer
-	$bot.include! Commands::UserTimezone
-	#Helpful Commands
-	$bot.include! Commands::Achievement
-	$bot.include! Commands::Ass
-	$bot.include! Commands::Awaken
-	$bot.include! Commands::Blog
-	$bot.include! Commands::Bounty
-	$bot.include! Commands::Cat
-	$bot.include! Commands::CatQuest
-	$bot.include! Commands::Catskill
-	$bot.include! Commands::CatVids
-	$bot.include! Commands::Coupon
-	$bot.include! Commands::Damage
-	$bot.include! Commands::Deco
-	$bot.include! Commands::Helix
-	$bot.include! Commands::Help
-	$bot.include! Commands::HGE
-	$bot.include! Commands::HS
-	$bot.include! Commands::Maint
-	$bot.include! Commands::Newbie
-	$bot.include! Commands::Ports
-	$bot.include! Commands::Reset
-	$bot.include! Commands::Sasha
-	$bot.include! Commands::Server
-	$bot.include! Commands::Server47
-	$bot.include! Commands::SetBuild
-	$bot.include! Commands::Sets
-	$bot.include! Commands::Shell
-	$bot.include! Commands::Stars
-	$bot.include! Commands::Talents
-	$bot.include! Commands::Unstable
-	$bot.include! Commands::Wiki
-	#Mod only
-	$bot.include! Commands::Announce
-	$bot.include! Commands::Avatar
-	$bot.include! Commands::Game
-	$bot.include! Commands::MainSetup
-	$bot.include! Commands::NewGuild
-	$bot.include! Commands::RolePlay
-	#Raids
-	$bot.include! Commands::Raid
-	$bot.include! Commands::Raid1
-	$bot.include! Commands::Raid2
-	$bot.include! Commands::Raid3
-	$bot.include! Commands::Raid4
-	$bot.include! Commands::Raid5
-	#User Role
-	$bot.include! Commands::UserRaid
-	#Other
-	$bot.include! Commands::Ask
-	$bot.include! Commands::Danger
-	$bot.include! Commands::GuildWars
-	$bot.include! Commands::Hosting
-	$bot.include! Commands::Last
-	$bot.include! Commands::Roll
-	$bot.include! Commands::Remindme
+	#Load all commands
+	Commands.constants.each do |mod|
+		$bot.include! Commands.const_get mod
+	end
 
 	#Fun Commands
 	$bot.message(containing: "(╯°□°）╯︵ ┻━┻") { |event|
