@@ -3,7 +3,7 @@ module MainBot
 	Dotenv.load
 
 	#sets bot prefix
-	$prefix = '!'
+	$prefix = '-'
 
 	#Loads and establishes $bot object
 	$bot = Discordrb::Commands::CommandBot.new token: ENV['TOKEN'], client_id: ENV['CLIENT'], prefix: $prefix, advanced_functionality: false
