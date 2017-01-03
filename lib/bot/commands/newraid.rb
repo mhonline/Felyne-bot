@@ -37,6 +37,9 @@ module MainBot
 					t3 = t2 + h1*60*60
 					t60 = t3 + d*24*60*60
 					
+					Dir.mkdir("botfiles/raids")
+						unless File.exist?("botfiles/raids")
+
 					if File.file?("botfiles/raids/#{event.channel.id}")
 						channelraids = loadArr(channelraids,"botfiles/raids/#{event.channel.id}")
 						channelraids.push(tactual.to_s, "#{raidtext.to_s} is starting now!")
