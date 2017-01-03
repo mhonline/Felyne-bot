@@ -7,7 +7,6 @@ module MainBot
 					description: "Sets a raid reminder for the channel.",
 					usage: "remindme <days> <hours> <mins> <text>",
 					help_available: true,
-					permission_level: 1,
 					min_args: 4,
 					permission_message: "Ask a Mod or Admin to set up a raid!"
 					
