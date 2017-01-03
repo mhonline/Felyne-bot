@@ -7,7 +7,10 @@ module MainBot
 					description: "Sets a raid reminder for the channel.",
 					usage: "remindme <days> <hours> <mins> <text>",
 					help_available: true,
-					min_args: 4
+					permission_level: 1,
+					min_args: 4,
+					permission_message: "Ask a Mod or Admin to set up a raid!"
+					
 			) do |event, days, hours, minutes, *text|
 				channelname = event.channel.name
 				if channelname.include? "raid"
