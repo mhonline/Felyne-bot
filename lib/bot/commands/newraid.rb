@@ -14,7 +14,7 @@ module MainBot
 			) do |event, days, hours, minutes, *text|
 				channelname = event.channel.name
 				if channelname.include? "raid"
-					if days.to_i + hours.to_i == 0 && minutes.to_i < 60
+					if (days.to_i + hours.to_i) == 0 && minutes.to_i < 60
 						event << "You can't set up a raid with less than an hour until start! Nobody would even show up!"
 					else
 						raidtext = text.join(' ')
