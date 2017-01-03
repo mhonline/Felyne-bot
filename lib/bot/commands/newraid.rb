@@ -15,7 +15,7 @@ module MainBot
 					if (days.to_i + hours.to_i) <= 0 
 						timecheck = 1
 					end
-					if minutes.to_i < 60
+					if minutes.to_i < 60 && timecheck == 1
 						timecheck = 1
 					end
 					if timecheck == 1
