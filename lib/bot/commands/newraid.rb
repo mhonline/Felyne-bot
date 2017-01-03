@@ -5,7 +5,7 @@ module MainBot
 			command(
 					:newraid,
 					description: "Sets a raid reminder for the channel.",
-					usage: "remindme <days> <hours> <mins> <text>",
+					usage: "newraid <days> <hours> <mins> <text>",
 					help_available: true,
 					min_args: 4,
 					permission_message: "Ask a Mod or Admin to set up a raid!"
