@@ -1,4 +1,8 @@
 module MainBot
+	#create botfiles directory if it doesn't exist
+	unless File.exist?("botfiles")
+		Dir.mkdir("botfiles")
+	end
 	#load env variables
 	Dotenv.load
 
