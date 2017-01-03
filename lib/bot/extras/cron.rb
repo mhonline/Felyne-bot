@@ -2,33 +2,34 @@ def cronjobs_start
 	scheduler = Rufus::Scheduler.new
 	scheduler.every '10s' do
 		clock=Time.new
-		puts "[#{clock.inspect}] Checking for reminders"
+		puts "[#{clock.inspect}] Checking for raids"
 
-		Dir["botfiles/reminders/*"].each { |file| 
+		Dir["botfiles/raids/*"].each { |file| 
 
-			userid = file
-			userid.slice! "botfiles/reminders/"
-			puts "Loading reminders for: #{userid}"
-			userreminders = loadArr(userreminders,"botfiles/reminders/#{userid}")
+			channel = file
+			channel.slice! "botfiles/raids/"
+			puts "Loading raids for: #{channel}"
+			raids = loadArr(raids,"botfiles/raids/#{channel}")
 			pos = 0
 			begin
-				t4 = userreminders[pos]
+				t4 = raids[pos]
 				t4 = Time.parse(t4)
 				if t4.past?
-					$bot.user(userid).pm("Your reminder for #{userreminders[pos]}: #{userreminders[pos+1]}")
-					puts "    Sent a reminder to #{userid}! Deleting reminder!"
-					userreminders.delete_at(pos+1)
-					userreminders.delete_at(pos)
+					$bot.user(channel).pm("Your reminder for #{raids[pos]}: #{raids[pos+1]}")
+					$bot.send_message(channel, "Raid for #{raids[pos+1]}")
+					puts "    Posting raid to #{channel}! Deleting reminder!"
+					raids.delete_at(pos+1)
+					raids.delete_at(pos)
 					pos -= 2
 				end
 				pos += 2
-			end while pos < userreminders.length
+			end while pos < raids.length
 
-			if userreminders.length == 0
-				File.delete("botfiles/reminders/#{userid}")
-				puts "    No more reminders exist for #{userid}! Deleting file!"
+			if raids.length == 0
+				File.delete("botfiles/raids/#{channel}")
+				puts "    No more raids exist for #{channel}! Deleting file!"
 			else
-				File.write("botfiles/reminders/#{userid}", userreminders)
+				File.write("botfiles/raids/#{channel}", raids)
 			end
 		}
 	end
