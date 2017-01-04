@@ -13,14 +13,15 @@ def cronjobs_start
 
 			channel = file
 			channel.slice! "botfiles/raids/"
-			puts "Loading raids for: #{channel}"
+			puts ">Loading raids for: #{channel}"
 			raids = loadArr(raids,"botfiles/raids/#{channel}")
 			pos = 0
 			begin
 				t4 = raids[pos]
 				t4 = Time.parse(t4)
 				if t4.past?
-					$bot.send_message(channel, "Raid for #{raids[pos+1]}")
+					channel = $bot.channel channel
+					$bot.send_message(channel, "Raid for #{raids[pos+1]}") unless channel
 					puts ">    Posting raid to #{channel}! Deleting reminder!"
 					raids.delete_at(pos+1)
 					raids.delete_at(pos)
@@ -31,12 +32,13 @@ def cronjobs_start
 
 			if raids.length == 0
 				File.delete("botfiles/raids/#{channel}")
-				puts "    No more raids exist for #{channel}! Deleting file!"
+				puts ">        No more raids exist for #{channel}! Deleting file!"
 			else
 				File.write("botfiles/raids/#{channel}", raids)
 			end
 		}
 	end
+
 	scheduler.cron '5 */3 * * *' do
 		$bot.stop
 	end
