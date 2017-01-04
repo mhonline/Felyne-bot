@@ -20,8 +20,8 @@ def cronjobs_start
 				t4 = raids[pos]
 				t4 = Time.parse(t4)
 				if t4.past?
-					channel = $bot.channel channel
-					$bot.send_message(channel, "Raid for #{raids[pos+1]}") unless channel
+					channeltest = $bot.channel channel
+					$bot.send_message(channel, "Raid for #{raids[pos+1]}") unless channeltest
 					puts ">    Posting raid to #{channel}! Deleting reminder!"
 					raids.delete_at(pos+1)
 					raids.delete_at(pos)
