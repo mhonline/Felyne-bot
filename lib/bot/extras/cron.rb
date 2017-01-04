@@ -20,8 +20,6 @@ def cronjobs_start
 				t4 = raids[pos]
 				t4 = Time.parse(t4)
 				if t4.past?
-					channeltest = $bot.channel channel
-					channeltest = channeltest.to_s
 					begin
 						$bot.send_message(channel, "Raid for #{raids[pos+1]}")
 					rescue
