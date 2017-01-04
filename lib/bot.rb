@@ -17,7 +17,9 @@ module MainBot
 
 	#Check for and set up default admin permissions
 	unless File.file?("botfiles/perm")
-		puts "You have not set up any permissions", "Please enter your user id to set admin permissions for your discord account", prompt
+		puts "You have not set up any permissions"
+		puts "Please enter your user id to set admin permissions for your discord account"
+		puts prompt
 		permarray = [$stdin.gets.chomp,999,"botadmin"]
 		File.write('botfiles/perm', permarray.to_s)
 		puts "Permissions saved!", permarray
