@@ -22,7 +22,7 @@ def cronjobs_start
 				if t4.past?
 					channeltest = $bot.channel channel
 					channeltest = channeltest.to_s
-					if channeltest !== ""
+					if channeltest != ""
 						$bot.send_message(channel, "Raid for #{raids[pos+1]}")
 					end
 					puts ">    Posting raid to #{channel}! Deleting reminder!"
