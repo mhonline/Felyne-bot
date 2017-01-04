@@ -1,5 +1,10 @@
 def cronjobs_start
 	scheduler = Rufus::Scheduler.new
+
+	unless File.exist?("botfiles/raids")
+		Dir.mkdir("botfiles/raids")
+	end
+	
 	scheduler.every '10s' do
 		clock=Time.new
 		puts "[#{clock.inspect}] Checking for raids"
@@ -16,7 +21,7 @@ def cronjobs_start
 				t4 = Time.parse(t4)
 				if t4.past?
 					$bot.send_message(channel, "Raid for #{raids[pos+1]}")
-					puts "    Posting raid to #{channel}! Deleting reminder!"
+					puts ">    Posting raid to #{channel}! Deleting reminder!"
 					raids.delete_at(pos+1)
 					raids.delete_at(pos)
 					pos -= 2
