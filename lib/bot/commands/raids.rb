@@ -9,7 +9,11 @@ module MainBot
 					help_available: true
 			) do |event, option, number|
 				if File.file?("botfiles/raids/#{event.channel.id}")
-					channelraids = loadArr(channelraids,"botfiles/raids/#{event.channel.id}")
+					begin
+						channelraids = loadArr(channelraids,"botfiles/raids/#{event.channel.id}")
+					rescue
+
+					end
 					if option == "list"
 						output = "```ruby\n"
 						x = 0
