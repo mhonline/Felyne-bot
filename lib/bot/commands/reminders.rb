@@ -1,47 +1,47 @@
 module MainBot
 	module Commands
-		module Reminders
+		module raids
 			extend Discordrb::Commands::CommandContainer
 			command(
-					:reminders,
-					description: "Manage set reminders.",
-					usage: "reminders <list|delete> <number>",
+					:raids,
+					description: "Manage raids for channel.",
+					usage: "raids <list|delete> <number>",
 					help_available: true
 			) do |event, option, number|
-				if File.file?("botfiles/reminders/#{event.user.id}")
-					userreminders = loadArr(userreminders,"botfiles/reminders/#{event.user.id}")
+				if File.file?("botfiles/raids/#{event.channel.id}")
+					channelraids = loadArr(channelraids,"botfiles/raids/#{event.channel.id}")
 					if option == "list"
-						output = "```\n"
+						output = "```ruby\n"
 						x = 0
 						y = 1
 						begin
-							output += "Reminder #{y}: #{userreminders[x+1]} @ #{userreminders[x]}\n"
+							output += "Reminder #{y}: #{channelraids[x+1]} @ #{channelraids[x]}\n"
 							x += 2
 							y += 1
-						end while x < userreminders.length
+						end while x < channelraids.length
 						output += "```"
 						event << output
 					elsif option == "delete"
 						if number == "all"
-							File.delete("botfiles/reminders/#{userid}")
+							File.delete("botfiles/raids/#{userid}")
 						else
-							userreminders.delete_at((number.to_i-1)*2+1)
-							userreminders.delete_at((number.to_i-1)*2)
-							File.write("botfiles/reminders/#{event.user.id}", userreminders)
-							event << "Reminder was deleted"
+							channelraids.delete_at((number.to_i-1)*2+1)
+							channelraids.delete_at((number.to_i-1)*2)
+							File.write("botfiles/raids/#{event.channel.id}", channelraids)
+							event << "Raid reminder was deleted"
 						end
 					else
-						remindernum = userreminders.length.to_i / 2
-						event << "You have #{remindernum} reminders set! Use the list option to list them or the delete option to delete one"
+						raidnum = channelraids.length.to_i / 2
+						event << "You have #{raidnum} raid reminders set! Use the list option to list them or the delete option to delete one"
 					end
 
 				else
-					event << "You do not have any reminders set right now. Set some with `!remindme`"
+					event << "You do not have any raids set right now. Set some with `#{$prefix}newraid`"
 				end
 
-				File.write("botfiles/reminders/#{event.user.id}", userreminders)
+				File.write("botfiles/raids/#{event.channel.id}", channelraids)
 
-				puts "#{event.timestamp}: #{event.user.name}: CMD: reminders"
+				puts "#{event.timestamp}: #{event.user.name}: CMD: raids"
 				nil
 			end
 		end
