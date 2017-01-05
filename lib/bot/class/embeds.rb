@@ -4,7 +4,7 @@ def list_raids(raids, channel)
     y = 1
     begin
             o += "**Reminder #{y}:** #{raids[x+1]} @ #{raids[x]}\n"
-            x += 2
+            x += 10
             y += 1
     end while x < raids.length
 	e = Discordrb::Webhooks::Embed.new

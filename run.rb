@@ -1,3 +1,4 @@
+require 'bundler/setup'
 require 'active_support'
 require 'date'
 require 'discordrb'
