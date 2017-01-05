@@ -23,7 +23,7 @@ module MainBot
 						event << output
 					elsif option == "delete"
 						if number == "all"
-							File.delete("botfiles/raids/#{userid}")
+							File.delete("botfiles/raids/#{event.channel.id}")
 						else
 							channelraids.delete_at((number.to_i-1)*2+1)
 							channelraids.delete_at((number.to_i-1)*2)
