@@ -5,31 +5,22 @@ module MainBot
 			command(
 					:raids,
 					description: "Manage raids for channel.",
-					usage: "raids <list|delete> <number>",
+					usage: "raids <list> <number>",
 					help_available: true
-			) do |event, option, number|
+			) do |event|
 				if File.file?("botfiles/raids/#{event.channel.id}")
 					channelraids = loadArr(channelraids,"botfiles/raids/#{event.channel.id}")
-					if option == "list"
-						output = "```ruby\n"
-						x = 0
-						y = 1
-						begin
-							output += "Reminder #{y}: #{channelraids[x+1]} @ #{channelraids[x]}\n"
-							x += 2
-							y += 1
-						end while x < channelraids.length
-						output += "```"
-						event << output
-					elsif option == "delete"
-						channelraids.delete_at((number.to_i-1)*2+1)
-						channelraids.delete_at((number.to_i-1)*2)
-						File.write("botfiles/raids/#{event.channel.id}", channelraids)
-						event << "Raid reminder was deleted"
-					else
-						raidnum = channelraids.length.to_i / 2
-						event << "You have #{raidnum} raid reminders set! Use the list option to list them or the delete option to delete one"
-					end
+					
+					output = "```ruby\n"
+					x = 0
+					y = 1
+					begin
+						output += "Reminder #{y}: #{channelraids[x+1]} @ #{channelraids[x]}\n"
+						x += 2
+						y += 1
+					end while x < channelraids.length
+					output += "```"
+					event << output
 
 				else
 					event << "You do not have any raids set right now. Set some with `#{$prefix}newraid`"
