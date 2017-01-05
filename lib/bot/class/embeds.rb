@@ -3,7 +3,7 @@ def list_raids(raids, channel)
     x = 0
     y = 1
     begin
-            o += "**Reminder #{y}:** #{raids[x+1]} @ #{raids[x]}\n"
+            o += "**Raid #{y}:** #{raids[x+1].chomp(' is starting *now*!')} @ #{raids[x]}\n"
             x += 10
             y += 1
     end while x < raids.length
