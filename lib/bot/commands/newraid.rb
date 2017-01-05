@@ -44,16 +44,16 @@ module MainBot
 
 						if File.file?("botfiles/raids/#{event.channel.id}")
 							channelraids = loadArr(channelraids,"botfiles/raids/#{event.channel.id}")
-							channelraids.push(tactual.to_s, "#{raidtext.to_s} is starting now!")
-							channelraids.push(t15.to_s, "#{raidtext.to_s} is starting in 15 minutes!")
-							channelraids.push(t30.to_s, "#{raidtext.to_s} is starting in 30 minutes!")
-							channelraids.push(t45.to_s, "#{raidtext.to_s} is starting in 45 minutes!")
-							channelraids.push(t60.to_s, "#{raidtext.to_s} is starting in 1 hour!")
+							channelraids.push(tactual.to_s, "**#{raidtext.to_s}** is starting *now*!")
+							channelraids.push(t15.to_s, "**#{raidtext.to_s}** is starting in *15 minutes*!")
+							channelraids.push(t30.to_s, "**#{raidtext.to_s}** is starting in *30 minutes*!")
+							channelraids.push(t45.to_s, "**#{raidtext.to_s}** is starting in *45 minutes*!")
+							channelraids.push(t60.to_s, "**#{raidtext.to_s}** is starting in *1 hour*!")
 							raidsnum = channelraids.length.to_i / 2
-							event << "Raid set up!" 
+							event << "Raid for **#{raidtext.to_s}** set up!" 
 						else
-							channelraids = [tactual.to_s, "#{raidtext.to_s} is starting now!", t15.to_s, "#{raidtext.to_s} is starting in 15 minutes!", t30.to_s, "#{raidtext.to_s} is starting in 30 minutes!", t45.to_s, "#{raidtext.to_s} is starting in 45 minutes!", t60.to_s, "#{raidtext.to_s} is starting in 1 hour!"]
-							event << "Raid set up!"
+							channelraids = [tactual.to_s, "**#{raidtext.to_s}** is starting *now*!", t15.to_s, "**#{raidtext.to_s}** is starting in *15 minutes*!", t30.to_s, "**#{raidtext.to_s}** is starting in *30 minutes*!", t45.to_s, "**#{raidtext.to_s}** is starting in *45 minutes*!", t60.to_s, "**#{raidtext.to_s}** is starting in *1 hour*!"]
+							event << "Raid for **#{raidtext.to_s}** set up!"
 						end
 
 						File.write("botfiles/raids/#{event.channel.id}", channelraids)
