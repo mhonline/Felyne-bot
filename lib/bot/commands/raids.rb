@@ -1,6 +1,6 @@
 module MainBot
 	module Commands
-		module raids
+		module Raids
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:raids,
