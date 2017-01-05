@@ -6,7 +6,11 @@ def loadArr(ar,loc)
 #puts 'No file!'
 	end
 	buff = f.read
-	ar=JSON.parse(buff)
+	begin
+		ar=JSON.parse(buff)
+	rescue
+		puts "JSON Error!"
+	end
 #puts 'Loaded array!'
 	return ar
 end
