@@ -9,7 +9,8 @@ def loadArr(ar,loc)
 	begin
 		ar=JSON.parse(buff)
 	rescue
-		puts "JSON Error!"
+		puts "JSON Error! Deleting file!"
+		File.delete(loc)
 	end
 #puts 'Loaded array!'
 	return ar
