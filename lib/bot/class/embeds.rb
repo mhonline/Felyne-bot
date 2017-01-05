@@ -6,9 +6,9 @@ def list_raids(raids, channel)
     begin
     	t4 = raids[x]
     	t4 = Time.parse(t4)
-    	d1 = Time.difference.between(t1, t4).in_days
-    	h1 = Time.difference.between(t1, t4).in_hours
-    	m1 = Time.difference.between(t1, t4).in_minutes
+    	d1 = TimeDifference.between(t1, t4).in_days
+    	h1 = TimeDifference.between(t1, t4).in_hours
+    	m1 = TimeDifference.between(t1, t4).in_minutes
     	d2 = d1.floor
     	h1 = h1 - 24 * d2
     	h2 = h1.floor
