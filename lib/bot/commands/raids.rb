@@ -22,15 +22,10 @@ module MainBot
 						output += "```"
 						event << output
 					elsif option == "delete"
-						if number.to_s == "all"
-							File.delete "botfiles/raids/#{event.channel.id.to_s}"
-							event << "Deleting all raids for this channel"
-						else
-							channelraids.delete_at((number.to_i-1)*2+1)
-							channelraids.delete_at((number.to_i-1)*2)
-							File.write("botfiles/raids/#{event.channel.id}", channelraids)
-							event << "Raid reminder was deleted"
-						end
+						channelraids.delete_at((number.to_i-1)*2+1)
+						channelraids.delete_at((number.to_i-1)*2)
+						File.write("botfiles/raids/#{event.channel.id}", channelraids)
+						event << "Raid reminder was deleted"
 					else
 						raidnum = channelraids.length.to_i / 2
 						event << "You have #{raidnum} raid reminders set! Use the list option to list them or the delete option to delete one"
