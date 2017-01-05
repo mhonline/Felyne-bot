@@ -28,7 +28,6 @@ def list_raids(raids, channel)
 	}
 	e.color = 0x673ab7
 	e.description = o.chomp("\n")
-	e.footer = { text: channel }
 	e.timestamp = Time.now
 	e
 end
