@@ -1,7 +1,6 @@
 class Raid
-	def initialize(id, ar, n, t)
+	def initialize(id, array, n, t)
 		@channel = id
-		@array = ar
 		@name = n
 		@time = t
 		
