@@ -42,21 +42,34 @@ module MainBot
 						t3 = t2 + h1*60*60
 						t60 = t3 + d*24*60*60
 
-						if File.file?("botfiles/raids/#{event.channel.id}")
-							channelraids = loadArr(channelraids,"botfiles/raids/#{event.channel.id}")
-							channelraids.push(tactual.to_s, "**#{raidtext.to_s}** is starting *now*!")
-							channelraids.push(t15.to_s, "**#{raidtext.to_s}** is starting in *15 minutes*!")
-							channelraids.push(t30.to_s, "**#{raidtext.to_s}** is starting in *30 minutes*!")
-							channelraids.push(t45.to_s, "**#{raidtext.to_s}** is starting in *45 minutes*!")
-							channelraids.push(t60.to_s, "**#{raidtext.to_s}** is starting in *1 hour*!")
-							raidsnum = channelraids.length.to_i / 2
-							event << "Raid for **#{raidtext.to_s}** set up!" 
+						if $raids[event.channel.id.to_s]['raids'].exist?
+							$raids[event.channel.id.to_s]['raids'].push([ { "name": raidtext.to_s, "time": tactual.to_s } ])
 						else
-							channelraids = [tactual.to_s, "**#{raidtext.to_s}** is starting *now*!", t15.to_s, "**#{raidtext.to_s}** is starting in *15 minutes*!", t30.to_s, "**#{raidtext.to_s}** is starting in *30 minutes*!", t45.to_s, "**#{raidtext.to_s}** is starting in *45 minutes*!", t60.to_s, "**#{raidtext.to_s}** is starting in *1 hour*!"]
-							event << "Raid for **#{raidtext.to_s}** set up!"
+							$raids[event.channel.id.to_s] = { "raids": [ { "name": raidtext.to_s, "time": tactual.to_s } ]}
 						end
 
-						File.write("botfiles/raids/#{event.channel.id}", channelraids)
+
+
+
+
+
+
+
+
+#							channelraids = loadArr(channelraids,"botfiles/raids/#{event.channel.id}")
+#							channelraids.push(tactual.to_s, "**#{raidtext.to_s}** is starting *now*!")
+#							channelraids.push(t15.to_s, "**#{raidtext.to_s}** is starting in *15 minutes*!")
+#							channelraids.push(t30.to_s, "**#{raidtext.to_s}** is starting in *30 minutes*!")
+#							channelraids.push(t45.to_s, "**#{raidtext.to_s}** is starting in *45 minutes*!")
+#							channelraids.push(t60.to_s, "**#{raidtext.to_s}** is starting in *1 hour*!")
+#							raidsnum = channelraids.length.to_i / 2
+#							event << "Raid for **#{raidtext.to_s}** set up!" 
+#						else
+#							channelraids = [tactual.to_s, "**#{raidtext.to_s}** is starting *now*!", t15.to_s, "**#{raidtext.to_s}** is starting in *15 minutes*!", t30.to_s, "**#{raidtext.to_s}** is starting in *30 minutes*!", t45.to_s, "**#{raidtext.to_s}** is starting in *45 minutes*!", t60.to_s, "**#{raidtext.to_s}** is starting in *1 hour*!"]
+#							event << "Raid for **#{raidtext.to_s}** set up!"
+#						end
+#
+#						File.write("botfiles/raids/#{event.channel.id}", channelraids)
 					end
 				else
 					event << "This is not a raid channel.  You can only setup raid reminders for channels with raid in the name."

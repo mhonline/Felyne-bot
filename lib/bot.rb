@@ -6,6 +6,10 @@ module MainBot
 	#load env variables
 	Dotenv.load
 
+	#load other variables
+	$raids = Hash.new
+	$raids = loadJSON($raids, "botfiles/raids.json")
+
 	#sets bot prefix
 	$prefix = '-'
 

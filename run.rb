@@ -16,5 +16,4 @@ require_relative 'lib/bot/extras/cron'
 Dir["lib/bot/commands/*.rb"].each {|file| require_relative file }
 require_relative 'lib/bot/class/loader'
 require_relative 'lib/bot/class/embeds'
-require_relative 'lib/bot/class/raid'
 require_relative 'lib/bot'

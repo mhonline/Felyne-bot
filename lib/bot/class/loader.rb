@@ -15,6 +15,15 @@ def loadArr(ar,loc)
 	return ar
 end
 
+def loadJSON(ar, loc)
+	if File.exist(loc)
+		JSON.parse File.read loc
+	else
+		puts "No file #{loc} to load!"
+	end
+	return ar
+end
+
 def loadPerm(ar,loc)
 	if File.exist?(loc)
 		f = File.open(loc,"r")
