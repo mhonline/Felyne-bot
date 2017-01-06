@@ -43,38 +43,22 @@ module MainBot
 						t60 = t3 + d*24*60*60
 
 						if $raids.key?(event.channel.id.to_s)
-							$raids[event.channel.id.to_s]['raids'].push({"name"=>raidtext.to_s, "time"=>tactual.to_s })
+							$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting *now*!", "time"=>tactual.to_s })
 						else
-							$raids[event.channel.id.to_s] = {"raids"=>[{"name"=>raidtext.to_s, "time"=>tactual.to_s}]}
+							$raids[event.channel.id.to_s] = {"raids"=>[{"name"=>"**#{raidtext.to_s}** is starting *now*!", "time"=>tactual.to_s }]}
 						end
+						$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting in *15 minutes*!", "time"=>t15.to_s })
+						$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting in *30 minutes*!", "time"=>t30.to_s })
+						$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting in *45 minutes*!", "time"=>t45.to_s })
+						$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting in *1 hour*!", "time"=>t60.to_s })
+						event << "Raid for **#{raidtext.to_s}** set up!" 
 
-
-
-
-
-
-
-
-
-#							channelraids = loadArr(channelraids,"botfiles/raids/#{event.channel.id}")
-#							channelraids.push(tactual.to_s, "**#{raidtext.to_s}** is starting *now*!")
-#							channelraids.push(t15.to_s, "**#{raidtext.to_s}** is starting in *15 minutes*!")
-#							channelraids.push(t30.to_s, "**#{raidtext.to_s}** is starting in *30 minutes*!")
-#							channelraids.push(t45.to_s, "**#{raidtext.to_s}** is starting in *45 minutes*!")
-#							channelraids.push(t60.to_s, "**#{raidtext.to_s}** is starting in *1 hour*!")
-#							raidsnum = channelraids.length.to_i / 2
-#							event << "Raid for **#{raidtext.to_s}** set up!" 
-#						else
-#							channelraids = [tactual.to_s, "**#{raidtext.to_s}** is starting *now*!", t15.to_s, "**#{raidtext.to_s}** is starting in *15 minutes*!", t30.to_s, "**#{raidtext.to_s}** is starting in *30 minutes*!", t45.to_s, "**#{raidtext.to_s}** is starting in *45 minutes*!", t60.to_s, "**#{raidtext.to_s}** is starting in *1 hour*!"]
-#							event << "Raid for **#{raidtext.to_s}** set up!"
-#						end
-#
-#						File.write("botfiles/raids/#{event.channel.id}", channelraids)
+						File.open('botfiles/raids.json', 'w') { |f| f.write RAIDS.to_json }
 					end
 				else
 					event << "This is not a raid channel.  You can only setup raid reminders for channels with raid in the name."
 				end
-				puts "#{event.timestamp}: #{event.user.name}: CMD: newraid"
+				puts "#{event.timestamp}: #{event.user.name}: CMD: newraid #{tactual}: #{raidtext}"
 				nil
 			end
 		end
