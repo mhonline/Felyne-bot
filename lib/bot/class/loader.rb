@@ -17,7 +17,7 @@ end
 def loadJSON(ar, loc)
 	if File.exist?(loc)
 		begin
-			JSON.parse File.read loc
+			ar = JSON.parse File.read loc
 		rescue
 			ar = Hash.new
 		end
