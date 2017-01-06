@@ -53,7 +53,7 @@ module MainBot
 						$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting in *1 hour*!", "time"=>t60.to_s })
 						event << "Raid for **#{raidtext.to_s}** set up!" 
 
-						File.open('botfiles/raids.json', 'w') { |f| f.write RAIDS.to_json }
+						File.open('botfiles/raids.json', 'w') { |f| f.write $raids.to_json }
 					end
 				else
 					event << "This is not a raid channel.  You can only setup raid reminders for channels with raid in the name."
