@@ -12,19 +12,9 @@ module MainBot
 	#Loads and establishes $bot object
 	$bot = Discordrb::Commands::CommandBot.new token: ENV['TOKEN'], client_id: ENV['CLIENT'], prefix: $prefix, advanced_functionality: false
 
-	#Establish permissions array
-	permarray = []
-
-	#Check for and set up default admin permissions
-	unless File.file?("botfiles/perm")
-		puts "You have not set up any permissions", "Please enter your user id to set admin permissions for your discord account", "> "
-		permarray = [$stdin.gets.chomp.to_i,999,"botadmin"]
-		File.write('botfiles/perm', permarray.to_s)
-		puts "Permissions saved!", permarray
-	end
-
 	#Load permissions from file
-	permarray = loadArr(permarray,"botfiles/perm")
+	permarray = []
+	permarray = loadPerm(permarray,"botfiles/perm")
 	pos = 0
 	begin
 		$bot.set_user_permission(permarray[pos],permarray[pos+1])

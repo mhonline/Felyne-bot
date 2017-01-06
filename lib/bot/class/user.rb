@@ -1,11 +1,11 @@
 class User
 	def initialize(id, name, ign, array, channel, b)
-		@usr_id=id
-		@usr_name=name
-		@usr_ign=ign
-		@usr_guild=nil
-		@user_timezone=nil
-		@user_server=nil
+		@usr_id = id
+		@usr_name = name
+		@usr_ign = ign
+		@usr_guild = nil
+		@user_timezone = nil
+		@user_server = nil
 
 		if array.empty?
 			array.push(self)
@@ -20,24 +20,24 @@ class User
 		end
 	end
 
-	def addName(name="")
-		@usr_name=name
+	def addName(name = "")
+		@usr_name = name
 	end
 
-	def addIgn(ign="")
-		@usr_ign=ign
+	def addIgn(ign = "")
+		@usr_ign = ign
 	end
 
-	def addGuild(guild=nil)
-		@usr_guild=guild
+	def addGuild(guild = nil)
+		@usr_guild = guild
 	end
 
-	def addTimezone(zone=nil)
-		@usr_timezone=zone
+	def addTimezone(zone = nil)
+		@usr_timezone = zone
 	end
 
-	def addServer(zone=nil)
-		@usr_server=zone
+	def addServer(zone = nil)
+		@usr_server = zone
 	end
 
 #Defining the user id variable (call it with user.id)
