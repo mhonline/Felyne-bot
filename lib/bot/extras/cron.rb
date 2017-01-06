@@ -1,9 +1,9 @@
 def cronjobs_start
 	scheduler = Rufus::Scheduler.new
 
-	unless File.exist?("botfiles/raids")
-		Dir.mkdir("botfiles/raids")
-	end
+#	unless File.exist?("botfiles/raids")
+#		Dir.mkdir("botfiles/raids")
+#	end
 	
 	scheduler.every '10s' do
 		clock=Time.new
