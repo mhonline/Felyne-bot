@@ -13,8 +13,8 @@ require 'time_difference'
 require 'yaml'
 include Sys
 require_relative 'lib/bot/extras/cron'
+require_relative 'lib/bot/extras/news'
 Dir["lib/bot/commands/*.rb"].each {|file| require_relative file }
 require_relative 'lib/bot/class/loader'
 require_relative 'lib/bot/class/embeds'
-require_relative 'lib/bot/class/news'
 require_relative 'lib/bot'
