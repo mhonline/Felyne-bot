@@ -9,6 +9,8 @@ module MainBot
 	#load other variables
 	$raids = Hash.new
 	$raids = loadJSON($raids, "botfiles/raids.json")
+	$qqnews = Hash.new
+	$qqnews = loadJSON($qqnews, "botfiles/qqnews.json")
 
 	#sets bot prefix
 	$prefix = '-'
@@ -17,7 +19,7 @@ module MainBot
 	$bot = Discordrb::Commands::CommandBot.new token: ENV['TOKEN'], client_id: ENV['CLIENT'], prefix: $prefix, advanced_functionality: false
 
 	#Load permissions from file
-	permarray = []
+	permarray = Array.new
 	permarray = loadPerm(permarray,"botfiles/perm")
 	pos = 0
 	begin
