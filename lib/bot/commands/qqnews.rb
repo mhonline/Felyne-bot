@@ -9,8 +9,8 @@ module MainBot
 					help_available: true
 			) do |event, option|
 				isadmin = false
-				event.user.roles.each do |permissions|
-					if permissions.administrator
+				event.user.roles.each do |x|
+					if event.user.roles[x].permissions.administrator
 						isadmin = true
 					end
 				end
