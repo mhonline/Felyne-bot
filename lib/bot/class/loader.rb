@@ -8,8 +8,7 @@ def loadArr(ar,loc)
 	begin
 		ar=JSON.parse(buff)
 	rescue
-		puts "JSON Error! Deleting file!"
-		File.delete(loc)
+		ar = Hash.new
 	end
 	puts 'Array loaded!'
 	return ar
@@ -17,7 +16,11 @@ end
 
 def loadJSON(ar, loc)
 	if File.exist?(loc)
-		JSON.parse File.read loc
+		begin
+			JSON.parse File.read loc
+		rescue
+			ar = Hash.new
+		end
 	else
 		puts "No file #{loc} to load!"
 	end
