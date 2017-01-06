@@ -43,9 +43,9 @@ module MainBot
 						t60 = t3 + d*24*60*60
 
 						if $raids[event.channel.id.to_s]['raids'].exist?
-							$raids[event.channel.id.to_s]['raids'].push([ { "name": raidtext.to_s, "time": tactual.to_s } ])
+							$raids[event.channel.id.to_s]['raids'].push([{"name"=>raidtext.to_s, "time"=>tactual.to_s }])
 						else
-							$raids[event.channel.id.to_s] = { "raids": [ { "name": raidtext.to_s, "time": tactual.to_s } ]}
+							$raids[event.channel.id.to_s] = {"raids"=>[{"name"=>raidtext.to_s, "time"=>tactual.to_s}]}
 						end
 
 
