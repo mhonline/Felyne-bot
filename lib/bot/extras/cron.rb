@@ -1,9 +1,5 @@
 def cronjobs_start
 	scheduler = Rufus::Scheduler.new
-
-#	unless File.exist?("botfiles/raids")
-#		Dir.mkdir("botfiles/raids")
-#	end
 	
 	scheduler.every '10s' do
 		clock=Time.new
@@ -16,8 +12,8 @@ def cronjobs_start
 					t4 = array['raids'][y]['time']
 					t4 = Time.parse(t4)
 					if t4.past?
-						$bot.send_message(key, "Raid for #{array['raids'][y]['name']}")
 						puts "[Posting] #{key}"
+						$bot.send_message(key, "Raid for #{array['raids'][y]['name']}")
 						puts "[Deleting] Raid"
 						$raids[key.to_s]['raids'].delete_at(y)
 						y -= 1
