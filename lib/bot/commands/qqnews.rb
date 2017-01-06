@@ -10,7 +10,7 @@ module MainBot
 			) do |event, option|
 				isadmin = false
 				event.user.roles.each do |x|
-					if event.user.roles[x].permissions.administrator
+					if x.permissions.administrator
 						isadmin = true
 					end
 				end
