@@ -18,24 +18,24 @@ def news_pull
 end
 
 def news_post
-	$news = getline("bot/oldnews",1).split(",")
-	$news2 = getline("bot/newnews",2)
+	$news = getline("botfiles/oldnews",1).split(",")
+	$news2 = getline("botfiles/newnews",2)
 	$news2 = $news2.chars.select(&:valid_encoding?).join
 	$news2date = $news2[/#{"<li><span>"}(.*?)#{"</span>"}/m, 1]
 	$news2link = $news2[/#{"a><ahref=\""}(.*?)#{"\"target"}/m, 1]
-	$news3 = getline("bot/newnews",3)
+	$news3 = getline("botfiles/newnews",3)
 	$news3 = $news3.chars.select(&:valid_encoding?).join
 	$news3date = $news3[/#{"<li><span>"}(.*?)#{"</span>"}/m, 1]
 	$news3link = $news3[/#{"a><ahref=\""}(.*?)#{"\"target"}/m, 1]
-	$news4 = getline("bot/newnews",4)
+	$news4 = getline("botfiles/newnews",4)
 	$news4 = $news4.chars.select(&:valid_encoding?).join
 	$news4date = $news4[/#{"<li><span>"}(.*?)#{"</span>"}/m, 1]
 	$news4link = $news4[/#{"a><ahref=\""}(.*?)#{"\"target"}/m, 1]
-	$news5 = getline("bot/newnews",5)
+	$news5 = getline("botfiles/newnews",5)
 	$news5 = $news5.chars.select(&:valid_encoding?).join
 	$news5date = $news5[/#{"<li><span>"}(.*?)#{"</span>"}/m, 1]
 	$news5link = $news5[/#{"a><ahref=\""}(.*?)#{"\"target"}/m, 1]
-	$news6 = getline("bot/newnews",6)
+	$news6 = getline("botfiles/newnews",6)
 	$news6 = $news6.chars.select(&:valid_encoding?).join
 	$news6date = $news6[/#{"<li><span>"}(.*?)#{"</span>"}/m, 1]
 	$news6link = $news6[/#{"a><ahref=\""}(.*?)#{"\"target"}/m, 1]

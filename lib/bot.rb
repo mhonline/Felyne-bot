@@ -48,9 +48,11 @@ module MainBot
 		$bot.game = 0
 	end
 	
+	#post news
+	news_post
+
 	#start cron
 	cronjobs_start
-	news_post
 
 	puts 'SKYNET ONLINE'
 	$bot.sync
