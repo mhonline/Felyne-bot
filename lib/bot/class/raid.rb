@@ -4,6 +4,6 @@ class Raid
 		@name = n
 		@time = t
 		
-		array.push(self)
+		array.push("#{@channel}": { "raid": [ { "name": @name, "time": @time } ] })
 	end
 end
