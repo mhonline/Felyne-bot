@@ -10,7 +10,7 @@ def news_pull
 		$currentnews = open(url).read
 		$currentnews.gsub!(/.*?(?=<ul class="newsList">)/im, "")
 		$currentnews.delete! "\s"
-		File.write('bot/newnews', $currentnews)
+		File.write('botfiles/newnews', $currentnews)
 		puts "News gathered!"
 	else
 		puts "Can't Connect to news!"
@@ -44,31 +44,31 @@ def news_post
 		$news.push($news6date + " | " + $news6link)
 		$bot.send_message(261019677390536704, "#{$news6date} | <http://mho.qq.com#{$news6link}>")
 		$news1 = $news.join(",").gsub("\n","")
-		File.write("bot/oldnews", $news1)
+		File.write("botfiles/oldnews", $news1)
 	end
 	if !$news.include? $news5date + " | " + $news5link
 		$news.push($news5date + " | " + $news5link)
 		$bot.send_message(261019677390536704, "#{$news5date} | <http://mho.qq.com#{$news5link}>")
 		$news1 = $news.join(",").gsub("\n","")
-		File.write("bot/oldnews", $news1)
+		File.write("botfiles/oldnews", $news1)
 	end
 	if !$news.include? $news4date + " | " + $news4link
 		$news.push($news4date + " | " + $news4link)
 		$bot.send_message(261019677390536704, "#{$news4date} | <http://mho.qq.com#{$news4link}>")
 		$news1 = $news.join(",").gsub("\n","")
-		File.write("bot/oldnews", $news1)
+		File.write("botfiles/oldnews", $news1)
 	end
 	if !$news.include? $news3date + " | " + $news3link
 		$news.push($news3date + " | " + $news3link)
 		$bot.send_message(261019677390536704, "#{$news3date} | <http://mho.qq.com#{$news3link}>")
 		$news1 = $news.join(",").gsub("\n","")
-		File.write("bot/oldnews", $news1)
+		File.write("botfiles/oldnews", $news1)
 	end
 	if !$news.include? $news2date + " | " + $news2link
 		$news.push($news2date + " | " + $news2link)
 		$bot.send_message(261019677390536704, "#{$news2date} | <http://mho.qq.com#{$news2link}>")
 		$news1 = $news.join(",").gsub("\n","")
-		File.write("bot/oldnews", $news1)
+		File.write("botfiles/oldnews", $news1)
 	end
 	puts 'News Posted!'
 end
