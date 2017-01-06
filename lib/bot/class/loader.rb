@@ -16,7 +16,7 @@ def loadArr(ar,loc)
 end
 
 def loadJSON(ar, loc)
-	if File.exist(loc)
+	if File.exist?(loc)
 		JSON.parse File.read loc
 	else
 		puts "No file #{loc} to load!"
