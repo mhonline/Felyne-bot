@@ -3,6 +3,10 @@ module MainBot
 	unless File.exist?("botfiles")
 		Dir.mkdir("botfiles")
 	end
+
+	#pull news from mho.qq.com
+	news_pull
+	
 	#load env variables
 	Dotenv.load
 
@@ -46,6 +50,7 @@ module MainBot
 	
 	#start cron
 	cronjobs_start
+	news_post
 
 	puts 'SKYNET ONLINE'
 	$bot.sync
