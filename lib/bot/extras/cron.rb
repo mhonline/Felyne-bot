@@ -9,50 +9,28 @@ def cronjobs_start
 		clock=Time.new
 		puts "[#{clock.inspect}] Checking for raids"
 		$raids.each do |key, array|
-			puts key
-			puts array
+			puts "[Loading] #{key}"
+			y = 0
+			begin
+				begin
+					t4 = array['raids'][y]['time']
+					t4 = Time.parse(t4)
+					if t4.past?
+						$bot.send_message(key, "Raid for #{array['raids'][y]['name']}")
+						puts "[Posting] #{key}"
+						puts "[Deleting] Raid"
+						$raids[key.to_s]['raids'].delete_at(y)
+						y -= 1
+					end
+				rescue
+					puts "[ERROR] Deleting raids for this channel"
+					$raids.delete(key)
+				end
+					y += 1
+			end while y < array['raids'].length
 		end
-
-
-
-
-
-
-
-
-
-
+		File.open('botfiles/raids.json', 'w') { |f| f.write $raids.to_json }
 	end
-#		Dir["botfiles/raids/*"].each { |x| 
-#			begin
-#				channel = x
-#				channel.slice! "botfiles/raids/"
-#				puts ">Loading raids for: #{channel}"
-#				raids = loadArr(raids,"botfiles/raids/#{channel}")
-#				pos = 0
-#				begin
-#					t4 = raids[pos]
-#					t4 = Time.parse(t4)
-#					if t4.past?
-#						$bot.send_message(channel, "Raid for #{raids[pos+1]}")
-#						puts ">    Posting raid to #{channel}! Deleting reminder!"
-#						raids.delete_at(pos+1)
-#						raids.delete_at(pos)
-#						pos -= 2
-#					end
-#					pos += 2
-#				end while pos < raids.length
-#
-#				if raids.length == 0
-#					File.delete("botfiles/raids/#{channel}")
-#					puts ">        No more raids exist for #{channel}! Deleting file!"
-#				else
-#					File.write("botfiles/raids/#{channel}", raids)
-#				end
-#			rescue
-#				puts "There is an error with the raids for #{channel}"
-#			end
-#		}
 
 	scheduler.cron '5 */3 * * *' do
 		$bot.stop
