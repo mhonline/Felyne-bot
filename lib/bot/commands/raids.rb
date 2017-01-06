@@ -11,6 +11,7 @@ module MainBot
 				if option == "clear"
 					$raids.delete(event.channel.id.to_s)
 					File.open('botfiles/raids.json', 'w') { |f| f.write $raids.to_json }
+					event << "Raids for this channel have been cleared."
 				else
 					if $raids.key?(event.channel.id.to_s)
 						channelraids = $raids[event.channel.id.to_s]['raids']
