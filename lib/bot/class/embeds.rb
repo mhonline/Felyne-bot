@@ -28,7 +28,7 @@ def list_raids(raids, channel)
 		else
 			o += "Raid #{y}: #{raids[x]['name'].chomp(' is starting *now*!')} in #{d2} days #{h2} hours #{m2} minutes\n"
 		end
-		x += 10
+		x += 5
 		y += 1
     end while x < raids.length
 	e = Discordrb::Webhooks::Embed.new
