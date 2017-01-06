@@ -9,7 +9,7 @@ module MainBot
 					help_available: true
 			) do |event|
 				if File.file?("botfiles/raids/#{event.channel.id}")
-					channelraids = loadArr(channelraids,"botfiles/raids/#{event.channel.id}")
+					channelraids = $raids[event.channel.id.to_s]['raids']
 					event.channel.send_embed '', list_raids(channelraids, event.channel.name)
 				else
 					event << "You do not have any raids set right now. Set some with `#{$prefix}newraid`"

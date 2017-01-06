@@ -4,7 +4,7 @@ def list_raids(raids, channel)
     x = 0
     y = 1
     begin
-    	t4 = raids[x]
+    	t4 = raids[x]['time']
     	t4 = Time.parse(t4)
     	d1 = TimeDifference.between(t1, t4).in_days
     	h1 = TimeDifference.between(t1, t4).in_hours
@@ -15,9 +15,9 @@ def list_raids(raids, channel)
     	m1 = m1 - 60 * h2 - 24 * 60 * d2
     	m2 = m1.floor
     	if d2 == 0
-			o += "Raid #{y}: #{raids[x+1].chomp(' is starting *now*!')} in #{h2} hours #{m2} minutes\n"
+			o += "Raid #{y}: #{raids[x]['name'].chomp(' is starting *now*!')} in #{h2} hours #{m2} minutes\n"
 		else
-			o += "Raid #{y}: #{raids[x+1].chomp(' is starting *now*!')} in #{d2} days #{h2} hours #{m2} minutes\n"
+			o += "Raid #{y}: #{raids[x]['name'].chomp(' is starting *now*!')} in #{d2} days #{h2} hours #{m2} minutes\n"
 		end
 		x += 10
 		y += 1
