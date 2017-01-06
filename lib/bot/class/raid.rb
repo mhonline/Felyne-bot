@@ -3,8 +3,7 @@ class Raid
 		if array[channelid.to_s].any?
 			$bot.send_message(channelid, "channel already has an array initialized")
 		else
-			array[channelid.to_s] = {"raids"=>[ ]}
-			$bot.send_message(channelid, "Channel array initialized")
+			$bot.send_message(channelid, "Array doesn't exist")
 		end
 	end
 end
