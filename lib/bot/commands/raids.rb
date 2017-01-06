@@ -8,15 +8,12 @@ module MainBot
 					usage: "raids <list> <number>",
 					help_available: true
 			) do |event|
-				if File.file?("botfiles/raids/#{event.channel.id}")
+				if $raids.key?(event.channel.id.to_s)
 					channelraids = $raids[event.channel.id.to_s]['raids']
 					event.channel.send_embed '', list_raids(channelraids, event.channel.name)
 				else
 					event << "You do not have any raids set right now. Set some with `#{$prefix}newraid`"
 				end
-
-				File.write("botfiles/raids/#{event.channel.id}", channelraids)
-
 				puts "#{event.timestamp}: #{event.user.name}: CMD: raids"
 				nil
 			end
