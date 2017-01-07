@@ -1,5 +1,6 @@
-bot
+botfiles
 userbase
 /log
 /run.sh
 .env
+vendor
