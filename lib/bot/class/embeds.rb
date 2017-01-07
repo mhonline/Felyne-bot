@@ -26,9 +26,9 @@ def list_raids(raids, channel)
         end
         raidname = raids[x]['name'].chomp(' is starting *now*!').chomp(' is starting in *15 minutes*!').chomp(' is starting in *30 minutes*!').chomp(' is starting in *45 minutes*!').chomp(' is starting in *1 hour*!')
     	if d2 == 0
-			o += "No.#{y}: #{raidname} in #{h2} hours #{m2} mins\n"
+			o += "Reminder #{y}: #{raidname} in #{h2} hours #{m2} minutes\n"
 		else
-			o += "No.#{y}: #{raidname} in #{d2} days #{h2} hours #{m2} mins\n"
+			o += "Reminder #{y}: #{raidname} in #{d2} days #{h2} hours #{m2} minutes\n"
 		end
 		x += 1
 		y += 1

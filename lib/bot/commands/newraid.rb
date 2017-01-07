@@ -47,9 +47,9 @@ module MainBot
 						else
 							$raids[event.channel.id.to_s] = {"raids"=>[{"name"=>"**#{raidtext.to_s}** is starting in *1 hour*!", "time"=>t60.to_s }]}
 						end
-						$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting in *45 mins*!", "time"=>t45.to_s })
-						$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting in *30 mins*!", "time"=>t30.to_s })
-						$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting in *15 mins*!", "time"=>t15.to_s })
+						$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting in *45 minutes*!", "time"=>t45.to_s })
+						$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting in *30 minutes*!", "time"=>t30.to_s })
+						$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting in *15 minutes*!", "time"=>t15.to_s })
 						$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting *now*!", "time"=>tactual.to_s })
 						event << "Raid for **#{raidtext.to_s}** set up!" 
 
