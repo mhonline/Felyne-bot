@@ -18,4 +18,7 @@ require_relative 'lib/bot/extras/news'
 Dir["lib/bot/commands/*.rb"].each {|file| require_relative file }
 require_relative 'lib/bot/class/loader'
 require_relative 'lib/bot/class/embeds'
+require_relative 'lib/bot/class/user'
+require_relative 'lib/bot/class/guild'
+require_relative 'lib/bot/class/strings'
 require_relative 'lib/bot'
