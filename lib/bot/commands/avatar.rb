@@ -1,4 +1,4 @@
-module Mainbot
+module MainBot
 	module Commands
 		module Avatar
 			extend Discordrb::Commands::CommandContainer
