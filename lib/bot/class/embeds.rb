@@ -3,6 +3,7 @@ def list_raids(raids, channel)
     o = ""
     x = 0
     y = 1
+    raidname = ""
     begin
     	t4 = raids[x]['time']
     	t4 = Time.parse(t4)
@@ -23,17 +24,18 @@ def list_raids(raids, channel)
         if m2 < 0
             m2 = 0            
         end
+        raidname = raids[x]['name'].chomp(' is starting *now*!').chomp(' is starting in *15 minutes*!').chomp(' is starting in *30 minutes*!').chomp(' is starting in *45 minutes*!').chomp(' is starting in *1 hour*!')
     	if d2 == 0
-			o += "Raid #{y}: #{raids[x]['name'].chomp(' is starting *now*!')} in #{h2} hours #{m2} minutes\n"
+			o += "Reminder #{y}: #{raidname} in #{h2} hours #{m2} minutes\n"
 		else
-			o += "Raid #{y}: #{raids[x]['name'].chomp(' is starting *now*!')} in #{d2} days #{h2} hours #{m2} minutes\n"
+			o += "Reminder #{y}: #{raidname} in #{d2} days #{h2} hours #{m2} minutes\n"
 		end
-		x += 5
+		x += 1
 		y += 1
     end while x < raids.length
 	e = Discordrb::Webhooks::Embed.new
 	e.author = {
-		name: "Raids for #{channel}"
+		name: "Notifications for #{channel}"
 	}
 	e.color = 0x673ab7
 	e.description = o.chomp("\n")
