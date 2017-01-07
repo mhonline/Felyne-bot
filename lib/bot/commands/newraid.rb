@@ -43,14 +43,14 @@ module MainBot
 						t60 = t3 + d*24*60*60
 
 						if $raids.key?(event.channel.id.to_s)
-							$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting *now*!", "time"=>tactual.to_s })
+							$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting in *1 hour*!", "time"=>t60.to_s })
 						else
-							$raids[event.channel.id.to_s] = {"raids"=>[{"name"=>"**#{raidtext.to_s}** is starting *now*!", "time"=>tactual.to_s }]}
+							$raids[event.channel.id.to_s] = {"raids"=>[{"name"=>"**#{raidtext.to_s}** is starting in *1 hour*!", "time"=>t60.to_s }]}
 						end
-						$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting in *15 minutes*!", "time"=>t15.to_s })
-						$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting in *30 minutes*!", "time"=>t30.to_s })
 						$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting in *45 minutes*!", "time"=>t45.to_s })
-						$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting in *1 hour*!", "time"=>t60.to_s })
+						$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting in *30 minutes*!", "time"=>t30.to_s })
+						$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting in *15 minutes*!", "time"=>t15.to_s })
+						$raids[event.channel.id.to_s]['raids'].push({"name"=>"**#{raidtext.to_s}** is starting *now*!", "time"=>tactual.to_s })
 						event << "Raid for **#{raidtext.to_s}** set up!" 
 
 						File.open('botfiles/raids.json', 'w') { |f| f.write $raids.to_json }
