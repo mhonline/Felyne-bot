@@ -1,6 +1,6 @@
 module MainBot
 	module Commands
-		module daily
+		module Daily
 			extend Discordrb::Commands::CommandContainer
 			command(
 					:daily,
