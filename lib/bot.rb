@@ -5,6 +5,9 @@ module MainBot
 	end
 
 	#pull news from mho.qq.com
+	unless File.file?("botfiles/oldnews")
+		File.write('botfiles/oldnews', "item1,item2")
+	end
 	news_pull
 	
 	#load env variables
@@ -15,6 +18,8 @@ module MainBot
 	$raids = loadJSON($raids, "botfiles/raids.json")
 	$qqnews = Hash.new
 	$qqnews = loadJSON($qqnews, "botfiles/qqnews.json")
+	loadusers("botfiles/users")
+	loadguilds("botfiles/guilds")
 
 	#sets bot prefix
 	$prefix = '-'
