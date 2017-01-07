@@ -29,31 +29,31 @@ def cronjobs_start
 	end
 
 	scheduler.cron '0 19 * * 1' do
-		$qqnews.each do |key, array|
+		$daily.each do |key, array|
 			$bot.send_message(key, "Daily gift/ticket reset just happened!\nArena, Cat Quest, and Raid limits have been reset\nWeekly shop limits have been reset\nDon't forget to collect your rewards!")
 		end
 	end
 
 	scheduler.cron '0 19 * * 2' do
-		$qqnews.each do |key, array|
+		$daily.each do |key, array|
 			$bot.send_message(key, "Daily gift/ticket reset just happened!\nHS Point allocation points have been reset\nDon't forget to collect your rewards!")
 		end
 	end
 
 	scheduler.cron '0 19 * * 3' do
-		$qqnews.each do |key, array|
+		$daily.each do |key, array|
 			$bot.send_message(key, "Weekly gift/ticket reset just happened!\nYour extra ticket storage has been refilled!\nAny weekly events such as Astrolab have been reset!\nDon't forget to collect your rewards!")
 		end
 	end
 
 	scheduler.cron '0 19 * * 4,5,6' do
-		$qqnews.each do |key, array|
+		$daily.each do |key, array|
 			$bot.send_message(key, "Daily gift/ticket reset just happened!\nDon't forget to collect your rewards!")
 		end
 	end
 
 	scheduler.cron '0 19 * * 7' do
-		$qqnews.each do |key, array|
+		$daily.each do |key, array|
 			$bot.send_message(key, "Daily gift/ticket reset just happened!\nWeekly Achievements have been reset\nDon't forget to collect your rewards!")
 		end
 	end
