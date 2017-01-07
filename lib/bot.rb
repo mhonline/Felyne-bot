@@ -18,6 +18,8 @@ module MainBot
 	$raids = loadJSON($raids, "botfiles/raids.json")
 	$qqnews = Hash.new
 	$qqnews = loadJSON($qqnews, "botfiles/qqnews.json")
+	$daily = Hash.new
+	$daily = loadJSON($daily, "botfiles/daily.json")
 	loadusers("botfiles/users")
 	loadguilds("botfiles/guilds")
 
