@@ -20,7 +20,7 @@ module MainBot
 						event << "You have subscribed this channel to Daily reset news"
 					elsif option == "unsub"
 						$daily.delete(event.channel.id.to_s)
-						event << "You have unsubscribed this channel from QQ MHO news"
+						event << "You have unsubscribed this channel from Daily reset news"
 					end
 					File.open('botfiles/daily.json', 'w') { |f| f.write $daily.to_json }
 				else
