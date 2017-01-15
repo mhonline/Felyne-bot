@@ -20,6 +20,9 @@ module Commands
 			h2 = h1.floor
 			m1 = m1-60*h2
 			m2 = m1.floor
+			unless $info.has_key?('maint')
+				$info['maint'] = {'start'=>'notime', 'end'=>'notime'}
+			end
 			if option == "start"
 				if hours == "clear"
 					$info['maint']['start'] = "notime"
