@@ -28,7 +28,7 @@ module Commands
 				em1 = em1-60*eh2
 				em2 = em1.floor
 			end
-			unless t3 == "notime"
+			unless t3 == nil
 				if t3.past?
 					started = "Maintenance has started!"
 				else
@@ -37,7 +37,7 @@ module Commands
 			else
 				started = "Maintenance start time not set."
 			end
-			unless t4 == "notime"
+			unless t4 == nil
 				if t4.past?
 					ended = "Maintenance has Ended! GO HUNTING!"
 				else
