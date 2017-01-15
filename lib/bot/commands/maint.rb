@@ -9,10 +9,8 @@ module Commands
 		) do |event|
 			t1 = Time.now
 
-			t3 = getline("botfiles/maintstart",1)
-			if t3 == nil
-				t3 = "notime"
-			else
+			t3 = $info['maint']['start']
+			unless t3 == "notime"
 				t3 = Time.parse(t3)
 				sh1 = TimeDifference.between(t1, t3).in_hours
 				sm1 = TimeDifference.between(t1, t3).in_minutes
@@ -21,10 +19,8 @@ module Commands
 				sm2 = sm1.floor
 			end
 
-			t4 = getline("botfiles/maintend",1)
-			if t4 == nil
-				t4 = "notime"
-			else
+			t4 = $info['maint']['end']
+			unless t4 == "notime"
 				t4 = Time.parse(t4)
 				eh1 = TimeDifference.between(t1, t4).in_hours
 				em1 = TimeDifference.between(t1, t4).in_minutes
@@ -32,7 +28,7 @@ module Commands
 				em1 = em1-60*eh2
 				em2 = em1.floor
 			end
-			if t3!="notime"
+			unless t3 == "notime"
 				if t3.past?
 					started = "Maintenance has started!"
 				else
@@ -41,7 +37,7 @@ module Commands
 			else
 				started = "Maintenance start time not set."
 			end
-			if t4!="notime"
+			unless t4 == "notime"
 				if t4.past?
 					ended = "Maintenance has Ended! GO HUNTING!"
 				else

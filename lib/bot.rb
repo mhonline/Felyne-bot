@@ -19,6 +19,8 @@ $qqnews = Hash.new
 $qqnews = loadJSON($qqnews, "botfiles/qqnews.json")
 $daily = Hash.new
 $daily = loadJSON($daily, "botfiles/daily.json")
+$info = Hash.new
+$info = loadJSON($info, "botfiles/info.json")
 loadusers("botfiles/users")
 loadguilds("botfiles/guilds")
 
@@ -79,7 +81,7 @@ $bot.message(containing: "RIP") { |event|
 	rip = ["Rest in Pizza", "RIP in Peace", "Ripperoni", "Rippy Dippy Doo", "Rest in Peace", "RIP in Pizza"]
 	event.respond rip[rand(0..(rip.length-1))]
 }
-$bot.message(containing: ["english patch", "English Patch", "English patch", "english Patch", "Eng Patch", "Eng patch", "eng patch", "eng Patch", "ENGLISH PATCH", "ENG PATCH"]) { |event|
+$bot.message.titleize(containing: ["English Patch", "Eng Patch"]) { |event|
 	engpatch = "2016-06-21 00:00:00 +0000"
 	t1 = Time.now
 	t4 = Time.parse(engpatch)
@@ -94,8 +96,8 @@ $bot.debug = false
 $bot.run :async
 	
 #Set game status from file
-if File.file?("botfiles/game")
-	$bot.game = getline("botfiles/game",1)
+if $info.hash?('game')
+	$bot.game = $info['game']
 else
 	$bot.game = 0
 end

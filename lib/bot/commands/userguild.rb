@@ -16,7 +16,7 @@ module Commands
 			servers = []
 			guilds2 = []
 			(1..$guilds.length).each { |i|
-				name_server = "#{$guilds[i-1].guild_name}        (#{$guilds[i-1].guild_server})"
+				name_server = "#{$guilds[i-1].guild_name}        #{$guilds[i-1].guild_server}"
 				guilds.push($guilds[i-1].guild_name)
 				guilds2.push(name_server)
 				servers.push({"name"=>"#{$guilds[i-1].guild_name}","server"=>"#{$guilds[i-1].guild_server}"})

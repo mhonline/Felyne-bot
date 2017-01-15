@@ -10,7 +10,7 @@ module Commands
 		) do |event|
 			puts "#{event.timestamp}: #{event.user.name}: CMD: kill"
 			$bot.send_message(event.message.channel, "Saving data and shutting down... I'll be back.")
-			File.open('botfiles/players.json', 'w') { |f| f.write $players.to_json }
+			File.open('botfiles/info.json', 'w') { |f| f.write $info.to_json }
 			$bot.stop
 			exit
 			nil

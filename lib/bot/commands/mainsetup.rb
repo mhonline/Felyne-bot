@@ -22,22 +22,23 @@ module Commands
 			m2 = m1.floor
 			if option == "start"
 				if hours == "clear"
-					File.write('botfiles/maintstart', '')
+					$info['maint']['start'] = "notime"
 					event.respond "Maintenance has been cleared"
 				else
-					File.write('botfiles/maintstart', t3)
+					$info['maint']['start'] = t3
 					event.respond "#{h2} hours #{m2} minutes until the start of maintenance."
 				end
 			end
 			if option == "end"
 				if hours == "clear"
-					File.write('botfiles/maintend', '')
+					$info['maint']['end'] = "notime"
 					event.respond "Maintenance has been cleared"
 				else
-					File.write('botfiles/maintend', t3)
+					$info['maint']['end'] = t3
 					event.respond "#{h2} hours #{m2} minutes until the end of maintenance."
 				end
 			end
+			File.open('botfiles/info.json', 'w') { |f| f.write $info.to_json }
 			puts "#{event.timestamp}: #{event.user.name}: CMD: mainsetup <#{option}> <#{t3}>"
 			nil
 		end
