@@ -21,11 +21,11 @@ module Commands
 			m1 = m1-60*h2
 			m2 = m1.floor
 			unless $info.has_key?('maint')
-				$info['maint'] = {'start'=>'notime', 'end'=>'notime'}
+				$info['maint'] = {'start'=>nil, 'end'=>nil}
 			end
 			if option == "start"
 				if hours == "clear"
-					$info['maint']['start'] = "notime"
+					$info['maint']['start'] = nil
 					event.respond "Maintenance has been cleared"
 				else
 					$info['maint']['start'] = t3
@@ -34,7 +34,7 @@ module Commands
 			end
 			if option == "end"
 				if hours == "clear"
-					$info['maint']['end'] = "notime"
+					$info['maint']['end'] = nil
 					event.respond "Maintenance has been cleared"
 				else
 					$info['maint']['end'] = t3
