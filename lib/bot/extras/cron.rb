@@ -3,23 +3,18 @@ def cronjobs_start
 	
 	scheduler.every '10s' do
 		clock=Time.new
-		puts "[#{clock.inspect}] Checking for raids"
 		$raids.each do |key, array|
-			puts "[Loading] #{key}"
 			y = 0
 			begin
 				begin
 					t4 = array['raids'][y]['time']
 					t4 = Time.parse(t4)
 					if t4.past?
-						puts "[Posting] #{key}"
 						$bot.send_message(key, "Raid for #{array['raids'][y]['name']}")
-						puts "[Deleting] Raid"
 						$raids[key.to_s]['raids'].delete_at(y)
 						y -= 1
 					end
 				rescue
-					puts "[ERROR] Deleting raids for this channel"
 					$raids.delete(key)
 				end
 					y += 1
