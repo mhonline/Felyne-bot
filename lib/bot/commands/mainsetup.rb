@@ -28,7 +28,7 @@ module Commands
 					$info['maint']['start'] = nil
 					event.respond "Maintenance has been cleared"
 				else
-					$info['maint']['start'] = t3
+					$info['maint']['start'] = t3.to_s
 					event.respond "#{h2} hours #{m2} minutes until the start of maintenance."
 				end
 			end
@@ -37,7 +37,7 @@ module Commands
 					$info['maint']['end'] = nil
 					event.respond "Maintenance has been cleared"
 				else
-					$info['maint']['end'] = t3
+					$info['maint']['end'] = t3.to_s
 					event.respond "#{h2} hours #{m2} minutes until the end of maintenance."
 				end
 			end

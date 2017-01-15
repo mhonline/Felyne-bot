@@ -10,9 +10,7 @@ module Commands
 			t1 = Time.now
 
 			t3 = $info['maint']['start']
-			if t3 == nil
-				t3 = "notime"
-			else
+			unless t3 == "notime"
 				t3 = Time.parse(t3)
 				sh1 = TimeDifference.between(t1, t3).in_hours
 				sm1 = TimeDifference.between(t1, t3).in_minutes
@@ -22,9 +20,7 @@ module Commands
 			end
 
 			t4 = $info['maint']['end']
-			if t3 == nil
-				t3 = "notime"
-			else
+			unless t4 == "notime"
 				t4 = Time.parse(t4)
 				eh1 = TimeDifference.between(t1, t4).in_hours
 				em1 = TimeDifference.between(t1, t4).in_minutes
