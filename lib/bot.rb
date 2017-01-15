@@ -96,7 +96,7 @@ $bot.debug = false
 $bot.run :async
 	
 #Set game status from file
-if $info.hash?('game')
+if $info.has_key?('game')
 	$bot.game = $info['game']
 else
 	$bot.game = 0
