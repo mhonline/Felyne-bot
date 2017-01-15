@@ -35,8 +35,7 @@ module Commands
 				event.respond "Removed from all guild server roles, and cleared guild from Database"
 			end
 			if set == 'list'
-				event.respond "``Guild roles currently set up:``"
-				guilds2.each { |x| event.respond x }
+				event.channel.send_embed '', guildList(guilds2)
 			end
 			if set == 'set'
 				guilds.each { |x| 

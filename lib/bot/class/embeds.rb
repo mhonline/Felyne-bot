@@ -42,3 +42,18 @@ def list_raids(raids, channel)
 	e.timestamp = Time.now
 	e
 end
+
+def listGuilds(arr)
+    o = ""
+    arr.each { |x| 
+        o += "#{x}\n"
+    }
+    e = Discordrb::Webhooks::Embed.new
+    e.author = {
+        name: "Guild roles currently set up:"
+    }
+    e.color = "%06x" % (rand * 0xffffff)
+    e.description = o.chomp("\n")
+    e.timestamp = Time.now
+    e
+end
