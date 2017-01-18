@@ -6,7 +6,7 @@ module Commands
 				description: "Evaluates code.",
 				useage: "eval <code>",
 				help_available: false,
-				permission_level: 800
+				permission_level: 999
 		) do |event, *code|
 			puts "#{event.timestamp}: #{event.user.name}: CMD: eval <#{code.join(' ')}>"
 			begin
