@@ -89,6 +89,14 @@ $bot.message(containing: ["english patch", "English Patch", "English patch", "en
 	d2 = d1.floor
 	event.respond "Day #{d2}: Still no english patch"
 }
+$bot.message(containing: ["Aslind", "aslind"]) { |event|
+	engpatch = "2016-12-27 00:00:00 +0000"
+	t1 = Time.now
+	t4 = Time.parse(engpatch)
+	d1 = TimeDifference.between(t1, t4).in_days
+	d2 = d1.floor
+	event.respond "Day #{d2}: Still no Aslind"
+}
 puts "Commands Loaded"
 
 #Turn off debugging and run async
