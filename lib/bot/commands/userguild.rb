@@ -14,10 +14,9 @@ module Commands
       guilds = []
       guilds2 = []
       (1..$guilds.length).each do |i|
-        name_server = "#{$guilds[i - 1]['guild_name']}        #{$guilds[i - 1]['guild_server']}"
+        name_server = $guilds[i - 1]['guild_name']
         guilds.push($guilds[i - 1]['guild_name'])
         guilds2.push(name_server)
-        servers.push('name' => $guilds[i - 1]['guild_name'] .to_s, 'server' => $guilds[i - 1]['guild_server'].to_s)
       end
       member = event.user.on(event.server)
       guild = 0
