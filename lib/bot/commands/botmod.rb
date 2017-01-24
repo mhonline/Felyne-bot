@@ -89,15 +89,15 @@ module Commands
         permissions.each do |key, _value|
           BOT.set_user_permission(permissions[key]['id'], permissions[key]['lvl'])
         end
-      end
-      if mention == 'check'
-        event << permissions
       else
         begin
           event.respond 'Invalid user'
         rescue
           mute_log(event.channel.id.to_s)
         end
+      end
+      if mention == 'check'
+        event << permissions
       end
       command_log('botmod', event.user.name)
       nil
