@@ -4,3 +4,5 @@ userbase
 /run.sh
 .env
 vendor
+bin
+.bundle

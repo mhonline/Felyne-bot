@@ -4,21 +4,15 @@ require 'date'
 require 'discordrb'
 require 'discordrb/data'
 require 'dotenv'
-require 'json'
 require 'open-uri'
 require 'rubygems'
 require 'rufus-scheduler'
 require 'sys/uptime'
 require 'time'
 require 'time_difference'
-require 'yaml'
+require 'titleize'
 include Sys
-require_relative 'lib/bot/extras/cron'
-require_relative 'lib/bot/extras/news'
-Dir["lib/bot/commands/*.rb"].each {|file| require_relative file }
-require_relative 'lib/bot/class/loader'
-require_relative 'lib/bot/class/embeds'
-require_relative 'lib/bot/class/user'
-require_relative 'lib/bot/class/guild'
-require_relative 'lib/bot/class/strings'
+Dir['lib/bot/class/*.rb'].each { |file| require_relative file }
+Dir['lib/bot/modules/*.rb'].each { |file| require_relative file }
+Dir['lib/bot/commands/*.rb'].each { |file| require_relative file }
 require_relative 'lib/bot'

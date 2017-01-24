@@ -1,118 +1,35 @@
-def loadArr(ar,loc)
-	if File.exist?(loc)
-		f = File.open(loc,"r")
-	else
-		puts "No file #{loc} to load!"
-	end
-	buff = f.read
-	begin
-		ar=JSON.parse(buff)
-	rescue
-		ar = Hash.new
-	end
-	puts 'Array loaded!'
-	return ar
+def load_json(file_location)
+  if File.exist?(file_location)
+    begin
+      ar = {}
+      ar = JSON.parse File.read file_location
+    rescue
+      ar = {}
+    end
+  else
+    ar = {}
+    puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][LOADER] No file #{file_location} to load!"
+  end
+  puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][LOADER] #{file_location} loaded!"
+  ar
 end
 
-def loadJSON(ar, loc)
-	if File.exist?(loc)
-		begin
-			ar = JSON.parse File.read loc
-		rescue
-			ar = Hash.new
-		end
-	else
-		puts "No file #{loc} to load!"
-	end
-	return ar
-end
-
-def loadPerm(ar,loc)
-	if File.exist?(loc)
-		f = File.open(loc,"r")
-	else
-		puts "You have not set up any permissions", "Please enter your user id to set admin permissions for your discord account", "> "
-		perm = [$stdin.gets.chomp.to_i,999,"botadmin"]
-		File.write(loc, perm.to_s)
-		puts "Permissions saved!"
-		f = File.open(loc,"r")
-	end
-	buff = f.read
-	begin
-		ar=JSON.parse(buff)
-	rescue
-		puts "JSON Error! Deleting file!"
-		File.delete(loc)
-	end
-	puts 'Array loaded!'
-	return ar
-end
-
-#Load object arrays
-def loadObj(ar,loc)
-	if File.exist?(loc)
-		f = File.open(loc,"r")
-		ar=YAML.load(f)
-		puts "Loaded #{loc}"
-		f.close
-	else
-		puts "No file #{loc} to load!"
-	end
-end
-#save object arrays
-def saveObj(ar,loc)
-	ar.sort! { |a,b| a.name.downcase <=> b.name.downcase }
-	if File.exist?(loc) then File.open(loc, 'w') {|f| f.write(YAML.dump(ar)) }
-	else File.open(loc, 'w') {|f| f.write(YAML.dump(ar)) } end
-end
-
-def saveGuilds(ar,loc)
-	ar.sort! { |a,b| a.guild_name.downcase <=> b.guild_name.downcase }
-	if File.exist?(loc) then File.open(loc, 'w') {|f| f.write(YAML.dump(ar)) }
-	else File.new(loc, 'w') {|f| f.write(YAML.dump(ar)) } end
-end
-
-def loadmess(loc)
-	if File.exist?(loc)
-		f = File.open(loc,"r")
-		$mess = YAML.load(f)
-		puts 'Mess database Loaded!'
-		f.close
-	else
-		puts 'No file to open!'
-	end
-end
-
-def loadusers(loc)
-	if File.exist?(loc)
-		f = File.open(loc,"r")
-		$users=YAML.load(f)
-		puts 'User database Loaded!'
-		f.close
-	else
-		puts 'No file to open!'
-	end
-end
-
-def loadguilds(loc)
-	if File.exist?(loc)
-		f = File.open(loc,"r")
-		$guilds = YAML.load(f)
-		puts 'Guild database Loaded!'
-		f.close
-	else
-		puts 'No file to open!'
-	end
-end
-
-def getline(loc,line)
-	if File.exist?(loc)
-		f = File.open(loc,"r")
-		line.times{ f.gets }
-		$temp = $_
-		f.close
-		$temp
-	else
-		puts 'No file to open!'
-	end
+def load_permissions(file_location)
+  if File.exist?(file_location)
+    begin
+      ar = {}
+      ar = JSON.parse File.read file_location
+    rescue
+      ar = {}
+    end
+  else
+    ar = {}
+    puts '[#{Time.now.strftime("%d %a %y | %H:%M:%S")}][LOADER] You have not set up any permissions', '[LOADER] Please enter your user id to set admin permissions for your discord account'
+    user_id = $stdin.gets.chomp.to_i
+    ar[user_id] = { 'id' => user_id.to_i, 'lvl' => 999 }
+    File.open(file_location, 'w') { |f| f.write ar.to_json }
+    puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][LOADER] Permissions saved!"
+  end
+  puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][LOADER] #{file_location} loaded!"
+  ar
 end
