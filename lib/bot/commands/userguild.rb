@@ -10,7 +10,7 @@ module Commands
       max_args: 2,
       min_args: 1
     ) do |event, set, search|
-      # Roles function
+      search = search.titleize
       guilds = []
       guilds2 = []
       (1..$guilds.length).each do |i|
