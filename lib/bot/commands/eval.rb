@@ -7,7 +7,7 @@ module Commands
       description: 'Evaluates code',
       usage: 'eval <code>',
       help_available: false,
-      permission_level: 800
+      permission_level: 999
     ) do |event, *code|
       command_log('eval', event.user.name)
       begin
