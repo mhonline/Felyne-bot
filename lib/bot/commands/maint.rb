@@ -43,7 +43,7 @@ module Commands
               else
                 "#{eh2} hours #{em2} minutes left until end of maintenance"
               end
-      e = embed('', "#{started}\n#{ended}")
+      e = embed('MHO Server maintenance:', "#{started}\n#{ended}")
       event.channel.send_embed '', e
       command_log('maint', event.user.name)
       nil
