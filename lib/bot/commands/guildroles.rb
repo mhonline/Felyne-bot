@@ -5,9 +5,7 @@ module Commands
     command(
       :guildroles,
       description: 'Displays guild roles set up for the server.',
-      usage: 'guildroles',
-      max_args: 2,
-      min_args: 1
+      usage: 'guildroles'
     ) do |event|
       if $guilds.key?(event.server.id.to_s)
         output = ''
