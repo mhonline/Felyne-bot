@@ -1,6 +1,11 @@
 # Make botfiles directory if the directory doesn't already exist
 Dir.mkdir('botfiles') unless File.exist?('botfiles')
-File.write('botfiles/oldnews', 'item1,item2') unless File.file?('botfiles/oldnews')
+unless File.file?('botfiles/oldnews')
+  File.write(
+    'botfiles/oldnews',
+    'item1,item2'
+  )
+end
 news_pull
 # Load the environment variables
 Dotenv.load
@@ -15,20 +20,35 @@ $settings = load_json('botfiles/settings.json')
 # If debug setting doesn't already exist then set it to false by default
 $settings['debug'] = false unless $settings.key?('debug')
 if $settings['debug']
-  puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP] Debugging mode on!"
+  puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP]
+  Debugging mode on!"
 else
-  puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP] Debugging mode off!"
+  puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP]
+  Debugging mode off!"
 end
 # Load all constant variables
 SCHEDULER = Rufus::Scheduler.new
 PREFIX = '-'.freeze
 # Load the bot constant
-BOT = Discordrb::Commands::CommandBot.new token: ENV['TOKEN'], client_id: ENV['CLIENT'], prefix: PREFIX, advanced_functionality: false, ignore_bots: true
+BOT = Discordrb::Commands::CommandBot.new token: ENV['TOKEN'],
+                                          client_id: ENV['CLIENT'],
+                                          prefix: PREFIX,
+                                          advanced_functionality: false,
+                                          ignore_bots: true
 # Load all permissions from file
 permissions = load_permissions('botfiles/permissions.json')
-permissions.each { |key, _value| BOT.set_user_permission(permissions[key]['id'], permissions[key]['lvl']) }
+permissions.each do |key, _value|
+  BOT.set_user_permission(permissions[key]['id'], permissions[key]['lvl'])
+end
 group_permissions = load_json('botfiles/permissions.json')
-group_permissions.each { |key, _value| BOT.set_role_permission(group_permissions[key]['id'], group_permissions[key]['lvl']) } unless group_permissions.length.zero?
+unless group_permissions.length.zero?
+  group_permissions.each do |key, _value|
+    BOT.set_role_permission(
+      group_permissions[key]['id'],
+      group_permissions[key]['lvl']
+    )
+  end
+end
 puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP] Permission Loaded!"
 # Set up command buckets for rate limiting
 BOT.bucket :info, limit: 5, time_span: 60, delay: 5

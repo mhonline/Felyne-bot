@@ -13,7 +13,8 @@ module Commands
       channelname = event.channel.name
       if channelname.include? 'raid'
         if (days.to_i + hours.to_i).zero? && minutes.to_i < 60
-          event << 'You can\'t set up a raid with less than an hour until start! Nobody would even show up!'
+          event << 'You can\'t set up a raid with less than an hour until
+          start! Nobody would even show up!'
         else
           raidtext = text.join(' ')
 
@@ -42,13 +43,22 @@ module Commands
           t60 = t3 + d * 24 * 60 * 60
 
           if $raids.key?(event.channel.id.to_s)
-            $raids[event.channel.id.to_s]['raids'].push('name' => raidtext, '60' => t60.to_s, '45' => t45.to_s, '30' => t30.to_s, '15' => t15.to_s, '0' => tactual.to_s)
+            $raids[event.channel.id.to_s]['raids'].push(
+              'name' => raidtext, '60' => t60.to_s, '45' => t45.to_s,
+              '30' => t30.to_s, '15' => t15.to_s, '0' => tactual.to_s
+            )
           else
-            $raids[event.channel.id.to_s] = { 'raids' => [{ 'name' => raidtext, '60' => t60.to_s, '45' => t45.to_s, '30' => t30.to_s, '15' => t15.to_s, '0' => tactual.to_s }] }
+            $raids[event.channel.id.to_s] = { 'raids' => [{
+              'name' => raidtext, '60' => t60.to_s, '45' => t45.to_s,
+              '30' => t30.to_s, '15' => t15.to_s, '0' => tactual.to_s
+            }] }
           end
 
           newraid = {}
-          newraid[event.channel.id.to_s] = { 'raids' => [{ 'name' => raidtext, '60' => t60.to_s, '45' => t45.to_s, '30' => t30.to_s, '15' => t15.to_s, '0' => tactual.to_s }] }
+          newraid[event.channel.id.to_s] = { 'raids' => [{
+            'name' => raidtext, '60' => t60.to_s, '45' => t45.to_s,
+            '30' => t30.to_s, '15' => t15.to_s, '0' => tactual.to_s
+          }] }
           schedule_raids(newraid)
 
           event.respond "Raid for **#{raidtext}** set up!"
@@ -56,7 +66,8 @@ module Commands
           File.open('botfiles/raids.json', 'w') { |f| f.write $raids.to_json }
         end
       else
-        event.respond 'This is not a raid channel.  You can only setup raid reminders for channels with raid in the name.'
+        event.respond 'This is not a raid channel.  You can only setup raid
+        reminders for channels with raid in the name.'
       end
       command_log('newraid', event.user.name)
       nil

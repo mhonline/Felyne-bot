@@ -12,10 +12,13 @@ module Commands
         past_raids = []
         if $raids[event.channel.id.to_s][0].nil?
           $raids = $raids.without(event.channel.id.to_s)
-          event.respond "You do not have any raids set right now. Set some with `#{$prefix}newraid`"
+          event.respond "You do not have any raids set right now. Set some with
+          `#{$prefix}newraid`"
         else
           (0..$raids[event.channel.id.to_s].length - 1).each do |i|
-            past_raids.push(i) if Time.parse($raids[event.channel.id.to_s]['raids'][i]['0']).past?
+            past_raids.push(i) if Time.parse(
+              $raids[event.channel.id.to_s]['raids'][i]['0']
+            ).past?
           end
           past_raids.reverse.each do |i|
             $raids[event.channel.id.to_s]['raids'].delete_at(i)
@@ -39,9 +42,11 @@ module Commands
             next if t4.past?
             raid_name = value['name']
             desc += if d2.zero?
-                      "**#{raid_number}: #{raid_name}:** #{h2} hours #{m2} minutes\n"
+                      "**#{raid_number}: #{raid_name}:** #{h2} hours #{m2}
+                      minutes\n"
                     else
-                      "**#{raid_number}: #{raid_name}:** #{d2} days #{h2} hours #{m2} minutes\n"
+                      "**#{raid_number}: #{raid_name}:** #{d2} days #{h2} hours
+                      #{m2} minutes\n"
                     end
             raid_number += 1
           end
@@ -49,7 +54,8 @@ module Commands
         e = embed('Raids for this channel', desc.chomp("\n"))
         event.channel.send_embed '', e
       else
-        event.respond "You do not have any raids set right now. Set some with `#{$prefix}newraid`"
+        event.respond "You do not have any raids set right now. Set some with
+        `#{$prefix}newraid`"
       end
       command_log('raids', event.user.name)
       nil

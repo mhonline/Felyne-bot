@@ -11,7 +11,8 @@ module Commands
       permission_message: "I'm sorry Dave, I cannot do that."
     ) do |event, *phrase|
       roleplaytext = phrase.join(' ')
-      event.respond "sent **#{roleplaytext}** to #{event.server.default_channel.name}"
+      event.respond "sent **#{roleplaytext}** to
+      #{event.server.default_channel.name}"
       BOT.send_message(event.server.default_channel.id, roleplaytext)
       command_log('rp', event.user.name)
       nil

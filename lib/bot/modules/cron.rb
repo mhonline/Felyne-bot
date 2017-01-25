@@ -22,17 +22,42 @@ def cron_jobs
     BOT.stop
   end
 
-puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP] Cron jobs scheduled!"
+  puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP] Cron jobs
+  scheduled!"
 end
 
 def schedule_raids(array)
   array.each do |key, value1|
     value1['raids'].each do |value2|
-      new_cron(value2['0'], key, "**#{value2['name']} Raid** is starting now!") unless Time.parse(value2['0']).past?
-      new_cron(value2['15'], key, "**#{value2['name']} Raid** is starting in 15 minutes!") unless Time.parse(value2['15']).past?
-      new_cron(value2['30'], key, "**#{value2['name']} Raid** is starting in 30 minutes!") unless Time.parse(value2['30']).past?
-      new_cron(value2['45'], key, "**#{value2['name']} Raid** is starting in 45 minutes!") unless Time.parse(value2['45']).past?
-      new_cron(value2['60'], key, "**#{value2['name']} Raid** is starting in 1 hour!") unless Time.parse(value2['60']).past?
+      unless Time.parse(value2['0']).past?
+        new_cron(
+          value2['0'], key,
+          "**#{value2['name']} Raid** is starting now!"
+        )
+      end
+      unless Time.parse(value2['15']).past?
+        new_cron(
+          value2['15'], key,
+          "**#{value2['name']} Raid** is starting in 15 minutes!"
+        )
+      end
+      unless Time.parse(value2['30']).past?
+        new_cron(
+          value2['30'], key,
+          "**#{value2['name']} Raid** is starting in 30 minutes!"
+        )
+      end
+      unless Time.parse(value2['45']).past?
+        new_cron(
+          value2['45'], key,
+          "**#{value2['name']} Raid** is starting in 45 minutes!"
+        )
+      end
+      next if Time.parse(value2['60']).past?
+      new_cron(
+        value2['60'], key,
+        "**#{value2['name']} Raid** is starting in 1 hour!"
+      )
     end
   end
 end
