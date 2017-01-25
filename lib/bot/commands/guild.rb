@@ -30,7 +30,7 @@ module Commands
           event.user.remove_role(server_role) unless server_role.nil?
         end
         $guilds[event.server.id.to_s].each do |x|
-          next unless guild_name == value['name']
+          next unless guild_name == x['name']
           server_role = event.server.roles.find do |role|
             role.name == x['name']
           end
