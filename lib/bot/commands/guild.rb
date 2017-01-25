@@ -25,14 +25,14 @@ module Commands
       if found == guild_name
         $guilds[event.server.id.to_s].each do |x|
           server_role = event.user.roles.find do |role|
-            role.name == $guilds[event.server.id.to_s][x]['name']
+            role.name == x['name']
           end
           event.user.remove_role(server_role) unless server_role.nil?
         end
         $guilds[event.server.id.to_s].each do |x|
           next unless guild_name == value['name']
           server_role = event.server.roles.find do |role|
-            role.name == $guilds[event.server.id.to_s][x]['name']
+            role.name == x['name']
           end
           event.user.add_role(server_role)
         end
