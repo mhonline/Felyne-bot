@@ -53,6 +53,8 @@ module Commands
             )
           end
         end
+      else
+        event.respond 'Only a role manager can designate a raid role.'
       end
       command_log('raidrole', event.user.name)
       nil
