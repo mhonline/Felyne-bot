@@ -9,7 +9,7 @@ module Commands
       min_args: 1
     ) do |event, *guild_name|
       guild_name = guild_name.join(' ').titleize
-      search = ''
+      found = ''
       if event.user.can_manage_roles?
         server_role = event.server.roles.find do |role|
           role.name.titleize == guild_name
@@ -32,14 +32,14 @@ module Commands
           event.respond "The #{guild_name} role has been created on the server!"
         elsif $guilds.key?(event.server.id.to_s)
           i = 0
-          until i == $guilds.length || search == guild_name
-            search = $guilds[event.server.id.to_s][i]['name'].titleize
+          until i == $guilds[event.server.id.to_s].length || found == guild_name
+            found = $guilds[event.server.id.to_s][i]['name'].titleize
             i += 1
           end
         else
           $guilds[event.server.id.to_s] = []
         end
-        if search == guild_name
+        if found == guild_name
           event.respond "The #{guild_name} role is already set up on this " \
                         'server'
         elsif $guilds[event.server.id.to_s].empty?

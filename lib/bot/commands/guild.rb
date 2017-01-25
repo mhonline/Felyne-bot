@@ -1,0 +1,54 @@
+module Commands
+  # Command Module
+  module Guild
+    extend Discordrb::Commands::CommandContainer
+    command(
+      :guild,
+      description: 'Adds guild for user to the database.',
+      usage: 'userguild <set/remove/list> <guildname>',
+      max_args: 2,
+      min_args: 1
+    ) do |event, *guild_name|
+      guild_name = guild_name.join(' ').titleize
+      found = ''
+      added = false
+      joinable = true
+      if $guilds.key?(event.server.id.to_s)
+        i = 0
+        until i == $guilds[event.server.id.to_s].length || found == guild_name
+          found = $guilds[event.server.id.to_s][i]['name'].titleize
+          i += 1
+        end
+      else
+        joinable = false
+      end
+      if found == guild_name
+        $guilds[event.server.id.to_s].each do |_index, value|
+          server_role = event.user.roles.find do |role|
+            role.name == value['name']
+          end
+          event.user.remove_role(server_role) unless server_role.nil?
+        end
+        $guilds[event.server.id.to_s].each do |_index, value|
+          next unless guild_name == value['name']
+          server_role = event.server.roles.find do |role|
+            role.name == value['name']
+          end
+          event.user.add_role(server_role)
+        end
+        added = true
+      end
+      if joinable
+        if added
+          event.respond "Added to the #{guild_name} server role."
+        else
+          event.respond "The #{guild_name} server role does not exist."
+        end
+      else
+        event.respond 'The server does not have any joinable roles set up.'
+      end
+      command_log('userguild', event.user.name)
+      nil
+    end
+  end
+end
