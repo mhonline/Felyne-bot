@@ -37,15 +37,15 @@ module Commands
           $guilds[event.server.id.to_s] = []
         end
         if search != ''
-          event.respond "The #{search} role is already set up on this " \
+          event.respond "The #{guild_name} role is already set up on this " \
                         'server'
         elsif $guilds[event.server.id.to_s].empty?
           $guilds[event.server.id.to_s] = [{
-            'name' => search, 'id' => server_role.id
+            'name' => guild_name, 'id' => server_role.id
           }]
         else
           $guilds[event.server.id.to_s].push(
-            'name' => search, 'id' => server_role.id
+            'name' => guild_name, 'id' => server_role.id
           )
         end
         File.open('botfiles/guilds.json', 'w') { |f| f.write $guilds.to_json }
