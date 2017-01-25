@@ -39,6 +39,7 @@ module Commands
                     "**#{index + 1}: #{raid_name}:** #{d2} days #{h2} hours #{m2} minutes\n"
                   end
         end
+        desc = 'No raids set up' if desc == ''
         e = embed('Raids for this channel', desc.chomp("\n"))
         event.channel.send_embed '', e
       else
