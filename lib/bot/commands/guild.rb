@@ -25,7 +25,7 @@ module Commands
       if found == guild_name
         $guilds[event.server.id.to_s].each do |_index, value|
           server_role = event.user.roles.find do |role|
-            role.name == value['name']
+            puts value['name']
           end
           event.user.remove_role(server_role) unless server_role.nil?
         end
