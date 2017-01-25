@@ -33,7 +33,7 @@ module Commands
         elsif $guilds.key?(event.server.id.to_s)
           i = 0
           until i == $guilds.length || search == guild_name
-            search = $guilds[event.server.id.to_s][i]
+            search = $guilds[event.server.id.to_s][i]['name'].titleize
             i += 1
           end
         else
