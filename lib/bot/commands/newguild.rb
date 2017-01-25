@@ -6,8 +6,7 @@ module Commands
       :newguild,
       description: 'Adds a user guild to the guilds database.',
       usage: 'newguild <GuildName>',
-      min_args: 1,
-      max_args: 1
+      min_args: 1
     ) do |event, *guild_name|
       if event.user.can_manage_roles?
         server_role = event.server.roles.find { |role| role.name == guild_name }
