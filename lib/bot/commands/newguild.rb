@@ -33,6 +33,8 @@ module Commands
             search = $guilds[event.server.id.to_s][i]
             i += 1
           end
+        else
+          $guilds[event.server.id.to_s] = []
         end
         if search != ''
           event.respond "The #{search} role is already set up on this " \
