@@ -11,14 +11,14 @@ module Commands
       if event.user.can_manage_channels?
         if option == 'sub'
           $daily[event.channel.id.to_s] = true
-          event << 'You have subscribed this channel to Daily reset news'
+          event.respond 'You have subscribed this channel to Daily reset news'
         elsif option == 'unsub'
           $daily.delete(event.channel.id.to_s)
-          event << 'You have unsubscribed this channel from Daily reset news'
+          event.respond 'You have unsubscribed this channel from Daily reset news'
         end
         File.open('botfiles/daily.json', 'w') { |f| f.write $daily.to_json }
       else
-        event << 'Only an admin can subscribe a channel to Daily reset news'
+        event.respond 'Only an admin can subscribe a channel to Daily reset news'
       end
       command_log('daily', event.user.name)
       nil
