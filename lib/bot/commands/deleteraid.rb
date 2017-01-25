@@ -16,6 +16,7 @@ module Commands
       else
         event << "You do not have any raids set right now. Set some with `#{$prefix}newraid`"
       end
+      $raids = $raids.without(event.channel.id.to_s) if $raids[event.channel.id.to_s].nil?
       command_log('deleteraid', event.user.name)
       nil
     end
