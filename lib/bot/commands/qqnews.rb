@@ -18,8 +18,8 @@ module Commands
         end
         File.open('botfiles/qqnews.json', 'w') { |f| f.write $qqnews.to_json }
       else
-        event.respond 'Only a channel manager can subscribe a channel to QQ MHO
-        news'
+        event.respond 'Only a channel manager can subscribe a channel to QQ ' \
+                      'MHO news'
       end
       command_log('qqnews', event.user.name)
       nil

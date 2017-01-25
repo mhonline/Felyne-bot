@@ -25,8 +25,8 @@ module Commands
           server_role = member.roles.find { |role| role.name == x }
           member.remove_role(server_role) unless server_role.nil?
         end
-        event.respond 'Removed from all guild server roles, and cleared guild
-        from Database'
+        event.respond 'Removed from all guild server roles, and cleared ' \
+                      'guild from Database'
       end
       if set == 'list'
         output = ''
@@ -48,9 +48,9 @@ module Commands
         if guild == 1
           event.respond "Added to the #{search} guild server role"
         else
-          event.respond 'The requested guild server role does not exist.  If
-          you would like to add your guild to the servers roles, please PM
-          Reaver01'
+          event.respond 'The requested guild server role does not exist. If ' \
+                        'you would like to add your guild to the servers ' \
+                        'roles, please PM Reaver01'
         end
       end
       command_log('userguild', event.user.name)

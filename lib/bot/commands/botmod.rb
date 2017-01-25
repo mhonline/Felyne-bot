@@ -31,8 +31,8 @@ module Commands
           end
           current_permission_level = permissions[user_id.to_s]['lvl']
           begin
-            event.respond "Current permission level:
-            #{current_permission_level}"
+            event.respond 'Current permission level: ' +
+                          current_permission_level.to_s
           rescue
             mute_log(event.channel.id.to_s)
           end
@@ -47,8 +47,8 @@ module Commands
                 permissions = permissions.without(user_id)
               else
                 begin
-                  event.respond 'You must force deletetion of admin or
-                  botmaster'
+                  event.respond 'You must force deletetion of admin or ' \
+                                'botmaster'
                 rescue
                   mute_log(event.channel.id.to_s)
                 end
@@ -64,8 +64,8 @@ module Commands
               end
               if force == 'no'
                 begin
-                  event.respond 'User permissions level is admin or higher,
-                  you must force permissions change to set lower'
+                  event.respond 'User permissions level is admin or higher, ' \
+                                'you must force permissions change to set lower'
                 rescue
                   mute_log(event.channel.id.to_s)
                 end

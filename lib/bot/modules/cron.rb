@@ -22,8 +22,8 @@ def cron_jobs
     BOT.stop
   end
 
-  puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP] Cron jobs
-  scheduled!"
+  puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP] Cron jobs " \
+       'scheduled!'
 end
 
 def schedule_raids(array)

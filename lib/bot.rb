@@ -20,11 +20,11 @@ $settings = load_json('botfiles/settings.json')
 # If debug setting doesn't already exist then set it to false by default
 $settings['debug'] = false unless $settings.key?('debug')
 if $settings['debug']
-  puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP]
-  Debugging mode on!"
+  puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP] Debugging " \
+       'mode on!'
 else
-  puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP]
-  Debugging mode off!"
+  puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP] Debugging " \
+       'mode off!'
 end
 # Load all constant variables
 SCHEDULER = Rufus::Scheduler.new

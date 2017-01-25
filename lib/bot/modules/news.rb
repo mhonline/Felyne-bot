@@ -13,8 +13,8 @@ def news_pull
     File.write('botfiles/newnews', $currentnews)
     puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP] News Gathered!"
   else
-    puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP] Can't connect
-    to news!"
+    puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP] Can't " \
+         'connect to news!'
   end
 end
 
