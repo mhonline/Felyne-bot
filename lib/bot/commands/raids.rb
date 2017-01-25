@@ -10,7 +10,7 @@ module Commands
     ) do |event|
       if $raids.key?(event.channel.id.to_s)
         past_raids = []
-        if $raids[event.channel.id.to_s].nil?
+        if $raids[event.channel.id.to_s][0].nil?
           $raids = $raids.without(event.channel.id.to_s)
           event.respond "You do not have any raids set right now. Set some with `#{$prefix}newraid`"
         else
