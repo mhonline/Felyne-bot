@@ -9,12 +9,9 @@ module Commands
       permission_level: 2,
       help_available: true
     ) do |event, delete|
-      delete = delete.to_i
       if $raids.key?(event.channel.id.to_s)
-        unless delete.zero? || delete > $raids[event.channel.id.to_s]['raids'].length - 1
-          $raids[event.channel.id.to_s]['raids'].delete_at(delete - 1)
-          event.respond 'Raid was deleted.'
-        end
+        $raids[event.channel.id.to_s]['raids'].delete_at(delete - 1) unless delete.zero? || delete > $raids[event.channel.id.to_s]['raids'].length - 1
+        event.respond 'Raid was deleted.'
       else
         event << "You do not have any raids set right now. Set some with `#{$prefix}newraid`"
       end
