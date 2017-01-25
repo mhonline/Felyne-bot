@@ -8,6 +8,7 @@ module Commands
       usage: 'newguild <GuildName>',
       min_args: 1
     ) do |event, *guild_name|
+      guild_name = guild_name.join(' ')
       if event.user.can_manage_roles?
         server_role = event.server.roles.find { |role| role.name == guild_name }
         if server_role.nil?
