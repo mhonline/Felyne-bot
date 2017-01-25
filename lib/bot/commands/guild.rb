@@ -4,9 +4,8 @@ module Commands
     extend Discordrb::Commands::CommandContainer
     command(
       :guild,
-      description: 'Adds guild for user to the database.',
-      usage: 'userguild <set/remove/list> <guildname>',
-      max_args: 2,
+      description: 'Adds user to set up guild roles.',
+      usage: 'guild <guildname>',
       min_args: 1
     ) do |event, *guild_name|
       guild_name = guild_name.join(' ').titleize
@@ -47,7 +46,7 @@ module Commands
       else
         event.respond 'The server does not have any joinable roles set up.'
       end
-      command_log('userguild', event.user.name)
+      command_log('guild', event.user.name)
       nil
     end
   end
