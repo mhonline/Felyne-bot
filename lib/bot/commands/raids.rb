@@ -17,7 +17,7 @@ module Commands
           $raids[event.channel.id.to_s]['raids'].delete_at(i)
         end
         desc = ''
-        $raids[event.channel.id.to_s]['raids'].each do |value|
+        $raids[event.channel.id.to_s]['raids'].each do |index, value|
           t4 = value['0']
           t4 = Time.parse(t4)
           d1 = TimeDifference.between(event.timestamp, t4).in_days
@@ -34,9 +34,9 @@ module Commands
           next if t4.past?
           raid_name = value['name']
           desc += if d2.zero?
-                    "**#{raid_name}:** #{h2} hours #{m2} minutes\n"
+                    "**#{index + 1}: #{raid_name}:** #{h2} hours #{m2} minutes\n"
                   else
-                    "**#{raid_name}:** #{d2} days #{h2} hours #{m2} minutes\n"
+                    "**#{index + 1}: #{raid_name}:** #{d2} days #{h2} hours #{m2} minutes\n"
                   end
         end
         e = embed('Raids for this channel', desc.chomp("\n"))
