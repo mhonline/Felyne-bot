@@ -12,7 +12,7 @@ module Commands
       if t1 > t2
         event.respond "#{Time.at(t1 - t2).strftime('**%H** hours **%M** minutes **%S** seconds')} left until the next gift/ticket reset"
       else
-        event.respond "#{Time.at(t1 + 86400 - t2).strftime('**%H** hours **%M** minutes **%S** seconds')} left until the next gift/ticket reset"
+        event.respond "#{Time.at(t1 + 86_400 - t2).strftime('**%H** hours **%M** minutes **%S** seconds')} left until the next gift/ticket reset"
       end
       command_log('reset', event.user.name)
       nil

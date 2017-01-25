@@ -26,9 +26,9 @@ PREFIX = '-'.freeze
 BOT = Discordrb::Commands::CommandBot.new token: ENV['TOKEN'], client_id: ENV['CLIENT'], prefix: PREFIX, advanced_functionality: false, ignore_bots: true
 # Load all permissions from file
 permissions = load_permissions('botfiles/permissions.json')
-permissions.each do |key, _value|
-  BOT.set_user_permission(permissions[key]['id'], permissions[key]['lvl'])
-end
+permissions.each { |key, _value| BOT.set_user_permission(permissions[key]['id'], permissions[key]['lvl']) }
+group_permissions = load_json('botfiles/permissions.json')
+group_permissions.each { |key, _value| BOT.set_role_permission(group_permissions[key]['id'], group_permissions[key]['lvl']) } unless group_permissions.length.zero?
 puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP] Permission Loaded!"
 # Set up command buckets for rate limiting
 BOT.bucket :info, limit: 5, time_span: 60, delay: 5

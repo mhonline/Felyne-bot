@@ -7,7 +7,7 @@ module Commands
       description: 'Kills the bot',
       usage: 'kill',
       help_available: false,
-      permission_level: 800
+      permission_level: 999
     ) do |event|
       begin
         event.respond "Saving data and shutting down... I'll be back."

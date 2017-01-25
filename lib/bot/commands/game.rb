@@ -8,7 +8,7 @@ module Commands
       usage: 'game <text>',
       help_available: false,
       min_args: 1,
-      permission_level: 2
+      permission_level: 999
     ) do |event, *text|
       $settings['game'] = text.join(' ')
       BOT.game = $settings['game']

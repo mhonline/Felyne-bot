@@ -6,7 +6,7 @@ module Commands
       :delraid,
       description: 'Delete a raid for this channel.',
       usage: 'raids <number>',
-      permission_level: 2,
+      permission_level: 1,
       help_available: true
     ) do |event, delete|
       delete = delete.to_i

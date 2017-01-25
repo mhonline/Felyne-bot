@@ -6,7 +6,7 @@ module Commands
       :botmod,
       description: 'Adds mod permissions to bot',
       usage: 'botmod <@name> <level> <force>',
-      permission_level: 800,
+      permission_level: 999,
       help_available: false,
       min_args: 1,
       max_args: 4

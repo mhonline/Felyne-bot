@@ -7,6 +7,7 @@ module Commands
       description: 'Sets a raid reminder for the channel.',
       usage: 'newraid <days> <hours> <mins> <text>',
       help_available: true,
+      permission_level: 1,
       min_args: 4
     ) do |event, days, hours, minutes, *text|
       channelname = event.channel.name
