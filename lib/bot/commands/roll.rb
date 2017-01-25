@@ -3,8 +3,7 @@ module Commands
   module Roll
     extend Discordrb::Commands::CommandContainer
     command(
-      :roll,
-      bucket: :delay10
+      :roll
     ) do |event, number|
       number = 6 if number.nil?
       event.respond "🎲A D#{number.to_i} is rolled: #{rand(1..number.to_i)}🎲"

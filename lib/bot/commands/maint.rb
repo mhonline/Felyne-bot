@@ -4,7 +4,6 @@ module Commands
     extend Discordrb::Commands::CommandContainer
     command(
       :maint,
-      bucket: :delay300,
       description: 'Checks time left in game maintenance.',
       usage: 'maint'
     ) do |event|

@@ -40,14 +40,12 @@ permissions = load_permissions('botfiles/permissions.json')
 permissions.each do |key, _value|
   BOT.set_user_permission(permissions[key]['id'], permissions[key]['lvl'])
 end
-group_permissions = load_json('botfiles/permissions.json')
-unless group_permissions.length.zero?
-  group_permissions.each do |key, _value|
-    BOT.set_role_permission(
-      group_permissions[key]['id'],
-      group_permissions[key]['lvl']
-    )
-  end
+group_permissions = load_json('botfiles/group_permissions.json')
+group_permissions.each do |key, _value|
+  BOT.set_role_permission(
+    group_permissions[key]['id'],
+    group_permissions[key]['lvl']
+  )
 end
 puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP] Permission Loaded!"
 # Set up command buckets for rate limiting

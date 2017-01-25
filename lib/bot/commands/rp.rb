@@ -7,7 +7,7 @@ module Commands
       description: 'Nothing to see here.',
       usage: 'rp <text>',
       help_available: false,
-      permission_level: 2,
+      permission_level: 5,
       permission_message: "I'm sorry Dave, I cannot do that."
     ) do |event, *phrase|
       roleplaytext = phrase.join(' ')
