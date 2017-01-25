@@ -21,13 +21,13 @@ module Commands
           group_id = BOT.parse_mention(mention).id
           if group_permissions.key?(group_id.to_s)
             begin
-              event.respond 'This group is already a raid manager.'
+              event.respond 'This role is already a mod role.'
             rescue
               mute_log(event.channel.id.to_s)
             end
             if delete
               begin
-                event.respond 'Removing raid manager permissions from group.'
+                event.respond 'Removing mod role permissions from role.'
               rescue
                 mute_log(event.channel.id.to_s)
               end
@@ -35,7 +35,7 @@ module Commands
             end
           else
             begin
-              event.respond 'Making this group a raid manager.'
+              event.respond 'Making this role a mod role.'
             rescue
               mute_log(event.channel.id.to_s)
             end
