@@ -8,7 +8,8 @@ module Commands
       usage: 'newraid <days> <hours> <mins> <text>',
       help_available: true,
       permission_level: 1,
-      min_args: 4
+      min_args: 4,
+      permission_message: 'You must be a raid manager to setup a raid!'
     ) do |event, days, hours, minutes, *text|
       channelname = event.channel.name
       if channelname.include? 'raid'

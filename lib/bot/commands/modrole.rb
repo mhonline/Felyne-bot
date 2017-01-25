@@ -1,15 +1,15 @@
 module Commands
   # Command Module
-  module Raidrole
+  module Modrole
     extend Discordrb::Commands::CommandContainer
     command(
-      :raidrole,
-      description: 'Specify a raid manager role (or delete one)',
-      usage: 'raidrole <@name> <delete>',
+      :modrole,
+      description: 'Specify a mod role (or delete one)',
+      usage: 'modrole <@name> <delete>',
       min_args: 1,
       max_args: 4
     ) do |event, mention, delete = false|
-      if event.user.can_manage_roles?
+      if event.user.can_administrate?
         group_permissions = load_json('botfiles/group_permissions.json')
         if BOT.parse_mention(mention).nil?
           begin
@@ -40,7 +40,7 @@ module Commands
               mute_log(event.channel.id.to_s)
             end
             group_permissions[group_id.to_s] = {
-              'id' => group_id, 'lvl' => 1
+              'id' => group_id, 'lvl' => 10
             }
           end
           File.open('botfiles/group_permissions.json', 'w') do |f|
@@ -54,7 +54,7 @@ module Commands
           end
         end
       else
-        event.respond 'Only a role manager can designate a raid role.'
+        event.respond 'Only an admin can designate a mod role.'
       end
       command_log('raidrole', event.user.name)
       nil
