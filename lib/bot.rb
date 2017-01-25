@@ -71,6 +71,7 @@ BOT.game = if $settings.key?('game')
            end
 # Schedule all raids from array
 cron_jobs
+news_post
 schedule_raids($raids) unless $raids.length.zero?
 # Put bot invite url in command console just in case
 puts BOT.invite_url
