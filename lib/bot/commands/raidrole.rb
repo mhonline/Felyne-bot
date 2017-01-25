@@ -43,8 +43,8 @@ module Commands
               'id' => group_id, 'lvl' => 1
             }
           end
-          File.open('botfiles/permissions.json', 'w') do |f|
-            f.write permissions.to_json
+          File.open('botfiles/group_permissions.json', 'w') do |f|
+            f.write group_permissions.to_json
           end
           group_permissions.each do |key, _value|
             BOT.set_role_permission(
