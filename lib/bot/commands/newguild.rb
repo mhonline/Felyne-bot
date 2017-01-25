@@ -39,7 +39,7 @@ module Commands
         else
           $guilds[event.server.id.to_s] = []
         end
-        if search != ''
+        if search == guild_name
           event.respond "The #{guild_name} role is already set up on this " \
                         'server'
         elsif $guilds[event.server.id.to_s].empty?
