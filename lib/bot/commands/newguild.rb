@@ -27,6 +27,7 @@ module Commands
               'name' => guild_name, 'id' => new_role.id
             )
           end
+          event.respond "The #{guild_name} role has been created on the server!"
         elsif $guilds.key?(event.server.id.to_s)
           i = 0
           until i == $guilds.length || search == guild_name
@@ -43,10 +44,12 @@ module Commands
           $guilds[event.server.id.to_s] = [{
             'name' => guild_name, 'id' => server_role.id
           }]
+          event.respond 'Role added to database'
         else
           $guilds[event.server.id.to_s].push(
             'name' => guild_name, 'id' => server_role.id
           )
+          event.respond 'Role added to database'
         end
         File.open('botfiles/guilds.json', 'w') { |f| f.write $guilds.to_json }
       end
