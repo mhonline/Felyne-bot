@@ -40,7 +40,7 @@ module Commands
               mute_log(event.channel.id.to_s)
             end
             group_permissions[group_id.to_s] = {
-              'id' => group_id, 'lvl' => level
+              'id' => group_id, 'lvl' => 1
             }
           end
           File.open('botfiles/permissions.json', 'w') do |f|
