@@ -9,6 +9,7 @@ module Commands
       min_args: 1
     ) do |event, *guild_name|
       guild_name = guild_name.join(' ').titleize
+      search = ''
       if event.user.can_manage_roles?
         server_role = event.server.roles.find { |role| role.name == guild_name }
         if server_role.nil?
@@ -28,23 +29,22 @@ module Commands
           end
         elsif $guilds.key?(event.server.id.to_s)
           i = 0
-          search = ''
           until i == $guilds.length || search == guild_name
             search = $guilds[event.server.id.to_s][i]
             i += 1
           end
-          if search != ''
-            event.respond "The #{search} role is already set up on this " \
-                          'server'
-          elsif $guilds[event.server.id.to_s].empty?
-            $guilds[event.server.id.to_s] = [{
-              'name' => search, 'id' => server_role.id
-            }]
-          else
-            $guilds[event.server.id.to_s].push(
-              'name' => search, 'id' => server_role.id
-            )
-          end
+        end
+        if search != ''
+          event.respond "The #{search} role is already set up on this " \
+                        'server'
+        elsif $guilds[event.server.id.to_s].empty?
+          $guilds[event.server.id.to_s] = [{
+            'name' => search, 'id' => server_role.id
+          }]
+        else
+          $guilds[event.server.id.to_s].push(
+            'name' => search, 'id' => server_role.id
+          )
         end
         File.open('botfiles/guilds.json', 'w') { |f| f.write $guilds.to_json }
       end
