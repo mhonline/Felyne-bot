@@ -11,7 +11,9 @@ module Commands
       guild_name = guild_name.join(' ').titleize
       search = ''
       if event.user.can_manage_roles?
-        server_role = event.server.roles.find { |role| role.name == guild_name }
+        server_role = event.server.roles.find do |role|
+          role.name.titleize == guild_name
+        end
         if server_role.nil?
           new_role = event.server.create_role
           new_role.name = guild_name
@@ -42,12 +44,12 @@ module Commands
                         'server'
         elsif $guilds[event.server.id.to_s].empty?
           $guilds[event.server.id.to_s] = [{
-            'name' => guild_name, 'id' => server_role.id
+            'name' => server_role.name, 'id' => server_role.id
           }]
           event.respond 'Role added to database'
         else
           $guilds[event.server.id.to_s].push(
-            'name' => guild_name, 'id' => server_role.id
+            'name' => server_role.name, 'id' => server_role.id
           )
           event.respond 'Role added to database'
         end
