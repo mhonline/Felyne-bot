@@ -15,7 +15,13 @@ module Commands
       delete_permission = 'yes' if level == 'delete'
       level = level.to_i
       permissions = load_permissions('botfiles/permissions.json')
-      unless BOT.parse_mention(mention).nil?
+      if BOT.parse_mention(mention).nil?
+        begin
+          event.respond 'Invalid user' unless mention == 'check'
+        rescue
+          mute_log(event.channel.id.to_s)
+        end
+      else
         user_id = BOT.parse_mention(mention).id
         if permissions.key?(user_id.to_s)
           begin
@@ -88,12 +94,6 @@ module Commands
         File.open('botfiles/permissions.json', 'w') { |f| f.write permissions.to_json }
         permissions.each do |key, _value|
           BOT.set_user_permission(permissions[key]['id'], permissions[key]['lvl'])
-        end
-      else
-        begin
-          event.respond 'Invalid user' unless mention == 'check'
-        rescue
-          mute_log(event.channel.id.to_s)
         end
       end
       event.respond permissions if mention == 'check'
