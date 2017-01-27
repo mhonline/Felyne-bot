@@ -22,6 +22,57 @@ def cron_jobs
     BOT.stop
   end
 
+  SCHEDULER.cron '0 19 * * 1' do
+    $daily.each do |key, _array|
+      $bot.send_message(
+        key, "Daily gift/ticket reset just happened!\n" \
+             "Arena, Cat Quest, and Raid limits have been reset\n" \
+             "Weekly shop limits have been reset\n" \
+             "Don't forget to collect your rewards!"
+      )
+    end
+  end
+
+  SCHEDULER.cron '0 19 * * 2' do
+    $daily.each do |key, _array|
+      $bot.send_message(
+        key, "Daily gift/ticket reset just happened!\n" \
+             "HS Point allocation points have been reset\n" \
+             "Don't forget to collect your rewards!"
+      )
+    end
+  end
+
+  SCHEDULER.cron '0 19 * * 3' do
+    $daily.each do |key, _array|
+      $bot.send_message(
+        key, "Weekly gift/ticket reset just happened!\n" \
+             "Your extra ticket storage has been refilled!\n" \
+             "Any weekly events such as Astrolab have been reset!\n" \
+             "Don't forget to collect your rewards!"
+      )
+    end
+  end
+
+  SCHEDULER.cron '0 19 * * 4,5,6' do
+    $daily.each do |key, _array|
+      $bot.send_message(
+        key, "Daily gift/ticket reset just happened!\n" \
+             "Don't forget to collect your rewards!"
+      )
+    end
+  end
+
+  SCHEDULER.cron '0 19 * * 7' do
+    $daily.each do |key, _array|
+      $bot.send_message(
+        key, "Daily gift/ticket reset just happened!\n" \
+             "Weekly Achievements have been reset\n" \
+             "Don't forget to collect your rewards!"
+      )
+    end
+  end
+
   puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP] Cron jobs " \
        'scheduled!'
 end
