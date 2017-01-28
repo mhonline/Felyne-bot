@@ -6,3 +6,4 @@ userbase
 vendor
 bin
 .bundle
+.lock
