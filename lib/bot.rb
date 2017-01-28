@@ -34,7 +34,8 @@ BOT = Discordrb::Commands::CommandBot.new token: ENV['TOKEN'],
                                           client_id: ENV['CLIENT'],
                                           prefix: PREFIX,
                                           advanced_functionality: false,
-                                          ignore_bots: true
+                                          ignore_bots: true,
+                                          log_mode: :quiet
 BOT.gateway.check_heartbeat_acks = true
 # Load all permissions from file
 permissions = load_permissions('botfiles/permissions.json')
