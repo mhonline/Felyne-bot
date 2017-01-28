@@ -11,15 +11,15 @@ def cron_jobs
   end
 
   SCHEDULER.cron '5 */3 * * *' do
-    File.open('botfiles/daily.json', 'w') { |f| f.write $daily.to_json }
-    File.open('botfiles/guilds.json', 'w') { |f| f.write $guilds.to_json }
-    File.open('botfiles/info.json', 'w') { |f| f.write $info.to_json }
-    File.open('botfiles/logs.json', 'w') { |f| f.write $logs.to_json }
-    File.open('botfiles/qqnews.json', 'w') { |f| f.write $qqnews.to_json }
-    File.open('botfiles/raids.json', 'w') { |f| f.write $raids.to_json }
-    File.open('botfiles/settings.json', 'w') { |f| f.write $settings.to_json }
-    File.open('botfiles/users.json', 'w') { |f| f.write $users.to_json }
-    BOT.stop
+    # File.open('botfiles/daily.json', 'w') { |f| f.write $daily.to_json }
+    # File.open('botfiles/guilds.json', 'w') { |f| f.write $guilds.to_json }
+    # File.open('botfiles/info.json', 'w') { |f| f.write $info.to_json }
+    # File.open('botfiles/logs.json', 'w') { |f| f.write $logs.to_json }
+    # File.open('botfiles/qqnews.json', 'w') { |f| f.write $qqnews.to_json }
+    # File.open('botfiles/raids.json', 'w') { |f| f.write $raids.to_json }
+    # File.open('botfiles/settings.json', 'w') { |f| f.write $settings.to_json }
+    # File.open('botfiles/users.json', 'w') { |f| f.write $users.to_json }
+    # BOT.stop
   end
 
   SCHEDULER.cron '0 19 * * 1' do
