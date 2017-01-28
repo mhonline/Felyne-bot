@@ -11,6 +11,8 @@ def cron_jobs
   end
 
   SCHEDULER.cron '5 */3 * * *' do
+    news_pull
+    news_post
     # File.open('botfiles/daily.json', 'w') { |f| f.write $daily.to_json }
     # File.open('botfiles/guilds.json', 'w') { |f| f.write $guilds.to_json }
     # File.open('botfiles/info.json', 'w') { |f| f.write $info.to_json }

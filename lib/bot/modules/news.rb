@@ -81,5 +81,5 @@ def news_post
     $news1 = $news.join(',').gsub("\n")
     File.write('botfiles/oldnews', $news1)
   end
-  "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP] News posted!"
+  puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP] News posted!"
 end
