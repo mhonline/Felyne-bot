@@ -118,7 +118,7 @@ def schedule_raids(array)
 end
 
 def new_cron(time, channel, tag, message)
-  SCHEDULER.at time, :tag => tag.to_s do
+  SCHEDULER.at time, tags: [channel.to_s, tag.to_s] do
     BOT.channel(channel).send_message message
   end
 end
