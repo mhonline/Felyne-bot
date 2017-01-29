@@ -11,9 +11,9 @@ def news_pull
     $currentnews.gsub!(/.*?(?=<ul class="newsList">)/im, '')
     $currentnews.delete! "\s"
     File.write('botfiles/newnews', $currentnews)
-    puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP] News Gathered!"
+    puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][NEWS] News Gathered!"
   else
-    puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP] Can't " \
+    puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][NEWS] Can't " \
          'connect to news!'
   end
 end
@@ -81,5 +81,5 @@ def news_post
     $news1 = $news.join(',').gsub("\n")
     File.write('botfiles/oldnews', $news1)
   end
-  puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP] News posted!"
+  puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][NEWS] News posted!"
 end
