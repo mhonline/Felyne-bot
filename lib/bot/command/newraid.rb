@@ -11,6 +11,7 @@ module Commands
       min_args: 4,
       permission_message: 'You must be a raid manager to setup a raid!'
     ) do |event, days, hours, minutes, *text|
+      key = rand(100_000..999_999).to_s
       channelname = event.channel.name
       if channelname.include? 'raid'
         if (days.to_i + hours.to_i).zero? && minutes.to_i < 60
@@ -43,18 +44,18 @@ module Commands
           t60 = t3 + d * 24 * 60 * 60
           if $raids.key?(event.channel.id.to_s)
             $raids[event.channel.id.to_s]['raids'].push(
-              'name' => raidtext, '60' => t60.to_s, '45' => t45.to_s,
+              'name' => raidtext, 'key' => key, '60' => t60.to_s, '45' => t45.to_s,
               '30' => t30.to_s, '15' => t15.to_s, '0' => tactual.to_s
             )
           else
             $raids[event.channel.id.to_s] = { 'raids' => [{
-              'name' => raidtext, '60' => t60.to_s, '45' => t45.to_s,
+              'name' => raidtext, 'key' => key, '60' => t60.to_s, '45' => t45.to_s,
               '30' => t30.to_s, '15' => t15.to_s, '0' => tactual.to_s
             }] }
           end
           newraid = {}
           newraid[event.channel.id.to_s] = { 'raids' => [{
-            'name' => raidtext, '60' => t60.to_s, '45' => t45.to_s,
+            'name' => raidtext, 'key' => key, '60' => t60.to_s, '45' => t45.to_s,
             '30' => t30.to_s, '15' => t15.to_s, '0' => tactual.to_s
           }] }
           schedule_raids(newraid)
