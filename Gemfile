@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'discordrb', git: 'https://github.com/meew0/discordrb.git',
-                 branch: 'heartbeat-acks'
+                 branch: 'master'
 gem 'dotenv'
 gem 'json'
 gem 'rufus-scheduler'
