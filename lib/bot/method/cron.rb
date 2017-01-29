@@ -85,31 +85,31 @@ def schedule_raids(array)
     value1['raids'].each do |value2|
       unless Time.parse(value2['0']).past?
         new_cron(
-          value2['0'], key, x,
+          value2['0'], key, value2['key'],
           "**#{value2['name']} Raid** is starting now!"
         )
       end
       unless Time.parse(value2['15']).past?
         new_cron(
-          value2['15'], key, x,
+          value2['15'], key, value2['key'],
           "**#{value2['name']} Raid** is starting in 15 minutes!"
         )
       end
       unless Time.parse(value2['30']).past?
         new_cron(
-          value2['30'], key, x,
+          value2['30'], key, value2['key'],
           "**#{value2['name']} Raid** is starting in 30 minutes!"
         )
       end
       unless Time.parse(value2['45']).past?
         new_cron(
-          value2['45'], key, x,
+          value2['45'], key, value2['key'],
           "**#{value2['name']} Raid** is starting in 45 minutes!"
         )
       end
       next if Time.parse(value2['60']).past?
       new_cron(
-        value2['60'], key, x,
+        value2['60'], key, value2['key'],
         "**#{value2['name']} Raid** is starting in 1 hour!"
       )
     end
@@ -118,7 +118,7 @@ def schedule_raids(array)
 end
 
 def new_cron(time, channel, tag, message)
-  SCHEDULER.at time, tags: [channel.to_s, tag.to_s] do
+  SCHEDULER.at time, tags: [channel.to_s, tag] do
     BOT.channel(channel).send_message message
   end
 end
