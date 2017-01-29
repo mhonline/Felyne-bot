@@ -54,7 +54,7 @@ module Commands
       elsif list == 'mats'
         event.respond '<http://monsterhunteronline.in/materials/?search=' \
                       "#{search}>"
-      elsif list == 'skill'
+      elsif list == 'skills'
         event.respond "<http://monsterhunteronline.in/skills/?search=#{search}>"
       elsif list == 'armor'
         event.respond "<http://monsterhunteronline.in/armor/?search=#{search}>"
