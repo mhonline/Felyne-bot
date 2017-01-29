@@ -14,6 +14,9 @@ module Commands
       channel_s = event.channel.id.to_s
       if $raids.key?(channel_s)
         unless delete.zero?
+          SCHEDULER.jobs(
+            tags: [channel_s, $raids[channel_s]['raids'][delete - 1]['key']]
+          ).each(&:unschedule)
           $raids[channel_s]['raids'].delete_at(delete - 1)
           event.respond 'Raid was deleted.'
         end
