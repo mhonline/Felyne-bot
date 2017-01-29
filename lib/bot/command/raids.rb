@@ -10,12 +10,12 @@ module Commands
     ) do |event|
       if $raids.key?(event.channel.id.to_s)
         past_raids = []
-        if $raids[event.channel.id.to_s][0].nil?
+        if $raids[event.channel.id.to_s]['raids'][0].nil?
           $raids = $raids.without(event.channel.id.to_s)
           event.respond 'You do not have any raids set right now. Set some ' \
                         "with `#{$prefix}newraid`"
         else
-          (0..$raids[event.channel.id.to_s].length - 1).each do |i|
+          (0..$raids[event.channel.id.to_s]['raids'].length - 1).each do |i|
             past_raids.push(i) if Time.parse(
               $raids[event.channel.id.to_s]['raids'][i]['0']
             ).past?
