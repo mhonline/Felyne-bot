@@ -48,6 +48,7 @@ module Commands
         'Switch Axe', 'switch axe', 'swaxe', 'saxe', 'axe', 'switch'
       ].include? weapon
         event.respond "Switch Axe Sets:\nEvasion + Sharp Set: <http://monsterhunteronline.in/armor/?3=61713&5=61715&1=61511&2=61512&4=61204&15=29158&18=29157&9=59&10=4>"
+      end
       command_log('sets', event.user.name)
       nil
     end
