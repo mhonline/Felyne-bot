@@ -11,7 +11,7 @@ def cron_jobs
   end
 
   SCHEDULER.every '30m' do
-    $settings['game'] = '⚔️ ' +
+    $settings['game'] = 'Fighting ' +
                         [
                           'Akura Jebia', 'Akura Vashimu', 'Arbiter Estrellian',
                           'Azure Rathalos', 'Baelidae', 'Basarios', 'Berioros',
