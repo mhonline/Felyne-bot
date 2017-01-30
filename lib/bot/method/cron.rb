@@ -10,7 +10,7 @@ def cron_jobs
     File.open('botfiles/users.json', 'w') { |f| f.write $users.to_json }
   end
 
-  SCHEDULER.every '5m' do
+  SCHEDULER.every '30m' do
     $settings['game'] = '⚔️ ' +
                         [
                           'Akura Jebia', 'Akura Vashimu', 'Arbiter Estrellian',
