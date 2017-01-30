@@ -10,7 +10,7 @@ module Commands
     ) do |event, *weapon|
       weapon = weapon.join(' ')
       if %w(Lance lance L l).include? weapon
-        event.respond "Lance Sets:\nSnS and Lance (preferrably SnS) (Guard+2 Guard Up Health+2 Eva dist+2) Change the helm to Rusted Kushala: <http://monsterhunteronline.in/armor/?1=61531&2=61532&3=61533&4=61294&5=61535&9=46&10=8&8=81007&18=29182&19=29007&15=29264&27=29264&28=29264&26=29251&24=29252&21=29090<\nMelee Super Damage (Ch+2 Sharp Sharpness+1): <http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29226&21=29226&24=29226>"
+        event.respond "Lance Sets:\nSnS and Lance (preferrably SnS) (Guard+2 Guard Up Health+2 Eva dist+2): <http://monsterhunteronline.in/armor/?1=61681&2=61532&3=61533&4=61294&5=61535&9=46&10=8&8=81007&18=29182&19=29007&27=29264&28=29264&26=29251&24=29252&21=29090&15=29264>\nMelee Super Damage (Ch+2 Sharp Sharpness+1): <http://monsterhunteronline.in/armor/?1=61201&2=61392&3=61203&4=61204&5=61425&9=73&10=4&15=29225&18=29226&21=29226&24=29226>"
       end
       if %w(Gunlance gunlance GL Gl gl).include? weapon
         event.respond '``Gunlance Sets:``'
