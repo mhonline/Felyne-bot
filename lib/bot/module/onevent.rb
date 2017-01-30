@@ -47,4 +47,10 @@ module Events
     d2 = d1.floor
     event.respond "Day #{d2}: Still no Aslind"
   end
+
+  message do |event|
+    unless event.message.content.include?(PREFIX)
+      CLEVER.say(event.message.content) if event.message.channel.pm?
+    end
+  end
 end

@@ -1,5 +1,6 @@
 require 'bundler/setup'
 require 'active_support'
+require 'cleverbot'
 require 'date'
 require 'discordrb'
 require 'discordrb/data'
