@@ -44,6 +44,10 @@ module Commands
       if %w(Bowgun bowgun BG Bg bg).include? weapon
         event.respond "Bowgun Sets:\nRecoil + Set: <http://monsterhunteronline.in/armor/?1=61496&4=61499&5=61500&2=61357&3=61358&8=81007&9=32&10=4&15=29273&16=29273&18=29273&19=29273&21=29273&22=29273&23=29124&24=29124&25=29124&27=29124&28=29124>\nGeneric Ranged Set: <http://monsterhunteronline.in/armor/?4=61379&5=61340&2=61457&3=61458&1=61226&8=81007&9=0&10=10&17=29003&18=29001&21=29232&26=29003&29=29294>"
       end
+      if [
+        'Switch Axe', 'switch axe', 'swaxe', 'saxe', 'axe', 'switch'
+      ].include? weapon
+        event.respond "Switch Axe Sets:\nEvasion + Sharp Set: <http://monsterhunteronline.in/armor/?3=61713&5=61715&1=61511&2=61512&4=61204&15=29158&18=29157&9=59&10=4>"
       command_log('sets', event.user.name)
       nil
     end
