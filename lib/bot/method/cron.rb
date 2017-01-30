@@ -10,6 +10,37 @@ def cron_jobs
     File.open('botfiles/users.json', 'w') { |f| f.write $users.to_json }
   end
 
+  SCHEDULER.every '5m' do
+    $settings['game'] = '⚔️ ' +
+                        [
+                          'Akura Jebia', 'Akura Vashimu', 'Arbiter Estrellian',
+                          'Azure Rathalos', 'Baelidae', 'Basarios', 'Berioros',
+                          'Blangonga', 'Blue Yian Kut-Ku', 'Bulldrome',
+                          'Caeserber', 'Cephadrome', 'Chameleos', 'Chramine',
+                          'Conflagration Rathian', 'Congalala',
+                          'Crystal Basarios', 'Daimyo Hermitaur', 'Deviljho',
+                          'Diablos', 'Doom Estrellian', 'Dread Baelidae',
+                          'Elemental Merphistophelin', 'Estrellian',
+                          'Flame Blangonga', 'Gendrome', 'Ghost Caeserber',
+                          'Gold Congalala', 'Gold Hypnocatrice',
+                          'GonnGenn Hermitaur', 'Gravios', 'Gypceros',
+                          'Hypnocatrice', 'Ice Chramine', 'Khezu', 'Kirin',
+                          'Kushala Daora', 'Lavasioth', 'Lightenna',
+                          'Merphistophelin', 'Monoblos',
+                          'One-Eared Yian Garuga', 'Onimusha', 'Pink Rathian',
+                          'Purple Gypceros', 'Purple Slicemargl', 'Rajang',
+                          'Rathalos', 'Rathian', 'Red Khezu',
+                          'Rusted Kushala Daora', 'Sandstone Basarios',
+                          'Shattered Monoblos', 'Shogun Ceanataur',
+                          'Silver Hypnocatrice', 'Slicemargl',
+                          'Swordmaster Shogun Ceanataur', 'Tartaronis',
+                          'Tigrex', 'Velocidrome', 'White Monoblos',
+                          'Yellow Caeserber', 'Yian Garuga', 'Yian Kut-Ku',
+                          'Zinogre'
+                        ].sample
+    BOT.game = $settings['game']
+  end
+
   SCHEDULER.cron '5 */3 * * *' do
     news_pull
     news_post
