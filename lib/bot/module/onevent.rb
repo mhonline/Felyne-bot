@@ -50,7 +50,9 @@ module Events
 
   message do |event|
     unless event.message.content.include?(PREFIX)
-      event.respond CLEVER.say(event.message.content) if event.message.channel.pm?
+      if event.message.channel.pm?
+        event.respond CLEVER.say(event.message.content)
+      end
     end
   end
 end
