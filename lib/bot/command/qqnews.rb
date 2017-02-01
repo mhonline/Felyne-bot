@@ -7,7 +7,7 @@ module Commands
       description: 'Manage QQ News subscription for channel.',
       usage: 'qqnews <sub/unsub>',
       help_available: true,
-      required_permissions: manage_channels,
+      required_permissions: 4,
       permission_message: 'Only a channel manager can use %name%'
     ) do |event, option|
       if option == 'sub'

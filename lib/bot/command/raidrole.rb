@@ -8,7 +8,7 @@ module Commands
       usage: 'raidrole <@name> <delete>',
       min_args: 1,
       max_args: 4,
-      required_permissions: manage_roles,
+      required_permissions: 28,
       permission_message: 'Only a role manager can use %name%'
     ) do |event, mention, delete = false|
       group_permissions = load_json('botfiles/group_permissions.json')
