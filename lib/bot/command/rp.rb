@@ -4,11 +4,8 @@ module Commands
     extend Discordrb::Commands::CommandContainer
     command(
       :rp,
-      description: 'Nothing to see here.',
-      usage: 'rp <text>',
       help_available: false,
-      permission_level: 10,
-      permission_message: "I'm sorry Dave, I cannot do that."
+      permission_level: 10
     ) do |event, *phrase|
       roleplaytext = phrase.join(' ')
       event.respond "sent **#{roleplaytext}** to " +

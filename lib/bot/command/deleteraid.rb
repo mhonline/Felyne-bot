@@ -8,7 +8,7 @@ module Commands
       usage: 'raids <number>',
       permission_level: 1,
       help_available: true,
-      permission_message: 'You must be a raid manager to delete a raid!'
+      permission_message: 'You must be a raid manager to use %name%'
     ) do |event, delete|
       delete = delete.to_i
       channel_s = event.channel.id.to_s

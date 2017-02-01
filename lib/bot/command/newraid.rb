@@ -9,7 +9,7 @@ module Commands
       help_available: true,
       permission_level: 1,
       min_args: 4,
-      permission_message: 'You must be a raid manager to setup a raid!'
+      permission_message: 'You must be a raid manager to use %name%'
     ) do |event, days, hours, minutes, *text|
       key = rand(100_000..999_999).to_s
       channelname = event.channel.name
