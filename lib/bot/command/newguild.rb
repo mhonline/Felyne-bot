@@ -49,7 +49,7 @@ module Commands
           event.respond 'Role added to database'
         else
           $guilds[event.server.id.to_s].push(
-            'name' => server_role.name, 'id' => server_role.id
+            'name' => guild_name, 'id' => server_role.id
           )
           event.respond 'Role added to database'
         end
