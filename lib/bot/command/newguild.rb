@@ -6,9 +6,7 @@ module Commands
       :newguild,
       description: 'Adds a user guild to the guilds database.',
       usage: 'newguild <GuildName>',
-      min_args: 1,
-      required_permissions: 28,
-      permission_message: 'Only a role manager can use %name%'
+      min_args: 1
     ) do |event, *guild_name|
       guild_name = guild_name.join(' ').titleize
       found = ''
