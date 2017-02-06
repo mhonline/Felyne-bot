@@ -8,7 +8,7 @@ module Commands
       usage: 'modrole <@name> <delete>',
       min_args: 1,
       max_args: 4,
-      required_permissions: 3,
+      required_permissions: :administrator,
       permission_message: 'Only an admin can use %name%'
     ) do |event, mention, delete = false|
       group_permissions = load_json('botfiles/group_permissions.json')
