@@ -19,7 +19,7 @@ def news_pull
 end
 
 def news_post
-  $news = getline('botfiles/oldnews', 1).split(',')
+  $news = load_json('botfiles/oldnews.json')
   $news2 = getline('botfiles/newnews', 2)
   $news2 = $news2.chars.select(&:valid_encoding?).join
   $news2date = $news2[/#{"<li><span>"}(.*?)#{"</span>"}/m, 1]
@@ -49,8 +49,7 @@ def news_post
       rescue
       end
     end
-    $news1 = $news.join(',').gsub("\n")
-    File.write('botfiles/oldnews', $news1)
+    File.open('botfiles/oldnews.json', 'w') { |f| f.write $news.to_json }
   end
   unless $news.include? $news5date + ' | ' + $news5link
     $news.push($news5date + ' | ' + $news5link)
@@ -60,8 +59,7 @@ def news_post
       rescue
       end
     end
-    $news1 = $news.join(',').gsub("\n")
-    File.write('botfiles/oldnews', $news1)
+    File.open('botfiles/oldnews.json', 'w') { |f| f.write $news.to_json }
   end
   unless $news.include? $news4date + ' | ' + $news4link
     $news.push($news4date + ' | ' + $news4link)
@@ -71,8 +69,7 @@ def news_post
       rescue
       end
     end
-    $news1 = $news.join(',').gsub("\n")
-    File.write('botfiles/oldnews', $news1)
+    File.open('botfiles/oldnews.json', 'w') { |f| f.write $news.to_json }
   end
   unless $news.include? $news3date + ' | ' + $news3link
     $news.push($news3date + ' | ' + $news3link)
@@ -82,8 +79,7 @@ def news_post
       rescue
       end
     end
-    $news1 = $news.join(',').gsub("\n")
-    File.write('botfiles/oldnews', $news1)
+    File.open('botfiles/oldnews.json', 'w') { |f| f.write $news.to_json }
   end
   unless $news.include? $news2date + ' | ' + $news2link
     $news.push($news2date + ' | ' + $news2link)
@@ -93,8 +89,7 @@ def news_post
       rescue
       end
     end
-    $news1 = $news.join(',').gsub("\n")
-    File.write('botfiles/oldnews', $news1)
+    File.open('botfiles/oldnews.json', 'w') { |f| f.write $news.to_json }
   end
   puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][NEWS] News posted!"
 end
