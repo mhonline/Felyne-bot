@@ -6,6 +6,7 @@ module Commands
       :qqnews,
       description: 'Manage QQ News subscription for channel.',
       usage: 'qqnews <sub/unsub>',
+      min_args: 1,
       help_available: true,
       required_permissions: [:manage_channels],
       permission_message: 'Only a channel manager can use %name%'
