@@ -44,7 +44,7 @@ def news_post
   unless $news.include? $news6date + ' | ' + $news6link
     $news.push($news6date + ' | ' + $news6link)
     $qqnews.each do |key, _array|
-      $bot.send_message(key, "#{$news6date} | <http://mho.qq.com#{$news6link}>")
+      BOT.send_message(key, "#{$news6date} | <http://mho.qq.com#{$news6link}>")
     end
     $news1 = $news.join(',').gsub("\n")
     File.write('botfiles/oldnews', $news1)
@@ -52,7 +52,7 @@ def news_post
   unless $news.include? $news5date + ' | ' + $news5link
     $news.push($news5date + ' | ' + $news5link)
     $qqnews.each do |key, _array|
-      $bot.send_message(key, "#{$news5date} | <http://mho.qq.com#{$news5link}>")
+      BOT.send_message(key, "#{$news5date} | <http://mho.qq.com#{$news5link}>")
     end
     $news1 = $news.join(',').gsub("\n")
     File.write('botfiles/oldnews', $news1)
@@ -60,7 +60,7 @@ def news_post
   unless $news.include? $news4date + ' | ' + $news4link
     $news.push($news4date + ' | ' + $news4link)
     $qqnews.each do |key, _array|
-      $bot.send_message(key, "#{$news4date} | <http://mho.qq.com#{$news4link}>")
+      BOT.send_message(key, "#{$news4date} | <http://mho.qq.com#{$news4link}>")
     end
     $news1 = $news.join(',').gsub("\n")
     File.write('botfiles/oldnews', $news1)
@@ -68,7 +68,7 @@ def news_post
   unless $news.include? $news3date + ' | ' + $news3link
     $news.push($news3date + ' | ' + $news3link)
     $qqnews.each do |key, _array|
-      $bot.send_message(key, "#{$news3date} | <http://mho.qq.com#{$news3link}>")
+      BOT.send_message(key, "#{$news3date} | <http://mho.qq.com#{$news3link}>")
     end
     $news1 = $news.join(',').gsub("\n")
     File.write('botfiles/oldnews', $news1)
@@ -76,7 +76,7 @@ def news_post
   unless $news.include? $news2date + ' | ' + $news2link
     $news.push($news2date + ' | ' + $news2link)
     $qqnews.each do |key, _array|
-      $bot.send_message(key, "#{$news2date} | <http://mho.qq.com#{$news2link}>")
+      BOT.send_message(key, "#{$news2date} | <http://mho.qq.com#{$news2link}>")
     end
     $news1 = $news.join(',').gsub("\n")
     File.write('botfiles/oldnews', $news1)
