@@ -15,6 +15,7 @@ $info = load_json('botfiles/info.json')
 $logs = load_json('botfiles/logs.json')
 $qqnews = load_json('botfiles/qqnews.json')
 $raids = load_json('botfiles/raids.json')
+$remind = load_json('botfiles/remind.json')
 $settings = load_json('botfiles/settings.json')
 # If debug setting doesn't already exist then set it to false by default
 $settings['debug'] = false unless $settings.key?('debug')
