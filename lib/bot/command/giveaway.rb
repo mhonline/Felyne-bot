@@ -15,11 +15,11 @@ module Commands
       end
       if eligible_users.count < 50
         event.respond 'The server does not have enough eligible users to do ' \
-                      "a giveaway at this time.\nThere are currently only" +
-                      eligible_users.count + 'eligible users.'
+                      "a giveaway at this time.\nThere are currently only" \
+                      " #{eligible_users.count} eligible users."
       else
         winner = eligible_users.sample
-        event.respond BOT.user(winner).mention + 'You have won the giveaway!' \
+        event.respond "#{BOT.user(winner).mention} You have won the giveaway!" \
                       "\nMake sure you respond to #{event.user.mention} or " \
                       'they might give your prize to someone else!'
       end
