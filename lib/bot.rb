@@ -1,7 +1,9 @@
 # Make botfiles directory if the directory doesn't already exist
 Dir.mkdir('botfiles') unless File.exist?('botfiles')
 unless File.file?('botfiles/oldnews.json')
-  File.open('botfiles/oldnews.json', 'w') { |f| f.write ['news1', 'news2'].to_json }
+  File.open('botfiles/oldnews.json', 'w') do |f|
+    f.write %w(news1 news2).to_json
+  end
 end
 news_pull
 # Load the environment variables

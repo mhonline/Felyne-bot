@@ -44,15 +44,6 @@ def cron_jobs
   SCHEDULER.cron '5 */3 * * *' do
     news_pull
     news_post
-    # File.open('botfiles/daily.json', 'w') { |f| f.write $daily.to_json }
-    # File.open('botfiles/guilds.json', 'w') { |f| f.write $guilds.to_json }
-    # File.open('botfiles/info.json', 'w') { |f| f.write $info.to_json }
-    # File.open('botfiles/logs.json', 'w') { |f| f.write $logs.to_json }
-    # File.open('botfiles/qqnews.json', 'w') { |f| f.write $qqnews.to_json }
-    # File.open('botfiles/raids.json', 'w') { |f| f.write $raids.to_json }
-    # File.open('botfiles/settings.json', 'w') { |f| f.write $settings.to_json }
-    # File.open('botfiles/users.json', 'w') { |f| f.write $users.to_json }
-    # BOT.stop
   end
 
   SCHEDULER.cron '0 19 * * 1' do
@@ -111,7 +102,6 @@ def cron_jobs
 end
 
 def schedule_raids(array)
-  x = 1
   array.each do |key, value1|
     value1['raids'].each do |value2|
       unless Time.parse(value2['0']).past?
@@ -144,7 +134,12 @@ def schedule_raids(array)
         "**#{value2['name']} Raid** is starting in 1 hour!"
       )
     end
-    x += 1
+  end
+end
+
+def new_reminder(time, id, tag, message)
+  SCHEDULER.at time, tags: [id.to_s, tag] do
+    BOT.user(id).pm(message)
   end
 end
 
