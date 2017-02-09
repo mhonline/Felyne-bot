@@ -52,8 +52,6 @@ module Events
     unless event.message.content.include?(PREFIX)
       if event.message.channel.pm?
         event.respond CLEVER.say(event.message.content)
-      elsif $users.nil?
-        $users[event.server.id.to_s] = { event.user.id.to_s => 1 }
       elsif $users.key?(event.server.id.to_s)
         if $users[event.server.id.to_s].key?(event.user.id.to_s)
           $users[event.server.id.to_s][event.user.id.to_s] += 1
