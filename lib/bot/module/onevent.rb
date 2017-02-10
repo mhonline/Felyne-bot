@@ -68,9 +68,10 @@ module Events
           if BOT.parse_mention(
             event.message.content
           ).id == 192_753_495_806_312_451
+            text = event.message.content.delete('<@192753495806312451>')
             event.channel.start_typing
             sleep rand(1..3)
-            event.respond CLEVER.say(event.message.content)
+            event.respond CLEVER.say(text)
           end
         end
         if $users.key?(event.server.id.to_s)
