@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 gem 'cleverbot_io'
-gem 'discordrb', git: 'https://github.com/meew0/discordrb.git',
-                 branch: 'master'
+gem 'discordrb', git: 'https://github.com/Reaver01/discordrb',
+                 branch: 'enhance/default_channel'
 gem 'dotenv'
 gem 'json'
 gem 'rufus-scheduler'
