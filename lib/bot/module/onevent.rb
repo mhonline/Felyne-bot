@@ -56,6 +56,13 @@ module Events
         if rand(0..24).zero? && event.channel.id == event.server.id
           event.respond CLEVER.say(event.message.content)
         end
+        unless BOT.parse_mention(event.message.content).nil?
+          if BOT.parse_mention(
+            event.message.content
+          ).id == 192_753_495_806_312_451
+            event.respond CLEVER.say(event.message.content)
+          end
+        end
         if $users.key?(event.server.id.to_s)
           if $users[event.server.id.to_s].key?(event.user.id.to_s)
             $users[event.server.id.to_s][event.user.id.to_s] += 1
