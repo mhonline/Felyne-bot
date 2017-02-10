@@ -39,11 +39,12 @@ BOT = Discordrb::Commands::CommandBot.new token: ENV['TOKEN'],
                                           ignore_bots: true,
                                           log_mode: :quiet
 BOT.gateway.check_heartbeat_acks = true
-# Load all permissions from file
+# Load user permissions from file
 permissions = load_permissions('botfiles/permissions.json')
 permissions.each do |key, _value|
   BOT.set_user_permission(permissions[key]['id'], permissions[key]['lvl'])
 end
+# Load group permissions from file
 group_permissions = load_json('botfiles/group_permissions.json')
 group_permissions.each do |key, _value|
   BOT.set_role_permission(
@@ -63,7 +64,7 @@ end
 BOT.include! Events
 # Turn off discordrb debugging
 BOT.debug = false
-# Set run to async
+# Start bot in async mode
 BOT.run :async
 # Load game from settings and set to 0 if no game setting exists
 BOT.game = if $settings.key?('game')
@@ -71,9 +72,10 @@ BOT.game = if $settings.key?('game')
            else
              0
            end
-# Schedule all raids from array
+# Run cron jobs to schedule jobs and post any news found
 cron_jobs
 news_post
+# Schedule all raids from array
 schedule_raids($raids) unless $raids.length.zero?
 # Put bot invite url in command console just in case
 puts BOT.invite_url

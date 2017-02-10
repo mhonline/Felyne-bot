@@ -1,4 +1,5 @@
 def cron_jobs
+  # Saves all variables every 5 minutes
   SCHEDULER.every '5m' do
     File.open('botfiles/daily.json', 'w') { |f| f.write $daily.to_json }
     File.open('botfiles/guilds.json', 'w') { |f| f.write $guilds.to_json }
@@ -10,6 +11,7 @@ def cron_jobs
     File.open('botfiles/users.json', 'w') { |f| f.write $users.to_json }
   end
 
+  # Changes game every 30 minutes
   SCHEDULER.every '30m' do
     $settings['game'] = 'Fighting ' +
                         [
@@ -39,13 +41,12 @@ def cron_jobs
                           'Zinogre'
                         ].sample
     BOT.game = $settings['game']
-  end
-
-  SCHEDULER.cron '5 */3 * * *' do
+    # Check for news and post it too
     news_pull
     news_post
   end
 
+  # Post ticket reset info
   SCHEDULER.cron '0 19 * * 1' do
     $daily.each do |key, _array|
       BOT.send_message(
@@ -101,6 +102,7 @@ def cron_jobs
        'scheduled!'
 end
 
+# Raid scheduling function for raid commands
 def schedule_raids(array)
   array.each do |key, value1|
     value1['raids'].each do |value2|
