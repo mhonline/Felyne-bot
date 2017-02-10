@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'cleverbot_io'
+gem 'cleverbot-api'
 gem 'discordrb', git: 'https://github.com/Reaver01/discordrb',
                  branch: 'enhance/default_channel'
 gem 'dotenv'

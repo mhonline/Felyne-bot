@@ -53,7 +53,7 @@ module Events
       if event.message.channel.pm?
         event.channel.start_typing
         sleep rand(1..3)
-        event.respond CLEVER.say(event.message.content)
+        event.respond CLEVER.think event.message.content
       else
         if rand(0..24).zero? && event.channel.id == event.server.id
           unless BOT.parse_mention(
@@ -61,7 +61,7 @@ module Events
           ).id == 192_753_495_806_312_451
             event.channel.start_typing
             sleep rand(1..3)
-            event.respond CLEVER.say(event.message.content)
+            event.respond CLEVER.think event.message.content
           end
         end
         unless BOT.parse_mention(event.message.content).nil?
@@ -71,7 +71,7 @@ module Events
             text = event.message.content.delete('<@192753495806312451>')
             event.channel.start_typing
             sleep rand(1..3)
-            event.respond CLEVER.say(text)
+            event.respond CLEVER.think text
           end
         end
         if $users.key?(event.server.id.to_s)

@@ -30,7 +30,7 @@ end
 # Load all constant variables
 SCHEDULER = Rufus::Scheduler.new
 PREFIX = '-'.freeze
-CLEVER = Cleverbot.new(ENV['CLEVERUSER'], ENV['CLEVERKEY'])
+CLEVER = CleverBot.new
 # Load the bot constant
 BOT = Discordrb::Commands::CommandBot.new token: ENV['TOKEN'],
                                           client_id: ENV['CLIENT'],
