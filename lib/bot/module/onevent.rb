@@ -51,18 +51,18 @@ module Events
   message do |event|
     unless event.message.content.include?(PREFIX)
       if event.message.channel.pm?
-        # event.channel.start_typing
-        # sleep rand(1..3)
-        # event.respond CLEVER.send_message(event.message.content)
+        event.channel.start_typing
+        sleep rand(1..3)
+        event.respond CLEVER.say(event.message.content)
       else
         unless BOT.parse_mention(event.message.content).nil?
           if BOT.parse_mention(
             event.message.content
           ).id == 192_753_495_806_312_451
-            # text = event.message.content.delete('<@192753495806312451>')
-            # event.channel.start_typing
-            # sleep rand(1..3)
-            # event.respond CLEVER.send_message(text)
+            text = event.message.content.delete('<@192753495806312451>')
+            event.channel.start_typing
+            sleep rand(1..3)
+            event.respond CLEVER.say(text)
           end
         end
         if $users.key?(event.server.id.to_s)
