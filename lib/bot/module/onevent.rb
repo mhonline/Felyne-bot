@@ -51,9 +51,13 @@ module Events
   message do |event|
     unless event.message.content.include?(PREFIX)
       if event.message.channel.pm?
+        event.channel.start_typing
+        sleep rand(1..3)
         event.respond CLEVER.say(event.message.content)
       else
         if rand(0..24).zero? && event.channel.id == event.server.id
+          event.channel.start_typing
+          sleep rand(1..3)
           event.respond CLEVER.say(event.message.content)
         end
         unless BOT.parse_mention(event.message.content).nil?
