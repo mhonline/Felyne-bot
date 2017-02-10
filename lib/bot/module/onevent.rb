@@ -55,12 +55,6 @@ module Events
         # sleep rand(1..3)
         # event.respond CLEVER.send_message(event.message.content)
       else
-        if rand(0..24).zero? && event.channel.id == event.server.id
-            # event.channel.start_typing
-            # sleep rand(1..3)
-            # event.respond CLEVER.send_message(event.message.content)
-          end
-        end
         unless BOT.parse_mention(event.message.content).nil?
           if BOT.parse_mention(
             event.message.content
