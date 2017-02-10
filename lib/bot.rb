@@ -30,7 +30,7 @@ end
 # Load all constant variables
 SCHEDULER = Rufus::Scheduler.new
 PREFIX = '-'.freeze
-CLEVER = CleverBot.new
+CLEVER = RubyCleverbot.new('HelloBot')
 # Load the bot constant
 BOT = Discordrb::Commands::CommandBot.new token: ENV['TOKEN'],
                                           client_id: ENV['CLIENT'],
