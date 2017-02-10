@@ -52,14 +52,19 @@ module Events
     unless event.message.content.include?(PREFIX)
       if event.message.channel.pm?
         event.respond CLEVER.say(event.message.content)
-      elsif $users.key?(event.server.id.to_s)
-        if $users[event.server.id.to_s].key?(event.user.id.to_s)
-          $users[event.server.id.to_s][event.user.id.to_s] += 1
-        else
-          $users[event.server.id.to_s][event.user.id.to_s] = 1
-        end
       else
-        $users[event.server.id.to_s] = { event.user.id.to_s => 1 }
+        if rand(0..24).zero? && event.channel.id == event.server.id
+          event.respond CLEVER.say(event.message.content)
+        end
+        if $users.key?(event.server.id.to_s)
+          if $users[event.server.id.to_s].key?(event.user.id.to_s)
+            $users[event.server.id.to_s][event.user.id.to_s] += 1
+          else
+            $users[event.server.id.to_s][event.user.id.to_s] = 1
+          end
+        else
+          $users[event.server.id.to_s] = { event.user.id.to_s => 1 }
+        end
       end
     end
   end
