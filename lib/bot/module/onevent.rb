@@ -56,9 +56,13 @@ module Events
         event.respond CLEVER.say(event.message.content)
       else
         if rand(0..24).zero? && event.channel.id == event.server.id
-          event.channel.start_typing
-          sleep rand(1..3)
-          event.respond CLEVER.say(event.message.content)
+          unless BOT.parse_mention(
+            event.message.content
+          ).id == 192_753_495_806_312_451
+            event.channel.start_typing
+            sleep rand(1..3)
+            event.respond CLEVER.say(event.message.content)
+          end
         end
         unless BOT.parse_mention(event.message.content).nil?
           if BOT.parse_mention(
