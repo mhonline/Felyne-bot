@@ -5,8 +5,7 @@ module Commands
     command(
       [:set, :sets, :s],
       description: 'Lists recommended sets for <weapon>.',
-      usage: 'sets',
-      min_args: 1
+      usage: 'sets'
     ) do |event|
       event.respond 'MHO Weapon Setup Suggestion Spreadsheet: <https://docs.g' \
                     'oogle.com/spreadsheets/d/1q1msLZ0cib-1XOFO8XbWRvbN9mbXps' \
