@@ -3,7 +3,7 @@ module Commands
   module Raidrole
     extend Discordrb::Commands::CommandContainer
     command(
-      :raidrole,
+      [:raidrole, :rr],
       description: 'Specify a raid manager role (or delete one)',
       usage: 'raidrole <@name> <delete>',
       min_args: 1,

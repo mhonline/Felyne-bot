@@ -3,7 +3,7 @@ module Commands
   module Sets
     extend Discordrb::Commands::CommandContainer
     command(
-      :sets,
+      [:set, :sets, :s],
       description: 'Lists recommended sets for <weapon>.',
       usage: 'sets <weapon>',
       min_args: 1

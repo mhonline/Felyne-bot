@@ -3,7 +3,7 @@ module Commands
   module Eval
     extend Discordrb::Commands::CommandContainer
     command(
-      :eval,
+      [:eval, :e],
       description: 'Evaluates code',
       usage: 'eval <code>',
       help_available: false,

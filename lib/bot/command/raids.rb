@@ -3,7 +3,7 @@ module Commands
   module Raids
     extend Discordrb::Commands::CommandContainer
     command(
-      :raids,
+      [:raids, :r],
       description: 'Manage raids for channel.',
       usage: 'raids <clear>',
       help_available: true

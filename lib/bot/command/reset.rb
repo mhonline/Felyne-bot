@@ -3,7 +3,7 @@ module Commands
   module Reset
     extend Discordrb::Commands::CommandContainer
     command(
-      :reset,
+      [:reset, :res],
       description: 'Displays time until gift/ticket reset',
       useage: 'reset'
     ) do |event|

@@ -3,7 +3,7 @@ module Commands
   module Wiki
     extend Discordrb::Commands::CommandContainer
     command(
-      :wiki,
+      [:wiki, :w, :site],
       bucket: :delay10,
       description: 'Searches the Wiki',
       usage: 'wiki <search>'

@@ -3,7 +3,7 @@ module Commands
   module Giveaway
     extend Discordrb::Commands::CommandContainer
     command(
-      :giveaway,
+      [:giveaway, :give],
       description: 'Selects an active user on the server to give something to.',
       usage: 'giveaway',
       help_available: false,

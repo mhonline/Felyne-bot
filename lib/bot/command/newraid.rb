@@ -3,7 +3,7 @@ module Commands
   module Newraid
     extend Discordrb::Commands::CommandContainer
     command(
-      :newraid,
+      [:newraid, :nr],
       description: 'Sets a raid reminder for the channel.',
       usage: 'newraid <days> <hours> <mins> <text>',
       help_available: true,

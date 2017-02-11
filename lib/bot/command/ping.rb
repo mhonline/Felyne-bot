@@ -3,7 +3,7 @@ module Commands
   module Ping
     extend Discordrb::Commands::CommandContainer
     command(
-      :ping,
+      [:ping, :p],
       description: 'Responds with response time',
       usage: 'ping',
       help_available: false

@@ -3,7 +3,7 @@ module Commands
   module RolePlay
     extend Discordrb::Commands::CommandContainer
     command(
-      :rp,
+      [:roleplay, :rp],
       help_available: false,
       permission_level: 10
     ) do |event, *phrase|

@@ -3,7 +3,7 @@ module Commands
   module Guild
     extend Discordrb::Commands::CommandContainer
     command(
-      :guildroles,
+      [:guildroles, :gr],
       description: 'Displays guild roles set up for the server.',
       usage: 'guildroles'
     ) do |event|

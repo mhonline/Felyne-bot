@@ -3,7 +3,7 @@ module Commands
   module Remindme
     extend Discordrb::Commands::CommandContainer
     command(
-      :remindme,
+      [:remindme, :rm],
       description: 'Sends a reminder at the specified time.',
       usage: 'remindme <days> <hours> <mins> <text>',
       help_available: true,

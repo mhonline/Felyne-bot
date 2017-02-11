@@ -3,7 +3,7 @@ module Commands
   module Modrole
     extend Discordrb::Commands::CommandContainer
     command(
-      :modrole,
+      [:modrole, :mr],
       description: 'Specify a mod role (or delete one)',
       usage: 'modrole <@name> <delete>',
       min_args: 1,

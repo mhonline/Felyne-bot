@@ -3,7 +3,7 @@ module Commands
   module MainSetup
     extend Discordrb::Commands::CommandContainer
     command(
-      :mainsetup,
+      [:mainsetup, :ms],
       description: 'Sets time left in maintenance.',
       usage: 'mainsetup <start/end> <hours/clear> <minutes>',
       permission_level: 10,

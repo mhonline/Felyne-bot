@@ -3,7 +3,7 @@ module Commands
   module Deleteraid
     extend Discordrb::Commands::CommandContainer
     command(
-      :delraid,
+      [:delraid, :dr],
       description: 'Delete a raid for this channel.',
       usage: 'raids <number>',
       permission_level: 1,

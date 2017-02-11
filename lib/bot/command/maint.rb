@@ -3,7 +3,7 @@ module Commands
   module Maint
     extend Discordrb::Commands::CommandContainer
     command(
-      :maint,
+      [:maint, :m],
       description: 'Checks time left in game maintenance.',
       usage: 'maint'
     ) do |event|
