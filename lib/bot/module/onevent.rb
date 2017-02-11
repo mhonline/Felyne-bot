@@ -55,7 +55,9 @@ module Events
         sleep rand(1..3)
         event.respond CLEVER.say(event.message.content)
       else
-        unless BOT.parse_mention(event.message.content).nil?
+        unless BOT.parse_mention(
+          event.message.content
+        ).nil? || event.channel.default?
           if BOT.parse_mention(
             event.message.content
           ).id == 192_753_495_806_312_451
