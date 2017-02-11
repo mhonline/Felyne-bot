@@ -39,6 +39,15 @@ module Events
   #   event.respond "Day #{d2}: Still no english patch"
   # end
 
+  # message(containing: %w(Aslind aslind Asslind asslind)) do |event|
+  #   engpatch = '2016-12-27 00:00:00 +0000'
+  #   t1 = Time.now
+  #   t4 = Time.parse(engpatch)
+  #   d1 = TimeDifference.between(t1, t4).in_days
+  #   d2 = d1.floor
+  #   event.respond "Day #{d2}: Still no Aslind"
+  # end
+
   message do |event|
     unless event.message.content.include?(PREFIX)
       if event.message.channel.pm?
