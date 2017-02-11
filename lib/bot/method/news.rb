@@ -13,8 +13,8 @@ def news_pull
     File.write('botfiles/newnews', $currentnews)
     puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][NEWS] News Gathered!"
   else
-    puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][NEWS] Can't " \
-         'connect to news!'
+    puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][NEWS] Can't connect t" \
+         'o news!'
   end
 end
 
@@ -45,7 +45,9 @@ def news_post
     $news.push($news6date + ' | ' + $news6link)
     $qqnews.each do |key, _array|
       begin
-        BOT.send_message(key, "#{$news6date} | <http://mho.qq.com#{$news6link}>")
+        BOT.send_message(
+          key, "#{$news6date} | <http://mho.qq.com#{$news6link}>"
+        )
       rescue
       end
     end
@@ -55,7 +57,9 @@ def news_post
     $news.push($news5date + ' | ' + $news5link)
     $qqnews.each do |key, _array|
       begin
-        BOT.send_message(key, "#{$news5date} | <http://mho.qq.com#{$news5link}>")
+        BOT.send_message(
+          key, "#{$news5date} | <http://mho.qq.com#{$news5link}>"
+        )
       rescue
       end
     end
@@ -65,7 +69,9 @@ def news_post
     $news.push($news4date + ' | ' + $news4link)
     $qqnews.each do |key, _array|
       begin
-        BOT.send_message(key, "#{$news4date} | <http://mho.qq.com#{$news4link}>")
+        BOT.send_message(
+          key, "#{$news4date} | <http://mho.qq.com#{$news4link}>"
+        )
       rescue
       end
     end
@@ -75,7 +81,9 @@ def news_post
     $news.push($news3date + ' | ' + $news3link)
     $qqnews.each do |key, _array|
       begin
-        BOT.send_message(key, "#{$news3date} | <http://mho.qq.com#{$news3link}>")
+        BOT.send_message(
+          key, "#{$news3date} | <http://mho.qq.com#{$news3link}>"
+        )
       rescue
       end
     end
@@ -85,7 +93,9 @@ def news_post
     $news.push($news2date + ' | ' + $news2link)
     $qqnews.each do |key, _array|
       begin
-        BOT.send_message(key, "#{$news2date} | <http://mho.qq.com#{$news2link}>")
+        BOT.send_message(
+          key, "#{$news2date} | <http://mho.qq.com#{$news2link}>"
+        )
       rescue
       end
     end

@@ -15,8 +15,8 @@ def mute_log(channel_id)
   else
     $logs['muted'][channel_id.to_s] = [Time.now]
   end
-  puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][MUTE] BOT has been " \
-       "muted in #{channel_id}"
+  puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][MUTE] BOT has been mute" \
+       "d in #{channel_id}"
 end
 
 def killed_log(channel_id, monster_name)

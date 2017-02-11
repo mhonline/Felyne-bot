@@ -41,8 +41,7 @@ module Commands
         $guilds[event.server.id.to_s] = []
       end
       if found == guild_name
-        event.respond "The #{guild_name} role is already set up on this " \
-                      'server'
+        event.respond "The #{guild_name} role is already set up on this server"
       elsif $guilds[event.server.id.to_s].empty?
         $guilds[event.server.id.to_s] = [{
           'name' => server_role.name, 'id' => server_role.id

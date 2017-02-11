@@ -52,8 +52,8 @@ module Commands
       if list.nil?
         event.respond '<http://monsterhunteronline.in>'
       elsif list == 'mats'
-        event.respond '<http://monsterhunteronline.in/materials/?search=' \
-                      "#{search}>"
+        event.respond '<http://monsterhunteronline.in/materials/?search=' +
+                      search.to_s
       elsif list == 'skills'
         event.respond "<http://monsterhunteronline.in/skills/?search=#{search}>"
       elsif list == 'armor'
@@ -71,11 +71,11 @@ module Commands
           links << "<http://monsterhunteronline.in/#{x}> \n"
         end
         if links.length > 2000
-          event.respond 'Output has too many characters. Please be more ' \
-                        'specific in your search.'
+          event.respond 'Output has too many characters. Please be more speci' \
+                        'fic in your search.'
         elsif links.empty?
-          event.respond 'I wasn\'t able to dig up any results.  Please try ' \
-                        'something else!'
+          event.respond 'I wasn\'t able to dig up any results.  Please try so' \
+                        'mething else!'
         else
           event.respond links
         end

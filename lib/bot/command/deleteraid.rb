@@ -21,8 +21,8 @@ module Commands
           event.respond 'Raid was deleted.'
         end
       else
-        event.respond 'You do not have any raids set right now. Set some ' \
-                      "with `#{$prefix}newraid`"
+        event.respond 'You do not have any raids set right now. Set some with' \
+                      " `#{$prefix}newraid`"
       end
       $raids = $raids.without(channel_s) if $raids[channel_s]['raids'][0].nil?
       command_log('deleteraid', event.user.name)

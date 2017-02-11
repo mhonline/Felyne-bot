@@ -30,8 +30,8 @@ module Commands
           event.respond 'Maintenance has been cleared'
         else
           $info['maint']['start'] = t3.to_s
-          event.respond "#{h2} hours #{m2} minutes until the start of " \
-                        'maintenance.'
+          event.respond "#{h2} hours #{m2} minutes until the start of mainten" \
+                        'ance'
         end
       end
       if option == 'end'
@@ -40,8 +40,7 @@ module Commands
           event.respond 'Maintenance has been cleared'
         else
           $info['maint']['end'] = t3.to_s
-          event.respond "#{h2} hours #{m2} minutes until the end of " \
-                        'maintenance.'
+          event.respond "#{h2} hours #{m2} minutes until the end of maintenance"
         end
       end
       File.open('botfiles/info.json', 'w') { |f| f.write $info.to_json }
