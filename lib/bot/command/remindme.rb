@@ -28,10 +28,9 @@ module Commands
         }] }
       end
       new_reminder(t.to_s, event.user.id, key, reminder_text)
-      event.respond "You will be reminded at #{t}"
       File.open('botfiles/remind.json', 'w') { |f| f.write $remind.to_json }
       command_log('remindme', event.user.name)
-      nil
+      "You will be reminded at #{t}"
     end
   end
 end

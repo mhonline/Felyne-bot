@@ -12,32 +12,20 @@ module Commands
       if $settings.key?('debug')
         if $settings['debug']
           debug = false
-          begin
-            event.respond 'DEBUG state has been toggled off.'
-          rescue
-            mute_log(event.channel.id.to_s)
-          end
+          m = 'DEBUG state has been toggled off.'
         else
           debug = true
-          begin
-            event.respond 'DEBUG state has been toggled on.'
-          rescue
-            mute_log(event.channel.id.to_s)
-          end
+          m = 'DEBUG state has been toggled on.'
         end
       else
         debug = true
-        begin
-          event.respond 'DEBUG state has been toggled on.'
-        rescue
-          mute_log(event.channel.id.to_s)
-        end
+        m = 'DEBUG state has been toggled on.'
       end
       $settings['debug'] = debug
       File.open('botfiles/settings.json', 'w') { |f| f.write $settings.to_json }
       event.message.delete
       command_log('debug', event.user.name)
-      nil
+      m
     end
   end
 end

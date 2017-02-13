@@ -50,18 +50,17 @@ module Commands
       ]
       search = search.join(' ')
       if list.nil?
-        event.respond '<http://monsterhunteronline.in>'
+        m = '<http://monsterhunteronline.in>'
       elsif list == 'mats'
-        event.respond '<http://monsterhunteronline.in/materials/?search=' +
-                      search.to_s
+        m = "<http://monsterhunteronline.in/materials/?search=#{search}>"
       elsif list == 'skills'
-        event.respond "<http://monsterhunteronline.in/skills/?search=#{search}>"
+        m = "<http://monsterhunteronline.in/skills/?search=#{search}>"
       elsif list == 'armor'
-        event.respond "<http://monsterhunteronline.in/armor/?search=#{search}>"
+        m = "<http://monsterhunteronline.in/armor/?search=#{search}>"
       elsif list == 'monsters'
-        event.respond '<http://monsterhunteronline.in/monsters>'
+        m = '<http://monsterhunteronline.in/monsters>'
       elsif list == 'random'
-        event.respond "<http://monsterhunteronline.in/#{wikilinks[rand(0..(
+        m = "<http://monsterhunteronline.in/#{wikilinks[rand(0..(
           wikilinks.length - 1
         ))]}>"
       else
@@ -70,18 +69,17 @@ module Commands
         wiki.grep(/#{list}/).each do |x|
           links << "<http://monsterhunteronline.in/#{x}> \n"
         end
-        if links.length > 2000
-          event.respond 'Output has too many characters. Please be more speci' \
-                        'fic in your search.'
-        elsif links.empty?
-          event.respond 'I wasn\'t able to dig up any results.  Please try so' \
-                        'mething else!'
-        else
-          event.respond links
-        end
+        m = if links.length > 2000
+              'Output has too many characters. Please be more specific in you' \
+              'r search.'
+            elsif links.empty?
+              "I wasn't able to dig up any results.  Please try something else!"
+            else
+              links
+            end
       end
       command_log('wiki', event.user.name)
-      nil
+      m
     end
   end
 end

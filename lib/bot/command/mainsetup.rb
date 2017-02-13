@@ -27,25 +27,25 @@ module Commands
       if option == 'start'
         if hours == 'clear'
           $info['maint']['start'] = nil
-          event.respond 'Maintenance has been cleared'
+          m = 'Maintenance has been cleared'
         else
           $info['maint']['start'] = t3.to_s
-          event.respond "#{h2} hours #{m2} minutes until the start of mainten" \
+          m = "#{h2} hours #{m2} minutes until the start of mainten" \
                         'ance'
         end
       end
       if option == 'end'
         if hours == 'clear'
           $info['maint']['end'] = nil
-          event.respond 'Maintenance has been cleared'
+          m = 'Maintenance has been cleared'
         else
           $info['maint']['end'] = t3.to_s
-          event.respond "#{h2} hours #{m2} minutes until the end of maintenance"
+          m = "#{h2} hours #{m2} minutes until the end of maintenance"
         end
       end
       File.open('botfiles/info.json', 'w') { |f| f.write $info.to_json }
       command_log('mainsetup', event.user.name)
-      nil
+      m
     end
   end
 end

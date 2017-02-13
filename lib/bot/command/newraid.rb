@@ -15,7 +15,7 @@ module Commands
       channelname = event.channel.name
       if channelname.include? 'raid'
         if (days.to_i + hours.to_i).zero? && minutes.to_i < 60
-          event.respond 'You can\'t set up a raid with less than an hour unti' \
+          m = 'You can\'t set up a raid with less than an hour unti' \
                         'l start! Nobody would even show up!'
         else
           raidtext = text.join(' ')
@@ -62,15 +62,15 @@ module Commands
             '0' => tactual.to_s
           }] }
           schedule_raids(newraid)
-          event.respond "Raid for **#{raidtext}** set up!"
+          m = "Raid for **#{raidtext}** set up!"
           File.open('botfiles/raids.json', 'w') { |f| f.write $raids.to_json }
         end
       else
-        event.respond 'This is not a raid channel. You can only setup raid re' \
+        m = 'This is not a raid channel. You can only setup raid re' \
                       'minders for channels with raid in the name.'
       end
       command_log('newraid', event.user.name)
-      nil
+      m
     end
   end
 end

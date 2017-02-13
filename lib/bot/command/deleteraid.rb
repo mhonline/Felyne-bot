@@ -18,15 +18,15 @@ module Commands
             tags: [channel_s, $raids[channel_s]['raids'][delete - 1]['key']]
           ).each(&:unschedule)
           $raids[channel_s]['raids'].delete_at(delete - 1)
-          event.respond 'Raid was deleted.'
+          m = 'Raid was deleted.'
         end
       else
-        event.respond 'You do not have any raids set right now. Set some with' \
+        m = 'You do not have any raids set right now. Set some with' \
                       " `#{$prefix}newraid`"
       end
       $raids = $raids.without(channel_s) if $raids[channel_s]['raids'][0].nil?
       command_log('deleteraid', event.user.name)
-      nil
+      m
     end
   end
 end

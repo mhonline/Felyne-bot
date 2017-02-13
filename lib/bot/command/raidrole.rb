@@ -13,33 +13,17 @@ module Commands
     ) do |event, mention, delete = false|
       group_permissions = load_json('botfiles/group_permissions.json')
       if BOT.parse_mention(mention).nil?
-        begin
-          event.respond 'Invalid user' unless mention == 'delete'
-        rescue
-          mute_log(event.channel.id.to_s)
-        end
+        m = 'Invalid user' unless mention == 'delete'
       else
         group_id = BOT.parse_mention(mention).id
         if group_permissions.key?(group_id.to_s)
-          begin
-            event.respond 'This role is already a raid manager.'
-          rescue
-            mute_log(event.channel.id.to_s)
-          end
+          m = 'This role is already a raid manager.'
           if delete
-            begin
-              event.respond 'Removing raid manager permissions from role.'
-            rescue
-              mute_log(event.channel.id.to_s)
-            end
+            m = 'Removing raid manager permissions from role.'
             group_permissions = group_permissions.without(group_id.to_s)
           end
         else
-          begin
-            event.respond 'Making this role a raid manager.'
-          rescue
-            mute_log(event.channel.id.to_s)
-          end
+          m = 'Making this role a raid manager.'
           group_permissions[group_id.to_s] = {
             'id' => group_id, 'lvl' => 1
           }
@@ -55,7 +39,7 @@ module Commands
         end
       end
       command_log('raidrole', event.user.name)
-      nil
+      m
     end
   end
 end

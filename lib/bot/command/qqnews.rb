@@ -13,14 +13,14 @@ module Commands
     ) do |event, option|
       if option == 'sub'
         $qqnews[event.channel.id.to_s] = true
-        event.respond 'You have subscribed this channel to QQ MHO news'
+        m = 'You have subscribed this channel to QQ MHO news'
       elsif option == 'unsub'
         $qqnews.delete(event.channel.id.to_s)
-        event.respond 'You have unsubscribed this channel from QQ MHO news'
+        m = 'You have unsubscribed this channel from QQ MHO news'
       end
       File.open('botfiles/qqnews.json', 'w') { |f| f.write $qqnews.to_json }
       command_log('qqnews', event.user.name)
-      nil
+      m
     end
   end
 end

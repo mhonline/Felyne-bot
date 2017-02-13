@@ -7,13 +7,11 @@ module Commands
       description: 'Lists recommended sets for <weapon>.',
       usage: 'sets'
     ) do |event|
-      event.respond 'MHO Weapon Setup Suggestion Spreadsheet: <https://docs.g' \
-                    'oogle.com/spreadsheets/d/1q1msLZ0cib-1XOFO8XbWRvbN9mbXps' \
-                    "diFAjvCL2lpNI>\nForm to suggest new sets: <https://docs." \
-                    'google.com/forms/d/e/1FAIpQLSfA3A6wUsr1-ZdHm_PYBzy0RE57S' \
-                    'LjhBZCtnM5cD_Vr9HT5bQ/viewform>'
       command_log('sets', event.user.name)
-      nil
+      'MHO Weapon Setup Suggestion Spreadsheet: <https://docs.google.com/spre' \
+      "adsheets/d/1q1msLZ0cib-1XOFO8XbWRvbN9mbXpsdiFAjvCL2lpNI>\nForm to sugg" \
+      'est new sets: <https://docs.google.com/forms/d/e/1FAIpQLSfA3A6wUsr1-Zd' \
+      'Hm_PYBzy0RE57SLjhBZCtnM5cD_Vr9HT5bQ/viewform>'
     end
   end
 end

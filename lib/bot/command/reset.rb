@@ -9,17 +9,16 @@ module Commands
     ) do |event|
       t2 = Time.now.to_i
       t1 = Time.parse('19:00').to_i
+      command_log('reset', event.user.name)
       if t1 > t2
-        event.respond "#{Time.at(t1 - t2).strftime(
+        "#{Time.at(t1 - t2).strftime(
           '**%H** hours **%M** minutes **%S** seconds'
         )} left until the next gift/ticket reset"
       else
-        event.respond "#{Time.at(t1 + 86_400 - t2).strftime(
+        "#{Time.at(t1 + 86_400 - t2).strftime(
           '**%H** hours **%M** minutes **%S** seconds'
         )} left until the next gift/ticket reset"
       end
-      command_log('reset', event.user.name)
-      nil
     end
   end
 end

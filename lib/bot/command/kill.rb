@@ -24,7 +24,6 @@ module Commands
       File.open('botfiles/users.json', 'w') { |f| f.write $users.to_json }
       BOT.stop
       exit
-      nil
     end
   end
 end

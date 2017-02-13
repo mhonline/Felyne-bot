@@ -14,9 +14,8 @@ module Commands
         'My reply is no', 'My sources say no', 'Outlook not so good',
         'Very doubtful'
       ]
-      event.respond "🎱#{options[rand(0..19)]}🎱"
       command_log('ask', event.user.name)
-      nil
+      "🎱#{options[rand(0..19)]}🎱"
     end
   end
 end

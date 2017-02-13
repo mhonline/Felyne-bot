@@ -8,13 +8,8 @@ module Commands
       usage: 'ping',
       help_available: false
     ) do |event|
-      begin
-        event.respond "Pong! : #{((Time.now - event.timestamp) * 1000).to_i}ms"
-      rescue
-        mute_log(event.channel.id.to_s)
-      end
       command_log('ping', event.user.name)
-      nil
+      "Pong! : #{((Time.now - event.timestamp) * 1000).to_i}ms"
     end
   end
 end

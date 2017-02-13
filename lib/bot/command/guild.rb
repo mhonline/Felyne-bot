@@ -37,17 +37,16 @@ module Commands
         end
         added = true
       end
+      command_log('guild', event.user.name)
       if joinable
         if added
-          event.respond "Added to the #{guild_name} server role."
+          "Added to the #{guild_name} server role."
         else
-          event.respond "The #{guild_name} server role does not exist."
+          "The #{guild_name} server role does not exist."
         end
       else
-        event.respond 'The server does not have any joinable roles set up.'
+        'The server does not have any joinable roles set up.'
       end
-      command_log('guild', event.user.name)
-      nil
     end
   end
 end
