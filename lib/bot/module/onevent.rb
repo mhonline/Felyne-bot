@@ -26,18 +26,18 @@ module Events
   #   event.respond rip[rand(0..(rip.length - 1))]
   # end
 
-  # message(containing: [
-  #           'english patch', 'English Patch', 'English patch', 'english Patch',
-  #           'Eng Patch', 'Eng patch', 'eng patch', 'eng Patch', 'ENGLISH PATCH',
-  #           'ENG PATCH'
-  #         ]) do |event|
-  #   engpatch = '2016-06-21 00:00:00 +0000'
-  #   t1 = Time.now
-  #   t4 = Time.parse(engpatch)
-  #   d1 = TimeDifference.between(t1, t4).in_days
-  #   d2 = d1.floor
-  #   event.respond "Day #{d2}: Still no english patch"
-  # end
+  message(containing: [
+            'english patch', 'English Patch', 'English patch', 'english Patch',
+            'Eng Patch', 'Eng patch', 'eng patch', 'eng Patch', 'ENGLISH PATCH',
+            'ENG PATCH'
+          ]) do |event|
+    engpatch = '2016-06-21 00:00:00 +0000'
+    t1 = Time.now
+    t4 = Time.parse(engpatch)
+    d1 = TimeDifference.between(t1, t4).in_days
+    d2 = d1.floor
+    event.respond "Day #{d2}: Still no english patch"
+  end
 
   # message(containing: %w(Aslind aslind Asslind asslind)) do |event|
   #   engpatch = '2016-12-27 00:00:00 +0000'
