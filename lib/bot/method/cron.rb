@@ -11,6 +11,11 @@ def cron_jobs
     File.open('botfiles/users.json', 'w') { |f| f.write $users.to_json }
   end
 
+  SCHEDULER.every '24h' do
+    Bot.stop
+    exit
+  end
+
   # Changes game every 30 minutes
   SCHEDULER.every '30m' do
     $settings['game'] = 'Fighting ' +
