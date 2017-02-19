@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 gem 'cleverbot_rb', git: 'git@github.com:Reaver01/cleverbot_rb.git',
                     branch: 'master'
 gem 'discordrb', git: 'https://github.com/Reaver01/discordrb',
-                 branch: 'enhance/create_role'
+                 branch: 'enhance/combo'
 gem 'dotenv'
 gem 'json'
 gem 'rufus-scheduler'
