@@ -31,6 +31,10 @@ end
 SCHEDULER = Rufus::Scheduler.new
 PREFIX = '-'.freeze
 CLEVER = Cleverbot.new(ENV['CLEVERKEY'])
+
+# Set Translate API key
+EasyTranslate.api_key = ENV['TRANSLATE']
+
 # Load the bot constant
 BOT = Discordrb::Commands::CommandBot.new token: ENV['TOKEN'],
                                           client_id: ENV['CLIENT'],
