@@ -3,7 +3,7 @@ module Commands
   module English
     extend Discordrb::Commands::CommandContainer
     command(
-      :english
+      [:english, :en]
     ) do |event, *text|
       text = text.join(' ')
       command_log('chinese', event.user.name)
