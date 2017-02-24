@@ -1,13 +1,13 @@
 module Commands
   # Command Module
-  module Chinese
+  module English
     extend Discordrb::Commands::CommandContainer
     command(
-      :chinese
+      :english
     ) do |event, *text|
       text = text.join(' ')
       command_log('chinese', event.user.name)
-      EasyTranslate.translate(text, to: :chinese_simplified)
+      EasyTranslate.translate(text, to: :english)
     end
   end
 end
