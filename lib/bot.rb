@@ -30,7 +30,7 @@ end
 # Load all constant variables
 SCHEDULER = Rufus::Scheduler.new
 PREFIX = '-'.freeze
-CLEVER = Cleverbot.new(ENV['CLEVERKEY'])
+CLEVER = Cleverbot::Client.new ENV['CLEVERKEY']
 
 # Set Translate API key
 EasyTranslate.api_key = ENV['TRANSLATE']
