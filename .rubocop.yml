@@ -65,3 +65,6 @@ Style/GlobalVars:
 
 Style/GuardClause:
   Enabled: false
+
+Metrics/LineLength:
+  Max: 100
