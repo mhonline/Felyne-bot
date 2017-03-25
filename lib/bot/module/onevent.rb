@@ -19,11 +19,7 @@ module Events
   # end
 
   # message(containing: 'RIP') do |event|
-  #   rip = [
-  #     'Rest in Pizza', 'RIP in Peace', 'Ripperoni', 'Rippy Dippy Doo',
-  #     'Rest in Peace', 'RIP in Pizza', 'RIP in Pizza Noodle'
-  #   ]
-  #   event.respond rip[rand(0..(rip.length - 1))]
+  #   event.respond ['Rest in Pizza', 'RIP in Peace', 'Ripperoni', 'Rippy Dippy Doo', 'Rest in Peace', 'RIP in Pizza', 'RIP in Pizza Noodle'].sample
   # end
 
   message(containing: [
