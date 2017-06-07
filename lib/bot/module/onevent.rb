@@ -3,13 +3,13 @@ module Events
   extend Discordrb::EventContainer
   message(containing: '(╯°□°）╯︵ ┻━┻') do |event|
     event.channel.start_typing
-    sleep rand(1..3)
+    sleep rand(1..2)
     event.respond '┬─┬﻿ ノ( ゜-゜ノ)'
   end
 
   message(containing: '┬─┬﻿ ノ( ゜-゜ノ)') do |event|
     event.channel.start_typing
-    sleep rand(1..3)
+    sleep rand(1..2)
     event.respond '(╯°□°）╯︵ ┻━┻'
   end
 
