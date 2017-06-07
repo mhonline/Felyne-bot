@@ -2,10 +2,14 @@
 module Events
   extend Discordrb::EventContainer
   message(containing: '(╯°□°）╯︵ ┻━┻') do |event|
+    event.channel.start_typing
+    sleep rand(1..3)
     event.respond '┬─┬﻿ ノ( ゜-゜ノ)'
   end
 
   message(containing: '┬─┬﻿ ノ( ゜-゜ノ)') do |event|
+    event.channel.start_typing
+    sleep rand(1..3)
     event.respond '(╯°□°）╯︵ ┻━┻'
   end
 
@@ -22,17 +26,17 @@ module Events
   #   event.respond ['Rest in Pizza', 'RIP in Peace', 'Ripperoni', 'Rippy Dippy Doo', 'Rest in Peace', 'RIP in Pizza', 'RIP in Pizza Noodle'].sample
   # end
 
-  message(containing: [
-            'english patch', 'English Patch', 'English patch', 'english Patch',
-            'Eng Patch', 'Eng patch', 'eng patch', 'eng Patch', 'ENGLISH PATCH',
-            'ENG PATCH'
-          ]) do |event|
-    event.respond "Day #{TimeDifference.between(Time.now, Time.parse('2016-06-21')).in_days.floor}: Still no english patch"
-  end
+  # message(containing: [
+  #           'english patch', 'English Patch', 'English patch', 'english Patch',
+  #           'Eng Patch', 'Eng patch', 'eng patch', 'eng Patch', 'ENGLISH PATCH',
+  #           'ENG PATCH'
+  #         ]) do |event|
+  #   event.respond "Day #{TimeDifference.between(Time.now, Time.parse('2016-06-21')).in_days.floor}: Still no english patch"
+  # end
 
-  message(containing: 'gamer.qq') do |event|
-    event.respond "Day #{TimeDifference.between(Time.now, Time.parse('2016-10-20')).in_days.floor}: <http://gamer.qq.com> has still not updated the weapon tree."
-  end
+  # message(containing: 'gamer.qq') do |event|
+  #   event.respond "Day #{TimeDifference.between(Time.now, Time.parse('2016-10-20')).in_days.floor}: <http://gamer.qq.com> has still not updated the weapon tree."
+  # end
 
   # message(containing: %w(Aslind aslind Asslind asslind)) do |event|
   #   event.respond "Day #{TimeDifference.between(Time.now, Time.parse('2016-12-27')).in_days.floor}: Still no Aslind"
