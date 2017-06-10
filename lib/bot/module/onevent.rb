@@ -13,6 +13,11 @@ module Events
     event.respond '(╯°□°）╯︵ ┻━┻'
   end
 
+  message(containing: 'invite') do |event|
+    sleep rand(1..2)
+    event.message.delete if event.user.id == 206037251543531521
+  end
+
   # message(containing: '111') do |event|
   #   id_list = %w(1112 1113 1114 1115 1116 1117 1118 1119 1110 2111 3111 4111
   #                5111 6111 7111 8111 9111 0111)
