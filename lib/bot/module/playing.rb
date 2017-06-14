@@ -6,7 +6,7 @@ module Events
       role.name == "Playing MHO"
     end
     if event.game == "Monster Hunter Online"
-      BOT.user(event.user.id).modify_roles(server_role, 0)
+      event.user.modify_roles(server_role, 0)
     end
   end
 end
