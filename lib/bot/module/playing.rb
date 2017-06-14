@@ -3,7 +3,7 @@ module Events
   extend Discordrb::EventContainer
   playing do |event|
     if event.game == "Monster Hunter Online"
-      event.user.modify_roles(event.server.roles.find { |role| role.name == "Playing MHO" }, 0)
+      event.user.add_role(event.server.roles.find { |role| role.name == "Playing MHO" })
     end
   end
 end
