@@ -7,8 +7,6 @@ module Events
     end
     if event.game == "Monster Hunter Online"
       BOT.user(event.user.id).modify_roles(server_role, nil)
-    else
-      BOT.user(event.user.id).modify_roles(nil, server_role)
     end
   end
 end
