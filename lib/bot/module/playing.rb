@@ -7,8 +7,10 @@ module Events
     if event.game == "Monster Hunter Online"
       server_user.add_role(server_role) unless server_role.nil?
     else
-      if server_user.role?(server_role.id)
-        server_user.remove_role(server_role)
+      unless server_role.nil?
+        if server_user.role?(server_role.id)
+          server_user.remove_role(server_role)
+        end
       end
     end
   end
