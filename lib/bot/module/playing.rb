@@ -2,11 +2,8 @@
 module Events
   extend Discordrb::EventContainer
   playing do |event|
-    server_role = event.server.roles.find do |role|
-      role.name == "Playing MHO"
-    end
     if event.game == "Monster Hunter Online"
-      event.user.modify_roles(server_role, 0)
+      event.user.modify_roles(event.server.roles.find { |role| role.name == "Playing MHO" }, 0)
     end
   end
 end
