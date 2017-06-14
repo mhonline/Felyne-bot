@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 gem 'cleverbot_rb', git: 'git@github.com:Reaver01/cleverbot_rb.git',
                     branch: 'master'
-gem 'discordrb', git: 'https://github.com/Reaver01/discordrb',
-                 branch: 'enhance/combo'
+gem 'discordrb', git: 'https://github.com/meew0/discordrb',
+                 branch: 'master'
 gem 'dotenv'
 gem 'easy_translate'
 gem 'json'
