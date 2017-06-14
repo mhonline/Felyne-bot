@@ -6,9 +6,9 @@ module Events
       role.name == "Playing MHO"
     end
     if event.game == "Monster Hunter Online"
-      event.user.add_role(server_role)
+      event.user.modify_roles(server_role, nil)
     else
-      event.user.remove_role(server_role)
+      event.user.modify_roles(nil, server_role)
     end
   end
 end
