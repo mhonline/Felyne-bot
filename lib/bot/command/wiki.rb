@@ -8,6 +8,7 @@ module Commands
       description: 'Searches the Wiki',
       usage: 'wiki <search>'
     ) do |event, list, *search|
+      base_url = 'https://reaver01.github.io/'
       wikilinks = [
         'armor', 'cats', 'crafting', 'faq', 'food', 'gathering', 'hunter-set',
         'hunter-set/#blademaster', 'hunter-set/#gunner', 'hunter-set/#list',
@@ -50,24 +51,24 @@ module Commands
       ]
       search = search.join(' ')
       if list.nil?
-        m = '<http://monsterhunteronline.in>'
+        m = "<#{base_url}>"
       elsif list == 'mats'
-        m = "<http://monsterhunteronline.in/materials/?search=#{search}>"
+        m = "<#{base_url}/materials/?search=#{search}>"
       elsif list == 'skills'
-        m = "<http://monsterhunteronline.in/skills/?search=#{search}>"
+        m = "<#{base_url}/skills/?search=#{search}>"
       elsif list == 'armor'
-        m = "<http://monsterhunteronline.in/armor/?search=#{search}>"
+        m = "<#{base_url}/armor/?search=#{search}>"
       elsif list == 'monsters'
-        m = '<http://monsterhunteronline.in/monsters>'
+        m = '<#{base_url}/monsters>'
       elsif list == 'random'
-        m = "<http://monsterhunteronline.in/#{wikilinks[rand(0..(
+        m = "<#{base_url}/#{wikilinks[rand(0..(
           wikilinks.length - 1
         ))]}>"
       else
         wiki = wikilinks
         links = ''
         wiki.grep(/#{list}/).each do |x|
-          links << "<http://monsterhunteronline.in/#{x}> \n"
+          links << "<#{base_url}/#{x}> \n"
         end
         m = if links.length > 2000
               'Output has too many characters. Please be more specific in you' \
