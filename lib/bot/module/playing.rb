@@ -8,9 +8,7 @@ module Events
       server_user.add_role(server_role) unless server_role.nil?
     else
       unless server_role.nil?
-        if server_user.role?(server_role.id)
-          server_user.remove_role(server_role)
-        end
+        server_user.remove_role(server_role) if server_user.role?(server_role.id)
       end
     end
   end
