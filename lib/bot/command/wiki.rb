@@ -8,7 +8,7 @@ module Commands
       description: 'Searches the Wiki',
       usage: 'wiki <search>'
     ) do |event, list, *search|
-      base_url = 'https://reaver01.github.io'
+      base_url = 'https://monsterhunteronline.github.io'
       wikilinks = [
         'armor', 'cats', 'crafting', 'faq', 'food', 'gathering', 'hunter-set',
         'hunter-set/#blademaster', 'hunter-set/#gunner', 'hunter-set/#list',
