@@ -18,6 +18,7 @@ def cron_jobs
     user_list.each do |user|
       user.remove_role(server_role) unless user.game = "Monster Hunter Online"
     end
+    puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][CRON] Cleaned up Playing MHO!"
   end
 
   SCHEDULER.every '24h' do
