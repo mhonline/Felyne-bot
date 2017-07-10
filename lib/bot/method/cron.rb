@@ -11,7 +11,7 @@ def cron_jobs
     File.open('botfiles/users.json', 'w') { |f| f.write $users.to_json }
   end
 
-  SCHEDULER.every '1m' do
+  SCHEDULER.every '6m' do
     server_role = BOT.server(122526505606709257).roles.find { |role| role.name == "Playing MHO" }
     user_list = Array.new
     server_role.users.each { |user| user_list.push(BOT.member(122526505606709257, user.id)) }
