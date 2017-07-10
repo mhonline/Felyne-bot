@@ -11,12 +11,12 @@ def cron_jobs
     File.open('botfiles/users.json', 'w') { |f| f.write $users.to_json }
   end
 
-  SCHEDULER.every '6m' do
+  SCHEDULER.every '1m' do
     server_role = BOT.server(122526505606709257).roles.find { |role| role.name == "Playing MHO" }
     user_list = Array.new
     server_role.users.each { |user| user_list.push(BOT.member(122526505606709257, user.id)) }
     user_list.each do |user|
-      user.remove_role(server_role) unless user.game = "Monster Hunter Online"
+      user.remove_role(server_role) unless user.game == "Monster Hunter Online"
     end
     puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][CRON] Cleaned up Playing MHO!"
   end
