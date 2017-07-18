@@ -35,7 +35,7 @@ module Events
             'english patch', 'English Patch', 'English patch', 'english Patch',
             'Eng Patch', 'Eng patch', 'eng patch', 'eng Patch', 'ENGLISH PATCH',
             'ENG PATCH'
-          ]) |event|
+          ]) do |event|
     if event.message.content.include?('?')
       event.respond "<https://www.reddit.com/r/MHOnline/comments/6nz9qx/monster_hunter_online_the_return_of_the_english/>"
     end
