@@ -36,7 +36,9 @@ module Events
             'Eng Patch', 'Eng patch', 'eng patch', 'eng Patch', 'ENGLISH PATCH',
             'ENG PATCH'
           ]) |event|
-    event.respond "<https://www.reddit.com/r/MHOnline/comments/6nz9qx/monster_hunter_online_the_return_of_the_english/>"
+    if event.message.content.include?('?')
+      event.respond "<https://www.reddit.com/r/MHOnline/comments/6nz9qx/monster_hunter_online_the_return_of_the_english/>"
+    end
   #   event.respond "Day #{TimeDifference.between(Time.now, Time.parse('2016-06-21')).in_days.floor}: Still no english patch"
   end
 
