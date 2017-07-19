@@ -59,7 +59,7 @@ module Commands
       elsif list == 'armor'
         m = "<#{base_url}/armor/?search=#{search}>"
       elsif list == 'monsters'
-        m = '<#{base_url}/monsters>'
+        m = "<#{base_url}/monsters>"
       elsif list == 'random'
         m = "<#{base_url}/#{wikilinks[rand(0..(
           wikilinks.length - 1
