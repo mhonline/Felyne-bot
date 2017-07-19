@@ -31,13 +31,16 @@ module Events
   #   event.respond ['Rest in Pizza', 'RIP in Peace', 'Ripperoni', 'Rippy Dippy Doo', 'Rest in Peace', 'RIP in Pizza', 'RIP in Pizza Noodle'].sample
   # end
 
-  # message(containing: [
-  #           'english patch', 'English Patch', 'English patch', 'english Patch',
-  #           'Eng Patch', 'Eng patch', 'eng patch', 'eng Patch', 'ENGLISH PATCH',
-  #           'ENG PATCH'
-  #         ]) do |event|
+  message(containing: [
+            'english patch', 'English Patch', 'English patch', 'english Patch',
+            'Eng Patch', 'Eng patch', 'eng patch', 'eng Patch', 'ENGLISH PATCH',
+            'ENG PATCH'
+          ]) do |event|
+    if event.message.content.include?('?')
+      event.respond "<https://www.reddit.com/r/MHOnline/comments/6nz9qx/monster_hunter_online_the_return_of_the_english/>"
+    end
   #   event.respond "Day #{TimeDifference.between(Time.now, Time.parse('2016-06-21')).in_days.floor}: Still no english patch"
-  # end
+  end
 
   # message(containing: 'gamer.qq') do |event|
   #   event.respond "Day #{TimeDifference.between(Time.now, Time.parse('2016-10-20')).in_days.floor}: <http://gamer.qq.com> has still not updated the weapon tree."
