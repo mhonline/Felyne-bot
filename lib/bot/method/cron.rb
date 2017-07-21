@@ -109,6 +109,22 @@ def cron_jobs
     end
   end
 
+  SCHEDULER.cron '0 2 * * *' do
+    $daily.each do |key, _array|
+      BOT.send_message(
+        key, 'Impending lag approaches'
+      )
+    end
+  end
+
+  SCHEDULER.cron '0 6 * * *' do
+    $daily.each do |key, _array|
+      BOT.send_message(
+        key, 'The lag has gone, probably'
+      )
+    end
+  end
+
   puts "[#{Time.now.strftime('%d %a %y | %H:%M:%S')}][STARTUP] Cron jobs sche" \
        'duled!'
 end
