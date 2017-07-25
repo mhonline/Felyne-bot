@@ -18,7 +18,7 @@ module Events
             'Eng Patch', 'Eng patch', 'eng patch', 'eng Patch', 'ENGLISH PATCH',
             'ENG PATCH'
           ]) do |event|
-    event.respond "#english-patch" if event.message.content.include?('where') or event.message.content.include?('Where')
+    event.respond BOT.channel(336718236458680321).mention if event.message.content.include?('where') or event.message.content.include?('Where')
   end
 
   message do |event|
