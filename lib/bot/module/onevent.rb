@@ -13,42 +13,13 @@ module Events
     event.respond '(╯°□°）╯︵ ┻━┻'
   end
 
-  message(containing: 'invite') do |event|
-    sleep rand(1..2)
-    event.message.delete if event.user.id == 206037251543531521
-  end
-
-  # message(containing: '111') do |event|
-  #   id_list = %w(1112 1113 1114 1115 1116 1117 1118 1119 1110 2111 3111 4111
-  #                5111 6111 7111 8111 9111 0111)
-  #   if id_list.any? { |s| event.message.content.include?(s) }
-  #   else
-  #     event.respond 'CATCH THE FUCKING MONSTER!!'
-  #   end
-  # end
-
-  # message(containing: 'RIP') do |event|
-  #   event.respond ['Rest in Pizza', 'RIP in Peace', 'Ripperoni', 'Rippy Dippy Doo', 'Rest in Peace', 'RIP in Pizza', 'RIP in Pizza Noodle'].sample
-  # end
-
   message(containing: [
             'english patch', 'English Patch', 'English patch', 'english Patch',
             'Eng Patch', 'Eng patch', 'eng patch', 'eng Patch', 'ENGLISH PATCH',
             'ENG PATCH'
           ]) do |event|
-    if event.message.content.include?('?')
-      event.respond "<https://www.reddit.com/r/MHOnline/comments/6nz9qx/monster_hunter_online_the_return_of_the_english/>"
-    end
-  #   event.respond "Day #{TimeDifference.between(Time.now, Time.parse('2016-06-21')).in_days.floor}: Still no english patch"
+    event.respond "#english-patch" if event.message.content.include?('where') or event.message.content.include?('Where')
   end
-
-  # message(containing: 'gamer.qq') do |event|
-  #   event.respond "Day #{TimeDifference.between(Time.now, Time.parse('2016-10-20')).in_days.floor}: <http://gamer.qq.com> has still not updated the weapon tree."
-  # end
-
-  # message(containing: %w(Aslind aslind Asslind asslind)) do |event|
-  #   event.respond "Day #{TimeDifference.between(Time.now, Time.parse('2016-12-27')).in_days.floor}: Still no Aslind"
-  # end
 
   message do |event|
     unless event.message.content.include?(PREFIX)
